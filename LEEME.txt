@@ -1,0 +1,8 @@
+SA1 · MI CUERPO FLORECE · VERSIÓN OFFLINE PARA PENDRIVE
+
+1. Copia esta carpeta completa al pendrive.
+2. Abre ABRIR_AQUI.html con Chrome, Edge o Firefox.
+3. No necesita Internet ni servidor web.
+4. Las fichas, vocabulario y rúbrica se imprimen desde sus botones propios.
+5. El sistema de impresión está preparado para una única página DIN A4 vertical por material imprimible, conservando la misma estructura visual de la ficha mostrada en pantalla.
+6. La rúbrica de la sesión 3 combina dos instrumentos: observación de aula (60 %) y evidencias de la ficha de trabajo (40 %). La valoración final se calcula cuando se han puntuado todos los indicadores.
