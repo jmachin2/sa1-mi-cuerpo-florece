@@ -549,6 +549,19 @@ body.sheet-viewing{overflow:hidden!important}
 .mentor-purpose{margin-top:14px;border:2px solid #a9d8ed;background:#eef8ff;border-radius:18px;padding:12px 14px;font-size:18px;line-height:1.35}
 @media(max-width:820px){.mentor-book-w3{grid-template-columns:1fr}.mentor-book-cover{min-height:260px}}
 
+
+.s7-mentor-readable{max-width:1300px;margin:0 auto}
+.s7-mentor-head{display:grid;grid-template-columns:1fr minmax(280px,.8fr);gap:18px;align-items:end;margin-bottom:14px}
+.s7-mentor-reader{display:grid;grid-template-columns:minmax(320px,.9fr) minmax(360px,1.1fr);gap:22px;align-items:stretch}
+.s7-mentor-image-wrap{border:3px solid #d7e1e5;border-radius:24px;background:#f7fafb;padding:10px;display:grid;place-items:center;min-height:420px;overflow:hidden}
+.s7-mentor-image-wrap img{width:100%;height:100%;max-height:480px;object-fit:contain;border-radius:18px;background:#fff}
+.s7-mentor-copy{border:3px solid #d7e1e5;border-radius:24px;background:#fff;padding:24px;display:flex;flex-direction:column;justify-content:center}
+.s7-mentor-counter{font:900 15px Arial,Helvetica,sans-serif;letter-spacing:.08em;color:#65727a;margin-bottom:14px}
+.s7-mentor-text{font-size:clamp(34px,4.3vw,58px);line-height:1.2;color:#18324a}
+.s7-mentor-question{font-size:clamp(23px,2.5vw,34px);line-height:1.25;margin-top:22px;padding:12px 14px;background:#fff6db;border:2px solid #f1d77a;border-radius:16px}
+.s7-mentor-controls{display:flex;gap:10px;justify-content:space-between;margin-top:20px}
+@media(max-width:850px){.s7-mentor-head,.s7-mentor-reader{grid-template-columns:1fr}.s7-mentor-image-wrap{min-height:280px}.s7-mentor-copy{padding:18px}}
+
 </style>
 
 </head>
@@ -1123,22 +1136,35 @@ body.sheet-viewing{overflow:hidden!important}
   <div class="printables-bottom"><button class="btn prev" type="button">◀ Volver</button><button class="btn" data-open-materials="week2" type="button">VER TODAS LAS FICHAS · SEMANA 2</button><button class="btn primary next" type="button">Cierre ▶</button></div>
 </div></section><section class="screen" data-session="6" data-title="Cierre · semana 2"><div class="panel"><span class="tag">CIERRE DE LA SEMANA 2</span><div class="week2-close schoolfont">Ahora puedo <strong>buscar información, investigar, clasificar y explicar</strong> cómo uso mis sentidos.</div><div class="sense-prompt schoolfont">Pregunta final: <b>¿Qué sentido te ayudó más hoy? ¿Cómo lo sabes?</b></div><div class="teacherbox"><b>3 min.</b> Guarda las tres fichas como evidencias de la semana. La observación oral durante las actividades completa la información que no aparece en las producciones.</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">📚 Palabra de hoy ▶</button></div></div></section><section class="screen" data-session="6" data-title="Vocabulario · sesión 6"><div class="panel vocab-two-column-panel"><div class="vocab-sheet" id="vocabSheet6"><div class="vocab-head"><div><div class="vocab-session">MI CUERPO FLORECE · SESIÓN 6</div><div class="vocab-note">Palabra de hoy · sustantivo</div></div><div class="vocab-kicker">📚 VOCABULARIO</div></div><div class="vocab-word schoolfont">BOCA</div><div class="vocab-photo-wrap"><img alt="Fotografía de una boca" class="vocab-photo" src="assets/embedded_fa3851fc5a6e4a5b.jpg"/></div><div class="vocab-def schoolfont"><span class="vocab-step">1 · MIRAMOS Y ENTENDEMOS</span><br/>La boca es una parte del cuerpo que usamos para saborear.</div><div class="vocab-example schoolfont"><span class="vocab-step">2 · ESCUCHAMOS UNA FRASE</span><br/>“Con mi boca puedo saborear el pan.”</div><div class="vocab-say schoolfont"><span class="vocab-step">3 · AHORA TÚ</span><br/>Construye tu oración: <b>Con mi boca puedo saborear…</b></div></div><div class="vocab-controls"><button class="btn prev">◀ Atrás</button><button class="btn" data-print-vocab="6">🖨️ Imprimir A4</button><button class="btn primary" data-go-home="">✓ Terminar sesión</button></div></div></section>
 
-<section class="screen" data-session="7" data-title="Libro mentor · 2, 4, 6, 8 patas">
-  <div class="panel mentor-book-w3">
-    <div class="mentor-book-cover">
-      <div class="book-kicker">TEXTO MENTOR</div>
-      <h2 class="book-title schoolfont">PATAS</h2>
-      <div class="book-numbers schoolfont">2 · 4 · 6 · 8</div>
-      <div class="book-author">Patricia Brennan</div>
+
+<section class="screen" data-session="7" data-title="Texto mentor · 2, 4, 6, 8 patas">
+  <div class="panel s7-mentor-readable">
+    <div class="s7-mentor-head">
+      <div>
+        <span class="tag w3-tag">TEXTO MENTOR · SESIÓN 7</span>
+        <h1 class="student-title schoolfont" style="font-size:clamp(38px,5vw,68px);margin-top:10px">PATAS · 2, 4, 6, 8</h1>
+        <div class="note">Patricia Brennan</div>
+      </div>
+      <div class="mentor-purpose"><b>Mientras leemos:</b> buscamos una característica y explicamos <b>¿cómo lo sabes?</b></div>
     </div>
-    <div class="mentor-book-info">
-      <span class="tag w3-tag">SESIÓN 7</span>
-      <h2 class="schoolfont">Leemos para buscar una característica</h2>
-      <p class="schoolfont">Mientras escuchamos el libro buscamos una información concreta: <b>¿cuántas patas tiene cada animal?</b></p>
-      <div class="mentor-purpose"><b>Propósito de lectura:</b> observar, localizar un dato, comparar y explicar <b>“¿cómo lo sabes?”</b>.</div>
-      <div class="actions"><button class="btn primary next" type="button">Empezar la lectura ▶</button></div>
-      <div class="teacherbox"><b>Uso docente.</b> Abre el ejemplar de <i>2, 4, 6, 8 patas</i> de la carpeta de libros mentores. Selecciona ejemplos de 2, 4, 6 y 8 patas y lee tú el texto; el alumnado usa las imágenes como evidencia.</div>
+
+    <div class="s7-mentor-reader">
+      <div class="s7-mentor-image-wrap">
+        <img id="s7MentorImg" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG" alt="Animal para acompañar la lectura">
+      </div>
+      <div class="s7-mentor-copy">
+        <div class="s7-mentor-counter" id="s7MentorCounter">1 de 8</div>
+        <div class="s7-mentor-text schoolfont" id="s7MentorText">Aquí veo dos patas.<br>Están caminando.</div>
+        <div class="s7-mentor-question schoolfont" id="s7MentorQuestion">¿Cuántas patas ves?</div>
+        <div class="s7-mentor-controls">
+          <button class="btn" id="s7MentorPrev" type="button">◀ Anterior</button>
+          <button class="btn primary" id="s7MentorNext" type="button">Siguiente ▶</button>
+        </div>
+      </div>
     </div>
+
+    <div class="teacherbox"><b>Lectura compartida.</b> El texto se presenta con apoyo visual para que el alumnado pueda observar, escuchar, localizar el número y justificar. El ejemplar original sigue siendo el texto de referencia del docente.</div>
+    <div class="nav"><button class="btn primary next" type="button">Pasar a las actividades ▶</button></div>
   </div>
 </section>
 
@@ -1576,6 +1602,30 @@ document.getElementById('s9MatchReset')?.addEventListener('click',()=>{s9MatchSe
 
 root.querySelectorAll('[data-print-w3]').forEach(b=>b.addEventListener('click',()=>{const el=document.getElementById('w3Sheet'+b.dataset.printW3);if(el)printTarget(el);}));
 root.querySelectorAll('[data-open-w3-sheet]').forEach(b=>b.addEventListener('click',()=>{const title='Ficha para imprimir · sesión '+b.dataset.openW3Sheet;const idx=screens.findIndex(x=>x.dataset.title===title);if(idx>=0)show(idx);}));
+
+
+const s7MentorPages=[
+ {img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG',text:'Aquí veo dos patas.<br>Están caminando.',q:'¿Cuántas patas ves?'},
+ {img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG',text:'Aquí veo cuatro patas.<br>Están descansando.',q:'¿Qué has mirado para saberlo?'},
+ {img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg',text:'Aquí veo seis patas.<br>Están moviéndose.',q:'Cuenta una a una.'},
+ {img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Spider_image_view.jpg',text:'Aquí veo ocho patas.<br>Están trabajando.',q:'¿Ves ocho? Señálalas.'},
+ {img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg',text:'Aquí veo seis patas.<br>Están saltando.',q:'¿Se parece al ejemplo anterior?'},
+ {img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Cat_is_standing.jpg',text:'Aquí veo cuatro patas.<br>Están corriendo.',q:'¿En qué grupo la pondrías?'},
+ {img:'assets/embedded_9b29069998326e5e.jpg',text:'Aquí veo dos piernas.<br>Están patinando.',q:'¿Decimos patas o piernas?'},
+ {img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Stone_rock.jpg',text:'¿Ves patas aquí?<br>¡Yo no veo ni una pata!',q:'¿Todo lo que no tiene patas está sin vida?'}
+];
+let s7MentorIndex=0;
+function renderS7Mentor(){
+ const p=s7MentorPages[s7MentorIndex];
+ const im=document.getElementById('s7MentorImg'),tx=document.getElementById('s7MentorText'),ct=document.getElementById('s7MentorCounter'),q=document.getElementById('s7MentorQuestion');
+ if(!im||!tx||!ct||!q)return;
+ im.src=p.img;tx.innerHTML=p.text;ct.textContent=(s7MentorIndex+1)+' de '+s7MentorPages.length;q.textContent=p.q;
+ document.getElementById('s7MentorPrev').disabled=s7MentorIndex===0;
+ document.getElementById('s7MentorNext').textContent=s7MentorIndex===s7MentorPages.length-1?'Volver al principio':'Siguiente ▶';
+}
+document.getElementById('s7MentorPrev')?.addEventListener('click',()=>{if(s7MentorIndex>0){s7MentorIndex--;renderS7Mentor();}});
+document.getElementById('s7MentorNext')?.addEventListener('click',()=>{if(s7MentorIndex<s7MentorPages.length-1)s7MentorIndex++;else s7MentorIndex=0;renderS7Mentor();});
+renderS7Mentor();
 
 })();
 </script>
