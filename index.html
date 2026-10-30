@@ -564,11 +564,11 @@ body.sheet-viewing{overflow:hidden!important}
 
 
 /* ===== SEMANA 3 · CONEXIÓN CURRICULAR Y RÚBRICA ===== */
-.w3-curriculum{margin-top:14px;border:2px solid #b8cfdb;background:#f4f9fc;border-radius:18px;padding:13px 15px;display:grid;grid-template-columns:1fr 1.25fr;gap:12px;align-items:start}
+.w3-curriculum{display:none;margin-top:14px;border:2px solid #b8cfdb;background:#f4f9fc;border-radius:18px;padding:13px 15px;display:grid;grid-template-columns:1fr 1.25fr;gap:12px;align-items:start}
 .w3-curriculum h3{margin:0 0 5px;font-size:18px;color:#18324a}
 .w3-curriculum p{margin:0;font-size:14px;line-height:1.35;color:#51616a}
 .w3-curriculum .crit{background:#fff;border:1.5px solid #cfdae0;border-radius:12px;padding:9px 10px}
-.w3-curriculum .evid{background:#fffaf0;border:1.5px solid #ecd88c;border-radius:12px;padding:9px 10px}
+.teacher-mode .w3-curriculum{display:grid!important}\n.w3-curriculum .evid{background:#fffaf0;border:1.5px solid #ecd88c;border-radius:12px;padding:9px 10px}
 .w3-rubric-shell{width:min(100%,297mm);aspect-ratio:297/210;background:#fff;border:2px solid #cfd7db;border-radius:18px;padding:7mm;margin:0 auto;display:flex;flex-direction:column;gap:5px;overflow:hidden}
 .w3-rubric-head{display:grid;grid-template-columns:1.2fr .8fr;gap:10px;align-items:end;border-bottom:2px solid #d9e1e4;padding-bottom:5px}
 .w3-rubric-head h2{font-size:22px;line-height:1.05;margin:0}
@@ -646,12 +646,19 @@ body{min-height:100dvh}
  .screen[data-title="Inicio general"] .home-resource .btn{min-height:27px!important;padding:3px 5px!important;font-size:9.5px!important}
  .screen[data-title="Inicio general"]>.panel>.teacherbox{display:none!important}
 }
-@media(max-width:900px){
+@media(max-width:1100px){
  .topbar{grid-template-columns:1fr auto;grid-template-areas:"brand actions" "sessions sessions" "tasks tasks";gap:4px}
  .progress{display:none}
- .session-switch{justify-content:flex-start;overflow-x:auto!important;scrollbar-width:none}
- .session-switch::-webkit-scrollbar{display:none}
+ .session-switch{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px!important;overflow:visible!important}
+ .session-tab{width:100%;padding:4px 5px!important;font-size:11px!important}
+ .week2-tasknav{justify-content:center!important;flex-wrap:nowrap!important}
  .screen.active>.panel{transform-origin:top left}
+}
+@media(max-width:560px){
+ .brand{font-size:12px!important}
+ .top-actions .btn{font-size:10px!important;padding:4px 6px!important}
+ .session-tab{font-size:10px!important}
+ .week2-tasknav button{font-size:9px!important;padding:4px 5px!important}
 }
 </style>
 </head>
@@ -1503,7 +1510,7 @@ function fitActiveScreen(){
     const nh=Math.max(1,panel.scrollHeight);
     const nw=Math.max(1,panel.scrollWidth);
     let z=Math.min(1,ah/nh,aw/nw);
-    z=Math.max(0.50,Math.min(1,z));
+    z=Math.max(0.40,Math.min(1,z));
     panel.style.zoom=String(Math.floor(z*1000)/1000);
   });
 }
@@ -1540,7 +1547,7 @@ root.querySelectorAll('[data-open-resource]').forEach(b=>b.addEventListener('cli
 root.querySelectorAll('[data-go-home]').forEach(b=>b.addEventListener('click',()=>{const idx=screens.findIndex(x=>x.dataset.title==='Inicio general');if(idx>=0)show(idx);}));
 root.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>show(current+1)));
 root.querySelectorAll('.prev').forEach(b=>b.addEventListener('click',()=>show(current-1)));
-document.getElementById('teacherBtn').addEventListener('click',()=>{teacher=!teacher;root.querySelectorAll('.teacherbox').forEach(x=>x.classList.toggle('show',teacher));document.getElementById('teacherBtn').textContent=teacher?'🔓 Ocultar guía docente':'👩‍🏫 Ayuda al profesor';requestAnimationFrame(fitActiveScreen);});
+document.getElementById('teacherBtn').addEventListener('click',()=>{teacher=!teacher;root.classList.toggle('teacher-mode',teacher);root.querySelectorAll('.teacherbox').forEach(x=>x.classList.toggle('show',teacher));document.getElementById('teacherBtn').textContent=teacher?'🔓 Ocultar guía docente':'👩‍🏫 Ayuda al profesor';requestAnimationFrame(fitActiveScreen);});
 document.getElementById('vocabBtn')?.addEventListener('click',()=>{const session=screens[current].dataset.session;const idx=screens.findIndex(x=>x.dataset.title===`Vocabulario · sesión ${session}`);if(idx>=0)show(idx);});
 const prompts={veo:'👀 Veo… ¿qué aparece en la portada?',pienso:'💭 Pienso… ¿de qué puede tratar este libro?',pregunto:'❓ Me pregunto… ¿qué quiero saber?'};
 root.querySelectorAll('.screen[data-title="Observo, pienso, me pregunto"] .rbtn').forEach(b=>b.addEventListener('click',()=>{root.querySelectorAll('.screen[data-title="Observo, pienso, me pregunto"] .rbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('routinePrompt').textContent=prompts[b.dataset.kind];}));
