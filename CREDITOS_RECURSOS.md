@@ -25,3 +25,14 @@ Las imágenes se cargan mediante Wikimedia Commons. Las licencias pueden consult
 ## Texto mentor
 
 **2, 4, 6, 8 patas**, de Patricia Brennan (Houghton Mifflin Harcourt), se utiliza como **texto mentor en el aula**. La web no reproduce páginas completas del libro; las actividades digitales se han creado con recursos visuales externos y propuestas propias.
+
+
+## Vídeos de la semana 3
+
+| Sesión | Recurso | Autor | Licencia | Fuente |
+|---|---|---|---|---|
+| S7 | Duck walking in Yvoire.webm | Clément Bucco-Lechat | CC BY-SA 3.0 | Wikimedia Commons |
+| S8 | Flying bee on flower in slow motion V.2.webm | Pittigrilli | CC BY-SA 4.0 | Wikimedia Commons |
+| S9 | Germination of two little plants.webm | Quasipodo | CC BY-SA 3.0 | Wikimedia Commons |
+
+Los vídeos se usan como recursos de observación y comprobación dentro de la secuencia didáctica. La web incluye una fuente remota de respaldo desde Wikimedia Commons para evitar que el recurso quede inutilizable si la copia local no está disponible.
