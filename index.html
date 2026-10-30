@@ -585,6 +585,75 @@ body.sheet-viewing{overflow:hidden!important}
 
 </style>
 
+
+<style id="viewport-fit-v2">
+html,body{height:100%;min-height:100%;overflow:hidden!important}
+body{min-height:100dvh}
+.app{width:100%;max-width:1600px;height:100dvh;min-height:0;margin:0 auto;padding:7px 12px 9px;display:flex;flex-direction:column;overflow:hidden}
+.topbar{flex:0 0 auto;display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"brand sessions actions" "progress tasks tasks";gap:5px 8px;align-items:center;margin-bottom:5px}
+.brand{grid-area:brand;white-space:nowrap;font-size:14px}
+.session-switch{grid-area:sessions;display:flex;flex-wrap:nowrap!important;gap:4px;justify-content:center;min-width:0;overflow:hidden}
+.session-tab{min-height:32px!important;padding:5px 7px!important;border-radius:10px!important;font-size:12px!important;white-space:nowrap}
+.progress{grid-area:progress;min-width:82px}
+.week2-tasknav{grid-area:tasks;margin:0!important;min-height:0;justify-content:flex-end;gap:5px!important}
+.week2-tasknav button{min-height:30px!important;padding:5px 8px!important;font-size:11px!important;border-radius:9px!important}
+.top-actions{grid-area:actions;display:flex;flex-wrap:nowrap!important;gap:5px}
+.top-actions .btn{min-height:32px!important;padding:5px 8px!important;font-size:12px!important;border-radius:10px!important;white-space:nowrap}
+.screen.active{display:block!important;flex:1 1 auto;min-height:0;height:auto;overflow:hidden!important;width:100%}
+.screen.active>.panel{width:100%;max-width:100%;height:auto;max-height:none;margin:0 auto;overflow:hidden!important;transform-origin:top center}
+.screen.active .teacherbox.show{max-height:none!important;overflow:hidden!important}
+@media(max-height:900px){
+ .panel{padding:12px 14px!important;border-radius:18px!important}
+ .student-title{font-size:clamp(30px,4vh,48px)!important;margin-bottom:6px!important}
+ .student-text{font-size:clamp(20px,2.6vh,32px)!important;line-height:1.2!important}
+ .tag{padding:5px 9px!important;font-size:12px!important}
+ .actions,.nav{margin-top:7px!important}
+ .btn{min-height:36px!important;padding:7px 10px!important}
+ .screen .btn{font-size:15px!important}
+ .w3-curriculum{margin-top:7px!important;padding:7px 8px!important;gap:7px!important}
+ .w3-curriculum h3{font-size:14px!important}.w3-curriculum p{font-size:11px!important;line-height:1.22!important}
+ .w3-photo-card img{height:min(15vh,115px)!important}
+ .w3-count-card img{height:min(14vh,105px)!important}
+ .w3-feedback{min-height:40px!important;padding:7px!important;margin-top:6px!important;font-size:17px!important}
+ .w3-question{font-size:clamp(23px,3vh,34px)!important;margin:3px 0 8px!important}
+ .w3-drag-card img{height:min(13vh,88px)!important}
+ .w3-drop{min-height:118px!important}
+ .w3-order-card img{height:min(13vh,90px)!important}.w3-order-slot{min-height:110px!important}
+ .s7-mentor-image-wrap{min-height:0!important;height:44vh!important}.s7-mentor-image-wrap img{max-height:100%!important}
+ .s7-mentor-text{font-size:clamp(28px,4vh,43px)!important}.s7-mentor-question{font-size:20px!important;margin-top:10px!important}
+ .s7-mentor-copy{padding:14px!important}
+ .vocab-sheet{height:68vh!important}
+}
+@media(max-height:820px){
+ .screen[data-title="Inicio general"] .home-main-title{font-size:30px!important;margin:0!important}
+ .screen[data-title="Inicio general"] .home-sub{font-size:16px!important;line-height:1.15!important}
+ .screen[data-title="Inicio general"] .home-grid{gap:5px!important;margin-top:5px!important}
+ .screen[data-title="Inicio general"] .home-card{min-height:0!important;padding:7px!important;gap:3px!important;border-radius:13px!important}
+ .screen[data-title="Inicio general"] .home-card h3{font-size:16px!important;line-height:1!important}
+ .screen[data-title="Inicio general"] .home-card p{display:none!important}
+ .screen[data-title="Inicio general"] .home-card .mini{font-size:9.5px!important;line-height:1.1!important}
+ .screen[data-title="Inicio general"] .home-card .btn{min-height:28px!important;padding:4px 6px!important;font-size:10px!important}
+ .screen[data-title="Inicio general"] .week-banner{margin-top:5px!important;padding:5px 8px!important;min-height:0!important}
+ .screen[data-title="Inicio general"] .week-banner b{font-size:15px!important}.screen[data-title="Inicio general"] .week-banner small{font-size:9px!important}
+ .screen[data-title="Inicio general"] .materials-home-btn{margin:4px auto 0!important;min-height:28px!important;font-size:10px!important}
+ .screen[data-title="Inicio general"] .home-eval{margin-top:5px!important;padding:6px!important}
+ .screen[data-title="Inicio general"] .home-eval>h2{font-size:14px!important}
+ .screen[data-title="Inicio general"] .workflow{display:none!important}
+ .screen[data-title="Inicio general"] .home-eval-grid{gap:5px!important;margin-top:4px!important;grid-template-columns:repeat(3,1fr)!important}
+ .screen[data-title="Inicio general"] .home-resource{padding:6px!important;border-radius:10px!important}
+ .screen[data-title="Inicio general"] .home-resource h3{font-size:12px!important;margin:0 0 3px!important}
+ .screen[data-title="Inicio general"] .home-resource p{display:none!important}
+ .screen[data-title="Inicio general"] .home-resource .btn{min-height:27px!important;padding:3px 5px!important;font-size:9.5px!important}
+ .screen[data-title="Inicio general"]>.panel>.teacherbox{display:none!important}
+}
+@media(max-width:900px){
+ .topbar{grid-template-columns:1fr auto;grid-template-areas:"brand actions" "sessions sessions" "tasks tasks";gap:4px}
+ .progress{display:none}
+ .session-switch{justify-content:flex-start;overflow-x:auto!important;scrollbar-width:none}
+ .session-switch::-webkit-scrollbar{display:none}
+ .screen.active>.panel{transform-origin:top left}
+}
+</style>
 </head>
 <body>
 <!-- Versión preparada para GitHub Pages. -->
@@ -1421,12 +1490,30 @@ body.sheet-viewing{overflow:hidden!important}
 <script>
 (()=>{
 const root=document.getElementById('app');
+
+function fitActiveScreen(){
+  const screen=screens[current];
+  if(!screen)return;
+  const panel=screen.querySelector(':scope > .panel');
+  if(!panel)return;
+  panel.style.zoom='1';
+  requestAnimationFrame(()=>{
+    const ah=Math.max(1,screen.clientHeight-2);
+    const aw=Math.max(1,screen.clientWidth-2);
+    const nh=Math.max(1,panel.scrollHeight);
+    const nw=Math.max(1,panel.scrollWidth);
+    let z=Math.min(1,ah/nh,aw/nw);
+    z=Math.max(0.50,Math.min(1,z));
+    panel.style.zoom=String(Math.floor(z*1000)/1000);
+  });
+}
+
 const screens=[...root.querySelectorAll('.screen')]; let current=0; let teacher=false;
 const brand=document.getElementById('brand');
 const sessionTabs=[...root.querySelectorAll('.session-tab')];
 const progress=document.getElementById('progress');
 function drawProgress(){progress.innerHTML='';const session=screens[current].dataset.session;const ss=screens.filter(x=>x.dataset.session===session);const active=ss.indexOf(screens[current]);if(session!=='0'){ss.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(i===active?' on':'');progress.appendChild(d);});}sessionTabs.forEach(t=>t.classList.toggle('active',t.dataset.sessionJump===session));brand.textContent=session==='0'?'🌱 Mi cuerpo florece · Inicio':'🌱 Mi cuerpo florece · Sesión '+session;const vb=document.getElementById('vocabBtn');if(vb)vb.style.display=session==='0'?'none':'inline-flex';}
-function show(i){current=Math.max(0,Math.min(screens.length-1,i));screens.forEach((s,j)=>s.classList.toggle('active',j===current));drawProgress();updateWeek2TaskNav();window.scrollTo({top:0,behavior:'smooth'})}
+function show(i){current=Math.max(0,Math.min(screens.length-1,i));screens.forEach((s,j)=>s.classList.toggle('active',j===current));drawProgress();updateWeek2TaskNav();requestAnimationFrame(fitActiveScreen)}
 
 // ===== Navegación directa Semana 2 =====
 const week2TaskNav=document.getElementById('week2TaskNav');
@@ -1453,7 +1540,7 @@ root.querySelectorAll('[data-open-resource]').forEach(b=>b.addEventListener('cli
 root.querySelectorAll('[data-go-home]').forEach(b=>b.addEventListener('click',()=>{const idx=screens.findIndex(x=>x.dataset.title==='Inicio general');if(idx>=0)show(idx);}));
 root.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>show(current+1)));
 root.querySelectorAll('.prev').forEach(b=>b.addEventListener('click',()=>show(current-1)));
-document.getElementById('teacherBtn').addEventListener('click',()=>{teacher=!teacher;root.querySelectorAll('.teacherbox').forEach(x=>x.classList.toggle('show',teacher));document.getElementById('teacherBtn').textContent=teacher?'🔓 Ocultar guía docente':'👩‍🏫 Ayuda al profesor';});
+document.getElementById('teacherBtn').addEventListener('click',()=>{teacher=!teacher;root.querySelectorAll('.teacherbox').forEach(x=>x.classList.toggle('show',teacher));document.getElementById('teacherBtn').textContent=teacher?'🔓 Ocultar guía docente':'👩‍🏫 Ayuda al profesor';requestAnimationFrame(fitActiveScreen);});
 document.getElementById('vocabBtn')?.addEventListener('click',()=>{const session=screens[current].dataset.session;const idx=screens.findIndex(x=>x.dataset.title===`Vocabulario · sesión ${session}`);if(idx>=0)show(idx);});
 const prompts={veo:'👀 Veo… ¿qué aparece en la portada?',pienso:'💭 Pienso… ¿de qué puede tratar este libro?',pregunto:'❓ Me pregunto… ¿qué quiero saber?'};
 root.querySelectorAll('.screen[data-title="Observo, pienso, me pregunto"] .rbtn').forEach(b=>b.addEventListener('click',()=>{root.querySelectorAll('.screen[data-title="Observo, pienso, me pregunto"] .rbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('routinePrompt').textContent=prompts[b.dataset.kind];}));
@@ -1627,56 +1714,6 @@ function setupMatch(act){if(!act||act.dataset.ready==='1')return;act.dataset.rea
 root.querySelectorAll('.match-activity').forEach(setupMatch);window.addEventListener('resize',()=>root.querySelectorAll('.match-activity').forEach(redrawMatch));
 
 
-drawProgress();storyShow();mentor3Show();
-})();
-</script>
-
-<div class="sheet-viewer" id="sheetViewer" aria-hidden="true">
-  <div class="sheet-viewer-toolbar">
-    <button type="button" id="sheetViewerClose">← VOLVER</button>
-    <div class="sheet-viewer-title" id="sheetViewerTitle">Ficha</div>
-    <a id="sheetViewerPdf" href="#">PDF / IMPRIMIR</a>
-  </div>
-  <div class="sheet-viewer-stage"><img id="sheetViewerImage" alt="Vista de la ficha adaptada a la pantalla"></div>
-</div>
-
-
-<script id="sheet-viewer-responsive-script">
-(function(){
- const viewer=document.getElementById('sheetViewer');
- const image=document.getElementById('sheetViewerImage');
- const title=document.getElementById('sheetViewerTitle');
- const pdf=document.getElementById('sheetViewerPdf');
- const close=document.getElementById('sheetViewerClose');
- if(!viewer||!image||!title||!pdf||!close)return;
- function openViewer(imgEl,card){
-   const heading=card?.querySelector('h2,h3,b,strong');
-   const link=card?.querySelector('a[href$=".pdf"],a.primary-pdf');
-   image.src=imgEl.currentSrc||imgEl.src;
-   image.alt=imgEl.alt||'Vista de la ficha';
-   title.textContent=(heading?.textContent||imgEl.alt||'Ficha').trim();
-   if(link){pdf.href=link.getAttribute('href');pdf.style.display='inline-flex';}else{pdf.removeAttribute('href');pdf.style.display='none';}
-   viewer.classList.add('open');viewer.setAttribute('aria-hidden','false');document.body.classList.add('sheet-viewing');
- }
- function closeViewer(){viewer.classList.remove('open');viewer.setAttribute('aria-hidden','true');document.body.classList.remove('sheet-viewing');image.removeAttribute('src');}
- close.addEventListener('click',closeViewer);
- viewer.addEventListener('click',e=>{if(e.target===viewer)closeViewer();});
- document.addEventListener('keydown',e=>{if(e.key==='Escape'&&viewer.classList.contains('open'))closeViewer();});
- document.querySelectorAll('.printable-real-card').forEach(card=>{
-   const img=card.querySelector('.printable-preview img'); if(!img)return;
-   img.setAttribute('title','Toca para ver la ficha a pantalla completa');
-   img.addEventListener('click',()=>openViewer(img,card));
-   const actions=card.querySelector('.printable-actions');
-   if(actions&&!actions.querySelector('.screen-view-btn')){const b=document.createElement('button');b.type='button';b.className='screen-view-btn';b.textContent='VER A PANTALLA';b.addEventListener('click',()=>openViewer(img,card));actions.prepend(b);}
-   card.querySelectorAll('a[target="_blank"]').forEach(a=>a.removeAttribute('target'));
- });
- document.querySelectorAll('.materials-card').forEach(card=>{
-   const img=card.querySelector('img'); if(!img)return;
-   img.setAttribute('title','Toca para ver la ficha a pantalla completa');
-   img.addEventListener('click',()=>openViewer(img,card));
-   card.querySelectorAll('a[target="_blank"]').forEach(a=>a.removeAttribute('target'));
- });
-
 // ===== SEMANA 3 · SESIONES 7-9 =====
 const s7Prompts={veo:'VEO… distintos animales y puedo fijarme en sus patas.',pienso:'PIENSO… algunos tienen más patas que otros.',pregunto:'ME PREGUNTO… ¿todos los animales tienen patas?'};
 root.querySelectorAll('.s7-routine').forEach(b=>b.addEventListener('click',()=>{root.querySelectorAll('.s7-routine').forEach(x=>x.classList.remove('active'));b.classList.add('active');const p=document.getElementById('s7RoutinePrompt');if(p)p.textContent=s7Prompts[b.dataset.s7Routine];}));
@@ -1745,6 +1782,58 @@ document.getElementById('resetW3Rubric')?.addEventListener('click',()=>{
   root.querySelectorAll('#w3Rubric79 input,#w3Rubric79 textarea').forEach(x=>x.value='');
 });
 document.getElementById('printW3Rubric')?.addEventListener('click',()=>printTarget(document.getElementById('w3Rubric79')));
+
+window.addEventListener('resize',()=>requestAnimationFrame(fitActiveScreen));
+root.querySelectorAll('img').forEach(img=>img.addEventListener('load',()=>{if(img.closest('.screen.active'))requestAnimationFrame(fitActiveScreen);}));
+drawProgress();storyShow();mentor3Show();requestAnimationFrame(fitActiveScreen);
+})();
+</script>
+
+<div class="sheet-viewer" id="sheetViewer" aria-hidden="true">
+  <div class="sheet-viewer-toolbar">
+    <button type="button" id="sheetViewerClose">← VOLVER</button>
+    <div class="sheet-viewer-title" id="sheetViewerTitle">Ficha</div>
+    <a id="sheetViewerPdf" href="#">PDF / IMPRIMIR</a>
+  </div>
+  <div class="sheet-viewer-stage"><img id="sheetViewerImage" alt="Vista de la ficha adaptada a la pantalla"></div>
+</div>
+
+
+<script id="sheet-viewer-responsive-script">
+(function(){
+ const viewer=document.getElementById('sheetViewer');
+ const image=document.getElementById('sheetViewerImage');
+ const title=document.getElementById('sheetViewerTitle');
+ const pdf=document.getElementById('sheetViewerPdf');
+ const close=document.getElementById('sheetViewerClose');
+ if(!viewer||!image||!title||!pdf||!close)return;
+ function openViewer(imgEl,card){
+   const heading=card?.querySelector('h2,h3,b,strong');
+   const link=card?.querySelector('a[href$=".pdf"],a.primary-pdf');
+   image.src=imgEl.currentSrc||imgEl.src;
+   image.alt=imgEl.alt||'Vista de la ficha';
+   title.textContent=(heading?.textContent||imgEl.alt||'Ficha').trim();
+   if(link){pdf.href=link.getAttribute('href');pdf.style.display='inline-flex';}else{pdf.removeAttribute('href');pdf.style.display='none';}
+   viewer.classList.add('open');viewer.setAttribute('aria-hidden','false');document.body.classList.add('sheet-viewing');
+ }
+ function closeViewer(){viewer.classList.remove('open');viewer.setAttribute('aria-hidden','true');document.body.classList.remove('sheet-viewing');image.removeAttribute('src');}
+ close.addEventListener('click',closeViewer);
+ viewer.addEventListener('click',e=>{if(e.target===viewer)closeViewer();});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&viewer.classList.contains('open'))closeViewer();});
+ document.querySelectorAll('.printable-real-card').forEach(card=>{
+   const img=card.querySelector('.printable-preview img'); if(!img)return;
+   img.setAttribute('title','Toca para ver la ficha a pantalla completa');
+   img.addEventListener('click',()=>openViewer(img,card));
+   const actions=card.querySelector('.printable-actions');
+   if(actions&&!actions.querySelector('.screen-view-btn')){const b=document.createElement('button');b.type='button';b.className='screen-view-btn';b.textContent='VER A PANTALLA';b.addEventListener('click',()=>openViewer(img,card));actions.prepend(b);}
+   card.querySelectorAll('a[target="_blank"]').forEach(a=>a.removeAttribute('target'));
+ });
+ document.querySelectorAll('.materials-card').forEach(card=>{
+   const img=card.querySelector('img'); if(!img)return;
+   img.setAttribute('title','Toca para ver la ficha a pantalla completa');
+   img.addEventListener('click',()=>openViewer(img,card));
+   card.querySelectorAll('a[target="_blank"]').forEach(a=>a.removeAttribute('target'));
+ });
 
 })();
 </script>
