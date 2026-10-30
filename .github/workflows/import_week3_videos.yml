@@ -1,0 +1,33 @@
+name: Importar videos educativos semana 3
+
+on:
+  push:
+    paths:
+      - ".github/workflows/import_week3_videos.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-videos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Descargar videos libres
+        run: |
+          mkdir -p assets/video
+          curl -L --fail --retry 3 -o assets/video/s7_pato_camino.webm "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/33/Duck_walking_in_Yvoire.webm/Duck_walking_in_Yvoire.webm.360p.webm"
+          curl -L --fail --retry 3 -o assets/video/s8_abeja_flor.webm "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/83/Flying_bee_on_flower_in_slow_motion_V.2.webm/Flying_bee_on_flower_in_slow_motion_V.2.webm.360p.webm"
+          curl -L --fail --retry 3 -o assets/video/s9_germinacion.webm "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/0a/Germination_of_two_little_plants.webm/Germination_of_two_little_plants.webm.360p.webm"
+      - name: Guardar videos en el repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/video
+          if git diff --cached --quiet; then
+            echo "No hay cambios."
+          else
+            git commit -m "Añadir videos educativos libres para sesiones 7-9"
+            git push
+          fi
