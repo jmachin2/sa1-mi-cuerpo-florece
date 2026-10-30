@@ -660,6 +660,19 @@ body{min-height:100dvh}
  .session-tab{font-size:10px!important}
  .week2-tasknav button{font-size:9px!important;padding:4px 5px!important}
 }
+
+/* ===== VIDEOS EDUCATIVOS · SEMANA 3 ===== */
+.edu-video-screen{display:grid;grid-template-columns:minmax(360px,1.15fr) minmax(300px,.85fr);gap:18px;align-items:center}
+.edu-video-wrap{background:#111;border-radius:22px;overflow:hidden;border:3px solid #d7e0e4;display:grid;place-items:center;min-height:0}
+.edu-video-wrap video{display:block;width:100%;height:auto;max-height:46vh;object-fit:contain;background:#111}
+.edu-video-side h2{font-size:clamp(30px,3.5vw,48px);margin:0 0 8px}
+.edu-video-side p{font-size:clamp(18px,2vw,26px);line-height:1.28;margin:7px 0;color:#506069}
+.edu-video-prompt{background:#fff6db;border:2px solid #f1d77a;border-radius:16px;padding:10px 12px;font-size:clamp(20px,2.2vw,30px);line-height:1.2;margin-top:10px}
+.edu-video-controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.edu-video-credit{font:12px/1.25 Arial,Helvetica,sans-serif;color:#6b777d;margin-top:8px}
+@media(max-height:820px){.edu-video-wrap video{max-height:38vh}.edu-video-side h2{font-size:28px!important}.edu-video-side p{font-size:17px!important}.edu-video-prompt{font-size:19px!important;padding:8px!important}}
+@media(max-width:850px){.edu-video-screen{grid-template-columns:1fr}.edu-video-wrap video{max-height:36vh}}
+
 </style>
 </head>
 <body>
@@ -1265,6 +1278,31 @@ body{min-height:100dvh}
   </div>
 </section>
 
+
+<section class="screen" data-session="7" data-title="Vídeo · observamos un pato">
+  <div class="panel edu-video-screen">
+    <div class="edu-video-wrap">
+      <video id="videoS7" preload="metadata" playsinline muted poster="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG">
+        <source src="assets/video/s7_pato_camino.webm" type="video/webm">
+        <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/3/33/Duck_walking_in_Yvoire.webm/Duck_walking_in_Yvoire.webm.360p.webm" type="video/webm">
+        Tu navegador no puede reproducir este vídeo.
+      </video>
+    </div>
+    <div class="edu-video-side">
+      <span class="tag w3-tag">VÍDEO DE OBSERVACIÓN · S7</span>
+      <h2 class="schoolfont">Mira cómo camina</h2>
+      <p class="schoolfont">Usamos el vídeo como una fuente más: observamos el cuerpo en movimiento y buscamos una característica.</p>
+      <div class="edu-video-prompt schoolfont"><b>¿Cuántas patas ves?</b> ¿Cómo lo sabes?</div>
+      <div class="edu-video-controls">
+        <button class="btn primary" data-video-action="play" data-video-target="videoS7" type="button">▶ REPRODUCIR</button>
+        <button class="btn" data-video-action="pause" data-video-target="videoS7" type="button">⏸ PAUSA</button>
+        <button class="btn" data-video-action="restart" data-video-target="videoS7" type="button">↻ VOLVER A VER</button>
+      </div>
+      <div class="edu-video-credit">Duck walking in Yvoire · Clément Bucco-Lechat · CC BY-SA 3.0 · Wikimedia Commons.</div>
+      <div class="nav"><button class="btn prev" type="button">◀ Atrás</button><button class="btn primary next" type="button">Seguir ▶</button></div>
+    </div>
+  </div>
+</section>
 <section class="screen" data-session="7" data-title="Patas · observamos y contamos">
 <div class="panel w3-hero"><div><span class="tag w3-tag">SESIÓN 7 · 35 min efectivos</span><h1 class="student-title schoolfont">Patas: observamos y contamos</h1><div class="student-text schoolfont">Hoy leemos para descubrir una característica de los animales: <b>cuántas patas tienen</b>.</div><div class="actions"><button class="btn primary next" type="button">Empezar ▶</button></div>
 <div class="w3-curriculum">
@@ -1314,6 +1352,31 @@ body{min-height:100dvh}
 </div><div class="teacherbox"><b>Criterios observables.</b> Clasificación justificada y comunicación del procedimiento (2.4-2.5). Frase oral modelo: “Lo pongo aquí porque tiene…”.</div></div><div class="w3-visual-grid"><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A_chicken_standing_alone.jpg" alt="Gallina"><b>GALLINA</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cat_is_standing.jpg" alt="Gato"><b>GATO</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ants_image.jpg" alt="Hormigas"><b>HORMIGA</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Tarantula_Spider.jpg" alt="Araña"><b>ARAÑA</b></div></div></div>
 </section>
 
+
+<section class="screen" data-session="8" data-title="Vídeo · observamos una abeja">
+  <div class="panel edu-video-screen">
+    <div class="edu-video-wrap">
+      <video id="videoS8" preload="metadata" playsinline muted poster="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg">
+        <source src="assets/video/s8_abeja_flor.webm" type="video/webm">
+        <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/8/83/Flying_bee_on_flower_in_slow_motion_V.2.webm/Flying_bee_on_flower_in_slow_motion_V.2.webm.360p.webm" type="video/webm">
+        Tu navegador no puede reproducir este vídeo.
+      </video>
+    </div>
+    <div class="edu-video-side">
+      <span class="tag w3-tag">VÍDEO DE COMPROBACIÓN · S8</span>
+      <h2 class="schoolfont">Observa una abeja de cerca</h2>
+      <p class="schoolfont">Antes de clasificar, miramos con atención. Podemos pausar el vídeo y contar las patas visibles.</p>
+      <div class="edu-video-prompt schoolfont"><b>¿En qué grupo la pondrías?</b> 2 · 4 · 6 · 8</div>
+      <div class="edu-video-controls">
+        <button class="btn primary" data-video-action="play" data-video-target="videoS8" type="button">▶ REPRODUCIR</button>
+        <button class="btn" data-video-action="pause" data-video-target="videoS8" type="button">⏸ PAUSA</button>
+        <button class="btn" data-video-action="restart" data-video-target="videoS8" type="button">↻ VOLVER A VER</button>
+      </div>
+      <div class="edu-video-credit">Flying bee on flower in slow motion V.2 · Pittigrilli · CC BY-SA 4.0 · Wikimedia Commons.</div>
+      <div class="nav"><button class="btn prev" type="button">◀ Atrás</button><button class="btn primary next" type="button">Clasificar ▶</button></div>
+    </div>
+  </div>
+</section>
 <section class="screen" data-session="8" data-title="Arrastramos · animales y patas"><div class="panel"><h2 class="manip-title schoolfont">Arrastra cada animal a su grupo</h2><p class="manip-sub">También puedes tocar un animal y después tocar el grupo.</p>
 <div class="w3-drag-layout"><div class="w3-bank" id="s8Bank">
 <div class="w3-drag-card s8-drag" draggable="true" data-legs="2" data-id="s8-0"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A_chicken_standing_alone.jpg" alt="GALLINA"><b>GALLINA</b></div><div class="w3-drag-card s8-drag" draggable="true" data-legs="2" data-id="s8-1"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG" alt="PATO"><b>PATO</b></div><div class="w3-drag-card s8-drag" draggable="true" data-legs="4" data-id="s8-2"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="PERRO"><b>PERRO</b></div><div class="w3-drag-card s8-drag" draggable="true" data-legs="4" data-id="s8-3"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cat_is_standing.jpg" alt="GATO"><b>GATO</b></div><div class="w3-drag-card s8-drag" draggable="true" data-legs="6" data-id="s8-4"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg" alt="ABEJA"><b>ABEJA</b></div><div class="w3-drag-card s8-drag" draggable="true" data-legs="6" data-id="s8-5"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ants_image.jpg" alt="HORMIGA"><b>HORMIGA</b></div><div class="w3-drag-card s8-drag" draggable="true" data-legs="8" data-id="s8-6"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Spider_image_view.jpg" alt="ARAÑA"><b>ARAÑA</b></div><div class="w3-drag-card s8-drag" draggable="true" data-legs="8" data-id="s8-7"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Tarantula_Spider.jpg" alt="TARÁNTULA"><b>TARÁNTULA</b></div>
@@ -1344,6 +1407,31 @@ body{min-height:100dvh}
 
 <section class="screen" data-session="9" data-title="Predicción · sesión 9"><div class="panel"><span class="tag w3-tag">1 · PIENSO</span><h2 class="w3-question schoolfont">¿Necesita tener patas para estar vivo?</h2><div class="w3-predict"><button data-s9-predict="si" type="button">SÍ</button><button data-s9-predict="no" type="button">NO</button></div><div class="w3-feedback schoolfont" id="s9PredictFeedback">Elige tu predicción. Todavía no diremos si es correcta.</div><div class="teacherbox"><b>Importante.</b> Acepta ambas respuestas y pregunta “¿por qué lo piensas?”. La predicción no se califica como acierto/error.</div><div class="nav"><button class="btn prev">◀ Atrás</button><button class="btn primary next">Comprobamos ▶</button></div></div></section>
 
+
+<section class="screen" data-session="9" data-title="Vídeo · una planta cambia">
+  <div class="panel edu-video-screen">
+    <div class="edu-video-wrap">
+      <video id="videoS9" preload="metadata" playsinline muted poster="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg">
+        <source src="assets/video/s9_germinacion.webm" type="video/webm">
+        <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/0/0a/Germination_of_two_little_plants.webm/Germination_of_two_little_plants.webm.360p.webm" type="video/webm">
+        Tu navegador no puede reproducir este vídeo.
+      </video>
+    </div>
+    <div class="edu-video-side">
+      <span class="tag w3-tag">VÍDEO DE INVESTIGACIÓN · S9</span>
+      <h2 class="schoolfont">Una planta también cambia</h2>
+      <p class="schoolfont">Este timelapse nos deja observar algo que normalmente ocurre demasiado despacio para verlo en clase.</p>
+      <div class="edu-video-prompt schoolfont"><b>No tiene patas.</b> ¿Está viva? ¿Qué cambio observas?</div>
+      <div class="edu-video-controls">
+        <button class="btn primary" data-video-action="play" data-video-target="videoS9" type="button">▶ REPRODUCIR</button>
+        <button class="btn" data-video-action="pause" data-video-target="videoS9" type="button">⏸ PAUSA</button>
+        <button class="btn" data-video-action="restart" data-video-target="videoS9" type="button">↻ VOLVER A VER</button>
+      </div>
+      <div class="edu-video-credit">Germination of two little plants · Quasipodo · CC BY-SA 3.0 · Wikimedia Commons.</div>
+      <div class="nav"><button class="btn prev" type="button">◀ Atrás</button><button class="btn primary next" type="button">Comprobar ▶</button></div>
+    </div>
+  </div>
+</section>
 <section class="screen" data-session="9" data-title="Arrastramos · vivo o no vivo"><div class="panel"><h2 class="manip-title schoolfont">Arrastra: ¿está vivo o no está vivo?</h2><p class="manip-sub">También puedes tocar una imagen y después tocar una caja.</p><div class="w3-drag-layout"><div class="w3-bank" id="s9Bank">
 <div class="w3-drag-card s9-drag" draggable="true" data-life="vivo" data-id="s9-0"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="PERRO"><b>PERRO</b></div><div class="w3-drag-card s9-drag" draggable="true" data-life="vivo" data-id="s9-1"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Picture_of_butterfly.jpg" alt="MARIPOSA"><b>MARIPOSA</b></div><div class="w3-drag-card s9-drag" draggable="true" data-life="vivo" data-id="s9-2"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg" alt="PLANTA"><b>PLANTA</b></div><div class="w3-drag-card s9-drag" draggable="true" data-life="no" data-id="s9-3"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Stone_rock.jpg" alt="PIEDRA"><b>PIEDRA</b></div><div class="w3-drag-card s9-drag" draggable="true" data-life="no" data-id="s9-4"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chair.JPG" alt="SILLA"><b>SILLA</b></div><div class="w3-drag-card s9-drag" draggable="true" data-life="no" data-id="s9-5"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Happy_fun_ball.png" alt="PELOTA"><b>PELOTA</b></div>
 </div><div class="w3-binary"><div class="w3-drop s9-drop" data-life="vivo"><strong>ESTÁ VIVO</strong><div class="placed-mini"></div></div><div class="w3-drop s9-drop" data-life="no"><strong>NO ESTÁ VIVO</strong><div class="placed-mini"></div></div></div></div><div class="w3-feedback schoolfont" id="s9DragFeedback">Mira cada ejemplo. No te fijes solo en si tiene patas.</div><div class="manip-actions"><button class="btn" id="s9DragReset">↻ Empezar otra vez</button><button class="btn primary next">Unimos ▶</button></div></div></section>
@@ -1789,6 +1877,22 @@ document.getElementById('resetW3Rubric')?.addEventListener('click',()=>{
   root.querySelectorAll('#w3Rubric79 input,#w3Rubric79 textarea').forEach(x=>x.value='');
 });
 document.getElementById('printW3Rubric')?.addEventListener('click',()=>printTarget(document.getElementById('w3Rubric79')));
+
+
+root.querySelectorAll('[data-video-action]').forEach(btn=>btn.addEventListener('click',()=>{
+  const video=document.getElementById(btn.dataset.videoTarget);
+  if(!video)return;
+  const action=btn.dataset.videoAction;
+  if(action==='play'){video.play().catch(()=>{});}
+  if(action==='pause'){video.pause();}
+  if(action==='restart'){video.pause();video.currentTime=0;video.play().catch(()=>{});}
+}));
+screens.forEach(screen=>{
+  screen.querySelectorAll('video').forEach(video=>{
+    video.addEventListener('play',()=>requestAnimationFrame(fitActiveScreen));
+    video.addEventListener('loadedmetadata',()=>requestAnimationFrame(fitActiveScreen));
+  });
+});
 
 window.addEventListener('resize',()=>requestAnimationFrame(fitActiveScreen));
 root.querySelectorAll('img').forEach(img=>img.addEventListener('load',()=>{if(img.closest('.screen.active'))requestAnimationFrame(fitActiveScreen);}));
