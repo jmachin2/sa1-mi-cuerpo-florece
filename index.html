@@ -562,6 +562,27 @@ body.sheet-viewing{overflow:hidden!important}
 .s7-mentor-controls{display:flex;gap:10px;justify-content:space-between;margin-top:20px}
 @media(max-width:850px){.s7-mentor-head,.s7-mentor-reader{grid-template-columns:1fr}.s7-mentor-image-wrap{min-height:280px}.s7-mentor-copy{padding:18px}}
 
+
+/* ===== SEMANA 3 · CONEXIÓN CURRICULAR Y RÚBRICA ===== */
+.w3-curriculum{margin-top:14px;border:2px solid #b8cfdb;background:#f4f9fc;border-radius:18px;padding:13px 15px;display:grid;grid-template-columns:1fr 1.25fr;gap:12px;align-items:start}
+.w3-curriculum h3{margin:0 0 5px;font-size:18px;color:#18324a}
+.w3-curriculum p{margin:0;font-size:14px;line-height:1.35;color:#51616a}
+.w3-curriculum .crit{background:#fff;border:1.5px solid #cfdae0;border-radius:12px;padding:9px 10px}
+.w3-curriculum .evid{background:#fffaf0;border:1.5px solid #ecd88c;border-radius:12px;padding:9px 10px}
+.w3-rubric-shell{width:min(100%,297mm);aspect-ratio:297/210;background:#fff;border:2px solid #cfd7db;border-radius:18px;padding:7mm;margin:0 auto;display:flex;flex-direction:column;gap:5px;overflow:hidden}
+.w3-rubric-head{display:grid;grid-template-columns:1.2fr .8fr;gap:10px;align-items:end;border-bottom:2px solid #d9e1e4;padding-bottom:5px}
+.w3-rubric-head h2{font-size:22px;line-height:1.05;margin:0}
+.w3-rubric-meta{font-size:9px;line-height:1.25;color:#5a6870}
+.w3-rubric-name{display:flex;gap:7px;align-items:center;font-size:11px}.w3-rubric-name input{flex:1;border:0;border-bottom:2px solid #87949b;padding:4px;background:transparent}
+.w3-rubric-legend{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}.w3-rubric-legend div{border:1px solid #d5dee2;border-radius:8px;padding:4px 5px;font-size:8px;line-height:1.15;background:#f8fafb}.w3-rubric-legend b{font-size:10px}
+.w3-rubric-table{width:100%;border-collapse:collapse;table-layout:fixed}.w3-rubric-table th{font-size:8px;line-height:1.1;padding:3px 4px;border:1px solid #cfd8dc;background:#eef3f6;text-align:left}.w3-rubric-table td{border:1px solid #d8e0e3;padding:4px;vertical-align:middle}
+.w3-rubric-table th:nth-child(1){width:10%}.w3-rubric-table th:nth-child(2){width:32%}.w3-rubric-table th:nth-child(3){width:29%}.w3-rubric-table th:nth-child(4){width:17%}.w3-rubric-table th:nth-child(5){width:12%}
+.w3-rubric-code{font-size:10px;font-weight:900;text-align:center}.w3-rubric-desc{font-size:8.4px;line-height:1.2}.w3-rubric-evidence{font-size:7.8px;line-height:1.2}.w3-rubric-session{font-size:8px;line-height:1.2}
+.w3-score-cell{text-align:center;white-space:nowrap}.w3-score-btn{min-width:29px;min-height:29px;padding:2px 5px;border:1.8px solid #18324a;border-radius:8px;background:#fff;font-size:12px;font-weight:900;cursor:pointer;margin:1px}.w3-score-btn.active{background:#18324a;color:#fff}
+.w3-rubric-bottom{display:grid;grid-template-columns:1fr 1fr;gap:6px}.w3-rubric-box{border:1.5px solid #cfd8dc;border-radius:9px;padding:5px 7px;min-height:38px;font-size:8px;line-height:1.2}.w3-rubric-box textarea{width:100%;height:28px;border:0;resize:none;font-size:8px;font-family:Arial;background:transparent}
+.w3-rubric-note{font-size:7.6px;line-height:1.2;color:#56646b}
+@media(max-width:900px){.w3-curriculum{grid-template-columns:1fr}.w3-rubric-shell{aspect-ratio:auto;overflow:visible}.w3-rubric-scroll{overflow:auto}.w3-rubric-table{min-width:1000px}}
+
 </style>
 
 </head>
@@ -612,7 +633,7 @@ body.sheet-viewing{overflow:hidden!important}
 <div class="workflow"><span>1 · Durante las sesiones: observar</span><span>2 · Guardar las 3 fichas</span><span>3 · Al terminar: analizar todas las evidencias</span><span>4 · Completar la rúbrica global</span></div>
 <div class="home-eval-grid">
 <div class="home-resource"><h3>📋 Rúbrica global 1–3</h3><p>Se completa <b>después de terminar las tres sesiones</b>, analizando las tres fichas de trabajo y la observación directa realizada durante las actividades. Genera una valoración final.</p><button class="btn" data-open-resource="rubric" type="button">Abrir rúbrica global</button></div>
-<div class="home-resource week2-rubric"><h3>Rúbrica global 4–6</h3><p>Se completa <b>al terminar la semana 2</b>, revisando las fichas de las sesiones 4, 5 y 6 y las observaciones realizadas durante lectura, estaciones y diálogo.</p><button class="btn" data-open-resource="rubric2" type="button">Abrir rúbrica semana 2</button></div></div>
+<div class="home-resource week2-rubric"><h3>Rúbrica global 4–6</h3><p>Se completa <b>al terminar la semana 2</b>, revisando las fichas de las sesiones 4, 5 y 6 y las observaciones realizadas durante lectura, estaciones y diálogo.</p><button class="btn" data-open-resource="rubric2" type="button">Abrir rúbrica semana 2</button></div><div class="home-resource week2-rubric"><h3>Rúbrica global 7–9</h3><p>Se completa <b>al terminar la semana 3</b>, revisando la lectura compartida, las clasificaciones, la pequeña investigación y las fichas.</p><button class="btn" data-open-resource="rubric3" type="button">Abrir rúbrica semana 3</button></div></div>
 </div>
 <div class="teacherbox"><b>Uso docente.</b><br/>La evaluación se realiza por triangulación de evidencias: producciones del alumnado + observación sistemática + diálogo. La rúbrica global no pertenece a una sesión concreta.</div>
 </div>
@@ -1169,7 +1190,11 @@ body.sheet-viewing{overflow:hidden!important}
 </section>
 
 <section class="screen" data-session="7" data-title="Patas · observamos y contamos">
-<div class="panel w3-hero"><div><span class="tag w3-tag">SESIÓN 7 · 35 min efectivos</span><h1 class="student-title schoolfont">Patas: observamos y contamos</h1><div class="student-text schoolfont">Hoy leemos para descubrir una característica de los animales: <b>cuántas patas tienen</b>.</div><div class="actions"><button class="btn primary next" type="button">Empezar ▶</button></div><div class="teacherbox"><b>Programación · semana 19–23 octubre.</b> Texto mentor: <i>2, 4, 6, 8 patas</i>. Lectura compartida para localizar una característica. Conocimiento: 2.2 y 2.5. Lengua: letra <b>d</b>, etiquetas y frase apoyada. Lee tú las páginas seleccionadas; no se exige lectura autónoma del libro.</div></div>
+<div class="panel w3-hero"><div><span class="tag w3-tag">SESIÓN 7 · 35 min efectivos</span><h1 class="student-title schoolfont">Patas: observamos y contamos</h1><div class="student-text schoolfont">Hoy leemos para descubrir una característica de los animales: <b>cuántas patas tienen</b>.</div><div class="actions"><button class="btn primary next" type="button">Empezar ▶</button></div>
+<div class="w3-curriculum">
+  <div class="crit"><h3>Criterios que observamos</h3><p><b>2.2</b> Localiza información con ayuda en fuentes seleccionadas.<br><b>2.5</b> Comunica lo aprendido con vocabulario básico y apoyo visual.</p></div>
+  <div class="evid"><h3>Evidencia de la sesión</h3><p>Localiza en el texto/imagen el número de patas de un animal y explica oralmente: <b>“Sé que tiene ___ patas porque…”</b>.</p></div>
+</div><div class="teacherbox"><b>Programación · semana 19–23 octubre.</b> Texto mentor: <i>2, 4, 6, 8 patas</i>. Lectura compartida para localizar una característica. Conocimiento: 2.2 y 2.5. Lengua: letra <b>d</b>, etiquetas y frase apoyada. Lee tú las páginas seleccionadas; no se exige lectura autónoma del libro.</div></div>
 <div class="w3-visual-grid"><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG" alt="Pato de cuerpo entero"><b>2</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro de cuerpo entero"><b>4</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg" alt="Abeja de cuerpo entero"><b>6</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Spider_image_view.jpg" alt="Araña"><b>8</b></div></div></div>
 </section>
 
@@ -1203,10 +1228,14 @@ body.sheet-viewing{overflow:hidden!important}
 
 <section class="screen" data-session="7" data-title="Cierre · sesión 7"><div class="panel"><span class="tag">CIERRE</span><div class="week2-close schoolfont">Hoy hemos usado un libro para <strong>buscar un dato, mirar una característica y contar</strong>.</div><div class="sense-prompt schoolfont">Completa oralmente: <b>“Sé que tiene ___ patas porque…”</b></div><div class="teacherbox"><b>Evidencia.</b> Respuesta individual breve: animal elegido + número + cómo lo sabe.</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">📚 Palabra de hoy ▶</button></div></div></section>
 
-<section class="screen" data-session="7" data-title="Vocabulario · sesión 7"><div class="panel vocab-two-column-panel"><div class="vocab-sheet" id="vocabSheet7"><div class="vocab-head"><div><div class="vocab-session">MI CUERPO FLORECE · SESIÓN 7</div><div class="vocab-note">Palabra de hoy · sustantivo</div></div><div class="vocab-kicker">VOCABULARIO</div></div><div class="vocab-word schoolfont">PATA</div><div class="vocab-photo-wrap"><img alt="Perro de cuerpo entero para observar sus patas" class="vocab-photo" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG"/></div><div class="vocab-def schoolfont"><span class="vocab-step">1 · MIRAMOS Y ENTENDEMOS</span><br/>Una pata es una parte del cuerpo de muchos animales. Les ayuda a sostenerse y moverse.</div><div class="vocab-example schoolfont"><span class="vocab-step">2 · ESCUCHAMOS UNA FRASE</span><br/>“El perro tiene cuatro patas.”</div><div class="vocab-say schoolfont"><span class="vocab-step">3 · AHORA TÚ</span><br/>Construye tu oración: <b>El/La ___ tiene ___ patas.</b></div></div><div class="vocab-controls"><button class="btn prev">◀ Atrás</button><button class="btn" data-print-vocab="7">🖨️ Imprimir A4</button><button class="btn primary" data-go-home>✓ Terminar sesión</button></div></div></section>
+<section class="screen" data-session="7" data-title="Vocabulario · sesión 7"><div class="panel vocab-two-column-panel"><div class="vocab-sheet" id="vocabSheet7"><div class="vocab-head"><div><div class="vocab-session">MI CUERPO FLORECE · SESIÓN 7</div><div class="vocab-note">Palabra de hoy · sustantivo</div></div><div class="vocab-kicker">VOCABULARIO</div></div><div class="vocab-word schoolfont">PATA</div><div class="vocab-photo-wrap"><img alt="Perro de cuerpo entero para observar sus patas" class="vocab-photo" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG"/></div><div class="vocab-def schoolfont"><span class="vocab-step">1 · MIRAMOS Y ENTENDEMOS</span><br/>Una pata es una parte del cuerpo de muchos animales. Les ayuda a sostenerse y moverse.</div><div class="vocab-example schoolfont"><span class="vocab-step">2 · ESCUCHAMOS UNA FRASE</span><br/>“El perro tiene cuatro patas.”</div><div class="vocab-say schoolfont"><span class="vocab-step">3 · AHORA TÚ</span><br/>Construye tu oración: <b>El/La ___ tiene ___ patas.</b></div></div><div class="vocab-controls"><button class="btn prev">◀ Atrás</button><button class="btn" data-print-vocab="7">🖨️ Imprimir A4</button><button class="btn" data-open-resource="rubric3" type="button">📋 Rúbrica semana 3</button><button class="btn primary" data-go-home>✓ Terminar sesión</button></div></div></section>
 
 <section class="screen" data-session="8" data-title="Clasificamos animales por sus patas">
-<div class="panel w3-hero"><div><span class="tag w3-tag">SESIÓN 8 · 35 min efectivos</span><h1 class="student-title schoolfont">Clasificamos animales por sus patas</h1><div class="student-text schoolfont">Hoy vamos a <b>agrupar</b> animales y explicar por qué van juntos.</div><div class="actions"><button class="btn primary next">Empezar ▶</button></div><div class="teacherbox"><b>Criterios observables.</b> Clasificación justificada y comunicación del procedimiento (2.4-2.5). Frase oral modelo: “Lo pongo aquí porque tiene…”.</div></div><div class="w3-visual-grid"><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A_chicken_standing_alone.jpg" alt="Gallina"><b>GALLINA</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cat_is_standing.jpg" alt="Gato"><b>GATO</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ants_image.jpg" alt="Hormigas"><b>HORMIGA</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Tarantula_Spider.jpg" alt="Araña"><b>ARAÑA</b></div></div></div>
+<div class="panel w3-hero"><div><span class="tag w3-tag">SESIÓN 8 · 35 min efectivos</span><h1 class="student-title schoolfont">Clasificamos animales por sus patas</h1><div class="student-text schoolfont">Hoy vamos a <b>agrupar</b> animales y explicar por qué van juntos.</div><div class="actions"><button class="btn primary next">Empezar ▶</button></div>
+<div class="w3-curriculum">
+  <div class="crit"><h3>Criterios que observamos</h3><p><b>2.2</b> Usa información de una fuente seleccionada para resolver la clasificación.<br><b>2.5</b> Comunica cómo ha clasificado y qué información lo confirma.</p></div>
+  <div class="evid"><h3>Evidencia de la sesión</h3><p>Clasificación de animales en 2, 4, 6 y 8 patas + explicación oral: <b>“Lo pongo aquí porque tiene…”</b>.</p></div>
+</div><div class="teacherbox"><b>Criterios observables.</b> Clasificación justificada y comunicación del procedimiento (2.4-2.5). Frase oral modelo: “Lo pongo aquí porque tiene…”.</div></div><div class="w3-visual-grid"><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A_chicken_standing_alone.jpg" alt="Gallina"><b>GALLINA</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cat_is_standing.jpg" alt="Gato"><b>GATO</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ants_image.jpg" alt="Hormigas"><b>HORMIGA</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Tarantula_Spider.jpg" alt="Araña"><b>ARAÑA</b></div></div></div>
 </section>
 
 <section class="screen" data-session="8" data-title="Arrastramos · animales y patas"><div class="panel"><h2 class="manip-title schoolfont">Arrastra cada animal a su grupo</h2><p class="manip-sub">También puedes tocar un animal y después tocar el grupo.</p>
@@ -1231,7 +1260,11 @@ body.sheet-viewing{overflow:hidden!important}
 
 <section class="screen" data-session="8" data-title="Vocabulario · sesión 8"><div class="panel vocab-two-column-panel"><div class="vocab-sheet" id="vocabSheet8"><div class="vocab-head"><div><div class="vocab-session">MI CUERPO FLORECE · SESIÓN 8</div><div class="vocab-note">Palabra de hoy · sustantivo</div></div><div class="vocab-kicker">VOCABULARIO</div></div><div class="vocab-word schoolfont">ANIMAL</div><div class="vocab-photo-wrap"><img alt="Perro, un animal" class="vocab-photo" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG"/></div><div class="vocab-def schoolfont"><span class="vocab-step">1 · MIRAMOS Y ENTENDEMOS</span><br/>Un animal es un ser vivo. Hay animales con cuerpos muy diferentes.</div><div class="vocab-example schoolfont"><span class="vocab-step">2 · ESCUCHAMOS UNA FRASE</span><br/>“El perro es un animal.”</div><div class="vocab-say schoolfont"><span class="vocab-step">3 · AHORA TÚ</span><br/>Construye tu oración: <b>El/La ___ es un animal.</b></div></div><div class="vocab-controls"><button class="btn prev">◀ Atrás</button><button class="btn" data-print-vocab="8">🖨️ Imprimir A4</button><button class="btn primary" data-go-home>✓ Terminar sesión</button></div></div></section>
 
-<section class="screen" data-session="9" data-title="Investigamos · ¿necesita patas para estar vivo?"><div class="panel w3-hero"><div><span class="tag w3-tag">SESIÓN 9 · 35 min efectivos</span><h1 class="student-title schoolfont">¿Necesita tener patas para estar vivo?</h1><div class="student-text schoolfont">Primero hacemos una <b>predicción</b>. Después miramos ejemplos y comprobamos.</div><div class="actions"><button class="btn primary next">Hacer predicción ▶</button></div><div class="teacherbox"><b>Pequeña investigación de la programación.</b> Pregunta del grupo → predicción → contraste con imágenes/recurso seleccionado → resultado mediante dibujo. Criterios 2.1-2.5. No usamos “tener patas” como definición de ser vivo.</div></div><div class="w3-visual-grid"><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg" alt="Planta"><b>PLANTA</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Happy_fun_ball.png" alt="Pelota"><b>PELOTA</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro"><b>PERRO</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Stone_rock.jpg" alt="Piedra"><b>PIEDRA</b></div></div></div></section>
+<section class="screen" data-session="9" data-title="Investigamos · ¿necesita patas para estar vivo?"><div class="panel w3-hero"><div><span class="tag w3-tag">SESIÓN 9 · 35 min efectivos</span><h1 class="student-title schoolfont">¿Necesita tener patas para estar vivo?</h1><div class="student-text schoolfont">Primero hacemos una <b>predicción</b>. Después miramos ejemplos y comprobamos.</div><div class="actions"><button class="btn primary next">Hacer predicción ▶</button></div>
+<div class="w3-curriculum">
+  <div class="crit"><h3>Criterios que observamos</h3><p><b>2.1</b> Formula o registra una predicción. <b>2.2</b> Localiza información. <b>2.3</b> Participa en una investigación guiada. <b>2.4</b> Compara predicción y resultado. <b>2.5</b> Comunica lo aprendido.</p></div>
+  <div class="evid"><h3>Evidencia de la sesión</h3><p>Predicción sobre si hace falta tener patas para estar vivo, contraste con imágenes/fuente, clasificación vivo-no vivo y explicación final mediante dibujo y oralidad.</p></div>
+</div><div class="teacherbox"><b>Pequeña investigación de la programación.</b> Pregunta del grupo → predicción → contraste con imágenes/recurso seleccionado → resultado mediante dibujo. Criterios 2.1-2.5. No usamos “tener patas” como definición de ser vivo.</div></div><div class="w3-visual-grid"><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg" alt="Planta"><b>PLANTA</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Happy_fun_ball.png" alt="Pelota"><b>PELOTA</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro"><b>PERRO</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Stone_rock.jpg" alt="Piedra"><b>PIEDRA</b></div></div></div></section>
 
 <section class="screen" data-session="9" data-title="Predicción · sesión 9"><div class="panel"><span class="tag w3-tag">1 · PIENSO</span><h2 class="w3-question schoolfont">¿Necesita tener patas para estar vivo?</h2><div class="w3-predict"><button data-s9-predict="si" type="button">SÍ</button><button data-s9-predict="no" type="button">NO</button></div><div class="w3-feedback schoolfont" id="s9PredictFeedback">Elige tu predicción. Todavía no diremos si es correcta.</div><div class="teacherbox"><b>Importante.</b> Acepta ambas respuestas y pregunta “¿por qué lo piensas?”. La predicción no se califica como acierto/error.</div><div class="nav"><button class="btn prev">◀ Atrás</button><button class="btn primary next">Comprobamos ▶</button></div></div></section>
 
@@ -1258,6 +1291,82 @@ body.sheet-viewing{overflow:hidden!important}
 <div class="materials-session"><h3>Sesión 8 · Clasifico</h3><p>Recortar y clasificar 2, 4, 6 y 8 patas.</p><button class="btn" data-open-w3-sheet="8">Abrir ficha</button></div>
 <div class="materials-session"><h3>Sesión 9 · Investigo</h3><p>Recortar, clasificar vivo/no vivo y dibujar.</p><button class="btn" data-open-w3-sheet="9">Abrir ficha</button></div>
 </div><div class="w3-credits">Fotografías externas: Wikimedia Commons. Créditos y licencias documentados en CREDITOS_RECURSOS.md del repositorio.</div><div class="main-return"><button class="btn" data-go-home>◀ Volver al inicio</button></div></div></section>
+
+
+<section class="screen" data-session="0" data-title="Rúbrica global · sesiones 7-9">
+  <div class="panel">
+    <div class="w3-rubric-shell" id="w3Rubric79">
+      <div class="w3-rubric-head">
+        <div>
+          <h2>RÚBRICA GLOBAL · SEMANA 3 · SESIONES 7–9</h2>
+          <div class="w3-rubric-meta">SA1 · Mi cuerpo florece · Texto mentor: <i>2, 4, 6, 8 patas</i> · Conocimiento del Medio</div>
+        </div>
+        <div class="w3-rubric-name">Alumno/a: <input type="text" aria-label="Nombre del alumno"></div>
+      </div>
+
+      <div class="w3-rubric-legend">
+        <div><b>4</b><br>Realiza la tarea y la explica con autonomía.</div>
+        <div><b>3</b><br>Necesita apoyo ocasional.</div>
+        <div><b>2</b><br>Realiza la tarea con guía.</div>
+        <div><b>1</b><br>Necesita ayuda continua.</div>
+      </div>
+
+      <div class="w3-rubric-scroll">
+        <table class="w3-rubric-table">
+          <thead><tr><th>Criterio</th><th>Qué se observa</th><th>Evidencia</th><th>Sesión/es</th><th>Valoración</th></tr></thead>
+          <tbody>
+            <tr data-w3-rubric-row="2.1">
+              <td class="w3-rubric-code">2.1</td>
+              <td class="w3-rubric-desc">Formula o registra una pregunta o predicción sencilla antes de comprobar.</td>
+              <td class="w3-rubric-evidence">Predicción: “¿Necesita tener patas para estar vivo?” y explicación inicial.</td>
+              <td class="w3-rubric-session">S9</td>
+              <td class="w3-score-cell"><button class="w3-score-btn" data-w3-score="1" type="button">1</button><button class="w3-score-btn" data-w3-score="2" type="button">2</button><button class="w3-score-btn" data-w3-score="3" type="button">3</button><button class="w3-score-btn" data-w3-score="4" type="button">4</button></td>
+            </tr>
+            <tr data-w3-rubric-row="2.2">
+              <td class="w3-rubric-code">2.2</td>
+              <td class="w3-rubric-desc">Localiza información con ayuda en fuentes seleccionadas.</td>
+              <td class="w3-rubric-evidence">Busca en texto mentor e imágenes el número de patas y usa la información para decidir.</td>
+              <td class="w3-rubric-session">S7 · S8 · S9</td>
+              <td class="w3-score-cell"><button class="w3-score-btn" data-w3-score="1" type="button">1</button><button class="w3-score-btn" data-w3-score="2" type="button">2</button><button class="w3-score-btn" data-w3-score="3" type="button">3</button><button class="w3-score-btn" data-w3-score="4" type="button">4</button></td>
+            </tr>
+            <tr data-w3-rubric-row="2.3">
+              <td class="w3-rubric-code">2.3</td>
+              <td class="w3-rubric-desc">Participa y registra una experiencia o investigación guiada.</td>
+              <td class="w3-rubric-evidence">Participa en el contraste vivo/no vivo y registra el resultado mediante clasificación y dibujo.</td>
+              <td class="w3-rubric-session">S9</td>
+              <td class="w3-score-cell"><button class="w3-score-btn" data-w3-score="1" type="button">1</button><button class="w3-score-btn" data-w3-score="2" type="button">2</button><button class="w3-score-btn" data-w3-score="3" type="button">3</button><button class="w3-score-btn" data-w3-score="4" type="button">4</button></td>
+            </tr>
+            <tr data-w3-rubric-row="2.4">
+              <td class="w3-rubric-code">2.4</td>
+              <td class="w3-rubric-desc">Compara el resultado con la predicción y ajusta su respuesta.</td>
+              <td class="w3-rubric-evidence">Vuelve a la predicción inicial y explica qué ejemplo le permitió comprobarla o cambiarla.</td>
+              <td class="w3-rubric-session">S9</td>
+              <td class="w3-score-cell"><button class="w3-score-btn" data-w3-score="1" type="button">1</button><button class="w3-score-btn" data-w3-score="2" type="button">2</button><button class="w3-score-btn" data-w3-score="3" type="button">3</button><button class="w3-score-btn" data-w3-score="4" type="button">4</button></td>
+            </tr>
+            <tr data-w3-rubric-row="2.5">
+              <td class="w3-rubric-code">2.5</td>
+              <td class="w3-rubric-desc">Comunica lo aprendido con vocabulario básico, apoyo visual y explicación oral.</td>
+              <td class="w3-rubric-evidence">“Sé que tiene… porque…”, explicación de la clasificación y conclusión vivo/no vivo.</td>
+              <td class="w3-rubric-session">S7 · S8 · S9</td>
+              <td class="w3-score-cell"><button class="w3-score-btn" data-w3-score="1" type="button">1</button><button class="w3-score-btn" data-w3-score="2" type="button">2</button><button class="w3-score-btn" data-w3-score="3" type="button">3</button><button class="w3-score-btn" data-w3-score="4" type="button">4</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="w3-rubric-bottom">
+        <div class="w3-rubric-box"><b>Fortalezas observadas</b><textarea placeholder="Escribe aquí..."></textarea></div>
+        <div class="w3-rubric-box"><b>Siguiente apoyo o reto</b><textarea placeholder="Escribe aquí..."></textarea></div>
+      </div>
+      <div class="w3-rubric-note"><b>Fuente de evidencia:</b> texto mentor + actividades digitales + fichas de S7, S8 y S9 + explicación oral. La lectura autónoma de grafías todavía no trabajadas no se utiliza como evidencia de Conocimiento del Medio.</div>
+    </div>
+    <div class="main-return">
+      <button class="btn" data-go-home type="button">◀ Volver al inicio</button>
+      <button class="btn" id="resetW3Rubric" type="button">↻ Borrar puntuación</button>
+      <button class="btn primary" id="printW3Rubric" type="button">🖨️ Imprimir A4 apaisado</button>
+    </div>
+  </div>
+</section>
 
 <section class="screen" data-session="0" data-title="Materiales imprimibles · semana 2"><div class="panel"><span class="tag">SEMANA 2</span><h1 class="schoolfont" style="font-size:clamp(36px,5vw,62px);margin:10px 0">Fichas para imprimir</h1><p class="student-text" style="font-size:clamp(22px,2.5vw,34px)">Aquí están juntas las fichas de las sesiones 4, 5 y 6. Cada botón abre un PDF DIN A4 listo para imprimir.</p><div class="materials-hub"><div class="materials-session"><h3>Sesión 4 · Descubrimos</h3><p>Dibujamos y clasificamos los cinco sentidos.</p><div class="materials-card"><img src="pdf/S4_MIS_CINCO_SENTIDOS_A4_300dpi.png" alt="Vista previa Mis cinco sentidos"><div><b>MIS CINCO SENTIDOS</b><br><small>Una sola ficha con VEO, OIGO, HUELO, SABOREO y TOCO.</small><br><a href="pdf/S4_MIS_CINCO_SENTIDOS_A4.pdf">Abrir PDF</a></div></div><div class="materials-card"><img src="pdf/S4_RECORTA_Y_CLASIFICA_SENTIDOS_A4_300dpi.png" alt="Vista previa recorta y clasifica"><div><b>RECORTA Y CLASIFICA</b><br><small>Recorta imágenes y colócalas en el sentido correspondiente.</small><br><a href="pdf/S4_RECORTA_Y_CLASIFICA_SENTIDOS_A4.pdf">Abrir PDF</a></div></div></div><div class="materials-session"><h3>Sesión 5 · Investigamos</h3><p>Ordenamos el proceso y dibujamos un descubrimiento.</p><div class="materials-card"><img src="pdf/S5_RECORTA_Y_ORDENA_INVESTIGACION_A4_300dpi.png" alt="Vista previa recorta y ordena"><div><b>RECORTA Y ORDENA</b><br><small>PIENSO → PRUEBO → DESCUBRO → CUENTO.</small><br><a href="pdf/S5_RECORTA_Y_ORDENA_INVESTIGACION_A4.pdf">Abrir PDF</a></div></div><div class="materials-card"><img src="pdf/S5_DIBUJO_MI_DESCUBRIMIENTO_A4_300dpi.png" alt="Vista previa dibujo mi descubrimiento"><div><b>DIBUJO MI DESCUBRIMIENTO</b><br><small>Elige la estación y representa qué has descubierto.</small><br><a href="pdf/S5_DIBUJO_MI_DESCUBRIMIENTO_A4.pdf">Abrir PDF</a></div></div></div><div class="materials-session"><h3>Sesión 6 · Aplicamos</h3><p>Clasificamos situaciones y cerramos con un dibujo de repaso.</p><div class="materials-card"><img src="pdf/S6_RECORTA_Y_CLASIFICA_QUE_SENTIDO_USO_A4_preview.png" alt="Vista previa clasificación"><div><b>¿QUÉ SENTIDO USO?</b><br><small>Recortar y clasificar por sentido.</small><br><a href="pdf/S6_RECORTA_Y_CLASIFICA_QUE_SENTIDO_USO_A4.pdf">Abrir PDF</a></div></div><div class="materials-card"><img src="pdf/S6_DIBUJO_Y_REPASO_CINCO_SENTIDOS_A4_preview.png" alt="Vista previa dibujo y repaso"><div><b>DIBUJO Y REPASO</b><br><small>Cierre individual de los cinco sentidos.</small><br><a href="pdf/S6_DIBUJO_Y_REPASO_CINCO_SENTIDOS_A4.pdf">Abrir PDF</a></div></div></div></div><div class="actions"><button class="btn primary" data-go-home type="button">Volver al inicio</button></div></div></section><section class="screen" data-session="0" data-title="Rúbrica global · sesiones 4-6">
 <div class="panel"><div class="global-rubric-shell" id="globalRubric456">
@@ -1340,7 +1449,7 @@ root.querySelectorAll('[data-open-materials]').forEach(b=>b.addEventListener('cl
 
 sessionTabs.forEach(t=>t.addEventListener('click',()=>{const idx=screens.findIndex(x=>x.dataset.session===t.dataset.sessionJump);if(idx>=0)show(idx);}));
 root.querySelectorAll('[data-home-open]').forEach(b=>b.addEventListener('click',()=>{const idx=screens.findIndex(x=>x.dataset.session===b.dataset.homeOpen);if(idx>=0)show(idx);}));
-root.querySelectorAll('[data-open-resource]').forEach(b=>b.addEventListener('click',()=>{const title=b.dataset.openResource==='rubric2'?'Rúbrica global · sesiones 4-6':'Rúbrica global · sesiones 1-3';const idx=screens.findIndex(x=>x.dataset.title===title);if(idx>=0)show(idx);}));
+root.querySelectorAll('[data-open-resource]').forEach(b=>b.addEventListener('click',()=>{const title=b.dataset.openResource==='rubric3'?'Rúbrica global · sesiones 7-9':(b.dataset.openResource==='rubric2'?'Rúbrica global · sesiones 4-6':'Rúbrica global · sesiones 1-3');const idx=screens.findIndex(x=>x.dataset.title===title);if(idx>=0)show(idx);}));
 root.querySelectorAll('[data-go-home]').forEach(b=>b.addEventListener('click',()=>{const idx=screens.findIndex(x=>x.dataset.title==='Inicio general');if(idx>=0)show(idx);}));
 root.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>show(current+1)));
 root.querySelectorAll('.prev').forEach(b=>b.addEventListener('click',()=>show(current-1)));
@@ -1388,7 +1497,7 @@ function printTarget(el){
   const oldHost=document.querySelector('.print-host'); if(oldHost) oldHost.remove();
   const oldPrintStyle=document.getElementById('dynamicPrintPage'); if(oldPrintStyle) oldPrintStyle.remove();
   const isVocab=el.classList.contains('vocab-sheet');
-  const isEvalLandscape=el.classList.contains('observation-sheet')||el.classList.contains('global-rubric-shell');
+  const isEvalLandscape=el.classList.contains('observation-sheet')||el.classList.contains('global-rubric-shell')||el.classList.contains('w3-rubric-shell');
   const host=document.createElement('div'); host.className='print-host'+(isVocab?' vocab-print-host':'')+(isEvalLandscape?' eval-landscape-print-host':'');
   const clone=el.cloneNode(true); clone.classList.add('print-target');
   const origFields=el.querySelectorAll('input,textarea,select'); const cloneFields=clone.querySelectorAll('input,textarea,select');
@@ -1626,6 +1735,16 @@ function renderS7Mentor(){
 document.getElementById('s7MentorPrev')?.addEventListener('click',()=>{if(s7MentorIndex>0){s7MentorIndex--;renderS7Mentor();}});
 document.getElementById('s7MentorNext')?.addEventListener('click',()=>{if(s7MentorIndex<s7MentorPages.length-1)s7MentorIndex++;else s7MentorIndex=0;renderS7Mentor();});
 renderS7Mentor();
+
+
+root.querySelectorAll('#w3Rubric79 .w3-score-btn').forEach(btn=>btn.addEventListener('click',()=>{
+  const row=btn.closest('tr'); row.querySelectorAll('.w3-score-btn').forEach(x=>x.classList.remove('active')); btn.classList.add('active');
+}));
+document.getElementById('resetW3Rubric')?.addEventListener('click',()=>{
+  root.querySelectorAll('#w3Rubric79 .w3-score-btn').forEach(x=>x.classList.remove('active'));
+  root.querySelectorAll('#w3Rubric79 input,#w3Rubric79 textarea').forEach(x=>x.value='');
+});
+document.getElementById('printW3Rubric')?.addEventListener('click',()=>printTarget(document.getElementById('w3Rubric79')));
 
 })();
 </script>
