@@ -1110,14 +1110,14 @@ body.mentor-open{overflow:hidden!important}
 .mentor-page-slot.left .mentor-page-paper{border-radius:12px 2px 2px 12px;box-shadow:inset -16px 0 22px -20px rgba(0,0,0,.6)}
 .mentor-page-slot.right .mentor-page-paper{border-radius:2px 12px 12px 2px;box-shadow:inset 16px 0 22px -20px rgba(0,0,0,.6)}
 .mentor-book.single .mentor-page-paper{border-radius:12px;box-shadow:none}
-.mentor-page-paper img{display:block;width:100%;height:100%;object-fit:contain;background:#fff;user-select:none;-webkit-user-drag:none}
+.mentor-page-paper img{display:block;position:absolute;left:0;top:0;width:100%;background:#fff;user-select:none;-webkit-user-drag:none;transform-origin:top left}
 .mentor-page-num{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);min-width:28px;text-align:center;padding:2px 6px;border-radius:999px;background:rgba(255,255,255,.8);font:800 10px Arial;color:#69777e}
 .mentor-flip-sheet{display:none;position:absolute;top:0;height:100%;width:50%;z-index:10;transform-style:preserve-3d;pointer-events:none}
 .mentor-flip-sheet.turn-next{right:0;transform-origin:left center;animation:mentorFlipNext .46s cubic-bezier(.45,.03,.25,1)}
 .mentor-flip-sheet.turn-prev{left:0;transform-origin:right center;animation:mentorFlipPrev .46s cubic-bezier(.45,.03,.25,1)}
 .mentor-flip-sheet.single-flip{width:100%}.mentor-flip-sheet.single-flip.turn-next{left:0;right:auto}.mentor-flip-sheet.single-flip.turn-prev{left:0}
 .mentor-flip-face{position:absolute;inset:0;background:#fff;border:1px solid #c8c5ba;overflow:hidden;backface-visibility:hidden;box-shadow:0 0 25px rgba(0,0,0,.2)}
-.mentor-flip-face img{width:100%;height:100%;object-fit:contain;background:#fff}
+.mentor-flip-face img{position:absolute;left:0;top:0;width:100%;background:#fff;transform-origin:top left}
 @keyframes mentorFlipNext{0%{transform:rotateY(0deg);box-shadow:0 0 0 rgba(0,0,0,0)}45%{box-shadow:-24px 8px 26px rgba(0,0,0,.28)}100%{transform:rotateY(-178deg);box-shadow:-4px 0 8px rgba(0,0,0,.05)}}
 @keyframes mentorFlipPrev{0%{transform:rotateY(0deg);box-shadow:0 0 0 rgba(0,0,0,0)}45%{box-shadow:24px 8px 26px rgba(0,0,0,.28)}100%{transform:rotateY(178deg);box-shadow:4px 0 8px rgba(0,0,0,.05)}}
 .mentor-book-status{display:flex;justify-content:center;gap:18px;align-items:center;margin-top:7px;min-height:28px;font:900 12px Arial;color:#415963}
@@ -2569,6 +2569,7 @@ const mentorBookCatalog={
     file:'1MFgQOjK5-Vm_LkIpevsECIme7Ko5Xez9',
     week:'SEMANA 1 · YO Y MI CUERPO',
     path:'assets/mentor/todo',
+    sprite:'assets/mentor/todo.webp?v=20261102c',
     pages:10,
     cover:1,
     summary:10,
@@ -2586,6 +2587,7 @@ const mentorBookCatalog={
     file:'1a5SGIOv_nn4UjlpKggaBvMfVfbG1R9Vy',
     week:'SEMANA 2 · LOS SENTIDOS',
     path:'assets/mentor/sentidos',
+    sprite:'assets/mentor/sentidos.webp?v=20261102c',
     pages:20,
     cover:1,
     summary:18,
@@ -2605,6 +2607,7 @@ const mentorBookCatalog={
     file:'1jyIn-LgajX1acFthlIVAxVYCi432qmOS',
     week:'SEMANA 3 · COMPARAMOS Y CLASIFICAMOS',
     path:'assets/mentor/patas',
+    sprite:'assets/mentor/patas.webp?v=20261102c',
     pages:19,
     cover:2,
     summary:19,
@@ -2629,7 +2632,31 @@ const mentorBooks={
 const mentorState={book:null,page:1,view:2,busy:false};
 
 function mentorPageSrc(book,page){
-  return book.path+'/page-'+String(page).padStart(2,'0')+'.jpg';
+  return book.sprite || (book.path+'/page-'+String(page).padStart(2,'0')+'.jpg');
+}
+function applyMentorPageImage(img,book,page){
+  if(!img||!book||!page)return;
+  const pages=Math.max(1,Number(book.pages)||1);
+  img.alt=book.title+' · página '+page;
+  img.src=mentorPageSrc(book,page);
+  if(book.sprite){
+    img.style.width='100%';
+    img.style.height=(pages*100)+'%';
+    img.style.objectFit='fill';
+    img.style.transform='translateY(-'+(((page-1)*100)/pages)+'%)';
+  }else{
+    img.style.height='100%';
+    img.style.objectFit='contain';
+    img.style.transform='none';
+  }
+}
+function clearMentorPageImage(img){
+  if(!img)return;
+  img.removeAttribute('src');
+  img.alt='';
+  img.style.height='';
+  img.style.objectFit='';
+  img.style.transform='';
 }
 function mentorClampPage(page){
   const max=mentorState.book?.pages||1;
@@ -2647,14 +2674,12 @@ function mentorSpread(){
 function setMentorSlot(slot,img,num,page,book){
   if(!page){
     slot.classList.add('empty');
-    img.removeAttribute('src');
-    img.alt='';
+    clearMentorPageImage(img);
     num.textContent='';
     return;
   }
   slot.classList.remove('empty');
-  img.alt=book.title+' · página '+page;
-  img.src=mentorPageSrc(book,page);
+  applyMentorPageImage(img,book,page);
   num.textContent=page;
 }
 function renderMentorBook(){
@@ -2690,7 +2715,7 @@ function turnMentorPage(target,direction){
   mentorState.busy=true;
   const sp=mentorSpread();
   let flipPage=direction==='prev'?(sp.left||mentorState.page):(sp.right||sp.left||mentorState.page);
-  mentorFlipImg.src=mentorPageSrc(b,flipPage);
+  applyMentorPageImage(mentorFlipImg,b,flipPage);
   mentorFlipSheet.className='mentor-flip-sheet '+(mentorState.view===1?'single-flip ':'')+(direction==='prev'?'turn-prev':'turn-next');
   mentorFlipSheet.style.display='block';
   setTimeout(()=>{
