@@ -1,0 +1,80 @@
+name: Preparar lector de textos mentores
+
+on:
+  push:
+    paths:
+      - ".github/workflows/import_mentor_books.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-mentor-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar herramientas
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+          python -m pip install --upgrade gdown pillow
+
+      - name: Descargar PDF originales
+        run: |
+          mkdir -p .mentor_tmp
+          gdown --id "1MFgQOjK5-Vm_LkIpevsECIme7Ko5Xez9" -O ".mentor_tmp/todo.pdf"
+          gdown --id "1a5SGIOv_nn4UjlpKggaBvMfVfbG1R9Vy" -O ".mentor_tmp/sentidos.pdf"
+          gdown --id "1jyIn-LgajX1acFthlIVAxVYCi432qmOS" -O ".mentor_tmp/patas.pdf"
+
+      - name: Renderizar páginas del libro
+        run: |
+          rm -rf assets/mentor
+          mkdir -p assets/mentor/todo assets/mentor/sentidos assets/mentor/patas
+          pdftocairo -jpeg -r 85 ".mentor_tmp/todo.pdf" "assets/mentor/todo/page"
+          pdftocairo -jpeg -r 85 ".mentor_tmp/sentidos.pdf" "assets/mentor/sentidos/page"
+          pdftocairo -jpeg -r 85 ".mentor_tmp/patas.pdf" "assets/mentor/patas/page"
+
+      - name: Normalizar orientación y tamaño
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+
+          roots = {
+              "todo": Path("assets/mentor/todo"),
+              "sentidos": Path("assets/mentor/sentidos"),
+              "patas": Path("assets/mentor/patas"),
+          }
+
+          for name, root in roots.items():
+              for path in sorted(root.glob("*.jpg")):
+                  im = Image.open(path).convert("RGB")
+                  if name == "todo":
+                      im = im.rotate(-90, expand=True)
+                  max_side = 1000
+                  scale = min(1, max_side / max(im.size))
+                  if scale < 1:
+                      im = im.resize((round(im.width*scale), round(im.height*scale)), Image.Resampling.LANCZOS)
+                  im.save(path, "JPEG", quality=80, optimize=True, progressive=True)
+          PY
+
+      - name: Verificar número de páginas
+        run: |
+          test "$(find assets/mentor/todo -name '*.jpg' | wc -l)" -eq 10
+          test "$(find assets/mentor/sentidos -name '*.jpg' | wc -l)" -eq 20
+          test "$(find assets/mentor/patas -name '*.jpg' | wc -l)" -eq 19
+
+      - name: Guardar páginas en el repositorio
+        run: |
+          rm -rf .mentor_tmp
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/mentor
+          if git diff --cached --quiet; then
+            echo "Las páginas ya estaban actualizadas."
+          else
+            git commit -m "Añadir páginas de los textos mentores para lector tipo libro"
+            git push
+          fi
