@@ -1122,8 +1122,14 @@ body.mentor-open{overflow:hidden!important}
 @keyframes mentorFlipPrev{0%{transform:rotateY(0deg);box-shadow:0 0 0 rgba(0,0,0,0)}45%{box-shadow:24px 8px 26px rgba(0,0,0,.28)}100%{transform:rotateY(178deg);box-shadow:4px 0 8px rgba(0,0,0,.05)}}
 .mentor-book-status{display:flex;justify-content:center;gap:18px;align-items:center;margin-top:7px;min-height:28px;font:900 12px Arial;color:#415963}
 .mentor-turn-help{font-weight:700;color:#718087}
-.mentor-reader-fallback{position:absolute;inset:auto 50% 40px auto;transform:translateX(50%);z-index:30;width:min(520px,80%);padding:14px;border:2px solid #d59a9a;border-radius:15px;background:#fff4f4;text-align:center;font:13px/1.3 Arial;color:#5d5555;box-shadow:0 6px 22px rgba(0,0,0,.14)}
-.mentor-reader-fallback span{display:block;margin:4px 0 8px}.mentor-reader-fallback a{display:inline-flex;padding:7px 10px;border-radius:9px;background:#2d617f;color:#fff;text-decoration:none;font-weight:900}
+.mentor-reader-fallback{position:absolute;inset:0;z-index:30;display:flex;flex-direction:column;gap:8px;padding:10px;border:2px solid #a9bbc4;border-radius:15px;background:#f4f8fa;font:13px/1.3 Arial;color:#45565e;box-shadow:0 6px 22px rgba(0,0,0,.14)}
+.mentor-reader-fallback[hidden]{display:none!important}
+.mentor-fallback-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:2px 4px}
+.mentor-fallback-copy{text-align:left}.mentor-fallback-copy b{display:block;font-size:14px;color:#314f5e}.mentor-fallback-copy span{display:block;margin-top:2px;color:#667780}
+.mentor-reader-fallback a{display:inline-flex;flex:0 0 auto;padding:7px 10px;border-radius:9px;background:#2d617f;color:#fff;text-decoration:none;font-weight:900}
+.mentor-reader-fallback iframe{display:block;width:100%;flex:1;min-height:420px;border:1px solid #b7c3c9;border-radius:11px;background:#fff}
+.mentor-book-shell.fallback-mode .mentor-book,.mentor-book-shell.fallback-mode .mentor-book-status{visibility:hidden}
+.mentor-book-controls.fallback-mode{display:none}
 @media(max-height:780px){.mentor-book{height:min(62vh,590px)}.mentor-book-area{padding-top:6px}.mentor-book-controls{padding:5px}.mentor-book-controls>button,.mentor-book-controls label,.mentor-view-toggle{min-height:32px}.mentor-turn-help{display:none}}
 @media(max-width:900px){.mentor-book-area{grid-template-columns:44px minmax(0,1fr) 44px;padding-left:5px;padding-right:5px}.mentor-edge-nav{width:40px;height:68px;font-size:42px}.mentor-book{width:82vw}.mentor-key-control select{max-width:140px}}
 </style>
@@ -2516,9 +2522,14 @@ body.mentor-open{overflow:hidden!important}
       </div>
 
       <div class="mentor-reader-fallback" id="mentorReaderFallback" hidden>
-        <b>No se han podido cargar las páginas del lector.</b>
-        <span>Puedes seguir usando el PDF original.</span>
-        <a id="mentorFallbackLink" href="#" target="_blank" rel="noopener">ABRIR PDF ORIGINAL ↗</a>
+        <div class="mentor-fallback-head">
+          <div class="mentor-fallback-copy">
+            <b>Vista del texto mentor</b>
+            <span>Las páginas locales no están disponibles. El PDF original se muestra aquí sin salir de la sesión.</span>
+          </div>
+          <a id="mentorFallbackLink" href="#" target="_blank" rel="noopener">ABRIR PDF ↗</a>
+        </div>
+        <iframe id="mentorFallbackFrame" title="Texto mentor en PDF" loading="lazy" allow="autoplay"></iframe>
       </div>
     </div>
 
@@ -2548,6 +2559,9 @@ const mentorStartPage=document.getElementById('mentorStartPage');
 const mentorKeyPages=document.getElementById('mentorKeyPages');
 const mentorSummaryBtn=document.getElementById('mentorSummaryBtn');
 const mentorReaderFallback=document.getElementById('mentorReaderFallback');
+const mentorFallbackFrame=document.getElementById('mentorFallbackFrame');
+const mentorBookShell=mentorBookEl?.closest('.mentor-book-shell');
+const mentorBookControls=document.querySelector('.mentor-book-controls');
 
 const mentorBookCatalog={
   todo:{
@@ -2696,7 +2710,13 @@ function populateMentorControls(book){
   mentorSummaryBtn.style.display=book.summary?'inline-flex':'none';
 }
 function showMentorFallback(){
+  if(!mentorReaderFallback)return;
   mentorReaderFallback.hidden=false;
+  mentorBookShell?.classList.add('fallback-mode');
+  mentorBookControls?.classList.add('fallback-mode');
+  const prev=document.getElementById('mentorBookPrev'),next=document.getElementById('mentorBookNext');
+  if(prev)prev.disabled=true;
+  if(next)next.disabled=true;
 }
 function openMentor(){
   const session=screens[current]?.dataset.session||'0';
@@ -2705,8 +2725,12 @@ function openMentor(){
   mentorTitle.textContent=book.title;
   mentorSubtitle.textContent=book.week+' · LECTOR TIPO LIBRO';
   const view='https://drive.google.com/file/d/'+book.file+'/view';
+  const preview='https://drive.google.com/file/d/'+book.file+'/preview';
   mentorOpenDrive.href=view;mentorFallbackLink.href=view;
+  if(mentorFallbackFrame)mentorFallbackFrame.src=preview;
   mentorReaderFallback.hidden=true;
+  mentorBookShell?.classList.remove('fallback-mode');
+  mentorBookControls?.classList.remove('fallback-mode');
   populateMentorControls(book);
   renderMentorBook();
   mentorOverlay.classList.add('open');mentorOverlay.setAttribute('aria-hidden','false');document.body.classList.add('mentor-open');
