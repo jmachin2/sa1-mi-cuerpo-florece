@@ -678,6 +678,40 @@ body{min-height:100dvh}
 .edu-video-fallback[hidden]{display:none!important}.edu-video-fallback .btn{margin-left:8px;text-decoration:none}
 
 </style>
+
+<style id="week3-redesign-v1">
+/* Semana 3: interfaz de diapositiva, sin recortes y con una acción por pantalla */
+.focus-week3 .session-switch,.focus-week3 .week2-tasknav,.focus-week3 .progress,.focus-week3 #vocabBtn{display:none!important}
+.focus-week3 .topbar{grid-template-columns:1fr auto!important;grid-template-areas:"brand actions"!important;min-height:38px!important}
+.focus-week3 .brand{font-size:15px!important}
+.focus-week3 .screen.active{overflow:hidden!important}
+.focus-week3 .w3-new{height:calc(100dvh - 58px)!important;max-height:calc(100dvh - 58px)!important;display:flex!important;flex-direction:column!important;gap:8px!important;padding:12px 16px!important;overflow:hidden!important;zoom:1!important}
+.w3-new *{box-sizing:border-box}
+.w3-kicker{font:900 12px/1.1 Arial,Helvetica,sans-serif;letter-spacing:.08em;color:#60717a}
+.w3-title{font-size:clamp(30px,4.4vh,50px);line-height:1.02;margin:0;text-align:center;color:#21343f}
+.w3-instruction{font-size:clamp(20px,2.7vh,30px);line-height:1.05;text-align:center;background:#fff6db;border:2px solid #f0d779;border-radius:14px;padding:7px 10px;margin:0 auto;width:min(100%,950px)}
+.w3-mentor-grid,.w3-four-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;flex:1;min-height:0}
+.w3-mentor-card,.w3-four-gallery article{border:2px solid #d7e0e4;border-radius:16px;background:#fff;padding:8px;text-align:center;display:flex;flex-direction:column;min-width:0;min-height:0}
+.w3-mentor-card img,.w3-four-gallery img{width:100%;height:100%;min-height:0;object-fit:contain!important;object-position:center;background:#fff;border-radius:10px}
+.w3-mentor-card div{flex:0 0 auto;padding-top:5px}.w3-mentor-card b,.w3-four-gallery b{display:block;font-size:20px}.w3-mentor-card span{display:block;font-size:14px;color:#5d6970}.w3-four-gallery article{justify-content:center}.w3-four-gallery img{max-height:42vh}
+.w3-nav{flex:0 0 auto;display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;border-top:2px solid #e0e6e9;padding-top:8px;margin-top:auto}
+.w3-nav-right{display:flex;justify-content:flex-end;gap:8px}.w3-step{font:900 14px Arial;text-align:center;background:#eef3f6;border-radius:999px;padding:5px 11px}
+.w3-nav-btn{min-height:42px;border:2px solid #24313a;border-radius:13px;padding:7px 14px;font:900 15px Arial;cursor:pointer;background:#fff;color:#24313a}.w3-nav-btn.primary{background:#e6538b;color:#fff;border-color:#e6538b}.w3-nav-btn.rubric{background:#fff6db;border-color:#d4a925}.w3-nav-btn.secondary{justify-self:start}
+.w3-video-box{flex:1;min-height:0;display:grid;place-items:center;position:relative;background:#111;border-radius:18px;overflow:hidden;border:2px solid #d7e0e4}.w3-video-box video{width:100%;height:100%;max-height:48vh;object-fit:contain;background:#111}.w3-play{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);min-height:44px;padding:8px 16px;border:0;border-radius:999px;background:#fff;color:#24313a;font:900 16px Arial;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer}.w3-video-box video:not([poster])+.w3-play{display:none}
+.w3-big-prompt{font-size:clamp(21px,2.8vh,32px);line-height:1.1;text-align:center;padding:8px 12px;background:#eef9f4;border:2px solid #a9d9c4;border-radius:14px}
+.w3-quiz-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;flex:1;min-height:0;align-items:stretch}.w3-main-photo{border:2px solid #d7e0e4;border-radius:18px;background:#fff;padding:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:0}.w3-main-photo img{width:100%;height:100%;min-height:0;object-fit:contain!important;object-position:center;background:#fff;border-radius:10px}.w3-main-photo b{font-size:22px;margin-top:4px}
+.w3-answer-side{display:flex;flex-direction:column;justify-content:center;gap:9px;min-height:0}.w3-number-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.w3-answer{min-height:80px;border:3px solid #52666f;border-radius:18px;background:#fff;font:900 clamp(30px,5vh,54px) Arial;cursor:pointer}.w3-answer.good,.w3-target.good,.w3-two-answer button.good{background:#e9f8ef;border-color:#4c9b76}.w3-answer.bad,.w3-target.bad,.w3-two-answer button.bad{background:#fff0f3;border-color:#d46b90}.w3-feedback-new{min-height:42px;padding:7px 10px;border-radius:12px;background:#f5f8fa;border:2px solid #dce4e8;text-align:center;font-size:18px;line-height:1.15}.w3-small-action{align-self:center;min-height:38px;border:2px solid #60717a;border-radius:12px;background:#fff;padding:6px 12px;font:900 13px Arial;cursor:pointer}.w3-small-action:disabled{opacity:.35}
+.w3-two-compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;flex:1;min-height:0}.w3-two-compare article{border:2px solid #d7e0e4;border-radius:18px;background:#fff;padding:8px;display:flex;flex-direction:column;align-items:center;min-height:0}.w3-two-compare img{width:100%;height:100%;min-height:0;object-fit:contain!important;background:#fff;border-radius:10px}.w3-two-compare b{font-size:22px}.w3-two-compare span{font:900 20px Arial;color:#48697c}
+.w3-item-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;flex:1;min-height:0}.w3-pick-card{border:3px solid #d5dfe3;border-radius:16px;background:#fff;padding:7px;cursor:pointer;display:flex;flex-direction:column;min-width:0;min-height:0}.w3-pick-card img{width:100%;height:100%;min-height:0;object-fit:contain!important;object-position:center;background:#fff;border-radius:9px}.w3-pick-card b{font:900 16px Arial;margin-top:4px}.w3-pick-card.selected{border-color:#e6538b;box-shadow:0 0 0 3px rgba(230,83,139,.16)}.w3-pick-card.done{opacity:.35;border-color:#58a987}
+.w3-target-row{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;flex:0 0 auto}.w3-target{min-height:64px;border:3px solid #52666f;border-radius:16px;background:#fff;cursor:pointer}.w3-target b{display:block;font:900 28px Arial}.w3-target span{font:900 12px Arial}.w3-target-two{grid-template-columns:1fr 1fr}.w3-target-two .w3-target b{font-size:20px}
+.w3-pair{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;flex:1;min-height:0}.w3-pair article{border:2px solid #d7e0e4;border-radius:18px;background:#fff;padding:8px;display:flex;flex-direction:column;align-items:center;min-height:0;height:100%}.w3-pair img{width:100%;height:100%;min-height:0;object-fit:contain!important;background:#fff;border-radius:10px}.w3-pair b{font:900 18px Arial}.w3-pair-sign{font:900 34px Arial;color:#8a979d}.w3-two-answer{display:grid;grid-template-columns:1fr 1fr;gap:10px}.w3-two-answer button{min-height:56px;border:3px solid #52666f;border-radius:16px;background:#fff;font:900 18px Arial;cursor:pointer}
+.w3-predict-new{display:grid;grid-template-columns:1fr 1fr;gap:18px;flex:1;align-items:center;width:min(100%,800px);margin:0 auto}.w3-predict-new button{height:min(30vh,190px);border:4px solid #52666f;border-radius:24px;background:#fff;font:900 clamp(42px,8vh,82px) Arial;cursor:pointer}.w3-predict-new button.active{background:#fff6db;border-color:#d4a925}
+.w3-conclusion{display:grid;grid-template-columns:1fr 1fr;gap:14px;flex:1;min-height:0}.w3-conclusion p{font-size:clamp(18px,2.3vh,26px);line-height:1.2}.w3-vocab{display:grid;grid-template-columns:1fr 1fr;gap:16px;flex:1;min-height:0;align-items:center}.w3-vocab-word{font-size:clamp(48px,9vh,88px);margin:0;line-height:1}.w3-vocab p{font-size:clamp(20px,2.7vh,30px);line-height:1.2}
+.w3-print-screen .w3-sheet{height:min(62vh,620px)!important;width:auto!important;max-width:100%!important;aspect-ratio:210/297!important;flex:1;min-height:0}.w3-print-btn{align-self:center;min-height:38px;border:2px solid #24313a;border-radius:12px;background:#fff;padding:6px 12px;font:900 13px Arial;cursor:pointer}.w3-hidden-print{position:fixed!important;left:-200vw!important;top:0!important;visibility:hidden!important}
+.w3-new .w3-sheet img,.w3-new .w3-cut img{object-fit:contain!important;background:#fff}
+@media(max-height:720px){.focus-week3 .w3-new{padding:8px 12px!important;gap:5px!important}.w3-title{font-size:30px}.w3-instruction{font-size:18px;padding:5px 8px}.w3-nav{padding-top:5px}.w3-nav-btn{min-height:36px;padding:5px 10px;font-size:13px}.w3-target{min-height:52px}.w3-answer{min-height:62px}.w3-feedback-new{font-size:15px;min-height:34px}.w3-mentor-card b,.w3-four-gallery b{font-size:16px}.w3-mentor-card span{font-size:12px}.w3-video-box video{max-height:42vh}}
+@media(max-width:820px){.w3-mentor-grid,.w3-four-gallery,.w3-item-row{grid-template-columns:repeat(2,1fr)}.w3-quiz-layout,.w3-conclusion,.w3-vocab{grid-template-columns:1fr}.w3-main-photo{max-height:34vh}.w3-two-compare{gap:8px}.w3-nav{grid-template-columns:auto auto 1fr}.w3-target-row{grid-template-columns:repeat(2,1fr)}}
+</style>
 </head>
 <body>
 <!-- Versión preparada para GitHub Pages. -->
@@ -1251,218 +1285,358 @@ body{min-height:100dvh}
 </div></section><section class="screen" data-session="6" data-title="Cierre · semana 2"><div class="panel"><span class="tag">CIERRE DE LA SEMANA 2</span><div class="week2-close schoolfont">Ahora puedo <strong>buscar información, investigar, clasificar y explicar</strong> cómo uso mis sentidos.</div><div class="sense-prompt schoolfont">Pregunta final: <b>¿Qué sentido te ayudó más hoy? ¿Cómo lo sabes?</b></div><div class="teacherbox"><b>3 min.</b> Guarda las tres fichas como evidencias de la semana. La observación oral durante las actividades completa la información que no aparece en las producciones.</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">📚 Palabra de hoy ▶</button></div></div></section><section class="screen" data-session="6" data-title="Vocabulario · sesión 6"><div class="panel vocab-two-column-panel"><div class="vocab-sheet" id="vocabSheet6"><div class="vocab-head"><div><div class="vocab-session">MI CUERPO FLORECE · SESIÓN 6</div><div class="vocab-note">Palabra de hoy · sustantivo</div></div><div class="vocab-kicker">📚 VOCABULARIO</div></div><div class="vocab-word schoolfont">BOCA</div><div class="vocab-photo-wrap"><img alt="Fotografía de una boca" class="vocab-photo" src="assets/embedded_fa3851fc5a6e4a5b.jpg"/></div><div class="vocab-def schoolfont"><span class="vocab-step">1 · MIRAMOS Y ENTENDEMOS</span><br/>La boca es una parte del cuerpo que usamos para saborear.</div><div class="vocab-example schoolfont"><span class="vocab-step">2 · ESCUCHAMOS UNA FRASE</span><br/>“Con mi boca puedo saborear el pan.”</div><div class="vocab-say schoolfont"><span class="vocab-step">3 · AHORA TÚ</span><br/>Construye tu oración: <b>Con mi boca puedo saborear…</b></div></div><div class="vocab-controls"><button class="btn prev">◀ Atrás</button><button class="btn" data-print-vocab="6">🖨️ Imprimir A4</button><button class="btn primary" data-go-home="">✓ Terminar sesión</button></div></div></section>
 
 
-<section class="screen" data-session="7" data-title="Texto mentor · 2, 4, 6, 8 patas">
-  <div class="panel s7-mentor-readable">
-    <div class="s7-mentor-head">
-      <div>
-        <span class="tag w3-tag">TEXTO MENTOR · SESIÓN 7</span>
-        <h1 class="student-title schoolfont" style="font-size:clamp(38px,5vw,68px);margin-top:10px">PATAS · 2, 4, 6, 8</h1>
-        <div class="note">Patricia Brennan</div>
-      </div>
-      <div class="mentor-purpose"><b>Mientras leemos:</b> buscamos una característica y explicamos <b>¿cómo lo sabes?</b></div>
-    </div>
 
-    <div class="s7-mentor-reader">
-      <div class="s7-mentor-image-wrap">
-        <img id="s7MentorImg" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG" alt="Animal para acompañar la lectura">
-      </div>
-      <div class="s7-mentor-copy">
-        <div class="s7-mentor-counter" id="s7MentorCounter">1 de 8</div>
-        <div class="s7-mentor-text schoolfont" id="s7MentorText">Aquí veo dos patas.<br>Están caminando.</div>
-        <div class="s7-mentor-question schoolfont" id="s7MentorQuestion">¿Cuántas patas ves?</div>
-        <div class="s7-mentor-controls">
-          <button class="btn" id="s7MentorPrev" type="button">◀ Anterior</button>
-          <button class="btn primary" id="s7MentorNext" type="button">Siguiente ▶</button>
-        </div>
-      </div>
+<section class="screen" data-session="7" data-title="Texto mentor · Patas">
+  <div class="panel w3-new">
+    <div class="w3-kicker">SESIÓN 7 · MIRA Y DESCUBRE</div>
+    <h1 class="w3-title schoolfont">Patas · 2, 4, 6, 8</h1>
+    <div class="w3-instruction schoolfont">MIRA LAS IMÁGENES. ¿QUÉ CAMBIA?</div>
+    <div class="w3-mentor-grid">
+      <article class="w3-mentor-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG" alt="Pato de cuerpo entero"><div><b>2 patas</b><span>Aquí vemos dos patas.</span></div></article>
+      <article class="w3-mentor-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro de cuerpo entero"><div><b>4 patas</b><span>Aquí vemos cuatro patas.</span></div></article>
+      <article class="w3-mentor-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg" alt="Abeja completa"><div><b>6 patas</b><span>Aquí vemos seis patas.</span></div></article>
+      <article class="w3-mentor-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Spider_image_view.jpg" alt="Araña completa"><div><b>8 patas</b><span>Aquí vemos ocho patas.</span></div></article>
     </div>
-
-    <div class="teacherbox"><b>Lectura compartida.</b> El texto se presenta con apoyo visual para que el alumnado pueda observar, escuchar, localizar el número y justificar. El ejemplar original sigue siendo el texto de referencia del docente.</div>
-    <div class="nav"><button class="btn primary next" type="button">Pasar a las actividades ▶</button></div>
+    <div class="teacherbox"><b>Texto mentor:</b> <i>2, 4, 6, 8 patas</i>, Patricia Brennan. Lectura compartida. <b>Criterios 2.2 y 2.5:</b> localizar una característica y explicar cómo se sabe. Evidencia: “Sé que tiene ___ patas porque…”.</div>
+    
+<div class="w3-nav">
+  <button class="w3-nav-btn secondary" data-go-home type="button">← SALIR</button>
+  <div class="w3-step"><b>1</b> / 6</div>
+  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+</div>
   </div>
 </section>
 
-
-<section class="screen" data-session="7" data-title="Vídeo · observamos un pato">
-  <div class="panel edu-video-screen">
-    <div class="edu-video-wrap">
-      <video id="videoS7" preload="metadata" playsinline muted controls poster="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG">
-        <source src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_walking_in_Yvoire.webm" type="video/webm">
-        Tu navegador no puede reproducir este vídeo.
-      </video>
-      <div class="edu-video-fallback" id="videoS7Fallback" hidden>
-        <b>El vídeo no se ha podido cargar.</b>
-        <a class="btn" href="https://commons.wikimedia.org/wiki/File:Duck_walking_in_Yvoire.webm" target="_blank" rel="noopener">ABRIR VÍDEO ↗</a>
-      </div>
-    </div>
-    <div class="edu-video-side">
-      <span class="tag w3-tag">VÍDEO DE OBSERVACIÓN · S7</span>
-      <h2 class="schoolfont">Mira cómo camina</h2>
-      <p class="schoolfont">Usamos el vídeo como una fuente más: observamos el cuerpo en movimiento y buscamos una característica.</p>
-      <div class="edu-video-prompt schoolfont"><b>¿Cuántas patas ves?</b> ¿Cómo lo sabes?</div>
-      <div class="edu-video-controls">
-        <button class="btn primary" data-video-action="play" data-video-target="videoS7" type="button">▶ REPRODUCIR</button>
-        <button class="btn" data-video-action="pause" data-video-target="videoS7" type="button">⏸ PAUSA</button>
-        <button class="btn" data-video-action="restart" data-video-target="videoS7" type="button">↻ VOLVER A VER</button>
-      </div>
-      <div class="edu-video-credit">Duck walking in Yvoire · Clément Bucco-Lechat · CC BY-SA 3.0 · Wikimedia Commons.</div>
-      <div class="nav"><button class="btn prev" type="button">◀ Atrás</button><button class="btn primary next" type="button">Seguir ▶</button></div>
-    </div>
+<section class="screen" data-session="7" data-title="Vídeo · pato">
+  <div class="panel w3-new">
+    <div class="w3-kicker">SESIÓN 7 · OBSERVA</div>
+    <h1 class="w3-title schoolfont">Mira cómo camina</h1>
+    <div class="w3-instruction schoolfont">MIRA EL CUERPO COMPLETO</div>
+    
+<div class="w3-video-box">
+  <video id="videoS7" preload="metadata" playsinline muted controls poster="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG">
+    <source src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_walking_in_Yvoire.webm" type="video/webm">
+  </video>
+  <button class="w3-play" data-video-action="play" data-video-target="videoS7" type="button">▶ REPRODUCIR</button>
+  <div class="edu-video-fallback" id="videoS7Fallback" hidden><b>El vídeo no se ha podido cargar.</b> <a href="https://commons.wikimedia.org/wiki/File:Duck_walking_in_Yvoire.webm" target="_blank" rel="noopener">Abrir vídeo</a></div>
+</div>
+<div class="w3-big-prompt schoolfont">¿CUÁNTAS PATAS VES?</div>
+    
+<div class="w3-nav">
+  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+  <div class="w3-step"><b>2</b> / 6</div>
+  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+</div>
   </div>
-</section>
-<section class="screen" data-session="7" data-title="Patas · observamos y contamos">
-<div class="panel w3-hero"><div><span class="tag w3-tag">SESIÓN 7 · 35 min efectivos</span><h1 class="student-title schoolfont">Patas: observamos y contamos</h1><div class="student-text schoolfont">Hoy leemos para descubrir una característica de los animales: <b>cuántas patas tienen</b>.</div><div class="actions"><button class="btn primary next" type="button">Empezar ▶</button></div>
-<div class="w3-curriculum">
-  <div class="crit"><h3>Criterios que observamos</h3><p><b>2.2</b> Localiza información con ayuda en fuentes seleccionadas.<br><b>2.5</b> Comunica lo aprendido con vocabulario básico y apoyo visual.</p></div>
-  <div class="evid"><h3>Evidencia de la sesión</h3><p>Localiza en el texto/imagen el número de patas de un animal y explica oralmente: <b>“Sé que tiene ___ patas porque…”</b>.</p></div>
-</div><div class="teacherbox"><b>Programación · semana 19–23 octubre.</b> Texto mentor: <i>2, 4, 6, 8 patas</i>. Lectura compartida para localizar una característica. Conocimiento: 2.2 y 2.5. Lengua: letra <b>d</b>, etiquetas y frase apoyada. Lee tú las páginas seleccionadas; no se exige lectura autónoma del libro.</div></div>
-<div class="w3-visual-grid"><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG" alt="Pato de cuerpo entero"><b>2</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro de cuerpo entero"><b>4</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg" alt="Abeja de cuerpo entero"><b>6</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Spider_image_view.jpg" alt="Araña"><b>8</b></div></div></div>
-</section>
-
-<section class="screen" data-session="7" data-title="Leemos para buscar un dato">
-<div class="panel"><span class="tag w3-tag">TEXTO MENTOR · PATAS</span><h2 class="w3-question schoolfont">Mientras escuchamos el libro… ¿qué dato vamos buscando?</h2>
-<div class="routine"><button class="rbtn s7-routine" data-s7-routine="veo"><span class="lab schoolfont">VEO</span></button><button class="rbtn s7-routine" data-s7-routine="pienso"><span class="lab schoolfont">PIENSO</span></button><button class="rbtn s7-routine" data-s7-routine="pregunto"><span class="lab schoolfont">ME PREGUNTO</span></button></div>
-<div class="prompt student-text schoolfont" id="s7RoutinePrompt">Escucha, mira las imágenes y toca una opción.</div>
-<div class="teacherbox"><b>Lectura compartida.</b> Selecciona ejemplos del libro con 2, 4, 6 y 8 patas. Pregunta después de cada página: “¿Qué has mirado para saberlo?”. La evidencia no es memorizar el número, sino localizar la característica en imagen/texto.</div><div class="nav"><button class="btn prev">◀ Atrás</button><button class="btn primary next">Contamos ▶</button></div></div>
 </section>
 
 <section class="screen" data-session="7" data-title="Contamos patas">
-<div class="panel"><h2 class="w3-question schoolfont">Mira cada animal. ¿Cuántas patas tiene?</h2>
-<div class="w3-count-grid">
-<div class="w3-count-card" data-s7-count="2"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG" alt="PATO"><b class="schoolfont">PATO</b><div class="w3-count-options"><button data-value="2" type="button">2</button><button data-value="4" type="button">4</button><button data-value="6" type="button">6</button><button data-value="8" type="button">8</button></div></div><div class="w3-count-card" data-s7-count="4"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="PERRO"><b class="schoolfont">PERRO</b><div class="w3-count-options"><button data-value="2" type="button">2</button><button data-value="4" type="button">4</button><button data-value="6" type="button">6</button><button data-value="8" type="button">8</button></div></div><div class="w3-count-card" data-s7-count="6"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg" alt="ABEJA"><b class="schoolfont">ABEJA</b><div class="w3-count-options"><button data-value="2" type="button">2</button><button data-value="4" type="button">4</button><button data-value="6" type="button">6</button><button data-value="8" type="button">8</button></div></div><div class="w3-count-card" data-s7-count="8"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Spider_image_view.jpg" alt="ARAÑA"><b class="schoolfont">ARAÑA</b><div class="w3-count-options"><button data-value="2" type="button">2</button><button data-value="4" type="button">4</button><button data-value="6" type="button">6</button><button data-value="8" type="button">8</button></div></div>
-</div><div class="w3-feedback schoolfont" id="s7CountFeedback">Cuenta con calma. Puedes señalar las patas una a una.</div>
-<div class="teacherbox"><b>Qué observar.</b> Si el alumnado usa la imagen como evidencia y puede explicar: “He contado…”. No penalices que necesite señalar físicamente una a una.</div><div class="nav"><button class="btn prev">◀ Atrás</button><button class="btn primary next">Comparamos ▶</button></div></div>
+  <div class="panel w3-new">
+    <div class="w3-kicker">SESIÓN 7 · TOCA UNA RESPUESTA</div>
+    <h1 class="w3-title schoolfont">¿Cuántas patas tiene?</h1>
+    <div class="w3-quiz-layout">
+      <div class="w3-main-photo"><img id="s7QuizImg" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG" alt="Animal para contar patas"><b id="s7QuizName">PATO</b></div>
+      <div class="w3-answer-side">
+        <div class="w3-instruction schoolfont">CUENTA Y TOCA</div>
+        <div class="w3-number-grid">
+          <button class="w3-answer" data-s7-number="2" type="button">2</button>
+          <button class="w3-answer" data-s7-number="4" type="button">4</button>
+          <button class="w3-answer" data-s7-number="6" type="button">6</button>
+          <button class="w3-answer" data-s7-number="8" type="button">8</button>
+        </div>
+        <div class="w3-feedback-new schoolfont" id="s7QuizFeedback">Señala las patas una a una.</div>
+        <button class="w3-small-action" id="s7NextAnimal" type="button" disabled>OTRO ANIMAL →</button>
+      </div>
+    </div>
+    
+<div class="w3-nav">
+  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+  <div class="w3-step"><b>3</b> / 6</div>
+  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+</div>
+  </div>
 </section>
 
 <section class="screen" data-session="7" data-title="Patas y piernas">
-<div class="panel"><h2 class="w3-question schoolfont">¿Patas o piernas?</h2><div class="w3-compare">
-<div class="w3-compare-card"><img src="assets/embedded_9b29069998326e5e.jpg" alt="Niño de cuerpo entero"><h3 class="schoolfont">PERSONA</h3><p class="schoolfont">Tiene dos <b>piernas</b>.</p></div>
-<div class="w3-compare-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro de cuerpo entero"><h3 class="schoolfont">PERRO</h3><p class="schoolfont">Tiene cuatro <b>patas</b>.</p></div></div>
-<div class="w3-feedback schoolfont">En el libro aparece una pista importante: las personas tienen <b>piernas</b>; hablamos de <b>patas</b> en muchos animales.</div>
-<div class="teacherbox"><b>Evita generalizaciones.</b> La programación pide comparar cuerpos sin concluir “todos los animales tienen patas”. En la sesión 9 volveremos a esta idea.</div><div class="nav"><button class="btn prev">◀ Atrás</button><button class="btn primary next">Ficha ▶</button></div></div>
+  <div class="panel w3-new">
+    <div class="w3-kicker">SESIÓN 7 · COMPARA</div>
+    <h1 class="w3-title schoolfont">¿Patas o piernas?</h1>
+    <div class="w3-instruction schoolfont">MIRA LOS DOS CUERPOS</div>
+    <div class="w3-two-compare">
+      <article><img src="assets/embedded_9b29069998326e5e.jpg" alt="Niño de cuerpo entero"><b>PERSONA</b><span>2 PIERNAS</span></article>
+      <article><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro de cuerpo entero"><b>PERRO</b><span>4 PATAS</span></article>
+    </div>
+    <div class="w3-big-prompt schoolfont">Las personas tenemos <b>piernas</b>. Muchos animales tienen <b>patas</b>.</div>
+    
+<div class="w3-nav">
+  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+  <div class="w3-step"><b>4</b> / 6</div>
+  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+</div>
+  </div>
 </section>
 
 <section class="screen" data-session="7" data-title="Ficha para imprimir · sesión 7">
-<div class="panel"><span class="tag w3-tag">FICHA · DIBUJO Y OBSERVACIÓN</span><div class="w3-sheet" id="w3Sheet7"><h2 class="schoolfont">Miro, cuento y dibujo</h2><div class="name">Nombre: __________________________________</div><p style="font-size:20px;margin:0">Dibuja un animal en cada cuadro. Después cuenta sus patas.</p><div class="w3-sheet-grid4"><div class="w3-sheet-box"><b>2 patas</b><small>DIBUJO</small></div><div class="w3-sheet-box"><b>4 patas</b><small>DIBUJO</small></div><div class="w3-sheet-box"><b>6 patas</b><small>DIBUJO</small></div><div class="w3-sheet-box"><b>8 patas</b><small>DIBUJO</small></div></div><div class="w3-drawbox"><b class="schoolfont" style="font-size:22px">El que más me sorprendió fue…</b></div></div>
-<div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn" data-print-w3="7">🖨️ Imprimir / guardar PDF</button><button class="btn primary next">Cierre ▶</button></div></div>
-</section>
-
-<section class="screen" data-session="7" data-title="Cierre · sesión 7"><div class="panel"><span class="tag">CIERRE</span><div class="week2-close schoolfont">Hoy hemos usado un libro para <strong>buscar un dato, mirar una característica y contar</strong>.</div><div class="sense-prompt schoolfont">Completa oralmente: <b>“Sé que tiene ___ patas porque…”</b></div><div class="teacherbox"><b>Evidencia.</b> Respuesta individual breve: animal elegido + número + cómo lo sabe.</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">📚 Palabra de hoy ▶</button></div></div></section>
-
-<section class="screen" data-session="7" data-title="Vocabulario · sesión 7"><div class="panel vocab-two-column-panel"><div class="vocab-sheet" id="vocabSheet7"><div class="vocab-head"><div><div class="vocab-session">MI CUERPO FLORECE · SESIÓN 7</div><div class="vocab-note">Palabra de hoy · sustantivo</div></div><div class="vocab-kicker">VOCABULARIO</div></div><div class="vocab-word schoolfont">PATA</div><div class="vocab-photo-wrap"><img alt="Perro de cuerpo entero para observar sus patas" class="vocab-photo" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG"/></div><div class="vocab-def schoolfont"><span class="vocab-step">1 · MIRAMOS Y ENTENDEMOS</span><br/>Una pata es una parte del cuerpo de muchos animales. Les ayuda a sostenerse y moverse.</div><div class="vocab-example schoolfont"><span class="vocab-step">2 · ESCUCHAMOS UNA FRASE</span><br/>“El perro tiene cuatro patas.”</div><div class="vocab-say schoolfont"><span class="vocab-step">3 · AHORA TÚ</span><br/>Construye tu oración: <b>El/La ___ tiene ___ patas.</b></div></div><div class="vocab-controls"><button class="btn prev">◀ Atrás</button><button class="btn" data-print-vocab="7">🖨️ Imprimir A4</button><button class="btn" data-open-resource="rubric3" type="button">📋 Rúbrica semana 3</button><button class="btn primary" data-go-home>✓ Terminar sesión</button></div></div></section>
-
-<section class="screen" data-session="8" data-title="Clasificamos animales por sus patas">
-<div class="panel w3-hero"><div><span class="tag w3-tag">SESIÓN 8 · 35 min efectivos</span><h1 class="student-title schoolfont">Clasificamos animales por sus patas</h1><div class="student-text schoolfont">Hoy vamos a <b>agrupar</b> animales y explicar por qué van juntos.</div><div class="actions"><button class="btn primary next">Empezar ▶</button></div>
-<div class="w3-curriculum">
-  <div class="crit"><h3>Criterios que observamos</h3><p><b>2.2</b> Usa información de una fuente seleccionada para resolver la clasificación.<br><b>2.5</b> Comunica cómo ha clasificado y qué información lo confirma.</p></div>
-  <div class="evid"><h3>Evidencia de la sesión</h3><p>Clasificación de animales en 2, 4, 6 y 8 patas + explicación oral: <b>“Lo pongo aquí porque tiene…”</b>.</p></div>
-</div><div class="teacherbox"><b>Criterios observables.</b> Clasificación justificada y comunicación del procedimiento (2.4-2.5). Frase oral modelo: “Lo pongo aquí porque tiene…”.</div></div><div class="w3-visual-grid"><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A_chicken_standing_alone.jpg" alt="Gallina"><b>GALLINA</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cat_is_standing.jpg" alt="Gato"><b>GATO</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ants_image.jpg" alt="Hormigas"><b>HORMIGA</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Tarantula_Spider.jpg" alt="Araña"><b>ARAÑA</b></div></div></div>
-</section>
-
-
-<section class="screen" data-session="8" data-title="Vídeo · observamos una abeja">
-  <div class="panel edu-video-screen">
-    <div class="edu-video-wrap">
-      <video id="videoS8" preload="metadata" playsinline muted controls poster="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg">
-        <source src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Flying_bee_on_flower_in_slow_motion_V.2.webm" type="video/webm">
-        Tu navegador no puede reproducir este vídeo.
-      </video>
-      <div class="edu-video-fallback" id="videoS8Fallback" hidden>
-        <b>El vídeo no se ha podido cargar.</b>
-        <a class="btn" href="https://commons.wikimedia.org/wiki/File:Flying_bee_on_flower_in_slow_motion_V.2.webm" target="_blank" rel="noopener">ABRIR VÍDEO ↗</a>
-      </div>
-    </div>
-    <div class="edu-video-side">
-      <span class="tag w3-tag">VÍDEO DE COMPROBACIÓN · S8</span>
-      <h2 class="schoolfont">Observa una abeja de cerca</h2>
-      <p class="schoolfont">Antes de clasificar, miramos con atención. Podemos pausar el vídeo y contar las patas visibles.</p>
-      <div class="edu-video-prompt schoolfont"><b>¿En qué grupo la pondrías?</b> 2 · 4 · 6 · 8</div>
-      <div class="edu-video-controls">
-        <button class="btn primary" data-video-action="play" data-video-target="videoS8" type="button">▶ REPRODUCIR</button>
-        <button class="btn" data-video-action="pause" data-video-target="videoS8" type="button">⏸ PAUSA</button>
-        <button class="btn" data-video-action="restart" data-video-target="videoS8" type="button">↻ VOLVER A VER</button>
-      </div>
-      <div class="edu-video-credit">Flying bee on flower in slow motion V.2 · Pittigrilli · CC BY-SA 4.0 · Wikimedia Commons.</div>
-      <div class="nav"><button class="btn prev" type="button">◀ Atrás</button><button class="btn primary next" type="button">Clasificar ▶</button></div>
-    </div>
+  <div class="panel w3-new w3-print-screen">
+    <div class="w3-kicker">SESIÓN 7 · FICHA DE HOY</div>
+    <h1 class="w3-title schoolfont">Miro, cuento y dibujo</h1>
+    <div class="w3-sheet" id="w3Sheet7"><h2 class="schoolfont">Miro, cuento y dibujo</h2><div class="name">Nombre: __________________________________</div><p>Dibuja un animal en cada cuadro. Después cuenta sus patas.</p><div class="w3-sheet-grid4"><div class="w3-sheet-box"><b>2 patas</b><small>DIBUJO</small></div><div class="w3-sheet-box"><b>4 patas</b><small>DIBUJO</small></div><div class="w3-sheet-box"><b>6 patas</b><small>DIBUJO</small></div><div class="w3-sheet-box"><b>8 patas</b><small>DIBUJO</small></div></div><div class="w3-drawbox"><b>El que más me sorprendió fue…</b></div></div>
+    <button class="w3-print-btn" data-print-w3="7" type="button">🖨 IMPRIMIR / GUARDAR PDF</button>
+    
+<div class="w3-nav">
+  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+  <div class="w3-step"><b>5</b> / 6</div>
+  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+</div>
   </div>
 </section>
-<section class="screen" data-session="8" data-title="Arrastramos · animales y patas"><div class="panel"><h2 class="manip-title schoolfont">Arrastra cada animal a su grupo</h2><p class="manip-sub">También puedes tocar un animal y después tocar el grupo.</p>
-<div class="w3-drag-layout"><div class="w3-bank" id="s8Bank">
-<div class="w3-drag-card s8-drag" draggable="true" data-legs="2" data-id="s8-0"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A_chicken_standing_alone.jpg" alt="GALLINA"><b>GALLINA</b></div><div class="w3-drag-card s8-drag" draggable="true" data-legs="2" data-id="s8-1"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG" alt="PATO"><b>PATO</b></div><div class="w3-drag-card s8-drag" draggable="true" data-legs="4" data-id="s8-2"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="PERRO"><b>PERRO</b></div><div class="w3-drag-card s8-drag" draggable="true" data-legs="4" data-id="s8-3"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cat_is_standing.jpg" alt="GATO"><b>GATO</b></div><div class="w3-drag-card s8-drag" draggable="true" data-legs="6" data-id="s8-4"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg" alt="ABEJA"><b>ABEJA</b></div><div class="w3-drag-card s8-drag" draggable="true" data-legs="6" data-id="s8-5"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ants_image.jpg" alt="HORMIGA"><b>HORMIGA</b></div><div class="w3-drag-card s8-drag" draggable="true" data-legs="8" data-id="s8-6"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Spider_image_view.jpg" alt="ARAÑA"><b>ARAÑA</b></div><div class="w3-drag-card s8-drag" draggable="true" data-legs="8" data-id="s8-7"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Tarantula_Spider.jpg" alt="TARÁNTULA"><b>TARÁNTULA</b></div>
-</div><div class="w3-drop-grid"><div class="w3-drop s8-drop" data-legs="2"><strong>2 PATAS</strong><div class="placed-mini"></div></div><div class="w3-drop s8-drop" data-legs="4"><strong>4 PATAS</strong><div class="placed-mini"></div></div><div class="w3-drop s8-drop" data-legs="6"><strong>6 PATAS</strong><div class="placed-mini"></div></div><div class="w3-drop s8-drop" data-legs="8"><strong>8 PATAS</strong><div class="placed-mini"></div></div></div></div>
-<div class="w3-feedback schoolfont" id="s8DragFeedback">Observa y cuenta antes de colocar.</div><div class="manip-actions"><button class="btn" id="s8DragReset">↻ Empezar otra vez</button><button class="btn primary next">Unimos ▶</button></div></div></section>
 
-<section class="screen" data-session="8" data-title="Unimos · animal y numero"><div class="panel"><h2 class="manip-title schoolfont">Une el animal con su número</h2><p class="manip-sub">Toca primero un animal y después el número correcto.</p><div class="w3-match"><div class="w3-match-left">
-<button class="w3-photo-card s8-match-animal" data-answer="2" type="button"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG" alt="PATO"><b>PATO</b></button><button class="w3-photo-card s8-match-animal" data-answer="4" type="button"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="PERRO"><b>PERRO</b></button><button class="w3-photo-card s8-match-animal" data-answer="6" type="button"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg" alt="ABEJA"><b>ABEJA</b></button><button class="w3-photo-card s8-match-animal" data-answer="8" type="button"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Spider_image_view.jpg" alt="ARAÑA"><b>ARAÑA</b></button>
-</div><div class="w3-match-number"><button class="s8-match-number" data-value="2" type="button">2</button><button class="s8-match-number" data-value="4" type="button">4</button><button class="s8-match-number" data-value="6" type="button">6</button><button class="s8-match-number" data-value="8" type="button">8</button></div></div><div class="w3-feedback schoolfont" id="s8MatchFeedback">Elige un animal.</div><div class="manip-actions"><button class="btn" id="s8MatchReset">↻ Empezar otra vez</button><button class="btn primary next">Ordenamos ▶</button></div></div></section>
-
-<section class="screen" data-session="8" data-title="Ordenamos · de menos a mas patas"><div class="panel"><h2 class="manip-title schoolfont">Ordena de menos a más patas</h2><p class="manip-sub">Toca las imágenes en orden: 2 → 4 → 6 → 8.</p><div class="w3-order-bank" id="s8OrderBank">
-<div class="w3-order-card s8-order-card" data-order="3"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg" alt="ABEJA"><b>ABEJA</b></div><div class="w3-order-card s8-order-card" data-order="4"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Spider_image_view.jpg" alt="ARAÑA"><b>ARAÑA</b></div><div class="w3-order-card s8-order-card" data-order="1"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG" alt="PATO"><b>PATO</b></div><div class="w3-order-card s8-order-card" data-order="2"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="PERRO"><b>PERRO</b></div>
-</div><div class="w3-order-slots" id="s8OrderSlots"><div class="w3-order-slot" data-slot="1"><span class="num">1</span></div><div class="w3-order-slot" data-slot="2"><span class="num">2</span></div><div class="w3-order-slot" data-slot="3"><span class="num">3</span></div><div class="w3-order-slot" data-slot="4"><span class="num">4</span></div></div><div class="w3-feedback schoolfont" id="s8OrderFeedback">¿Cuál tiene menos patas?</div><div class="manip-actions"><button class="btn" id="s8OrderReset">↻ Empezar otra vez</button><button class="btn primary next">Ficha ▶</button></div></div></section>
-
-<section class="screen" data-session="8" data-title="Ficha para imprimir · sesión 8"><div class="panel"><span class="tag w3-tag">FICHA · RECORTA Y CLASIFICA</span><div class="w3-sheet" id="w3Sheet8"><h2 class="schoolfont">Recorta y clasifica por sus patas</h2><div class="name">Nombre: __________________________________</div><div class="w3-sheet-grid4"><div class="w3-sheet-box"><b>2 patas</b></div><div class="w3-sheet-box"><b>4 patas</b></div><div class="w3-sheet-box"><b>6 patas</b></div><div class="w3-sheet-box"><b>8 patas</b></div></div><div class="w3-cut-bank">
-<div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A_chicken_standing_alone.jpg" alt="GALLINA"><b>GALLINA</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG" alt="PATO"><b>PATO</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="PERRO"><b>PERRO</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cat_is_standing.jpg" alt="GATO"><b>GATO</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg" alt="ABEJA"><b>ABEJA</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ants_image.jpg" alt="HORMIGA"><b>HORMIGA</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Spider_image_view.jpg" alt="ARAÑA"><b>ARAÑA</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Tarantula_Spider.jpg" alt="TARÁNTULA"><b>TARÁNTULA</b></div>
-</div></div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn" data-print-w3="8">🖨️ Imprimir / guardar PDF</button><button class="btn primary next">Cierre ▶</button></div></div></section>
-
-<section class="screen" data-session="8" data-title="Cierre · sesión 8"><div class="panel"><span class="tag">CIERRE</span><div class="week2-close schoolfont">Clasificar es <strong>agrupar usando una característica</strong>.</div><div class="sense-prompt schoolfont">Completa: <b>“He puesto ___ con ___ porque…”</b></div><div class="teacherbox"><b>Qué observar.</b> Que explique el criterio, no solo que acierte la caja.</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">📚 Palabra de hoy ▶</button></div></div></section>
-
-<section class="screen" data-session="8" data-title="Vocabulario · sesión 8"><div class="panel vocab-two-column-panel"><div class="vocab-sheet" id="vocabSheet8"><div class="vocab-head"><div><div class="vocab-session">MI CUERPO FLORECE · SESIÓN 8</div><div class="vocab-note">Palabra de hoy · sustantivo</div></div><div class="vocab-kicker">VOCABULARIO</div></div><div class="vocab-word schoolfont">ANIMAL</div><div class="vocab-photo-wrap"><img alt="Perro, un animal" class="vocab-photo" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG"/></div><div class="vocab-def schoolfont"><span class="vocab-step">1 · MIRAMOS Y ENTENDEMOS</span><br/>Un animal es un ser vivo. Hay animales con cuerpos muy diferentes.</div><div class="vocab-example schoolfont"><span class="vocab-step">2 · ESCUCHAMOS UNA FRASE</span><br/>“El perro es un animal.”</div><div class="vocab-say schoolfont"><span class="vocab-step">3 · AHORA TÚ</span><br/>Construye tu oración: <b>El/La ___ es un animal.</b></div></div><div class="vocab-controls"><button class="btn prev">◀ Atrás</button><button class="btn" data-print-vocab="8">🖨️ Imprimir A4</button><button class="btn primary" data-go-home>✓ Terminar sesión</button></div></div></section>
-
-<section class="screen" data-session="9" data-title="Investigamos · ¿necesita patas para estar vivo?"><div class="panel w3-hero"><div><span class="tag w3-tag">SESIÓN 9 · 35 min efectivos</span><h1 class="student-title schoolfont">¿Necesita tener patas para estar vivo?</h1><div class="student-text schoolfont">Primero hacemos una <b>predicción</b>. Después miramos ejemplos y comprobamos.</div><div class="actions"><button class="btn primary next">Hacer predicción ▶</button></div>
-<div class="w3-curriculum">
-  <div class="crit"><h3>Criterios que observamos</h3><p><b>2.1</b> Formula o registra una predicción. <b>2.2</b> Localiza información. <b>2.3</b> Participa en una investigación guiada. <b>2.4</b> Compara predicción y resultado. <b>2.5</b> Comunica lo aprendido.</p></div>
-  <div class="evid"><h3>Evidencia de la sesión</h3><p>Predicción sobre si hace falta tener patas para estar vivo, contraste con imágenes/fuente, clasificación vivo-no vivo y explicación final mediante dibujo y oralidad.</p></div>
-</div><div class="teacherbox"><b>Pequeña investigación de la programación.</b> Pregunta del grupo → predicción → contraste con imágenes/recurso seleccionado → resultado mediante dibujo. Criterios 2.1-2.5. No usamos “tener patas” como definición de ser vivo.</div></div><div class="w3-visual-grid"><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg" alt="Planta"><b>PLANTA</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Happy_fun_ball.png" alt="Pelota"><b>PELOTA</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro"><b>PERRO</b></div><div class="w3-photo-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Stone_rock.jpg" alt="Piedra"><b>PIEDRA</b></div></div></div></section>
-
-<section class="screen" data-session="9" data-title="Predicción · sesión 9"><div class="panel"><span class="tag w3-tag">1 · PIENSO</span><h2 class="w3-question schoolfont">¿Necesita tener patas para estar vivo?</h2><div class="w3-predict"><button data-s9-predict="si" type="button">SÍ</button><button data-s9-predict="no" type="button">NO</button></div><div class="w3-feedback schoolfont" id="s9PredictFeedback">Elige tu predicción. Todavía no diremos si es correcta.</div><div class="teacherbox"><b>Importante.</b> Acepta ambas respuestas y pregunta “¿por qué lo piensas?”. La predicción no se califica como acierto/error.</div><div class="nav"><button class="btn prev">◀ Atrás</button><button class="btn primary next">Comprobamos ▶</button></div></div></section>
-
-
-<section class="screen" data-session="9" data-title="Vídeo · una planta cambia">
-  <div class="panel edu-video-screen">
-    <div class="edu-video-wrap">
-      <video id="videoS9" preload="metadata" playsinline muted controls poster="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg">
-        <source src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Germination_of_two_little_plants.webm" type="video/webm">
-        Tu navegador no puede reproducir este vídeo.
-      </video>
-      <div class="edu-video-fallback" id="videoS9Fallback" hidden>
-        <b>El vídeo no se ha podido cargar.</b>
-        <a class="btn" href="https://commons.wikimedia.org/wiki/File:Germination_of_two_little_plants.webm" target="_blank" rel="noopener">ABRIR VÍDEO ↗</a>
-      </div>
+<section class="screen" data-session="7" data-title="Vocabulario · sesión 7">
+  <div class="panel w3-new">
+    <div class="w3-kicker">SESIÓN 7 · PALABRA DE HOY</div>
+    <div class="w3-vocab">
+      <div class="w3-main-photo"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro con patas visibles"></div>
+      <div><h1 class="w3-vocab-word schoolfont">PATA</h1><p class="schoolfont">Parte del cuerpo de muchos animales.</p><div class="w3-big-prompt schoolfont">“El perro tiene cuatro patas.”</div><button class="w3-print-btn" data-print-vocab="7" type="button">🖨 IMPRIMIR VOCABULARIO</button></div>
     </div>
-    <div class="edu-video-side">
-      <span class="tag w3-tag">VÍDEO DE INVESTIGACIÓN · S9</span>
-      <h2 class="schoolfont">Una planta también cambia</h2>
-      <p class="schoolfont">Este timelapse nos deja observar algo que normalmente ocurre demasiado despacio para verlo en clase.</p>
-      <div class="edu-video-prompt schoolfont"><b>No tiene patas.</b> ¿Está viva? ¿Qué cambio observas?</div>
-      <div class="edu-video-controls">
-        <button class="btn primary" data-video-action="play" data-video-target="videoS9" type="button">▶ REPRODUCIR</button>
-        <button class="btn" data-video-action="pause" data-video-target="videoS9" type="button">⏸ PAUSA</button>
-        <button class="btn" data-video-action="restart" data-video-target="videoS9" type="button">↻ VOLVER A VER</button>
-      </div>
-      <div class="edu-video-credit">Germination of two little plants · Quasipodo · CC BY-SA 3.0 · Wikimedia Commons.</div>
-      <div class="nav"><button class="btn prev" type="button">◀ Atrás</button><button class="btn primary next" type="button">Comprobar ▶</button></div>
-    </div>
+    <div class="vocab-sheet w3-hidden-print" id="vocabSheet7"><div class="vocab-head"><div><div class="vocab-session">MI CUERPO FLORECE · SESIÓN 7</div><div class="vocab-note">Palabra de hoy · sustantivo</div></div><div class="vocab-kicker">VOCABULARIO</div></div><div class="vocab-word schoolfont">PATA</div><div class="vocab-photo-wrap"><img class="vocab-photo" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro"></div><div class="vocab-def schoolfont">Una pata es una parte del cuerpo de muchos animales.</div><div class="vocab-example schoolfont">“El perro tiene cuatro patas.”</div><div class="vocab-say schoolfont">El/La ___ tiene ___ patas.</div></div>
+    
+<div class="w3-nav">
+  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+  <div class="w3-step"><b>6</b> / 6</div>
+  <div class="w3-nav-right"><button class="w3-nav-btn primary" data-go-home type="button">TERMINAR ✓</button></div>
+</div>
   </div>
 </section>
-<section class="screen" data-session="9" data-title="Arrastramos · vivo o no vivo"><div class="panel"><h2 class="manip-title schoolfont">Arrastra: ¿está vivo o no está vivo?</h2><p class="manip-sub">También puedes tocar una imagen y después tocar una caja.</p><div class="w3-drag-layout"><div class="w3-bank" id="s9Bank">
-<div class="w3-drag-card s9-drag" draggable="true" data-life="vivo" data-id="s9-0"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="PERRO"><b>PERRO</b></div><div class="w3-drag-card s9-drag" draggable="true" data-life="vivo" data-id="s9-1"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Picture_of_butterfly.jpg" alt="MARIPOSA"><b>MARIPOSA</b></div><div class="w3-drag-card s9-drag" draggable="true" data-life="vivo" data-id="s9-2"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg" alt="PLANTA"><b>PLANTA</b></div><div class="w3-drag-card s9-drag" draggable="true" data-life="no" data-id="s9-3"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Stone_rock.jpg" alt="PIEDRA"><b>PIEDRA</b></div><div class="w3-drag-card s9-drag" draggable="true" data-life="no" data-id="s9-4"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chair.JPG" alt="SILLA"><b>SILLA</b></div><div class="w3-drag-card s9-drag" draggable="true" data-life="no" data-id="s9-5"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Happy_fun_ball.png" alt="PELOTA"><b>PELOTA</b></div>
-</div><div class="w3-binary"><div class="w3-drop s9-drop" data-life="vivo"><strong>ESTÁ VIVO</strong><div class="placed-mini"></div></div><div class="w3-drop s9-drop" data-life="no"><strong>NO ESTÁ VIVO</strong><div class="placed-mini"></div></div></div></div><div class="w3-feedback schoolfont" id="s9DragFeedback">Mira cada ejemplo. No te fijes solo en si tiene patas.</div><div class="manip-actions"><button class="btn" id="s9DragReset">↻ Empezar otra vez</button><button class="btn primary next">Unimos ▶</button></div></div></section>
+<section class="screen" data-session="8" data-title="Clasificamos por sus patas">
+  <div class="panel w3-new">
+    <div class="w3-kicker">SESIÓN 8 · CLASIFICA</div>
+    <h1 class="w3-title schoolfont">Clasificamos por sus patas</h1>
+    <div class="w3-instruction schoolfont">MIRA. HOY VAMOS A HACER GRUPOS.</div>
+    <div class="w3-four-gallery">
+      <article><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG" alt="Pato"><b>PATO</b></article>
+      <article><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro"><b>PERRO</b></article>
+      <article><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg" alt="Abeja"><b>ABEJA</b></article>
+      <article><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Spider_image_view.jpg" alt="Araña"><b>ARAÑA</b></article>
+    </div>
+    <div class="teacherbox"><b>Criterios 2.2 y 2.5.</b> Usa información del texto y de las imágenes para clasificar y explicar el criterio. Evidencia oral: “Lo pongo aquí porque tiene…”.</div>
+    
+<div class="w3-nav">
+  <button class="w3-nav-btn secondary" data-go-home type="button">← SALIR</button>
+  <div class="w3-step"><b>1</b> / 6</div>
+  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+</div>
+  </div>
+</section>
 
-<section class="screen" data-session="9" data-title="Unimos · ser vivo y pista"><div class="panel"><h2 class="manip-title schoolfont">Une cada imagen con su grupo</h2><p class="manip-sub">Toca una imagen y después SER VIVO u OBJETO.</p><div class="w3-match"><div class="w3-match-left">
-<button class="w3-photo-card s9-match-item" data-answer="vivo" type="button"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg" alt="PLANTA"><b>PLANTA</b></button><button class="w3-photo-card s9-match-item" data-answer="vivo" type="button"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="PERRO"><b>PERRO</b></button><button class="w3-photo-card s9-match-item" data-answer="objeto" type="button"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chair.JPG" alt="SILLA"><b>SILLA</b></button><button class="w3-photo-card s9-match-item" data-answer="objeto" type="button"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Stone_rock.jpg" alt="PIEDRA"><b>PIEDRA</b></button>
-</div><div class="w3-match-number"><button class="s9-match-group" data-value="vivo" type="button" style="font-size:22px">SER VIVO</button><button class="s9-match-group" data-value="objeto" type="button" style="font-size:22px">OBJETO</button></div></div><div class="w3-feedback schoolfont" id="s9MatchFeedback">Elige una imagen.</div><div class="manip-actions"><button class="btn" id="s9MatchReset">↻ Empezar otra vez</button><button class="btn primary next">Ordenamos la investigación ▶</button></div></div></section>
+<section class="screen" data-session="8" data-title="Vídeo · abeja">
+  <div class="panel w3-new">
+    <div class="w3-kicker">SESIÓN 8 · OBSERVA</div>
+    <h1 class="w3-title schoolfont">Observa una abeja</h1>
+    <div class="w3-instruction schoolfont">PAUSA SI LO NECESITAS</div>
+    
+<div class="w3-video-box">
+  <video id="videoS8" preload="metadata" playsinline muted controls poster="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg">
+    <source src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Flying_bee_on_flower_in_slow_motion_V.2.webm" type="video/webm">
+  </video>
+  <button class="w3-play" data-video-action="play" data-video-target="videoS8" type="button">▶ REPRODUCIR</button>
+  <div class="edu-video-fallback" id="videoS8Fallback" hidden><b>El vídeo no se ha podido cargar.</b> <a href="https://commons.wikimedia.org/wiki/File:Flying_bee_on_flower_in_slow_motion_V.2.webm" target="_blank" rel="noopener">Abrir vídeo</a></div>
+</div>
+<div class="w3-big-prompt schoolfont">¿EN QUÉ GRUPO LA PONDRÍAS?</div>
+    
+<div class="w3-nav">
+  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+  <div class="w3-step"><b>2</b> / 6</div>
+  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+</div>
+  </div>
+</section>
 
-<section class="screen" data-session="9" data-title="Ordenamos · pienso compruebo explico"><div class="panel"><h2 class="manip-title schoolfont">Ordena cómo investigamos</h2><div class="w3-investigation"><div class="w3-step"><span class="n">1</span><b class="schoolfont">PIENSO</b><p>Hago una predicción.</p></div><div class="w3-step"><span class="n">2</span><b class="schoolfont">COMPRUEBO</b><p>Miro el libro, imágenes o una fuente elegida.</p></div><div class="w3-step"><span class="n">3</span><b class="schoolfont">EXPLICO</b><p>Cuento qué he descubierto.</p></div></div><div class="w3-feedback schoolfont">La planta no tiene patas y está viva. La pelota puede moverse si la empujamos, pero no está viva.</div><div class="teacherbox"><b>Conclusión ajustada al nivel.</b> Personas, animales y plantas son seres vivos; una piedra, una silla o una pelota son objetos. Las necesidades de los seres vivos se profundizan en la semana siguiente.</div><div class="nav"><button class="btn prev">◀ Atrás</button><button class="btn primary next">Ficha ▶</button></div></div></section>
+<section class="screen" data-session="8" data-title="Toca y clasifica">
+  <div class="panel w3-new">
+    <div class="w3-kicker">SESIÓN 8 · TOCA → TOCA</div>
+    <h1 class="w3-title schoolfont">Toca un animal y después su grupo</h1>
+    <div class="w3-classify-layout">
+      <div class="w3-item-row" id="s8Items">
+        <button class="w3-pick-card" data-legs="2" type="button"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG" alt="Pato"><b>PATO</b></button>
+        <button class="w3-pick-card" data-legs="4" type="button"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro"><b>PERRO</b></button>
+        <button class="w3-pick-card" data-legs="6" type="button"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg" alt="Abeja"><b>ABEJA</b></button>
+        <button class="w3-pick-card" data-legs="8" type="button"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Spider_image_view.jpg" alt="Araña"><b>ARAÑA</b></button>
+      </div>
+      <div class="w3-target-row" id="s8Targets">
+        <button class="w3-target" data-legs="2" type="button"><b>2</b><span>PATAS</span></button>
+        <button class="w3-target" data-legs="4" type="button"><b>4</b><span>PATAS</span></button>
+        <button class="w3-target" data-legs="6" type="button"><b>6</b><span>PATAS</span></button>
+        <button class="w3-target" data-legs="8" type="button"><b>8</b><span>PATAS</span></button>
+      </div>
+    </div>
+    <div class="w3-feedback-new schoolfont" id="s8ClassFeedback">1. Toca un animal. 2. Toca su grupo.</div>
+    <button class="w3-small-action" id="s8ResetSimple" type="button">↻ EMPEZAR OTRA VEZ</button>
+    
+<div class="w3-nav">
+  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+  <div class="w3-step"><b>3</b> / 6</div>
+  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+</div>
+  </div>
+</section>
 
-<section class="screen" data-session="9" data-title="Ficha para imprimir · sesión 9"><div class="panel"><span class="tag w3-tag">FICHA · RECORTA, CLASIFICA Y DIBUJA</span><div class="w3-sheet" id="w3Sheet9"><h2 class="schoolfont">¿Está vivo?</h2><div class="name">Nombre: __________________________________</div><div class="w3-two"><div class="w3-sheet-box"><b>ESTÁ VIVO</b></div><div class="w3-sheet-box"><b>NO ESTÁ VIVO</b></div></div><div class="w3-cut-bank" style="grid-template-columns:repeat(3,1fr)">
-<div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="PERRO"><b>PERRO</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Picture_of_butterfly.jpg" alt="MARIPOSA"><b>MARIPOSA</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg" alt="PLANTA"><b>PLANTA</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Stone_rock.jpg" alt="PIEDRA"><b>PIEDRA</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chair.JPG" alt="SILLA"><b>SILLA</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Happy_fun_ball.png" alt="PELOTA"><b>PELOTA</b></div>
-</div><div class="w3-drawbox"><b class="schoolfont" style="font-size:21px">Dibuja otro ser vivo.</b></div></div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn" data-print-w3="9">🖨️ Imprimir / guardar PDF</button><button class="btn primary next">Cierre ▶</button></div></div></section>
+<section class="screen" data-session="8" data-title="Comparamos animales">
+  <div class="panel w3-new">
+    <div class="w3-kicker">SESIÓN 8 · COMPARA</div>
+    <h1 class="w3-title schoolfont">¿Van en el mismo grupo?</h1>
+    <div class="w3-pair" id="s8Pair">
+      <article><img id="s8PairA" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG" alt="Pato"><b id="s8PairALabel">PATO</b></article>
+      <div class="w3-pair-sign">+</div>
+      <article><img id="s8PairB" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A_chicken_standing_alone.jpg" alt="Gallina"><b id="s8PairBLabel">GALLINA</b></article>
+    </div>
+    <div class="w3-two-answer"><button data-s8-pair-answer="same" type="button">SÍ, JUNTOS</button><button data-s8-pair-answer="different" type="button">NO, DISTINTOS</button></div>
+    <div class="w3-feedback-new schoolfont" id="s8PairFeedback">Mira sus patas antes de responder.</div>
+    <button class="w3-small-action" id="s8NextPair" type="button" disabled>OTRA PAREJA →</button>
+    
+<div class="w3-nav">
+  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+  <div class="w3-step"><b>4</b> / 6</div>
+  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+</div>
+  </div>
+</section>
 
-<section class="screen" data-session="9" data-title="Cierre · sesión 9"><div class="panel"><span class="tag">CIERRE DE LA SEMANA 3</span><div class="week2-close schoolfont">Hoy hemos descubierto que <strong>tener patas no decide si algo está vivo</strong>.</div><div class="sense-prompt schoolfont">Vuelve a tu predicción: <b>¿pensabas lo mismo al principio? ¿Qué imagen te ayudó a comprobarlo?</b></div><div class="teacherbox"><b>Evidencia de investigación.</b> Guarda la ficha y recoge una explicación oral. Registra el grado de ayuda: continua · con guía · apoyo ocasional · autonomía.</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">📚 Palabra de hoy ▶</button></div></div></section>
+<section class="screen" data-session="8" data-title="Ficha para imprimir · sesión 8">
+  <div class="panel w3-new w3-print-screen">
+    <div class="w3-kicker">SESIÓN 8 · FICHA DE HOY</div>
+    <h1 class="w3-title schoolfont">Recorta y clasifica</h1>
+    <div class="w3-sheet" id="w3Sheet8"><h2 class="schoolfont">Recorta y clasifica por sus patas</h2><div class="name">Nombre: __________________________________</div><div class="w3-sheet-grid4"><div class="w3-sheet-box"><b>2 patas</b></div><div class="w3-sheet-box"><b>4 patas</b></div><div class="w3-sheet-box"><b>6 patas</b></div><div class="w3-sheet-box"><b>8 patas</b></div></div><div class="w3-cut-bank"><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG" alt="PATO"><b>PATO</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A_chicken_standing_alone.jpg" alt="GALLINA"><b>GALLINA</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="PERRO"><b>PERRO</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cat_is_standing.jpg" alt="GATO"><b>GATO</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg" alt="ABEJA"><b>ABEJA</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Spider_image_view.jpg" alt="ARAÑA"><b>ARAÑA</b></div></div></div>
+    <button class="w3-print-btn" data-print-w3="8" type="button">🖨 IMPRIMIR / GUARDAR PDF</button>
+    
+<div class="w3-nav">
+  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+  <div class="w3-step"><b>5</b> / 6</div>
+  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+</div>
+  </div>
+</section>
 
-<section class="screen" data-session="9" data-title="Vocabulario · sesión 9"><div class="panel vocab-two-column-panel"><div class="vocab-sheet" id="vocabSheet9"><div class="vocab-head"><div><div class="vocab-session">MI CUERPO FLORECE · SESIÓN 9</div><div class="vocab-note">Palabra de hoy · sustantivo</div></div><div class="vocab-kicker">VOCABULARIO</div></div><div class="vocab-word schoolfont">PLANTA</div><div class="vocab-photo-wrap"><img alt="Fotografía de una planta" class="vocab-photo" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg"/></div><div class="vocab-def schoolfont"><span class="vocab-step">1 · MIRAMOS Y ENTENDEMOS</span><br/>Una planta es un ser vivo. No tiene patas, pero está viva.</div><div class="vocab-example schoolfont"><span class="vocab-step">2 · ESCUCHAMOS UNA FRASE</span><br/>“La planta está viva.”</div><div class="vocab-say schoolfont"><span class="vocab-step">3 · AHORA TÚ</span><br/>Construye tu oración: <b>La planta…</b></div></div><div class="vocab-controls"><button class="btn prev">◀ Atrás</button><button class="btn" data-print-vocab="9">🖨️ Imprimir A4</button><button class="btn primary" data-go-home>✓ Terminar sesión</button></div></div></section>
+<section class="screen" data-session="8" data-title="Vocabulario · sesión 8">
+  <div class="panel w3-new">
+    <div class="w3-kicker">SESIÓN 8 · PALABRA DE HOY</div>
+    <div class="w3-vocab"><div class="w3-main-photo"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro"></div><div><h1 class="w3-vocab-word schoolfont">ANIMAL</h1><p class="schoolfont">Un animal es un ser vivo.</p><div class="w3-big-prompt schoolfont">“El perro es un animal.”</div><button class="w3-print-btn" data-print-vocab="8" type="button">🖨 IMPRIMIR VOCABULARIO</button></div></div>
+    <div class="vocab-sheet w3-hidden-print" id="vocabSheet8"><div class="vocab-head"><div><div class="vocab-session">MI CUERPO FLORECE · SESIÓN 8</div><div class="vocab-note">Palabra de hoy · sustantivo</div></div><div class="vocab-kicker">VOCABULARIO</div></div><div class="vocab-word schoolfont">ANIMAL</div><div class="vocab-photo-wrap"><img class="vocab-photo" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro"></div><div class="vocab-def schoolfont">Un animal es un ser vivo.</div><div class="vocab-example schoolfont">“El perro es un animal.”</div><div class="vocab-say schoolfont">El/La ___ es un animal.</div></div>
+    
+<div class="w3-nav">
+  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+  <div class="w3-step"><b>6</b> / 6</div>
+  <div class="w3-nav-right"><button class="w3-nav-btn primary" data-go-home type="button">TERMINAR ✓</button></div>
+</div>
+  </div>
+</section>
+<section class="screen" data-session="9" data-title="Predicción · vivo o no vivo">
+  <div class="panel w3-new">
+    <div class="w3-kicker">SESIÓN 9 · PIENSA</div>
+    <h1 class="w3-title schoolfont">¿Hace falta tener patas para estar vivo?</h1>
+    <div class="w3-instruction schoolfont">ELIGE TU PREDICCIÓN</div>
+    <div class="w3-predict-new"><button data-s9-predict-simple="yes" type="button">SÍ</button><button data-s9-predict-simple="no" type="button">NO</button></div>
+    <div class="w3-feedback-new schoolfont" id="s9PredictSimpleFeedback">No pasa nada si después cambias de idea.</div>
+    <div class="teacherbox"><b>Criterios 2.1–2.5.</b> Predicción → contraste con imágenes/vídeo → clasificación → comparación con la predicción → comunicación final. La predicción no se califica como acierto/error.</div>
+    
+<div class="w3-nav">
+  <button class="w3-nav-btn secondary" data-go-home type="button">← SALIR</button>
+  <div class="w3-step"><b>1</b> / 6</div>
+  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+</div>
+  </div>
+</section>
 
+<section class="screen" data-session="9" data-title="Vídeo · germinación">
+  <div class="panel w3-new">
+    <div class="w3-kicker">SESIÓN 9 · COMPRUEBA</div>
+    <h1 class="w3-title schoolfont">Mira cómo cambia una planta</h1>
+    <div class="w3-instruction schoolfont">OBSERVA EL CAMBIO</div>
+    
+<div class="w3-video-box">
+  <video id="videoS9" preload="metadata" playsinline muted controls poster="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg">
+    <source src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Germination_of_two_little_plants.webm" type="video/webm">
+  </video>
+  <button class="w3-play" data-video-action="play" data-video-target="videoS9" type="button">▶ REPRODUCIR</button>
+  <div class="edu-video-fallback" id="videoS9Fallback" hidden><b>El vídeo no se ha podido cargar.</b> <a href="https://commons.wikimedia.org/wiki/File:Germination_of_two_little_plants.webm" target="_blank" rel="noopener">Abrir vídeo</a></div>
+</div>
+<div class="w3-big-prompt schoolfont">NO TIENE PATAS. ¿ESTÁ VIVA?</div>
+    
+<div class="w3-nav">
+  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+  <div class="w3-step"><b>2</b> / 6</div>
+  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+</div>
+  </div>
+</section>
+
+<section class="screen" data-session="9" data-title="Toca vivo o no vivo">
+  <div class="panel w3-new">
+    <div class="w3-kicker">SESIÓN 9 · TOCA → TOCA</div>
+    <h1 class="w3-title schoolfont">¿Está vivo?</h1>
+    <div class="w3-item-row" id="s9Items">
+      <button class="w3-pick-card" data-life="vivo" type="button"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg" alt="Planta"><b>PLANTA</b></button>
+      <button class="w3-pick-card" data-life="vivo" type="button"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro"><b>PERRO</b></button>
+      <button class="w3-pick-card" data-life="no" type="button"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Stone_rock.jpg" alt="Piedra"><b>PIEDRA</b></button>
+      <button class="w3-pick-card" data-life="no" type="button"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Happy_fun_ball.png" alt="Pelota"><b>PELOTA</b></button>
+    </div>
+    <div class="w3-target-row w3-target-two" id="s9Targets"><button class="w3-target" data-life="vivo" type="button"><b>ESTÁ VIVO</b></button><button class="w3-target" data-life="no" type="button"><b>NO ESTÁ VIVO</b></button></div>
+    <div class="w3-feedback-new schoolfont" id="s9ClassFeedback">1. Toca una imagen. 2. Toca su grupo.</div>
+    <button class="w3-small-action" id="s9ResetSimple" type="button">↻ EMPEZAR OTRA VEZ</button>
+    
+<div class="w3-nav">
+  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+  <div class="w3-step"><b>3</b> / 6</div>
+  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+</div>
+  </div>
+</section>
+
+<section class="screen" data-session="9" data-title="Conclusión · una planta está viva">
+  <div class="panel w3-new">
+    <div class="w3-kicker">SESIÓN 9 · EXPLICA</div>
+    <h1 class="w3-title schoolfont">La planta no tiene patas…</h1>
+    <div class="w3-conclusion">
+      <div class="w3-main-photo"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg" alt="Planta"></div>
+      <div><div class="w3-big-prompt schoolfont">…y <b>está viva</b>.</div><p class="schoolfont">Las personas, los animales y las plantas son seres vivos.</p><p class="schoolfont">Una piedra o una pelota no están vivas.</p></div>
+    </div>
+    <div class="w3-instruction schoolfont">¿PIENSAS LO MISMO QUE AL PRINCIPIO?</div>
+    
+<div class="w3-nav">
+  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+  <div class="w3-step"><b>4</b> / 6</div>
+  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+</div>
+  </div>
+</section>
+
+<section class="screen" data-session="9" data-title="Ficha para imprimir · sesión 9">
+  <div class="panel w3-new w3-print-screen">
+    <div class="w3-kicker">SESIÓN 9 · FICHA DE HOY</div>
+    <h1 class="w3-title schoolfont">¿Está vivo?</h1>
+    <div class="w3-sheet" id="w3Sheet9"><h2 class="schoolfont">¿Está vivo?</h2><div class="name">Nombre: __________________________________</div><div class="w3-two"><div class="w3-sheet-box"><b>ESTÁ VIVO</b></div><div class="w3-sheet-box"><b>NO ESTÁ VIVO</b></div></div><div class="w3-cut-bank" style="grid-template-columns:repeat(3,1fr)"><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg" alt="PLANTA"><b>PLANTA</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="PERRO"><b>PERRO</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Stone_rock.jpg" alt="PIEDRA"><b>PIEDRA</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Happy_fun_ball.png" alt="PELOTA"><b>PELOTA</b></div></div><div class="w3-drawbox"><b>Dibuja otro ser vivo.</b></div></div>
+    <button class="w3-print-btn" data-print-w3="9" type="button">🖨 IMPRIMIR / GUARDAR PDF</button>
+    
+<div class="w3-nav">
+  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+  <div class="w3-step"><b>5</b> / 6</div>
+  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+</div>
+  </div>
+</section>
+
+<section class="screen" data-session="9" data-title="Vocabulario · sesión 9">
+  <div class="panel w3-new">
+    <div class="w3-kicker">SESIÓN 9 · PALABRA DE HOY</div>
+    <div class="w3-vocab"><div class="w3-main-photo"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg" alt="Planta"></div><div><h1 class="w3-vocab-word schoolfont">PLANTA</h1><p class="schoolfont">Una planta es un ser vivo.</p><div class="w3-big-prompt schoolfont">“La planta está viva.”</div><button class="w3-print-btn" data-print-vocab="9" type="button">🖨 IMPRIMIR VOCABULARIO</button></div></div>
+    <div class="vocab-sheet w3-hidden-print" id="vocabSheet9"><div class="vocab-head"><div><div class="vocab-session">MI CUERPO FLORECE · SESIÓN 9</div><div class="vocab-note">Palabra de hoy · sustantivo</div></div><div class="vocab-kicker">VOCABULARIO</div></div><div class="vocab-word schoolfont">PLANTA</div><div class="vocab-photo-wrap"><img class="vocab-photo" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg" alt="Planta"></div><div class="vocab-def schoolfont">Una planta es un ser vivo.</div><div class="vocab-example schoolfont">“La planta está viva.”</div><div class="vocab-say schoolfont">La planta…</div></div>
+    
+<div class="w3-nav">
+  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+  <div class="w3-step"><b>6</b> / 6</div>
+  <div class="w3-nav-right"><button class="w3-nav-btn rubric" data-open-resource="rubric3" type="button">RÚBRICA</button><button class="w3-nav-btn primary" data-go-home type="button">TERMINAR ✓</button></div>
+</div>
+  </div>
+</section>
 <section class="screen" data-session="0" data-title="Materiales imprimibles · semana 3"><div class="panel"><span class="tag w3-tag">SEMANA 3</span><h1 class="schoolfont" style="font-size:clamp(36px,5vw,62px);margin:10px 0">Fichas para imprimir</h1><p class="student-text" style="font-size:clamp(22px,2.5vw,34px)">Las tres fichas mantienen el formato DIN A4 y pueden imprimirse o guardarse como PDF desde el navegador.</p><div class="materials-hub">
 <div class="materials-session"><h3>Sesión 7 · Observo</h3><p>Dibujar animales según el número de patas.</p><button class="btn" data-open-w3-sheet="7">Abrir ficha</button></div>
 <div class="materials-session"><h3>Sesión 8 · Clasifico</h3><p>Recortar y clasificar 2, 4, 6 y 8 patas.</p><button class="btn" data-open-w3-sheet="8">Abrir ficha</button></div>
@@ -1605,6 +1779,7 @@ function fitActiveScreen(){
   const panel=screen.querySelector(':scope > .panel');
   if(!panel)return;
   panel.style.zoom='1';
+  if(panel.classList.contains('w3-new'))return;
   requestAnimationFrame(()=>{
     const ah=Math.max(1,screen.clientHeight-2);
     const aw=Math.max(1,screen.clientWidth-2);
@@ -1620,8 +1795,8 @@ const screens=[...root.querySelectorAll('.screen')]; let current=0; let teacher=
 const brand=document.getElementById('brand');
 const sessionTabs=[...root.querySelectorAll('.session-tab')];
 const progress=document.getElementById('progress');
-function drawProgress(){progress.innerHTML='';const session=screens[current].dataset.session;const ss=screens.filter(x=>x.dataset.session===session);const active=ss.indexOf(screens[current]);if(session!=='0'){ss.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(i===active?' on':'');progress.appendChild(d);});}sessionTabs.forEach(t=>t.classList.toggle('active',t.dataset.sessionJump===session));brand.textContent=session==='0'?'🌱 Mi cuerpo florece · Inicio':'🌱 Mi cuerpo florece · Sesión '+session;const vb=document.getElementById('vocabBtn');if(vb)vb.style.display=session==='0'?'none':'inline-flex';}
-function show(i){current=Math.max(0,Math.min(screens.length-1,i));screens.forEach((s,j)=>s.classList.toggle('active',j===current));drawProgress();updateWeek2TaskNav();requestAnimationFrame(fitActiveScreen)}
+function drawProgress(){progress.innerHTML='';const session=screens[current].dataset.session;const ss=screens.filter(x=>x.dataset.session===session);const active=ss.indexOf(screens[current]);if(session!=='0'){ss.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(i===active?' on':'');progress.appendChild(d);});}sessionTabs.forEach(t=>t.classList.toggle('active',t.dataset.sessionJump===session));brand.textContent=session==='0'?'🌱 Mi cuerpo florece · Inicio':(['7','8','9'].includes(session)?'🌱 Mi cuerpo florece · Sesión '+session+' · Semana 3':'🌱 Mi cuerpo florece · Sesión '+session);const vb=document.getElementById('vocabBtn');if(vb)vb.style.display=session==='0'?'none':'inline-flex';}
+function show(i){current=Math.max(0,Math.min(screens.length-1,i));screens.forEach((s,j)=>s.classList.toggle('active',j===current));const ses=screens[current]?.dataset.session||'0';root.classList.toggle('focus-week3',['7','8','9'].includes(ses));drawProgress();updateWeek2TaskNav();requestAnimationFrame(fitActiveScreen)}
 
 // ===== Navegación directa Semana 2 =====
 const week2TaskNav=document.getElementById('week2TaskNav');
@@ -1634,7 +1809,7 @@ const week2Map={
 };
 function updateWeek2TaskNav(){
  const session=screens[current]?.dataset.session||'0';
- const showNav=['4','5','6','8','9'].includes(session);
+ const showNav=['4','5','6'].includes(session);
  week2TaskNav?.classList.toggle('show',showNav);
  if(!showNav)return;
  week2TaskNav.querySelectorAll('button').forEach(b=>{const target=week2Map[session]?.[b.dataset.w2Task];b.classList.toggle('active',target===screens[current]?.dataset.title)});
@@ -1822,110 +1997,98 @@ function setupMatch(act){if(!act||act.dataset.ready==='1')return;act.dataset.rea
 root.querySelectorAll('.match-activity').forEach(setupMatch);window.addEventListener('resize',()=>root.querySelectorAll('.match-activity').forEach(redrawMatch));
 
 
-// ===== SEMANA 3 · SESIONES 7-9 =====
-const s7Prompts={veo:'VEO… distintos animales y puedo fijarme en sus patas.',pienso:'PIENSO… algunos tienen más patas que otros.',pregunto:'ME PREGUNTO… ¿todos los animales tienen patas?'};
-root.querySelectorAll('.s7-routine').forEach(b=>b.addEventListener('click',()=>{root.querySelectorAll('.s7-routine').forEach(x=>x.classList.remove('active'));b.classList.add('active');const p=document.getElementById('s7RoutinePrompt');if(p)p.textContent=s7Prompts[b.dataset.s7Routine];}));
-root.querySelectorAll('[data-s7-count]').forEach(card=>{const correct=card.dataset.s7Count;card.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{card.querySelectorAll('button').forEach(x=>x.classList.remove('good','bad'));const ok=b.dataset.value===correct;b.classList.add(ok?'good':'bad');const f=document.getElementById('s7CountFeedback');if(f)f.textContent=ok?'Correcto. ¿Cómo lo sabes? Señala las patas que has contado.':'Mira otra vez y cuenta una a una.';}));});
-
-function setupTapDrag(cardSelector,zoneSelector,answerAttr,feedbackId){
- let selected=null;
- const cards=[...root.querySelectorAll(cardSelector)], zones=[...root.querySelectorAll(zoneSelector)];
- const place=(card,zone)=>{const ok=card.dataset[answerAttr]===zone.dataset[answerAttr];const f=document.getElementById(feedbackId);if(ok){zone.classList.add('good');card.classList.add('placed');card.classList.remove('selected');const im=card.querySelector('img')?.cloneNode();if(im)zone.querySelector('.placed-mini')?.appendChild(im);selected=null;if(f)f.textContent='Muy bien. Ahora explica por qué va en ese grupo.';}else{zone.classList.add('bad');if(f)f.textContent='Comprueba otra vez la característica.';setTimeout(()=>zone.classList.remove('bad'),800);}};
- cards.forEach(card=>{card.addEventListener('click',()=>{cards.forEach(x=>x.classList.remove('selected'));if(!card.classList.contains('placed')){card.classList.add('selected');selected=card;}});card.addEventListener('dragstart',e=>{selected=card;e.dataTransfer?.setData('text/plain',card.dataset.id||'item');});});
- zones.forEach(zone=>{zone.addEventListener('dragover',e=>e.preventDefault());zone.addEventListener('drop',e=>{e.preventDefault();if(selected)place(selected,zone);});zone.addEventListener('click',()=>{if(selected)place(selected,zone);});});
- return ()=>{cards.forEach(c=>{c.classList.remove('selected','placed');c.style.opacity='';});zones.forEach(z=>{z.classList.remove('good','bad');const p=z.querySelector('.placed-mini');if(p)p.innerHTML='';});selected=null;const f=document.getElementById(feedbackId);if(f)f.textContent='Observa y comprueba antes de colocar.';};
+// ===== SEMANA 3 · REDISEÑO SIMPLE =====
+const w3S7Animals=[
+ {name:'PATO',img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG',legs:'2'},
+ {name:'PERRO',img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG',legs:'4'},
+ {name:'ABEJA',img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg',legs:'6'},
+ {name:'ARAÑA',img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Spider_image_view.jpg',legs:'8'}
+];
+let w3S7Index=0;
+function renderS7Quiz(){
+ const a=w3S7Animals[w3S7Index],im=document.getElementById('s7QuizImg'),name=document.getElementById('s7QuizName'),fb=document.getElementById('s7QuizFeedback'),next=document.getElementById('s7NextAnimal');
+ if(!im||!name)return;
+ im.src=a.img;im.alt=a.name;name.textContent=a.name;
+ root.querySelectorAll('[data-s7-number]').forEach(b=>b.classList.remove('good','bad'));
+ if(fb)fb.textContent='Señala las patas una a una.';
+ if(next)next.disabled=true;
+ requestAnimationFrame(fitActiveScreen);
 }
-const resetS8Drag=setupTapDrag('.s8-drag','.s8-drop','legs','s8DragFeedback');document.getElementById('s8DragReset')?.addEventListener('click',resetS8Drag);
-const resetS9Drag=setupTapDrag('.s9-drag','.s9-drop','life','s9DragFeedback');document.getElementById('s9DragReset')?.addEventListener('click',resetS9Drag);
+root.querySelectorAll('[data-s7-number]').forEach(btn=>btn.addEventListener('click',()=>{
+ const correct=w3S7Animals[w3S7Index].legs,fb=document.getElementById('s7QuizFeedback'),next=document.getElementById('s7NextAnimal');
+ root.querySelectorAll('[data-s7-number]').forEach(b=>b.classList.remove('good','bad'));
+ const ok=btn.dataset.s7Number===correct;btn.classList.add(ok?'good':'bad');
+ if(fb)fb.textContent=ok?'✓ Muy bien. Lo sé porque he contado '+correct+'.':'Mira otra vez y cuenta una a una.';
+ if(ok&&next)next.disabled=false;
+}));
+document.getElementById('s7NextAnimal')?.addEventListener('click',()=>{w3S7Index=(w3S7Index+1)%w3S7Animals.length;renderS7Quiz();});
+renderS7Quiz();
 
-let s8MatchSel=null;
-root.querySelectorAll('.s8-match-animal').forEach(b=>b.addEventListener('click',()=>{root.querySelectorAll('.s8-match-animal').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');s8MatchSel=b;document.getElementById('s8MatchFeedback').textContent='Ahora toca el número.';}));
-root.querySelectorAll('.s8-match-number').forEach(n=>n.addEventListener('click',()=>{if(!s8MatchSel)return;const ok=s8MatchSel.dataset.answer===n.dataset.value;if(ok){n.classList.add('good');s8MatchSel.style.opacity='.35';s8MatchSel.classList.remove('selected');s8MatchSel=null;document.getElementById('s8MatchFeedback').textContent='Correcto.';}else document.getElementById('s8MatchFeedback').textContent='Cuenta otra vez.';}));
-document.getElementById('s8MatchReset')?.addEventListener('click',()=>{s8MatchSel=null;root.querySelectorAll('.s8-match-animal').forEach(x=>{x.style.opacity='1';x.classList.remove('selected')});root.querySelectorAll('.s8-match-number').forEach(x=>x.classList.remove('good'));document.getElementById('s8MatchFeedback').textContent='Elige un animal.';});
+function setupSimpleClassify(itemSelector,targetSelector,key,feedbackId,resetId){
+ let selected=null;
+ const items=[...root.querySelectorAll(itemSelector)],targets=[...root.querySelectorAll(targetSelector)],fb=document.getElementById(feedbackId);
+ function clearSelection(){items.forEach(i=>i.classList.remove('selected'));selected=null;}
+ items.forEach(item=>item.addEventListener('click',()=>{if(item.classList.contains('done'))return;items.forEach(i=>i.classList.remove('selected'));selected=item;item.classList.add('selected');if(fb)fb.textContent='Ahora toca su grupo.';}));
+ targets.forEach(target=>target.addEventListener('click',()=>{if(!selected){if(fb)fb.textContent='Primero toca una imagen.';return;}const ok=selected.dataset[key]===target.dataset[key];targets.forEach(t=>t.classList.remove('good','bad'));target.classList.add(ok?'good':'bad');if(ok){selected.classList.remove('selected');selected.classList.add('done');selected=null;if(fb)fb.textContent='✓ Correcto. Explica: “Lo pongo aquí porque…”';setTimeout(()=>target.classList.remove('good'),650);}else{if(fb)fb.textContent='Mira otra vez. ¿Qué característica estás usando?';setTimeout(()=>target.classList.remove('bad'),650);}}));
+ document.getElementById(resetId)?.addEventListener('click',()=>{items.forEach(i=>i.classList.remove('selected','done'));targets.forEach(t=>t.classList.remove('good','bad'));selected=null;if(fb)fb.textContent='1. Toca una imagen. 2. Toca su grupo.';});
+}
+setupSimpleClassify('#s8Items .w3-pick-card','#s8Targets .w3-target','legs','s8ClassFeedback','s8ResetSimple');
+setupSimpleClassify('#s9Items .w3-pick-card','#s9Targets .w3-target','life','s9ClassFeedback','s9ResetSimple');
 
-let s8OrderNext=1;
-root.querySelectorAll('.s8-order-card').forEach(card=>card.addEventListener('click',()=>{if(card.classList.contains('used'))return;const wanted=String(s8OrderNext);const f=document.getElementById('s8OrderFeedback');if(card.dataset.order===wanted){const slot=root.querySelector('.w3-order-slot[data-slot="'+wanted+'"]');slot?.appendChild(card.querySelector('img').cloneNode());card.classList.add('used');s8OrderNext++;f.textContent=s8OrderNext>4?'¡Orden completo! 2 → 4 → 6 → 8.':'Muy bien. ¿Cuál sigue?';}else f.textContent='Piensa: empieza por el que tiene menos patas.';}));
-document.getElementById('s8OrderReset')?.addEventListener('click',()=>{s8OrderNext=1;root.querySelectorAll('.s8-order-card').forEach(x=>x.classList.remove('used'));root.querySelectorAll('.w3-order-slot img').forEach(x=>x.remove());document.getElementById('s8OrderFeedback').textContent='¿Cuál tiene menos patas?';});
+const w3Pairs=[
+ {a:{name:'PATO',img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG'},b:{name:'GALLINA',img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/A_chicken_standing_alone.jpg'},answer:'same'},
+ {a:{name:'PERRO',img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG'},b:{name:'ABEJA',img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg'},answer:'different'},
+ {a:{name:'PERRO',img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG'},b:{name:'GATO',img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Cat_is_standing.jpg'},answer:'same'}
+];
+let w3PairIndex=0;
+function renderW3Pair(){
+ const p=w3Pairs[w3PairIndex];
+ const ai=document.getElementById('s8PairA'),bi=document.getElementById('s8PairB');
+ if(!ai||!bi)return;
+ ai.src=p.a.img;ai.alt=p.a.name;bi.src=p.b.img;bi.alt=p.b.name;
+ document.getElementById('s8PairALabel').textContent=p.a.name;document.getElementById('s8PairBLabel').textContent=p.b.name;
+ root.querySelectorAll('[data-s8-pair-answer]').forEach(b=>b.classList.remove('good','bad'));
+ document.getElementById('s8PairFeedback').textContent='Mira sus patas antes de responder.';
+ document.getElementById('s8NextPair').disabled=true;
+ requestAnimationFrame(fitActiveScreen);
+}
+root.querySelectorAll('[data-s8-pair-answer]').forEach(btn=>btn.addEventListener('click',()=>{
+ const ok=btn.dataset.s8PairAnswer===w3Pairs[w3PairIndex].answer;
+ root.querySelectorAll('[data-s8-pair-answer]').forEach(b=>b.classList.remove('good','bad'));btn.classList.add(ok?'good':'bad');
+ document.getElementById('s8PairFeedback').textContent=ok?'✓ Correcto. ¿Cómo lo sabes?':'Cuenta las patas de los dos animales.';
+ if(ok)document.getElementById('s8NextPair').disabled=false;
+}));
+document.getElementById('s8NextPair')?.addEventListener('click',()=>{w3PairIndex=(w3PairIndex+1)%w3Pairs.length;renderW3Pair();});
+renderW3Pair();
 
-root.querySelectorAll('[data-s9-predict]').forEach(b=>b.addEventListener('click',()=>{root.querySelectorAll('[data-s9-predict]').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('s9PredictFeedback').textContent='Predicción guardada: '+(b.dataset.s9Predict==='si'?'SÍ':'NO')+'. Ahora vamos a comprobarla.';}));
-
-let s9MatchSel=null;
-root.querySelectorAll('.s9-match-item').forEach(b=>b.addEventListener('click',()=>{root.querySelectorAll('.s9-match-item').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');s9MatchSel=b;document.getElementById('s9MatchFeedback').textContent='Ahora toca su grupo.';}));
-root.querySelectorAll('.s9-match-group').forEach(n=>n.addEventListener('click',()=>{if(!s9MatchSel)return;const ok=s9MatchSel.dataset.answer===n.dataset.value;if(ok){n.classList.add('good');s9MatchSel.style.opacity='.35';s9MatchSel.classList.remove('selected');s9MatchSel=null;document.getElementById('s9MatchFeedback').textContent='Correcto. ¿Qué te ha ayudado a decidir?';}else document.getElementById('s9MatchFeedback').textContent='Vuelve a mirar y piensa si es un ser vivo o un objeto.';}));
-document.getElementById('s9MatchReset')?.addEventListener('click',()=>{s9MatchSel=null;root.querySelectorAll('.s9-match-item').forEach(x=>{x.style.opacity='1';x.classList.remove('selected')});root.querySelectorAll('.s9-match-group').forEach(x=>x.classList.remove('good'));document.getElementById('s9MatchFeedback').textContent='Elige una imagen.';});
+root.querySelectorAll('[data-s9-predict-simple]').forEach(btn=>btn.addEventListener('click',()=>{
+ root.querySelectorAll('[data-s9-predict-simple]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+ document.getElementById('s9PredictSimpleFeedback').textContent='Predicción guardada. Ahora vamos a comprobarla.';
+}));
 
 root.querySelectorAll('[data-print-w3]').forEach(b=>b.addEventListener('click',()=>{const el=document.getElementById('w3Sheet'+b.dataset.printW3);if(el)printTarget(el);}));
 root.querySelectorAll('[data-open-w3-sheet]').forEach(b=>b.addEventListener('click',()=>{const title='Ficha para imprimir · sesión '+b.dataset.openW3Sheet;const idx=screens.findIndex(x=>x.dataset.title===title);if(idx>=0)show(idx);}));
 
-
-const s7MentorPages=[
- {img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG',text:'Aquí veo dos patas.<br>Están caminando.',q:'¿Cuántas patas ves?'},
- {img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG',text:'Aquí veo cuatro patas.<br>Están descansando.',q:'¿Qué has mirado para saberlo?'},
- {img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg',text:'Aquí veo seis patas.<br>Están moviéndose.',q:'Cuenta una a una.'},
- {img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Spider_image_view.jpg',text:'Aquí veo ocho patas.<br>Están trabajando.',q:'¿Ves ocho? Señálalas.'},
- {img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg',text:'Aquí veo seis patas.<br>Están saltando.',q:'¿Se parece al ejemplo anterior?'},
- {img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Cat_is_standing.jpg',text:'Aquí veo cuatro patas.<br>Están corriendo.',q:'¿En qué grupo la pondrías?'},
- {img:'assets/embedded_9b29069998326e5e.jpg',text:'Aquí veo dos piernas.<br>Están patinando.',q:'¿Decimos patas o piernas?'},
- {img:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Stone_rock.jpg',text:'¿Ves patas aquí?<br>¡Yo no veo ni una pata!',q:'¿Todo lo que no tiene patas está sin vida?'}
-];
-let s7MentorIndex=0;
-function renderS7Mentor(){
- const p=s7MentorPages[s7MentorIndex];
- const im=document.getElementById('s7MentorImg'),tx=document.getElementById('s7MentorText'),ct=document.getElementById('s7MentorCounter'),q=document.getElementById('s7MentorQuestion');
- if(!im||!tx||!ct||!q)return;
- im.src=p.img;tx.innerHTML=p.text;ct.textContent=(s7MentorIndex+1)+' de '+s7MentorPages.length;q.textContent=p.q;
- document.getElementById('s7MentorPrev').disabled=s7MentorIndex===0;
- document.getElementById('s7MentorNext').textContent=s7MentorIndex===s7MentorPages.length-1?'Volver al principio':'Siguiente ▶';
-}
-document.getElementById('s7MentorPrev')?.addEventListener('click',()=>{if(s7MentorIndex>0){s7MentorIndex--;renderS7Mentor();}});
-document.getElementById('s7MentorNext')?.addEventListener('click',()=>{if(s7MentorIndex<s7MentorPages.length-1)s7MentorIndex++;else s7MentorIndex=0;renderS7Mentor();});
-renderS7Mentor();
-
-
-root.querySelectorAll('#w3Rubric79 .w3-score-btn').forEach(btn=>btn.addEventListener('click',()=>{
-  const row=btn.closest('tr'); row.querySelectorAll('.w3-score-btn').forEach(x=>x.classList.remove('active')); btn.classList.add('active');
-}));
-document.getElementById('resetW3Rubric')?.addEventListener('click',()=>{
-  root.querySelectorAll('#w3Rubric79 .w3-score-btn').forEach(x=>x.classList.remove('active'));
-  root.querySelectorAll('#w3Rubric79 input,#w3Rubric79 textarea').forEach(x=>x.value='');
-});
+root.querySelectorAll('#w3Rubric79 .w3-score-btn').forEach(btn=>btn.addEventListener('click',()=>{const row=btn.closest('tr');row.querySelectorAll('.w3-score-btn').forEach(x=>x.classList.remove('active'));btn.classList.add('active');}));
+document.getElementById('resetW3Rubric')?.addEventListener('click',()=>{root.querySelectorAll('#w3Rubric79 .w3-score-btn').forEach(x=>x.classList.remove('active'));root.querySelectorAll('#w3Rubric79 input,#w3Rubric79 textarea').forEach(x=>x.value='');});
 document.getElementById('printW3Rubric')?.addEventListener('click',()=>printTarget(document.getElementById('w3Rubric79')));
 
-
 root.querySelectorAll('[data-video-action]').forEach(btn=>btn.addEventListener('click',async()=>{
-  const video=document.getElementById(btn.dataset.videoTarget);
-  if(!video)return;
-  const action=btn.dataset.videoAction;
-  try{
-    if(action==='play'){
-      if(video.readyState===0) video.load();
-      await video.play();
-    }
-    if(action==='pause') video.pause();
-    if(action==='restart'){
-      video.pause();
-      video.currentTime=0;
-      if(video.readyState===0) video.load();
-      await video.play();
-    }
-  }catch(_){
-    const fb=document.getElementById(video.id+'Fallback');
-    if(fb) fb.hidden=false;
-  }
+ const video=document.getElementById(btn.dataset.videoTarget);if(!video)return;
+ try{if(video.readyState===0)video.load();await video.play();btn.style.display='none';}
+ catch(_){const fb=document.getElementById(video.id+'Fallback');if(fb)fb.hidden=false;}
 }));
-screens.forEach(screen=>{
-  screen.querySelectorAll('video').forEach(video=>{
-    const fb=document.getElementById(video.id+'Fallback');
-    video.addEventListener('play',()=>requestAnimationFrame(fitActiveScreen));
-    video.addEventListener('loadedmetadata',()=>{if(fb)fb.hidden=true;requestAnimationFrame(fitActiveScreen);});
-    video.addEventListener('canplay',()=>{if(fb)fb.hidden=true;});
-    video.addEventListener('error',()=>{if(fb)fb.hidden=false;requestAnimationFrame(fitActiveScreen);});
-  });
-});
+screens.forEach(screen=>screen.querySelectorAll('video').forEach(video=>{
+ const fb=document.getElementById(video.id+'Fallback');
+ video.addEventListener('loadedmetadata',()=>{if(fb)fb.hidden=true;requestAnimationFrame(fitActiveScreen);});
+ video.addEventListener('play',()=>{const b=root.querySelector('[data-video-target="'+video.id+'"]');if(b)b.style.display='none';});
+ video.addEventListener('pause',()=>{const b=root.querySelector('[data-video-target="'+video.id+'"]');if(b&&video.currentTime===0)b.style.display='block';});
+ video.addEventListener('error',()=>{if(fb)fb.hidden=false;});
+}));
 
 window.addEventListener('resize',()=>requestAnimationFrame(fitActiveScreen));
 root.querySelectorAll('img').forEach(img=>img.addEventListener('load',()=>{if(img.closest('.screen.active'))requestAnimationFrame(fitActiveScreen);}));
-drawProgress();storyShow();mentor3Show();requestAnimationFrame(fitActiveScreen);
+root.classList.toggle('focus-week3',['7','8','9'].includes(screens[current]?.dataset.session||'0'));drawProgress();storyShow();mentor3Show();requestAnimationFrame(fitActiveScreen);
 })();
 </script>
 
