@@ -1161,7 +1161,9 @@ body.mentor-open{overflow:hidden!important}
 .resource-session{min-width:34px;height:34px;border-radius:10px;background:#eef3f6;display:grid;place-items:center;font:900 11px Arial;color:#3e5865}
 .resource-info{min-width:0}.resource-info b{display:block;font:900 13px/1.15 Arial;color:#253943}.resource-info span{display:block;margin-top:2px;font:700 10.5px/1.2 Arial;color:#738188}
 .resource-actions{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}.resource-actions button,.resource-actions a{min-height:32px;border:1.5px solid #355d72;border-radius:9px;background:#fff;color:#2c5367;padding:5px 8px;font:900 10px Arial;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.resource-actions .print,.resource-actions .primary{background:#2d617f;color:#fff}.resource-actions .edit{background:#fff6db;border-color:#c89b16;color:#69540c}
-.resource-rubric{margin-top:12px;border:2px solid #dfc75d;border-radius:14px;background:#fff9df;padding:10px;display:flex;align-items:center;justify-content:space-between;gap:10px}.resource-rubric b{display:block;font:900 14px Arial}.resource-rubric span{display:block;font:700 10.5px/1.25 Arial;color:#6d6242;margin-top:2px}.resource-rubric button{flex:0 0 auto;min-height:36px;border:2px solid #a78217;border-radius:10px;background:#fff;color:#654f0b;padding:6px 10px;font:900 10.5px Arial;cursor:pointer}
+.resource-rubric{margin-top:12px;border:2px solid #dfc75d;border-radius:14px;background:#fff9df;padding:10px;display:flex;align-items:center;justify-content:space-between;gap:10px}.resource-rubric b{display:block;font:900 14px Arial}.resource-rubric span{display:block;font:700 10.5px/1.25 Arial;color:#6d6242;margin-top:2px}.resource-rubric-actions{display:flex;gap:6px;flex:0 0 auto;flex-wrap:wrap;justify-content:flex-end}
+.resource-rubric button{flex:0 0 auto;min-height:36px;border:2px solid #a78217;border-radius:10px;background:#fff;color:#654f0b;padding:6px 10px;font:900 10.5px Arial;cursor:pointer}
+.resource-rubric button.primary{background:#7a5a00;color:#fff;border-color:#7a5a00}
 .resources-hub-return{display:flex;justify-content:center;margin:14px 0 4px}.resources-hub-return button{min-height:42px}
 @media(max-width:1100px){.resources-weeks-grid{grid-template-columns:1fr}.resources-hub-panel{height:auto;max-height:none}.resources-hub-head{align-items:start}}
 @media(max-width:650px){.resource-row{grid-template-columns:auto 1fr}.resource-actions{grid-column:1/-1;justify-content:stretch}.resource-actions button,.resource-actions a{flex:1}.resources-hub-head{flex-direction:column}}
@@ -2357,6 +2359,10 @@ body.mentor-open{overflow:hidden!important}
           <h2 class="schoolfont">Yo y mi cuerpo</h2>
           <p>Identidad, partes externas del cuerpo, semejanzas y diferencias.</p>
         </div>
+        <div class="resource-rubric">
+          <div><b>📋 Rúbrica Semana 1</b><span>Sesiones 1–3 · fichas + observación + diálogo.</span></div>
+          <div class="resource-rubric-actions"><button data-open-resource="rubric" type="button">ABRIR</button><button class="primary" data-print-rubric="rubric" type="button">🖨 IMPRIMIR</button></div>
+        </div>
         <div class="resources-group-title">FICHAS DE TRABAJO</div>
         <div class="resources-list">
           <div class="resource-row">
@@ -2375,10 +2381,7 @@ body.mentor-open{overflow:hidden!important}
             <div class="resource-actions"><button data-open-screen-title="Trabajo físico · comparación" type="button">VER</button><button class="print" data-print-target-id="compareWorksheet" type="button">🖨 IMPRIMIR</button></div>
           </div>
         </div>
-        <div class="resource-rubric">
-          <div><b>📋 Rúbrica Semana 1</b><span>Sesiones 1–3 · fichas + observación + diálogo.</span></div>
-          <button data-open-resource="rubric" type="button">ABRIR RÚBRICA</button>
-        </div>
+
       </section>
 
       <section class="resources-week week2">
@@ -2386,6 +2389,10 @@ body.mentor-open{overflow:hidden!important}
           <b>SEMANA 2 · SESIONES 4–6</b>
           <h2 class="schoolfont">Los cinco sentidos</h2>
           <p>Sentidos, pequeñas investigaciones y aplicación de lo aprendido.</p>
+        </div>
+        <div class="resource-rubric">
+          <div><b>📋 Rúbrica Semana 2</b><span>Sesiones 4–6 · sentidos, investigación, explicación y trabajo autónomo.</span></div>
+          <div class="resource-rubric-actions"><button data-open-resource="rubric2" type="button">ABRIR</button><button class="primary" data-print-rubric="rubric2" type="button">🖨 IMPRIMIR</button></div>
         </div>
         <div class="resources-group-title">FICHAS DE TRABAJO</div>
         <div class="resources-list">
@@ -2396,10 +2403,7 @@ body.mentor-open{overflow:hidden!important}
           <div class="resource-row"><div class="resource-session">S6</div><div class="resource-info"><b>¿Qué sentido uso?</b><span>Recortar y clasificar situaciones por sentido.</span></div><div class="resource-actions"><a class="primary" href="pdf/S6_RECORTA_Y_CLASIFICA_QUE_SENTIDO_USO_A4.pdf" target="_blank" rel="noopener">PDF</a></div></div>
           <div class="resource-row"><div class="resource-session">S6</div><div class="resource-info"><b>Dibujo y repaso</b><span>Cierre individual sobre los cinco sentidos.</span></div><div class="resource-actions"><a class="primary" href="pdf/S6_DIBUJO_Y_REPASO_CINCO_SENTIDOS_A4.pdf" target="_blank" rel="noopener">PDF</a></div></div>
         </div>
-        <div class="resource-rubric">
-          <div><b>📋 Rúbrica Semana 2</b><span>Sesiones 4–6 · fichas + observación + diálogo.</span></div>
-          <button data-open-resource="rubric2" type="button">ABRIR RÚBRICA</button>
-        </div>
+
       </section>
 
       <section class="resources-week week3">
@@ -2407,6 +2411,10 @@ body.mentor-open{overflow:hidden!important}
           <b>SEMANA 3 · SESIONES 7–9</b>
           <h2 class="schoolfont">Observo y clasifico seres vivos</h2>
           <p>Patas, clasificación y pequeña investigación vivo / no vivo.</p>
+        </div>
+        <div class="resource-rubric">
+          <div><b>📋 Rúbrica Semana 3</b><span>Sesiones 7–9 · texto mentor, clasificación, investigación y comunicación.</span></div>
+          <div class="resource-rubric-actions"><button data-open-resource="rubric3" type="button">ABRIR</button><button class="primary" data-print-rubric="rubric3" type="button">🖨 IMPRIMIR</button></div>
         </div>
         <div class="resources-group-title">FICHAS DE TRABAJO</div>
         <div class="resources-list">
@@ -2426,10 +2434,7 @@ body.mentor-open{overflow:hidden!important}
             <div class="resource-actions"><button data-open-w3-sheet="9" type="button">VER</button><button class="edit" data-edit-w3-sheet="9" type="button">✏ EDITAR</button><button class="print" data-direct-print-w3="9" type="button">🖨</button></div>
           </div>
         </div>
-        <div class="resource-rubric">
-          <div><b>📋 Rúbrica Semana 3</b><span>Sesiones 7–9 · lectura, clasificación, investigación y fichas.</span></div>
-          <button data-open-resource="rubric3" type="button">ABRIR RÚBRICA</button>
-        </div>
+
       </section>
     </div>
 
@@ -2525,7 +2530,7 @@ body.mentor-open{overflow:hidden!important}
   </div>
 </section>
 
-<section class="screen" data-session="0" data-title="Materiales imprimibles · semana 2"><div class="panel"><span class="tag">SEMANA 2</span><h1 class="schoolfont" style="font-size:clamp(36px,5vw,62px);margin:10px 0">Fichas para imprimir</h1><p class="student-text" style="font-size:clamp(22px,2.5vw,34px)">Aquí están juntas las fichas de las sesiones 4, 5 y 6. Cada botón abre un PDF DIN A4 listo para imprimir.</p><div class="materials-hub"><div class="materials-session"><h3>Sesión 4 · Descubrimos</h3><p>Dibujamos y clasificamos los cinco sentidos.</p><div class="materials-card"><img src="pdf/S4_MIS_CINCO_SENTIDOS_A4_300dpi.png" alt="Vista previa Mis cinco sentidos"><div><b>MIS CINCO SENTIDOS</b><br><small>Una sola ficha con VEO, OIGO, HUELO, SABOREO y TOCO.</small><br><a href="pdf/S4_MIS_CINCO_SENTIDOS_A4.pdf">Abrir PDF</a></div></div><div class="materials-card"><img src="pdf/S4_RECORTA_Y_CLASIFICA_SENTIDOS_A4_300dpi.png" alt="Vista previa recorta y clasifica"><div><b>RECORTA Y CLASIFICA</b><br><small>Recorta imágenes y colócalas en el sentido correspondiente.</small><br><a href="pdf/S4_RECORTA_Y_CLASIFICA_SENTIDOS_A4.pdf">Abrir PDF</a></div></div></div><div class="materials-session"><h3>Sesión 5 · Investigamos</h3><p>Ordenamos el proceso y dibujamos un descubrimiento.</p><div class="materials-card"><img src="pdf/S5_RECORTA_Y_ORDENA_INVESTIGACION_A4_300dpi.png" alt="Vista previa recorta y ordena"><div><b>RECORTA Y ORDENA</b><br><small>PIENSO → PRUEBO → DESCUBRO → CUENTO.</small><br><a href="pdf/S5_RECORTA_Y_ORDENA_INVESTIGACION_A4.pdf">Abrir PDF</a></div></div><div class="materials-card"><img src="pdf/S5_DIBUJO_MI_DESCUBRIMIENTO_A4_300dpi.png" alt="Vista previa dibujo mi descubrimiento"><div><b>DIBUJO MI DESCUBRIMIENTO</b><br><small>Elige la estación y representa qué has descubierto.</small><br><a href="pdf/S5_DIBUJO_MI_DESCUBRIMIENTO_A4.pdf">Abrir PDF</a></div></div></div><div class="materials-session"><h3>Sesión 6 · Aplicamos</h3><p>Clasificamos situaciones y cerramos con un dibujo de repaso.</p><div class="materials-card"><img src="pdf/S6_RECORTA_Y_CLASIFICA_QUE_SENTIDO_USO_A4_preview.png" alt="Vista previa clasificación"><div><b>¿QUÉ SENTIDO USO?</b><br><small>Recortar y clasificar por sentido.</small><br><a href="pdf/S6_RECORTA_Y_CLASIFICA_QUE_SENTIDO_USO_A4.pdf">Abrir PDF</a></div></div><div class="materials-card"><img src="pdf/S6_DIBUJO_Y_REPASO_CINCO_SENTIDOS_A4_preview.png" alt="Vista previa dibujo y repaso"><div><b>DIBUJO Y REPASO</b><br><small>Cierre individual de los cinco sentidos.</small><br><a href="pdf/S6_DIBUJO_Y_REPASO_CINCO_SENTIDOS_A4.pdf">Abrir PDF</a></div></div></div></div><div class="actions"><button class="btn primary" data-go-home type="button">Volver al inicio</button></div></div></section><section class="screen" data-session="0" data-title="Rúbrica global · sesiones 4-6">
+<section class="screen" data-session="0" data-title="Materiales imprimibles · semana 2"><div class="panel"><span class="tag">SEMANA 2</span><h1 class="schoolfont" style="font-size:clamp(36px,5vw,62px);margin:10px 0">Fichas para imprimir</h1><p class="student-text" style="font-size:clamp(22px,2.5vw,34px)">Aquí están juntas las fichas de las sesiones 4, 5 y 6. Cada botón abre un PDF DIN A4 listo para imprimir.</p><div class="resource-rubric" style="margin:10px 0 14px"><div><b>📋 Rúbrica de evaluación · Semana 2</b><span>Sesiones 4–6 · Los cinco sentidos · lista para evaluar e imprimir.</span></div><div class="resource-rubric-actions"><button data-open-resource="rubric2" type="button">ABRIR RÚBRICA</button><button class="primary" data-print-rubric="rubric2" type="button">🖨 IMPRIMIR RÚBRICA</button></div></div><div class="materials-hub"><div class="materials-session"><h3>Sesión 4 · Descubrimos</h3><p>Dibujamos y clasificamos los cinco sentidos.</p><div class="materials-card"><img src="pdf/S4_MIS_CINCO_SENTIDOS_A4_300dpi.png" alt="Vista previa Mis cinco sentidos"><div><b>MIS CINCO SENTIDOS</b><br><small>Una sola ficha con VEO, OIGO, HUELO, SABOREO y TOCO.</small><br><a href="pdf/S4_MIS_CINCO_SENTIDOS_A4.pdf">Abrir PDF</a></div></div><div class="materials-card"><img src="pdf/S4_RECORTA_Y_CLASIFICA_SENTIDOS_A4_300dpi.png" alt="Vista previa recorta y clasifica"><div><b>RECORTA Y CLASIFICA</b><br><small>Recorta imágenes y colócalas en el sentido correspondiente.</small><br><a href="pdf/S4_RECORTA_Y_CLASIFICA_SENTIDOS_A4.pdf">Abrir PDF</a></div></div></div><div class="materials-session"><h3>Sesión 5 · Investigamos</h3><p>Ordenamos el proceso y dibujamos un descubrimiento.</p><div class="materials-card"><img src="pdf/S5_RECORTA_Y_ORDENA_INVESTIGACION_A4_300dpi.png" alt="Vista previa recorta y ordena"><div><b>RECORTA Y ORDENA</b><br><small>PIENSO → PRUEBO → DESCUBRO → CUENTO.</small><br><a href="pdf/S5_RECORTA_Y_ORDENA_INVESTIGACION_A4.pdf">Abrir PDF</a></div></div><div class="materials-card"><img src="pdf/S5_DIBUJO_MI_DESCUBRIMIENTO_A4_300dpi.png" alt="Vista previa dibujo mi descubrimiento"><div><b>DIBUJO MI DESCUBRIMIENTO</b><br><small>Elige la estación y representa qué has descubierto.</small><br><a href="pdf/S5_DIBUJO_MI_DESCUBRIMIENTO_A4.pdf">Abrir PDF</a></div></div></div><div class="materials-session"><h3>Sesión 6 · Aplicamos</h3><p>Clasificamos situaciones y cerramos con un dibujo de repaso.</p><div class="materials-card"><img src="pdf/S6_RECORTA_Y_CLASIFICA_QUE_SENTIDO_USO_A4_preview.png" alt="Vista previa clasificación"><div><b>¿QUÉ SENTIDO USO?</b><br><small>Recortar y clasificar por sentido.</small><br><a href="pdf/S6_RECORTA_Y_CLASIFICA_QUE_SENTIDO_USO_A4.pdf">Abrir PDF</a></div></div><div class="materials-card"><img src="pdf/S6_DIBUJO_Y_REPASO_CINCO_SENTIDOS_A4_preview.png" alt="Vista previa dibujo y repaso"><div><b>DIBUJO Y REPASO</b><br><small>Cierre individual de los cinco sentidos.</small><br><a href="pdf/S6_DIBUJO_Y_REPASO_CINCO_SENTIDOS_A4.pdf">Abrir PDF</a></div></div></div></div><div class="actions"><button class="btn primary" data-go-home type="button">Volver al inicio</button></div></div></section><section class="screen" data-session="0" data-title="Rúbrica global · sesiones 4-6">
 <div class="panel"><div class="global-rubric-shell" id="globalRubric456">
 <div class="rubric-head"><div><div class="rubric-title">RÚBRICA GLOBAL · SESIONES 4–6</div><div class="rubric-sub">Semana 2 · Los cinco sentidos · se completa después de revisar las tres fichas y la observación realizada durante las actividades.</div></div><div class="rubric-name">Alumno/a: <input aria-label="Nombre del alumno o alumna" type="text"/></div></div>
 <div class="rubric-curriculum"><div><b>BLOQUE EVALUADO</b><br/>I · Cultura científica</div><div><b>SABERES BÁSICOS</b><br/>I.1.1–I.1.5 · iniciación a la indagación<br/>I.2.3 · ser humano, cuerpo y sentidos</div><div><b>INSTRUMENTOS</b><br/>Fichas S4, S5 y S6 + observación directa + diálogos</div></div>
@@ -3051,8 +3056,11 @@ function printTarget(el){
   if(isVocab) document.body.classList.add('vocab-printing');
   if(isW3Sheet) document.body.classList.add('w3-sheet-printing');
   if(isEvalLandscape) document.body.classList.add('eval-landscape-printing');
-  const cleanup=()=>{document.body.classList.remove('printing','vocab-printing','eval-landscape-printing','w3-sheet-printing');host.remove();printStyle.remove();window.removeEventListener('afterprint',cleanup)};
-  window.addEventListener('afterprint',cleanup); window.print(); setTimeout(cleanup,1800);
+  let cleaned=false;
+  const cleanup=()=>{if(cleaned)return;cleaned=true;document.body.classList.remove('printing','vocab-printing','eval-landscape-printing','w3-sheet-printing');host.remove();printStyle.remove();window.removeEventListener('afterprint',cleanup)};
+  window.addEventListener('afterprint',cleanup);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>window.print()));
+  setTimeout(cleanup,60000);
 }
 document.getElementById('printWorksheet').addEventListener('click',()=>printTarget(document.getElementById('worksheet')));
 document.getElementById('printBodyWorksheet').addEventListener('click',()=>printTarget(document.getElementById('bodyWorksheet')));
@@ -3432,6 +3440,10 @@ root.querySelectorAll('[data-open-screen-title]').forEach(b=>b.addEventListener(
 }));
 root.querySelectorAll('[data-print-target-id]').forEach(b=>b.addEventListener('click',()=>{
   const el=document.getElementById(b.dataset.printTargetId);if(el)printTarget(el);
+}));
+root.querySelectorAll('[data-print-rubric]').forEach(b=>b.addEventListener('click',()=>{
+  const map={rubric:'globalRubric123',rubric2:'globalRubric456',rubric3:'w3Rubric79'};
+  const el=document.getElementById(map[b.dataset.printRubric]);if(el)printTarget(el);
 }));
 setHomeWeek(3);
 
