@@ -899,6 +899,65 @@ body.vocab-editor-open{overflow:hidden!important}
   .vocab-editor-stage .vocab-a4-card{height:calc(100dvh - 142px)!important;max-width:92vw!important}
 }
 </style>
+
+<style id="vocab-editor-fix-v2">
+/* Nunca mostrar la hoja imprimible dentro de la pantalla normal */
+.screen .vocab-a4-card.w3-hidden-print{display:none!important;visibility:hidden!important;position:fixed!important;left:-300vw!important;top:-300vh!important}
+.vocab-editor-stage .vocab-a4-card{display:block!important;visibility:visible!important;position:relative!important;left:auto!important;top:auto!important}
+
+/* Pantalla normal de vocabulario: limpia, sin mini-A4 ni solapes */
+.focus-week3 .w3-vocab-screen{height:calc(100dvh - 58px)!important;max-height:calc(100dvh - 58px)!important;padding:12px 16px!important}
+.focus-week3 .w3-vocab-card-preview{display:grid!important;grid-template-columns:minmax(320px,44%) minmax(0,56%)!important;gap:18px!important;flex:1!important;min-height:0!important;overflow:hidden!important}
+.focus-week3 .w3-vocab-photo{min-height:0!important;display:grid!important;place-items:center!important;overflow:hidden!important}
+.focus-week3 .w3-vocab-photo img{width:100%!important;height:100%!important;max-height:none!important;object-fit:contain!important}
+.focus-week3 .w3-vocab-info{min-height:0!important;overflow:hidden!important;gap:8px!important}
+.focus-week3 .w3-vocab-word{font-size:clamp(42px,7vh,72px)!important}
+.focus-week3 .w3-vocab-syllables b{font-size:clamp(24px,3.5vh,36px)!important}
+.focus-week3 .w3-vocab-meaning,.focus-week3 .w3-vocab-example,.focus-week3 .w3-vocab-own-label{font-size:clamp(16px,2.2vh,23px)!important;padding:8px 10px!important}
+.focus-week3 .vocab-print-main,.focus-week3 .vocab-edit-open{min-height:40px!important;margin:0!important}
+
+/* Editor: A4 centrado, toolbar fija y sin elementos de la pantalla de actividad */
+.vocab-editor{background:#cfdbe1!important}
+.vocab-editor-toolbar{position:relative!important;z-index:2!important;flex-wrap:nowrap!important;overflow-x:auto!important;white-space:nowrap!important}
+.vocab-editor-stage{background:#cfdbe1!important;overflow:auto!important;padding:14px!important}
+.vocab-editor-stage .vocab-a4-card{
+  flex:none!important;
+  width:min(72vw,720px)!important;
+  height:auto!important;
+  max-width:none!important;
+  max-height:none!important;
+  aspect-ratio:210/297!important;
+  margin:auto!important;
+  padding:30px!important;
+  border-radius:4px!important;
+  box-shadow:0 8px 30px rgba(0,0,0,.24)!important;
+  background:#fff!important;
+}
+.vocab-editor-stage .vocab-a4-card:not(.vocab-free-layout){
+  display:grid!important;
+  grid-template-rows:44px 220px 126px 108px minmax(190px,1fr)!important;
+  gap:12px!important;
+}
+.vocab-editor-stage .vocab-a4-header{font-size:12px!important}
+.vocab-editor-stage .vocab-a4-word{font-size:52px!important}
+.vocab-editor-stage .vocab-a4-syllables{font-size:34px!important}
+.vocab-editor-stage .vocab-a4-meaning{font-size:22px!important}
+.vocab-editor-stage .vocab-a4-example{font-size:23px!important}
+.vocab-editor-stage .vocab-writing-line{height:42px!important;min-height:42px!important}
+@media(max-width:900px){
+ .vocab-editor-toolbar{flex-wrap:wrap!important;white-space:normal!important}
+ .vocab-editor-stage .vocab-a4-card{width:min(92vw,680px)!important;padding:20px!important}
+}
+</style>
+
+<style id="vocab-screen-normalize-v1">
+.vocab-two-column-panel:has(.vocab-a4-card),.vocab-screen-panel:has(.vocab-a4-card){
+  display:block!important;height:auto!important;max-height:none!important;overflow:hidden!important;padding:14px!important
+}
+.vocab-two-column-panel:has(.vocab-a4-card) .vocab-controls,.vocab-screen-panel:has(.vocab-a4-card) .vocab-controls{
+  display:flex!important;flex-direction:row!important;justify-content:center!important;gap:8px!important;width:100%!important;margin-top:12px!important
+}
+</style>
 </head>
 <body>
 <!-- Versión preparada para GitHub Pages. -->
@@ -1075,7 +1134,7 @@ body.vocab-editor-open{overflow:hidden!important}
 </div>
 </section><section class="screen" data-session="1" data-title="Vocabulario · sesión 1">
 <div class="panel vocab-screen-panel vocab-two-column-panel">
-<div class="vocab-sheet vocab-a4-card" id="vocabSheet1"><div class="vocab-a4-header">
+<div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet1"><div class="vocab-a4-header">
   <div><b>MI CUERPO FLORECE · SESIÓN 1</b><span>PALABRA DE HOY</span></div>
   <div class="vocab-a4-name">Nombre: ______________________________</div>
 </div>
@@ -1254,7 +1313,7 @@ body.vocab-editor-open{overflow:hidden!important}
 </div>
 </section><section class="screen" data-session="2" data-title="Vocabulario · sesión 2">
 <div class="panel vocab-screen-panel vocab-two-column-panel">
-<div class="vocab-sheet vocab-a4-card" id="vocabSheet2"><div class="vocab-a4-header">
+<div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet2"><div class="vocab-a4-header">
   <div><b>MI CUERPO FLORECE · SESIÓN 2</b><span>PALABRA DE HOY</span></div>
   <div class="vocab-a4-name">Nombre: ______________________________</div>
 </div>
@@ -1410,7 +1469,7 @@ body.vocab-editor-open{overflow:hidden!important}
 </div>
 </section><section class="screen" data-session="3" data-title="Vocabulario · sesión 3">
 <div class="panel vocab-screen-panel vocab-two-column-panel">
-<div class="vocab-sheet vocab-a4-card" id="vocabSheet3"><div class="vocab-a4-header">
+<div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet3"><div class="vocab-a4-header">
   <div><b>MI CUERPO FLORECE · SESIÓN 3</b><span>PALABRA DE HOY</span></div>
   <div class="vocab-a4-name">Nombre: ______________________________</div>
 </div>
@@ -1447,7 +1506,7 @@ body.vocab-editor-open{overflow:hidden!important}
     </article>
   </div>
   <div class="printables-bottom"><button class="btn prev" type="button">◀ Volver</button><button class="btn" data-open-materials="week2" type="button">VER TODAS LAS FICHAS · SEMANA 2</button><button class="btn primary next" type="button">Cierre ▶</button></div>
-</div></section><section class="screen" data-session="4" data-title="Cierre · cinco sentidos"><div class="panel"><span class="tag">CIERRE</span><div class="week2-close schoolfont">Hoy descubrimos que usamos <strong>cinco sentidos</strong> para conocer lo que nos rodea.</div><div class="sense-routine"><button class="sense-rbtn s4-close" data-kind="aprendi">🌱 He aprendido…</button><button class="sense-rbtn s4-close" data-kind="evidencia">🔎 Lo sé porque…</button><button class="sense-rbtn s4-close" data-kind="pregunta">❓ Todavía me pregunto…</button></div><div class="sense-prompt schoolfont" id="s4ClosePrompt">Elige una frase para cerrar.</div><div class="teacherbox"><b>3 min.</b> Recoge una respuesta oral de varios alumnos. No busques que nombren necesariamente “vista/oído/olfato/gusto/tacto”; pueden usar los verbos del libro.</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">📚 Palabra de hoy ▶</button></div></div></section><section class="screen" data-session="4" data-title="Vocabulario · sesión 4"><div class="panel vocab-two-column-panel"><div class="vocab-sheet vocab-a4-card" id="vocabSheet4"><div class="vocab-a4-header">
+</div></section><section class="screen" data-session="4" data-title="Cierre · cinco sentidos"><div class="panel"><span class="tag">CIERRE</span><div class="week2-close schoolfont">Hoy descubrimos que usamos <strong>cinco sentidos</strong> para conocer lo que nos rodea.</div><div class="sense-routine"><button class="sense-rbtn s4-close" data-kind="aprendi">🌱 He aprendido…</button><button class="sense-rbtn s4-close" data-kind="evidencia">🔎 Lo sé porque…</button><button class="sense-rbtn s4-close" data-kind="pregunta">❓ Todavía me pregunto…</button></div><div class="sense-prompt schoolfont" id="s4ClosePrompt">Elige una frase para cerrar.</div><div class="teacherbox"><b>3 min.</b> Recoge una respuesta oral de varios alumnos. No busques que nombren necesariamente “vista/oído/olfato/gusto/tacto”; pueden usar los verbos del libro.</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">📚 Palabra de hoy ▶</button></div></div></section><section class="screen" data-session="4" data-title="Vocabulario · sesión 4"><div class="panel vocab-two-column-panel"><div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet4"><div class="vocab-a4-header">
   <div><b>MI CUERPO FLORECE · SESIÓN 4</b><span>PALABRA DE HOY</span></div>
   <div class="vocab-a4-name">Nombre: ______________________________</div>
 </div>
@@ -1475,7 +1534,7 @@ body.vocab-editor-open{overflow:hidden!important}
     </article>
   </div>
   <div class="printables-bottom"><button class="btn prev" type="button">◀ Volver</button><button class="btn" data-open-materials="week2" type="button">VER TODAS LAS FICHAS · SEMANA 2</button><button class="btn primary next" type="button">Cierre ▶</button></div>
-</div></section><section class="screen" data-session="5" data-title="Cierre · investigamos"><div class="panel"><span class="tag">CIERRE</span><div class="week2-close schoolfont">Un pequeño científico <strong>no solo adivina</strong>: observa, prueba y explica qué ha descubierto.</div><div class="sense-prompt schoolfont">Hoy completa oralmente: <b>“Me sorprendió…”</b> o <b>“Descubrí que…”</b></div><div class="teacherbox"><b>3 min.</b> Recoge respuestas espontáneas. Puedes anotar mentalmente evidencias de atención, autonomía, uso de vocabulario y capacidad de explicar.</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">📚 Palabra de hoy ▶</button></div></div></section><section class="screen" data-session="5" data-title="Vocabulario · sesión 5"><div class="panel vocab-two-column-panel"><div class="vocab-sheet vocab-a4-card" id="vocabSheet5"><div class="vocab-a4-header">
+</div></section><section class="screen" data-session="5" data-title="Cierre · investigamos"><div class="panel"><span class="tag">CIERRE</span><div class="week2-close schoolfont">Un pequeño científico <strong>no solo adivina</strong>: observa, prueba y explica qué ha descubierto.</div><div class="sense-prompt schoolfont">Hoy completa oralmente: <b>“Me sorprendió…”</b> o <b>“Descubrí que…”</b></div><div class="teacherbox"><b>3 min.</b> Recoge respuestas espontáneas. Puedes anotar mentalmente evidencias de atención, autonomía, uso de vocabulario y capacidad de explicar.</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">📚 Palabra de hoy ▶</button></div></div></section><section class="screen" data-session="5" data-title="Vocabulario · sesión 5"><div class="panel vocab-two-column-panel"><div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet5"><div class="vocab-a4-header">
   <div><b>MI CUERPO FLORECE · SESIÓN 5</b><span>PALABRA DE HOY</span></div>
   <div class="vocab-a4-name">Nombre: ______________________________</div>
 </div>
@@ -1503,7 +1562,7 @@ body.vocab-editor-open{overflow:hidden!important}
     </article>
   </div>
   <div class="printables-bottom"><button class="btn prev" type="button">◀ Volver</button><button class="btn" data-open-materials="week2" type="button">VER TODAS LAS FICHAS · SEMANA 2</button><button class="btn primary next" type="button">Cierre ▶</button></div>
-</div></section><section class="screen" data-session="6" data-title="Cierre · semana 2"><div class="panel"><span class="tag">CIERRE DE LA SEMANA 2</span><div class="week2-close schoolfont">Ahora puedo <strong>buscar información, investigar, clasificar y explicar</strong> cómo uso mis sentidos.</div><div class="sense-prompt schoolfont">Pregunta final: <b>¿Qué sentido te ayudó más hoy? ¿Cómo lo sabes?</b></div><div class="teacherbox"><b>3 min.</b> Guarda las tres fichas como evidencias de la semana. La observación oral durante las actividades completa la información que no aparece en las producciones.</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">📚 Palabra de hoy ▶</button></div></div></section><section class="screen" data-session="6" data-title="Vocabulario · sesión 6"><div class="panel vocab-two-column-panel"><div class="vocab-sheet vocab-a4-card" id="vocabSheet6"><div class="vocab-a4-header">
+</div></section><section class="screen" data-session="6" data-title="Cierre · semana 2"><div class="panel"><span class="tag">CIERRE DE LA SEMANA 2</span><div class="week2-close schoolfont">Ahora puedo <strong>buscar información, investigar, clasificar y explicar</strong> cómo uso mis sentidos.</div><div class="sense-prompt schoolfont">Pregunta final: <b>¿Qué sentido te ayudó más hoy? ¿Cómo lo sabes?</b></div><div class="teacherbox"><b>3 min.</b> Guarda las tres fichas como evidencias de la semana. La observación oral durante las actividades completa la información que no aparece en las producciones.</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">📚 Palabra de hoy ▶</button></div></div></section><section class="screen" data-session="6" data-title="Vocabulario · sesión 6"><div class="panel vocab-two-column-panel"><div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet6"><div class="vocab-a4-header">
   <div><b>MI CUERPO FLORECE · SESIÓN 6</b><span>PALABRA DE HOY</span></div>
   <div class="vocab-a4-name">Nombre: ______________________________</div>
 </div>
@@ -2146,6 +2205,23 @@ body.vocab-editor-open{overflow:hidden!important}
 <div class="main-return"><button class="btn" data-go-home="" type="button">◀ Volver al inicio</button><button class="btn" id="resetGlobalRubric123" type="button">↻ Borrar puntuación</button><button class="btn primary" id="printGlobalRubric123" type="button">🖨️ Imprimir A4 apaisado</button></div>
 </div>
 </section></div>
+<div class="vocab-editor" id="vocabEditor" aria-hidden="true">
+  <div class="vocab-editor-toolbar">
+    <button type="button" id="vocabEditorClose">← CERRAR Y GUARDAR</button>
+    <div class="vocab-editor-title" id="vocabEditorTitle">Editar ficha de vocabulario</div>
+    <button type="button" class="active" data-vocab-editor-mode="move">↔ MOVER / TAMAÑO</button>
+    <button type="button" data-vocab-editor-mode="text">T TEXTO</button>
+    <button type="button" id="vocabEditorImage">🖼 CAMBIAR IMAGEN</button>
+    <button type="button" id="vocabEditorAddLine">＋ LÍNEA</button>
+    <button type="button" id="vocabEditorAddBox">＋ RECUADRO</button>
+    <button type="button" id="vocabEditorDelete">🗑 BORRAR</button>
+    <button type="button" id="vocabEditorReset">↻ RESTABLECER</button>
+    <button type="button" class="print" id="vocabEditorPrint">🖨 IMPRIMIR</button>
+    <input type="file" id="vocabEditorFile" accept="image/*" hidden>
+  </div>
+  <div class="vocab-editor-hint" id="vocabEditorHint">Selecciona un bloque y arrástralo. Usa el punto de la esquina para cambiar su tamaño.</div>
+  <div class="vocab-editor-stage" id="vocabEditorStage"></div>
+</div>
 <script>
 (()=>{
 const root=document.getElementById('app');
@@ -2356,13 +2432,13 @@ function selectVocabObject(el){
   if(el)el.classList.add('selected');
 }
 function openVocabEditor(n){
-  const sheet=document.getElementById('vocabSheet'+n);if(!sheet)return;
+  const sheet=document.getElementById('vocabSheet'+n);if(!sheet||!vocabEditor||!vocabEditorStage)return;
   vocabEditorNumber=String(n);vocabEditorSheet=sheet;
   vocabEditorHome=sheet.parentNode;vocabEditorNext=sheet.nextSibling;
-  sheet.classList.remove('w3-hidden-print');
   vocabEditorStage.appendChild(sheet);
+  sheet.classList.remove('w3-hidden-print');
   vocabEditor.classList.add('open');vocabEditor.setAttribute('aria-hidden','false');document.body.classList.add('vocab-editor-open');
-  document.getElementById('vocabEditorTitle').textContent='Editar vocabulario · sesión '+n;
+  const title=document.getElementById('vocabEditorTitle');if(title)title.textContent='Editar vocabulario · sesión '+n;
   requestAnimationFrame(()=>{activateFreeVocabLayout(sheet);setVocabEditorMode('move');selectVocabObject(null);});
 }
 function closeVocabEditor(){
@@ -2373,7 +2449,7 @@ function closeVocabEditor(){
     if(vocabEditorNext&&vocabEditorNext.parentNode===vocabEditorHome)vocabEditorHome.insertBefore(vocabEditorSheet,vocabEditorNext);
     else vocabEditorHome.appendChild(vocabEditorSheet);
   }
-  if(Number(vocabEditorNumber)>=7)vocabEditorSheet.classList.add('w3-hidden-print');
+  vocabEditorSheet.classList.add('w3-hidden-print');
   vocabEditor.classList.remove('open','text-mode','move-mode');vocabEditor.setAttribute('aria-hidden','true');document.body.classList.remove('vocab-editor-open');
   vocabEditorSheet=null;vocabEditorSelected=null;vocabEditorNumber=null;vocabEditorHome=null;vocabEditorNext=null;
 }
@@ -2739,22 +2815,6 @@ root.classList.toggle('focus-week3',['7','8','9'].includes(screens[current]?.dat
 </script>
 
 
-<div class="vocab-editor" id="vocabEditor" aria-hidden="true">
-  <div class="vocab-editor-toolbar">
-    <button type="button" id="vocabEditorClose">← CERRAR Y GUARDAR</button>
-    <div class="vocab-editor-title" id="vocabEditorTitle">Editar ficha de vocabulario</div>
-    <button type="button" class="active" data-vocab-editor-mode="move">↔ MOVER / TAMAÑO</button>
-    <button type="button" data-vocab-editor-mode="text">T TEXTO</button>
-    <button type="button" id="vocabEditorImage">🖼 CAMBIAR IMAGEN</button>
-    <button type="button" id="vocabEditorAddLine">＋ LÍNEA</button>
-    <button type="button" id="vocabEditorAddBox">＋ RECUADRO</button>
-    <button type="button" id="vocabEditorDelete">🗑 BORRAR</button>
-    <button type="button" id="vocabEditorReset">↻ RESTABLECER</button>
-    <button type="button" class="print" id="vocabEditorPrint">🖨 IMPRIMIR</button>
-    <input type="file" id="vocabEditorFile" accept="image/*" hidden>
-  </div>
-  <div class="vocab-editor-hint" id="vocabEditorHint">Selecciona un bloque y arrástralo. Usa el punto de la esquina para cambiar su tamaño.</div>
-  <div class="vocab-editor-stage" id="vocabEditorStage"></div>
-</div>
+
 </body>
 </html>
