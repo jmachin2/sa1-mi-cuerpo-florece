@@ -999,6 +999,69 @@ body.vocab-editor-open{overflow:hidden!important}
 /* La hoja A4 normal sigue con márgenes propios; el editor libre usa coordenadas de hoja completa. */
 .vocab-editor-stage .vocab-free-layout{padding:0!important}
 </style>
+
+<style id="vocab-editor-stable-v4">
+/* Editor estable: una única hoja A4 real (794 x 1123 CSS px) */
+.vocab-editor-stage{display:flex!important;align-items:flex-start!important;justify-content:center!important;overflow:auto!important;padding:14px!important}
+.vocab-editor-stage .vocab-a4-card{
+  box-sizing:border-box!important;
+  width:794px!important;
+  height:1123px!important;
+  min-width:794px!important;
+  min-height:1123px!important;
+  max-width:794px!important;
+  max-height:1123px!important;
+  aspect-ratio:auto!important;
+  margin:0 auto!important;
+  padding:34px!important;
+  transform-origin:top center!important;
+  zoom:.66;
+  border-radius:4px!important;
+  background:#fff!important;
+  box-shadow:0 8px 30px rgba(0,0,0,.24)!important;
+  overflow:hidden!important;
+}
+@media(min-height:950px){.vocab-editor-stage .vocab-a4-card{zoom:.72}}
+@media(max-height:760px){.vocab-editor-stage .vocab-a4-card{zoom:.54}}
+@media(max-width:900px){.vocab-editor-stage .vocab-a4-card{zoom:.48}}
+/* Sólo se mueven los cinco bloques principales. Foto y palabra permanecen juntas en su zona superior. */
+.vocab-editor-stage .vocab-free-layout>.vocab-a4-top{display:grid!important;position:absolute!important}
+.vocab-editor-stage .vocab-free-layout .vocab-a4-photo,
+.vocab-editor-stage .vocab-free-layout .vocab-a4-wordbox{position:relative!important;left:auto!important;top:auto!important;width:auto!important;height:auto!important}
+.vocab-editor-stage .vocab-free-layout .vocab-a4-own>.vocab-edit-line{position:relative!important;left:auto!important;top:auto!important;width:auto!important;height:42px!important}
+.vocab-editor-stage .vocab-editor-added-box,
+.vocab-editor-stage .vocab-editor-added-line{display:none!important}
+/* Limpieza de restos antiguos */
+.vocab-a4-card .vocab-editor-added-box,
+.vocab-a4-card .vocab-editor-added-line{display:none!important}
+/* Impresión exacta del editor actual */
+@media print{
+ body.vocab-editor-exact-print *{visibility:hidden!important}
+ body.vocab-editor-exact-print #vocabEditor,
+ body.vocab-editor-exact-print #vocabEditorStage,
+ body.vocab-editor-exact-print #vocabEditorStage .vocab-a4-card,
+ body.vocab-editor-exact-print #vocabEditorStage .vocab-a4-card *{visibility:visible!important}
+ body.vocab-editor-exact-print #vocabEditor{display:block!important;position:fixed!important;inset:0!important;background:#fff!important}
+ body.vocab-editor-exact-print .vocab-editor-toolbar,
+ body.vocab-editor-exact-print .vocab-editor-hint{display:none!important}
+ body.vocab-editor-exact-print #vocabEditorStage{
+   position:fixed!important;left:0!important;top:0!important;
+   width:210mm!important;height:297mm!important;padding:0!important;margin:0!important;
+   display:block!important;overflow:hidden!important;background:#fff!important
+ }
+ body.vocab-editor-exact-print #vocabEditorStage .vocab-a4-card{
+   position:absolute!important;left:0!important;top:0!important;
+   width:210mm!important;height:297mm!important;min-width:210mm!important;min-height:297mm!important;
+   max-width:210mm!important;max-height:297mm!important;
+   zoom:1!important;transform:none!important;margin:0!important;
+   box-shadow:none!important;border:0!important;border-radius:0!important;
+   box-sizing:border-box!important;overflow:hidden!important
+ }
+ body.vocab-editor-exact-print .vocab-resize-handle{display:none!important}
+ body.vocab-editor-exact-print .vocab-edit-object,
+ body.vocab-editor-exact-print .vocab-edit-line{outline:none!important}
+}
+</style>
 </head>
 <body>
 <!-- Versión preparada para GitHub Pages. -->
@@ -2307,14 +2370,14 @@ body.vocab-editor-open{overflow:hidden!important}
     <button type="button" class="active" data-vocab-editor-mode="move">↔ MOVER / TAMAÑO</button>
     <button type="button" data-vocab-editor-mode="text">T TEXTO</button>
     <button type="button" id="vocabEditorImage">🖼 CAMBIAR IMAGEN</button>
-    <button type="button" id="vocabEditorAddLine">＋ LÍNEA</button>
-    <button type="button" id="vocabEditorAddBox">＋ RECUADRO</button>
-    <button type="button" id="vocabEditorDelete">🗑 BORRAR</button>
+    
+    
+    
     <button type="button" id="vocabEditorReset">↻ RESTABLECER</button>
     <button type="button" class="print" id="vocabEditorPrint">🖨 IMPRIMIR</button>
     <input type="file" id="vocabEditorFile" accept="image/*" hidden>
   </div>
-  <div class="vocab-editor-hint" id="vocabEditorHint">Selecciona un bloque y arrástralo. Usa el punto de la esquina para cambiar su tamaño.</div>
+  <div class="vocab-editor-hint" id="vocabEditorHint">Selecciona un bloque para moverlo o cambiar su tamaño. Puedes editar el texto y sustituir la fotografía.</div>
   <div class="vocab-editor-stage" id="vocabEditorStage"></div>
 </div>
 <script>
@@ -2458,7 +2521,14 @@ const sameSay={ojos:'👀 Los dos tienen ojos.',orejas:'👂 Los dos tienen orej
 root.querySelectorAll('.same-btn').forEach(b=>b.addEventListener('click',()=>{root.querySelectorAll('.same-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('samePrompt').textContent=sameSay[b.dataset.part];}));
 root.querySelectorAll('.c-card').forEach(c=>c.addEventListener('click',()=>{c.classList.remove('same','diff');const same=c.dataset.answer==='same';c.classList.add(same?'same':'diff');document.getElementById('comparePrompt').textContent=same?'✅ Esto habla de algo igual. Los dos lo tienen.':'↔️ Esto habla de algo diferente. No es igual en los dos.';}));
 document.getElementById('printCompareWorksheet').addEventListener('click',()=>printTarget(document.getElementById('compareWorksheet')));
-root.querySelectorAll('[data-print-vocab]').forEach(b=>b.addEventListener('click',()=>{const n=b.dataset.printVocab;printTarget(document.getElementById('vocabSheet'+n));}));
+root.querySelectorAll('[data-print-vocab]').forEach(b=>b.addEventListener('click',()=>{
+  const n=b.dataset.printVocab,s=document.getElementById('vocabSheet'+n);
+  if(!s)return;
+  if(s.classList.contains('vocab-free-layout')){
+    openVocabEditor(n);
+    setTimeout(()=>document.getElementById('vocabEditorPrint')?.click(),80);
+  }else printTarget(s);
+}));
 
 const vocabEditor=document.getElementById('vocabEditor');
 const vocabEditorStage=document.getElementById('vocabEditorStage');
@@ -2475,46 +2545,32 @@ function makeHandle(el){
   const h=document.createElement('span');h.className='vocab-resize-handle';h.setAttribute('aria-hidden','true');el.appendChild(h);
 }
 function markVocabObjects(sheet){
-  const top=[
-    sheet.querySelector('.vocab-a4-header'),
-    sheet.querySelector('.vocab-a4-photo'),
-    sheet.querySelector('.vocab-a4-wordbox'),
+  sheet.querySelectorAll('.vocab-edit-object,.vocab-edit-line').forEach(el=>{
+    el.classList.remove('vocab-edit-object','vocab-edit-line','selected');
+    el.querySelectorAll(':scope > .vocab-resize-handle').forEach(h=>h.remove());
+  });
+  const blocks=[
+    sheet.querySelector(':scope > .vocab-a4-header'),
+    sheet.querySelector(':scope > .vocab-a4-top'),
     ...sheet.querySelectorAll(':scope > .vocab-a4-section'),
     sheet.querySelector(':scope > .vocab-a4-own')
   ].filter(Boolean);
-  top.forEach(el=>{el.classList.add('vocab-edit-object');makeHandle(el);});
-  sheet.querySelectorAll('.vocab-a4-own .vocab-writing-line').forEach(el=>{el.classList.add('vocab-edit-line');makeHandle(el);});
+  blocks.forEach(el=>{el.classList.add('vocab-edit-object');makeHandle(el);});
 }
 function activateFreeVocabLayout(sheet){
+  // Limpia restos de versiones anteriores que causaban recuadros fantasma.
+  sheet.querySelectorAll('.vocab-editor-added-box,.vocab-editor-added-line').forEach(x=>x.remove());
   if(sheet.classList.contains('vocab-free-layout')){markVocabObjects(sheet);return;}
   markVocabObjects(sheet);
   const sr=sheet.getBoundingClientRect();
-  const objects=[
-    sheet.querySelector(':scope > .vocab-a4-header'),
-    sheet.querySelector('.vocab-a4-photo'),
-    sheet.querySelector('.vocab-a4-wordbox'),
-    ...sheet.querySelectorAll(':scope > .vocab-a4-section'),
-    sheet.querySelector(':scope > .vocab-a4-own')
-  ].filter(Boolean);
+  const objects=[...sheet.querySelectorAll(':scope > .vocab-edit-object')];
   const rects=objects.map(el=>({el,r:el.getBoundingClientRect()}));
-  const own=sheet.querySelector(':scope > .vocab-a4-own');
-  let lineRects=[];
-  if(own){
-    const or=own.getBoundingClientRect();
-    lineRects=[...own.querySelectorAll(':scope > .vocab-edit-line')].map(el=>({el,r:el.getBoundingClientRect(),or}));
-  }
   sheet.classList.add('vocab-free-layout');
   rects.forEach(({el,r})=>{
     el.style.left=pct(r.left-sr.left,sr.width);
     el.style.top=pct(r.top-sr.top,sr.height);
     el.style.width=pct(r.width,sr.width);
     el.style.height=pct(r.height,sr.height);
-  });
-  lineRects.forEach(({el,r,or})=>{
-    el.style.left=pct(r.left-or.left,or.width);
-    el.style.top=pct(r.top-or.top,or.height);
-    el.style.width=pct(r.width,or.width);
-    el.style.height=pct(Math.max(r.height,4),or.height);
   });
 }
 function setVocabEditorMode(mode){
@@ -2594,10 +2650,7 @@ vocabEditorStage?.addEventListener('click',e=>{
 });
 
 document.getElementById('vocabEditorImage')?.addEventListener('click',()=>{
-  let img=null;
-  if(vocabEditorSelected?.classList.contains('vocab-a4-photo'))img=vocabEditorSelected.querySelector('img');
-  else if(vocabEditorSelected)img=vocabEditorSelected.querySelector('img');
-  if(!img)img=vocabEditorSheet?.querySelector('.vocab-a4-photo img');
+  let img=vocabEditorSelected?.querySelector?.('.vocab-a4-photo img, img')||vocabEditorSheet?.querySelector('.vocab-a4-photo img');
   if(!img){vocabEditorHint.textContent='Selecciona primero el bloque de la fotografía.';return;}
   vocabEditorFile.dataset.targetReady='1';vocabEditorFile.click();
 });
@@ -2607,28 +2660,28 @@ vocabEditorFile?.addEventListener('change',()=>{
   if(!img)return;
   const reader=new FileReader();reader.onload=()=>{img.src=String(reader.result);};reader.readAsDataURL(file);vocabEditorFile.value='';
 });
-document.getElementById('vocabEditorAddLine')?.addEventListener('click',()=>{
-  if(!vocabEditorSheet)return;
-  activateFreeVocabLayout(vocabEditorSheet);
-  const el=document.createElement('div');el.className='vocab-editor-added-line vocab-edit-object';el.style.cssText='left:15%;top:88%;width:70%;height:2%;';makeHandle(el);vocabEditorSheet.appendChild(el);selectVocabObject(el);setVocabEditorMode('move');
-});
-document.getElementById('vocabEditorAddBox')?.addEventListener('click',()=>{
-  if(!vocabEditorSheet)return;
-  activateFreeVocabLayout(vocabEditorSheet);
-  const el=document.createElement('div');el.className='vocab-editor-added-box vocab-edit-object schoolfont';el.style.cssText='left:18%;top:78%;width:64%;height:8%;';el.textContent='';makeHandle(el);vocabEditorSheet.appendChild(el);selectVocabObject(el);setVocabEditorMode('move');
-});
-document.getElementById('vocabEditorDelete')?.addEventListener('click',()=>{
-  if(!vocabEditorSelected)return;
-  const core=vocabEditorSelected.matches('.vocab-a4-header,.vocab-a4-photo,.vocab-a4-wordbox,.vocab-a4-section,.vocab-a4-own');
-  if(core){vocabEditorSelected.style.display='none';selectVocabObject(null);}
-  else{vocabEditorSelected.remove();vocabEditorSelected=null;}
-});
+
+
+
 document.getElementById('vocabEditorReset')?.addEventListener('click',()=>{
   if(!vocabEditorSheet||!vocabEditorNumber)return;
-  vocabEditorSheet.classList.remove('vocab-free-layout');vocabEditorSheet.removeAttribute('style');vocabEditorSheet.innerHTML=vocabEditorOriginal[vocabEditorNumber];
+  vocabEditorSheet.className='vocab-sheet vocab-a4-card';
+  vocabEditorSheet.removeAttribute('style');
+  vocabEditorSheet.innerHTML=vocabEditorOriginal[vocabEditorNumber];
   requestAnimationFrame(()=>{activateFreeVocabLayout(vocabEditorSheet);setVocabEditorMode('move');selectVocabObject(null);});
 });
-document.getElementById('vocabEditorPrint')?.addEventListener('click',()=>{if(vocabEditorSheet)printTarget(vocabEditorSheet);});
+document.getElementById('vocabEditorPrint')?.addEventListener('click',()=>{
+  if(!vocabEditorSheet)return;
+  vocabEditorSheet.querySelectorAll('[contenteditable]').forEach(x=>x.removeAttribute('contenteditable'));
+  selectVocabObject(null);
+  let ps=document.getElementById('vocabEditorExactPage');
+  if(!ps){ps=document.createElement('style');ps.id='vocabEditorExactPage';ps.textContent='@page{size:A4 portrait;margin:0}';document.head.appendChild(ps);}
+  document.body.classList.add('vocab-editor-exact-print');
+  const clean=()=>{document.body.classList.remove('vocab-editor-exact-print');window.removeEventListener('afterprint',clean);};
+  window.addEventListener('afterprint',clean);
+  window.print();
+  setTimeout(clean,1800);
+});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&vocabEditor?.classList.contains('open'))closeVocabEditor();});
 
 const compareClosePrompts={veo:'👀 VEO… Ahora puedo mirar a dos personas y encontrar cosas iguales.',pienso:'💭 PIENSO… Las personas pueden tener muchas cosas en común y también algunas diferencias.',pregunto:'❓ ME PREGUNTO… ¿Qué más quiero descubrir sobre nuestro cuerpo y sobre cómo conocemos el mundo?'};
