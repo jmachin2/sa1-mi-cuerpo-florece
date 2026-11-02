@@ -973,6 +973,32 @@ body.vocab-editor-open{overflow:hidden!important}
 .vocab-two-column-panel:has(.legacy-vocab-preview) .vocab-controls,.vocab-screen-panel:has(.legacy-vocab-preview) .vocab-controls{flex:0 0 auto!important;display:flex!important;flex-direction:row!important;justify-content:center!important;gap:8px!important;margin:8px 0 0!important}
 @media(max-width:820px){.legacy-vocab-preview{grid-template-columns:1fr}.legacy-vocab-photo{max-height:30vh}}
 </style>
+
+<style id="vocab-editor-print-fix-v3">
+/* En modo libre, FOTO y PALABRA dejan de depender del grid interno.
+   Sus porcentajes pasan a referirse directamente a la hoja A4. */
+.vocab-free-layout>.vocab-a4-top{display:contents!important}
+.vocab-free-layout .vocab-edit-object{position:absolute!important;margin:0!important;box-sizing:border-box!important}
+.vocab-free-layout .vocab-a4-photo,
+.vocab-free-layout .vocab-a4-wordbox{position:absolute!important}
+.vocab-free-layout .vocab-a4-own{position:absolute!important}
+.vocab-free-layout .vocab-a4-own>.vocab-edit-line{position:absolute!important;box-sizing:border-box!important}
+
+/* Impresión: mantener exactamente la geometría libre, sin reactivar grids internos. */
+@media print{
+ .vocab-print-host .vocab-free-layout.print-target{display:block!important;position:absolute!important;padding:0!important}
+ .vocab-print-host .vocab-free-layout>.vocab-a4-top{display:contents!important}
+ .vocab-print-host .vocab-free-layout .vocab-edit-object{position:absolute!important;margin:0!important;box-sizing:border-box!important}
+ .vocab-print-host .vocab-free-layout .vocab-a4-photo,
+ .vocab-print-host .vocab-free-layout .vocab-a4-wordbox,
+ .vocab-print-host .vocab-free-layout .vocab-a4-own{position:absolute!important}
+ .vocab-print-host .vocab-free-layout .vocab-a4-own>.vocab-edit-line{position:absolute!important}
+ .vocab-print-host .vocab-resize-handle{display:none!important}
+}
+
+/* La hoja A4 normal sigue con márgenes propios; el editor libre usa coordenadas de hoja completa. */
+.vocab-editor-stage .vocab-free-layout{padding:0!important}
+</style>
 </head>
 <body>
 <!-- Versión preparada para GitHub Pages. -->
@@ -2463,11 +2489,20 @@ function activateFreeVocabLayout(sheet){
   if(sheet.classList.contains('vocab-free-layout')){markVocabObjects(sheet);return;}
   markVocabObjects(sheet);
   const sr=sheet.getBoundingClientRect();
-  const top=[...sheet.querySelectorAll(':scope > .vocab-edit-object')];
-  const rects=top.map(el=>({el,r:el.getBoundingClientRect()}));
+  const objects=[
+    sheet.querySelector(':scope > .vocab-a4-header'),
+    sheet.querySelector('.vocab-a4-photo'),
+    sheet.querySelector('.vocab-a4-wordbox'),
+    ...sheet.querySelectorAll(':scope > .vocab-a4-section'),
+    sheet.querySelector(':scope > .vocab-a4-own')
+  ].filter(Boolean);
+  const rects=objects.map(el=>({el,r:el.getBoundingClientRect()}));
   const own=sheet.querySelector(':scope > .vocab-a4-own');
   let lineRects=[];
-  if(own){const or=own.getBoundingClientRect();lineRects=[...own.querySelectorAll(':scope > .vocab-edit-line')].map(el=>({el,r:el.getBoundingClientRect(),or}));}
+  if(own){
+    const or=own.getBoundingClientRect();
+    lineRects=[...own.querySelectorAll(':scope > .vocab-edit-line')].map(el=>({el,r:el.getBoundingClientRect(),or}));
+  }
   sheet.classList.add('vocab-free-layout');
   rects.forEach(({el,r})=>{
     el.style.left=pct(r.left-sr.left,sr.width);
