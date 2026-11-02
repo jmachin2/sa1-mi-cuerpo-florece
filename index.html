@@ -1133,6 +1133,19 @@ body.mentor-open{overflow:hidden!important}
 @media(max-height:780px){.mentor-book{height:min(62vh,590px)}.mentor-book-area{padding-top:6px}.mentor-book-controls{padding:5px}.mentor-book-controls>button,.mentor-book-controls label,.mentor-view-toggle{min-height:32px}.mentor-turn-help{display:none}}
 @media(max-width:900px){.mentor-book-area{grid-template-columns:44px minmax(0,1fr) 44px;padding-left:5px;padding-right:5px}.mentor-edge-nav{width:40px;height:68px;font-size:42px}.mentor-book{width:82vw}.mentor-key-control select{max-width:140px}}
 </style>
+<style id="week3-video-selection-v1">
+.w3-video-selection{display:grid;grid-template-columns:1fr 1fr;gap:12px;flex:1;min-height:0}
+.w3-video-card{min-width:0;min-height:0;border:2px solid #d7e0e4;border-radius:18px;background:#fff;overflow:hidden;display:flex;flex-direction:column}
+.w3-video-card-head{padding:7px 10px;background:#f5f8fa;border-bottom:1px solid #dce4e8;text-align:center}
+.w3-video-card-head b{display:block;font:900 clamp(18px,2.4vh,26px)/1.05 Arial;color:#21343f}
+.w3-video-card-head span{display:block;margin-top:3px;font:700 12px/1.2 Arial;color:#61717a}
+.w3-video-frame{flex:1;min-height:0;background:#111;display:grid;place-items:center}
+.w3-video-frame iframe,.w3-video-frame video{display:block;width:100%;height:100%;min-height:260px;border:0;background:#111;object-fit:contain}
+.w3-video-source{padding:5px 9px;text-align:center;font:700 10px/1.2 Arial;color:#708089;background:#fbfcfd}
+.w3-video-source a{color:#2d617f;font-weight:900;text-decoration:none}
+@media(max-height:800px){.w3-video-frame iframe,.w3-video-frame video{min-height:210px}.w3-video-card-head b{font-size:18px}}
+@media(max-width:850px){.w3-video-selection{grid-template-columns:1fr}.w3-video-frame iframe,.w3-video-frame video{min-height:230px}}
+</style>
 </head>
 <body>
 <!-- Versión preparada para GitHub Pages. -->
@@ -1829,26 +1842,35 @@ body.mentor-open{overflow:hidden!important}
   </div>
 </section>
 
-<section class="screen" data-session="7" data-title="Vídeo · pato">
+<section class="screen" data-session="7" data-title="Vídeos · contamos patas">
   <div class="panel w3-new">
-    <div class="w3-kicker">SESIÓN 7 · OBSERVA</div>
-    <h1 class="w3-title schoolfont">Mira cómo camina</h1>
-    <div class="w3-instruction schoolfont">MIRA EL CUERPO COMPLETO</div>
-    
-<div class="w3-video-box">
-  <video id="videoS7" preload="metadata" playsinline muted controls poster="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG">
-    <source src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_walking_in_Yvoire.webm" type="video/webm">
-  </video>
-  <button class="w3-play" data-video-action="play" data-video-target="videoS7" type="button">▶ REPRODUCIR</button>
-  <div class="edu-video-fallback" id="videoS7Fallback" hidden><b>El vídeo no se ha podido cargar.</b> <a href="https://commons.wikimedia.org/wiki/File:Duck_walking_in_Yvoire.webm" target="_blank" rel="noopener">Abrir vídeo</a></div>
-</div>
-<div class="w3-big-prompt schoolfont">¿CUÁNTAS PATAS VES?</div>
-    
-<div class="w3-nav">
-  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
-  <div class="w3-step"><b>2</b> / 6</div>
-  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
-</div>
+    <div class="w3-kicker">SESIÓN 7 · OBSERVA Y CUENTA</div>
+    <h1 class="w3-title schoolfont">¿Cuántas patas tienen?</h1>
+    <div class="w3-instruction schoolfont">MIRA · CUENTA · COMPARA</div>
+    <div class="w3-video-selection">
+      <article class="w3-video-card">
+        <div class="w3-video-card-head"><b>¿Cuántas patas tienen los animales?</b><span>Solidaria Kids · vídeo educativo</span></div>
+        <div class="w3-video-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/-xdRbwwbNGY?rel=0" title="Aprende cuántas patas tienen los animales - Solidaria Kids" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="w3-video-source">YouTube · <a href="https://www.youtube.com/watch?v=-xdRbwwbNGY" target="_blank" rel="noopener">ABRIR VÍDEO ↗</a></div>
+      </article>
+      <article class="w3-video-card">
+        <div class="w3-video-card-head"><b>Contando patas</b><span>INTEF + RTVE · Aprendemos en Clan</span></div>
+        <div class="w3-video-frame">
+          <video controls playsinline preload="metadata">
+            <source src="https://media.educalab.es/videos/2022/S24/P126_U4_MATES.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="w3-video-source">Fuente: INTEF / MEFP–RTVE · <a href="https://intef.es/aprendemos_episodios/contando-patas/" target="_blank" rel="noopener">VER RECURSO ↗</a></div>
+      </article>
+    </div>
+    <div class="w3-big-prompt schoolfont">¿VES ANIMALES CON 2, 4, 6 U 8 PATAS?</div>
+    <div class="w3-nav">
+      <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+      <div class="w3-step"><b>2</b> / 6</div>
+      <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+    </div>
   </div>
 </section>
 
@@ -1994,26 +2016,33 @@ body.mentor-open{overflow:hidden!important}
   </div>
 </section>
 
-<section class="screen" data-session="8" data-title="Vídeo · abeja">
+<section class="screen" data-session="8" data-title="Vídeos · insectos y arácnidos">
   <div class="panel w3-new">
-    <div class="w3-kicker">SESIÓN 8 · OBSERVA</div>
-    <h1 class="w3-title schoolfont">Observa una abeja</h1>
-    <div class="w3-instruction schoolfont">PAUSA SI LO NECESITAS</div>
-    
-<div class="w3-video-box">
-  <video id="videoS8" preload="metadata" playsinline muted controls poster="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg">
-    <source src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Flying_bee_on_flower_in_slow_motion_V.2.webm" type="video/webm">
-  </video>
-  <button class="w3-play" data-video-action="play" data-video-target="videoS8" type="button">▶ REPRODUCIR</button>
-  <div class="edu-video-fallback" id="videoS8Fallback" hidden><b>El vídeo no se ha podido cargar.</b> <a href="https://commons.wikimedia.org/wiki/File:Flying_bee_on_flower_in_slow_motion_V.2.webm" target="_blank" rel="noopener">Abrir vídeo</a></div>
-</div>
-<div class="w3-big-prompt schoolfont">¿EN QUÉ GRUPO LA PONDRÍAS?</div>
-    
-<div class="w3-nav">
-  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
-  <div class="w3-step"><b>2</b> / 6</div>
-  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
-</div>
+    <div class="w3-kicker">SESIÓN 8 · COMPARA</div>
+    <h1 class="w3-title schoolfont">6 patas · 8 patas</h1>
+    <div class="w3-instruction schoolfont">MIRA Y BUSCA LA DIFERENCIA</div>
+    <div class="w3-video-selection">
+      <article class="w3-video-card">
+        <div class="w3-video-card-head"><b>INSECTOS · 6 patas</b><span>Happy Learning Español</span></div>
+        <div class="w3-video-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/3tXZZTy_ncE?rel=0" title="Los insectos - Happy Learning" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="w3-video-source">YouTube · Happy Learning · <a href="https://www.youtube.com/watch?v=3tXZZTy_ncE" target="_blank" rel="noopener">ABRIR VÍDEO ↗</a></div>
+      </article>
+      <article class="w3-video-card">
+        <div class="w3-video-card-head"><b>ARÁCNIDOS · 8 patas</b><span>Happy Learning Español</span></div>
+        <div class="w3-video-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/OaSlWPG890I?rel=0" title="Los arácnidos - Happy Learning" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="w3-video-source">YouTube · Happy Learning · <a href="https://www.youtube.com/watch?v=OaSlWPG890I" target="_blank" rel="noopener">ABRIR VÍDEO ↗</a></div>
+      </article>
+    </div>
+    <div class="w3-big-prompt schoolfont">INSECTO = 6 · ARÁCNIDO = 8</div>
+    <div class="w3-nav">
+      <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+      <div class="w3-step"><b>2</b> / 6</div>
+      <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+    </div>
   </div>
 </section>
 
