@@ -958,6 +958,21 @@ body.vocab-editor-open{overflow:hidden!important}
   display:flex!important;flex-direction:row!important;justify-content:center!important;gap:8px!important;width:100%!important;margin-top:12px!important
 }
 </style>
+
+<style id="legacy-vocab-preview-v1">
+.vocab-two-column-panel:has(.legacy-vocab-preview),.vocab-screen-panel:has(.legacy-vocab-preview){
+  height:calc(100dvh - 92px)!important;max-height:calc(100dvh - 92px)!important;display:flex!important;flex-direction:column!important;overflow:hidden!important;padding:12px 16px!important
+}
+.legacy-vocab-preview{display:grid;grid-template-columns:minmax(300px,44%) minmax(0,56%);gap:18px;flex:1;min-height:0;overflow:hidden}
+.legacy-vocab-photo{border:2px solid #d7e0e4;border-radius:20px;background:#fff;padding:10px;display:grid;place-items:center;min-height:0;overflow:hidden}
+.legacy-vocab-photo img{width:100%;height:100%;object-fit:contain!important}
+.legacy-vocab-content{display:flex;flex-direction:column;gap:8px;justify-content:center;min-height:0;overflow:hidden}
+.legacy-vocab-word{font-size:clamp(44px,7vh,72px);line-height:1;text-align:center}
+.legacy-vocab-syllables{border:2px solid #a9d8ed;background:#eef8ff;border-radius:15px;padding:8px 12px;text-align:center}.legacy-vocab-syllables span{display:block;font:900 11px Arial;color:#56717f}.legacy-vocab-syllables b{font-size:clamp(24px,3.4vh,36px)}
+.legacy-vocab-meaning,.legacy-vocab-example,.legacy-vocab-own{font-size:clamp(16px,2.2vh,23px);line-height:1.2;padding:8px 10px;border:2px solid #dce4e8;border-radius:14px;background:#fff}.legacy-vocab-example{background:#eef9f4;border-color:#a9d9c4}.legacy-vocab-own{border-style:dashed;background:#fffdf6}
+.vocab-two-column-panel:has(.legacy-vocab-preview) .vocab-controls,.vocab-screen-panel:has(.legacy-vocab-preview) .vocab-controls{flex:0 0 auto!important;display:flex!important;flex-direction:row!important;justify-content:center!important;gap:8px!important;margin:8px 0 0!important}
+@media(max-width:820px){.legacy-vocab-preview{grid-template-columns:1fr}.legacy-vocab-photo{max-height:30vh}}
+</style>
 </head>
 <body>
 <!-- Versión preparada para GitHub Pages. -->
@@ -1134,7 +1149,16 @@ body.vocab-editor-open{overflow:hidden!important}
 </div>
 </section><section class="screen" data-session="1" data-title="Vocabulario · sesión 1">
 <div class="panel vocab-screen-panel vocab-two-column-panel">
-<div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet1"><div class="vocab-a4-header">
+<div class="legacy-vocab-preview">
+    <div class="legacy-vocab-photo"><img src="assets/embedded_af669e1d5b6469bf.png" alt="FAMILIA"></div>
+    <div class="legacy-vocab-content">
+      <div class="legacy-vocab-word schoolfont">FAMILIA</div>
+      <div class="legacy-vocab-syllables"><span>SÍLABAS</span><b class="schoolfont">FA · MI · LIA</b></div>
+      <div class="legacy-vocab-meaning schoolfont">La familia es un grupo de personas importantes en nuestra vida. Nos cuidamos, ayudamos y compartimos cosas.</div>
+      <div class="legacy-vocab-example schoolfont">“Mi familia me cuida.”</div>
+      <div class="legacy-vocab-own schoolfont">Mi oración con FAMILIA: ____________________</div>
+    </div>
+  </div><div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet1"><div class="vocab-a4-header">
   <div><b>MI CUERPO FLORECE · SESIÓN 1</b><span>PALABRA DE HOY</span></div>
   <div class="vocab-a4-name">Nombre: ______________________________</div>
 </div>
@@ -1313,7 +1337,16 @@ body.vocab-editor-open{overflow:hidden!important}
 </div>
 </section><section class="screen" data-session="2" data-title="Vocabulario · sesión 2">
 <div class="panel vocab-screen-panel vocab-two-column-panel">
-<div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet2"><div class="vocab-a4-header">
+<div class="legacy-vocab-preview">
+    <div class="legacy-vocab-photo"><img src="assets/embedded_77ce8d2dca970642.png" alt="MANO"></div>
+    <div class="legacy-vocab-content">
+      <div class="legacy-vocab-word schoolfont">MANO</div>
+      <div class="legacy-vocab-syllables"><span>SÍLABAS</span><b class="schoolfont">MA · NO</b></div>
+      <div class="legacy-vocab-meaning schoolfont">La mano es una parte de nuestro cuerpo. Con ella podemos tocar, coger, señalar y hacer muchas cosas.</div>
+      <div class="legacy-vocab-example schoolfont">“Con mi mano puedo dibujar.”</div>
+      <div class="legacy-vocab-own schoolfont">Mi oración con MANO: ____________________</div>
+    </div>
+  </div><div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet2"><div class="vocab-a4-header">
   <div><b>MI CUERPO FLORECE · SESIÓN 2</b><span>PALABRA DE HOY</span></div>
   <div class="vocab-a4-name">Nombre: ______________________________</div>
 </div>
@@ -1469,7 +1502,16 @@ body.vocab-editor-open{overflow:hidden!important}
 </div>
 </section><section class="screen" data-session="3" data-title="Vocabulario · sesión 3">
 <div class="panel vocab-screen-panel vocab-two-column-panel">
-<div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet3"><div class="vocab-a4-header">
+<div class="legacy-vocab-preview">
+    <div class="legacy-vocab-photo"><img src="assets/embedded_f800a076497431ac.png" alt="PERSONA"></div>
+    <div class="legacy-vocab-content">
+      <div class="legacy-vocab-word schoolfont">PERSONA</div>
+      <div class="legacy-vocab-syllables"><span>SÍLABAS</span><b class="schoolfont">PER · SO · NA</b></div>
+      <div class="legacy-vocab-meaning schoolfont">Una persona es un ser humano. Cada persona tiene un cuerpo y características propias.</div>
+      <div class="legacy-vocab-example schoolfont">“Esta persona tiene el pelo largo.”</div>
+      <div class="legacy-vocab-own schoolfont">Mi oración con PERSONA: ____________________</div>
+    </div>
+  </div><div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet3"><div class="vocab-a4-header">
   <div><b>MI CUERPO FLORECE · SESIÓN 3</b><span>PALABRA DE HOY</span></div>
   <div class="vocab-a4-name">Nombre: ______________________________</div>
 </div>
@@ -1506,7 +1548,16 @@ body.vocab-editor-open{overflow:hidden!important}
     </article>
   </div>
   <div class="printables-bottom"><button class="btn prev" type="button">◀ Volver</button><button class="btn" data-open-materials="week2" type="button">VER TODAS LAS FICHAS · SEMANA 2</button><button class="btn primary next" type="button">Cierre ▶</button></div>
-</div></section><section class="screen" data-session="4" data-title="Cierre · cinco sentidos"><div class="panel"><span class="tag">CIERRE</span><div class="week2-close schoolfont">Hoy descubrimos que usamos <strong>cinco sentidos</strong> para conocer lo que nos rodea.</div><div class="sense-routine"><button class="sense-rbtn s4-close" data-kind="aprendi">🌱 He aprendido…</button><button class="sense-rbtn s4-close" data-kind="evidencia">🔎 Lo sé porque…</button><button class="sense-rbtn s4-close" data-kind="pregunta">❓ Todavía me pregunto…</button></div><div class="sense-prompt schoolfont" id="s4ClosePrompt">Elige una frase para cerrar.</div><div class="teacherbox"><b>3 min.</b> Recoge una respuesta oral de varios alumnos. No busques que nombren necesariamente “vista/oído/olfato/gusto/tacto”; pueden usar los verbos del libro.</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">📚 Palabra de hoy ▶</button></div></div></section><section class="screen" data-session="4" data-title="Vocabulario · sesión 4"><div class="panel vocab-two-column-panel"><div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet4"><div class="vocab-a4-header">
+</div></section><section class="screen" data-session="4" data-title="Cierre · cinco sentidos"><div class="panel"><span class="tag">CIERRE</span><div class="week2-close schoolfont">Hoy descubrimos que usamos <strong>cinco sentidos</strong> para conocer lo que nos rodea.</div><div class="sense-routine"><button class="sense-rbtn s4-close" data-kind="aprendi">🌱 He aprendido…</button><button class="sense-rbtn s4-close" data-kind="evidencia">🔎 Lo sé porque…</button><button class="sense-rbtn s4-close" data-kind="pregunta">❓ Todavía me pregunto…</button></div><div class="sense-prompt schoolfont" id="s4ClosePrompt">Elige una frase para cerrar.</div><div class="teacherbox"><b>3 min.</b> Recoge una respuesta oral de varios alumnos. No busques que nombren necesariamente “vista/oído/olfato/gusto/tacto”; pueden usar los verbos del libro.</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">📚 Palabra de hoy ▶</button></div></div></section><section class="screen" data-session="4" data-title="Vocabulario · sesión 4"><div class="panel vocab-two-column-panel"><div class="legacy-vocab-preview">
+    <div class="legacy-vocab-photo"><img src="assets/embedded_d3be1aa2e50a1614.jpg" alt="OJO"></div>
+    <div class="legacy-vocab-content">
+      <div class="legacy-vocab-word schoolfont">OJO</div>
+      <div class="legacy-vocab-syllables"><span>SÍLABAS</span><b class="schoolfont">O · JO</b></div>
+      <div class="legacy-vocab-meaning schoolfont">El ojo es una parte del cuerpo que usamos para ver.</div>
+      <div class="legacy-vocab-example schoolfont">“Con mis ojos puedo ver el río.”</div>
+      <div class="legacy-vocab-own schoolfont">Mi oración con OJO: ____________________</div>
+    </div>
+  </div><div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet4"><div class="vocab-a4-header">
   <div><b>MI CUERPO FLORECE · SESIÓN 4</b><span>PALABRA DE HOY</span></div>
   <div class="vocab-a4-name">Nombre: ______________________________</div>
 </div>
@@ -1534,7 +1585,16 @@ body.vocab-editor-open{overflow:hidden!important}
     </article>
   </div>
   <div class="printables-bottom"><button class="btn prev" type="button">◀ Volver</button><button class="btn" data-open-materials="week2" type="button">VER TODAS LAS FICHAS · SEMANA 2</button><button class="btn primary next" type="button">Cierre ▶</button></div>
-</div></section><section class="screen" data-session="5" data-title="Cierre · investigamos"><div class="panel"><span class="tag">CIERRE</span><div class="week2-close schoolfont">Un pequeño científico <strong>no solo adivina</strong>: observa, prueba y explica qué ha descubierto.</div><div class="sense-prompt schoolfont">Hoy completa oralmente: <b>“Me sorprendió…”</b> o <b>“Descubrí que…”</b></div><div class="teacherbox"><b>3 min.</b> Recoge respuestas espontáneas. Puedes anotar mentalmente evidencias de atención, autonomía, uso de vocabulario y capacidad de explicar.</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">📚 Palabra de hoy ▶</button></div></div></section><section class="screen" data-session="5" data-title="Vocabulario · sesión 5"><div class="panel vocab-two-column-panel"><div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet5"><div class="vocab-a4-header">
+</div></section><section class="screen" data-session="5" data-title="Cierre · investigamos"><div class="panel"><span class="tag">CIERRE</span><div class="week2-close schoolfont">Un pequeño científico <strong>no solo adivina</strong>: observa, prueba y explica qué ha descubierto.</div><div class="sense-prompt schoolfont">Hoy completa oralmente: <b>“Me sorprendió…”</b> o <b>“Descubrí que…”</b></div><div class="teacherbox"><b>3 min.</b> Recoge respuestas espontáneas. Puedes anotar mentalmente evidencias de atención, autonomía, uso de vocabulario y capacidad de explicar.</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">📚 Palabra de hoy ▶</button></div></div></section><section class="screen" data-session="5" data-title="Vocabulario · sesión 5"><div class="panel vocab-two-column-panel"><div class="legacy-vocab-preview">
+    <div class="legacy-vocab-photo"><img src="assets/embedded_0fada10193aa8e45.jpg" alt="NARIZ"></div>
+    <div class="legacy-vocab-content">
+      <div class="legacy-vocab-word schoolfont">NARIZ</div>
+      <div class="legacy-vocab-syllables"><span>SÍLABAS</span><b class="schoolfont">NA · RIZ</b></div>
+      <div class="legacy-vocab-meaning schoolfont">La nariz es una parte del cuerpo que usamos para oler.</div>
+      <div class="legacy-vocab-example schoolfont">“Con mi nariz puedo oler las flores.”</div>
+      <div class="legacy-vocab-own schoolfont">Mi oración con NARIZ: ____________________</div>
+    </div>
+  </div><div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet5"><div class="vocab-a4-header">
   <div><b>MI CUERPO FLORECE · SESIÓN 5</b><span>PALABRA DE HOY</span></div>
   <div class="vocab-a4-name">Nombre: ______________________________</div>
 </div>
@@ -1562,7 +1622,16 @@ body.vocab-editor-open{overflow:hidden!important}
     </article>
   </div>
   <div class="printables-bottom"><button class="btn prev" type="button">◀ Volver</button><button class="btn" data-open-materials="week2" type="button">VER TODAS LAS FICHAS · SEMANA 2</button><button class="btn primary next" type="button">Cierre ▶</button></div>
-</div></section><section class="screen" data-session="6" data-title="Cierre · semana 2"><div class="panel"><span class="tag">CIERRE DE LA SEMANA 2</span><div class="week2-close schoolfont">Ahora puedo <strong>buscar información, investigar, clasificar y explicar</strong> cómo uso mis sentidos.</div><div class="sense-prompt schoolfont">Pregunta final: <b>¿Qué sentido te ayudó más hoy? ¿Cómo lo sabes?</b></div><div class="teacherbox"><b>3 min.</b> Guarda las tres fichas como evidencias de la semana. La observación oral durante las actividades completa la información que no aparece en las producciones.</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">📚 Palabra de hoy ▶</button></div></div></section><section class="screen" data-session="6" data-title="Vocabulario · sesión 6"><div class="panel vocab-two-column-panel"><div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet6"><div class="vocab-a4-header">
+</div></section><section class="screen" data-session="6" data-title="Cierre · semana 2"><div class="panel"><span class="tag">CIERRE DE LA SEMANA 2</span><div class="week2-close schoolfont">Ahora puedo <strong>buscar información, investigar, clasificar y explicar</strong> cómo uso mis sentidos.</div><div class="sense-prompt schoolfont">Pregunta final: <b>¿Qué sentido te ayudó más hoy? ¿Cómo lo sabes?</b></div><div class="teacherbox"><b>3 min.</b> Guarda las tres fichas como evidencias de la semana. La observación oral durante las actividades completa la información que no aparece en las producciones.</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">📚 Palabra de hoy ▶</button></div></div></section><section class="screen" data-session="6" data-title="Vocabulario · sesión 6"><div class="panel vocab-two-column-panel"><div class="legacy-vocab-preview">
+    <div class="legacy-vocab-photo"><img src="assets/embedded_fa3851fc5a6e4a5b.jpg" alt="BOCA"></div>
+    <div class="legacy-vocab-content">
+      <div class="legacy-vocab-word schoolfont">BOCA</div>
+      <div class="legacy-vocab-syllables"><span>SÍLABAS</span><b class="schoolfont">BO · CA</b></div>
+      <div class="legacy-vocab-meaning schoolfont">La boca es una parte del cuerpo que usamos para saborear.</div>
+      <div class="legacy-vocab-example schoolfont">“Con mi boca puedo saborear el pan.”</div>
+      <div class="legacy-vocab-own schoolfont">Mi oración con BOCA: ____________________</div>
+    </div>
+  </div><div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet6"><div class="vocab-a4-header">
   <div><b>MI CUERPO FLORECE · SESIÓN 6</b><span>PALABRA DE HOY</span></div>
   <div class="vocab-a4-name">Nombre: ______________________________</div>
 </div>
