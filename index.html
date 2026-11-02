@@ -673,6 +673,10 @@ body{min-height:100dvh}
 @media(max-height:820px){.edu-video-wrap video{max-height:38vh}.edu-video-side h2{font-size:28px!important}.edu-video-side p{font-size:17px!important}.edu-video-prompt{font-size:19px!important;padding:8px!important}}
 @media(max-width:850px){.edu-video-screen{grid-template-columns:1fr}.edu-video-wrap video{max-height:36vh}}
 
+
+.edu-video-fallback{margin-top:8px;padding:10px;border:2px solid #d9a4a4;background:#fff4f4;border-radius:14px;text-align:center}
+.edu-video-fallback[hidden]{display:none!important}.edu-video-fallback .btn{margin-left:8px;text-decoration:none}
+
 </style>
 </head>
 <body>
@@ -1282,11 +1286,14 @@ body{min-height:100dvh}
 <section class="screen" data-session="7" data-title="Vídeo · observamos un pato">
   <div class="panel edu-video-screen">
     <div class="edu-video-wrap">
-      <video id="videoS7" preload="metadata" playsinline muted poster="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG">
-        <source src="assets/video/s7_pato_camino.webm" type="video/webm">
-        <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/3/33/Duck_walking_in_Yvoire.webm/Duck_walking_in_Yvoire.webm.360p.webm" type="video/webm">
+      <video id="videoS7" preload="metadata" playsinline muted controls poster="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG">
+        <source src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_walking_in_Yvoire.webm" type="video/webm">
         Tu navegador no puede reproducir este vídeo.
       </video>
+      <div class="edu-video-fallback" id="videoS7Fallback" hidden>
+        <b>El vídeo no se ha podido cargar.</b>
+        <a class="btn" href="https://commons.wikimedia.org/wiki/File:Duck_walking_in_Yvoire.webm" target="_blank" rel="noopener">ABRIR VÍDEO ↗</a>
+      </div>
     </div>
     <div class="edu-video-side">
       <span class="tag w3-tag">VÍDEO DE OBSERVACIÓN · S7</span>
@@ -1356,11 +1363,14 @@ body{min-height:100dvh}
 <section class="screen" data-session="8" data-title="Vídeo · observamos una abeja">
   <div class="panel edu-video-screen">
     <div class="edu-video-wrap">
-      <video id="videoS8" preload="metadata" playsinline muted poster="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg">
-        <source src="assets/video/s8_abeja_flor.webm" type="video/webm">
-        <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/8/83/Flying_bee_on_flower_in_slow_motion_V.2.webm/Flying_bee_on_flower_in_slow_motion_V.2.webm.360p.webm" type="video/webm">
+      <video id="videoS8" preload="metadata" playsinline muted controls poster="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg">
+        <source src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Flying_bee_on_flower_in_slow_motion_V.2.webm" type="video/webm">
         Tu navegador no puede reproducir este vídeo.
       </video>
+      <div class="edu-video-fallback" id="videoS8Fallback" hidden>
+        <b>El vídeo no se ha podido cargar.</b>
+        <a class="btn" href="https://commons.wikimedia.org/wiki/File:Flying_bee_on_flower_in_slow_motion_V.2.webm" target="_blank" rel="noopener">ABRIR VÍDEO ↗</a>
+      </div>
     </div>
     <div class="edu-video-side">
       <span class="tag w3-tag">VÍDEO DE COMPROBACIÓN · S8</span>
@@ -1411,11 +1421,14 @@ body{min-height:100dvh}
 <section class="screen" data-session="9" data-title="Vídeo · una planta cambia">
   <div class="panel edu-video-screen">
     <div class="edu-video-wrap">
-      <video id="videoS9" preload="metadata" playsinline muted poster="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg">
-        <source src="assets/video/s9_germinacion.webm" type="video/webm">
-        <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/0/0a/Germination_of_two_little_plants.webm/Germination_of_two_little_plants.webm.360p.webm" type="video/webm">
+      <video id="videoS9" preload="metadata" playsinline muted controls poster="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg">
+        <source src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Germination_of_two_little_plants.webm" type="video/webm">
         Tu navegador no puede reproducir este vídeo.
       </video>
+      <div class="edu-video-fallback" id="videoS9Fallback" hidden>
+        <b>El vídeo no se ha podido cargar.</b>
+        <a class="btn" href="https://commons.wikimedia.org/wiki/File:Germination_of_two_little_plants.webm" target="_blank" rel="noopener">ABRIR VÍDEO ↗</a>
+      </div>
     </div>
     <div class="edu-video-side">
       <span class="tag w3-tag">VÍDEO DE INVESTIGACIÓN · S9</span>
@@ -1879,18 +1892,34 @@ document.getElementById('resetW3Rubric')?.addEventListener('click',()=>{
 document.getElementById('printW3Rubric')?.addEventListener('click',()=>printTarget(document.getElementById('w3Rubric79')));
 
 
-root.querySelectorAll('[data-video-action]').forEach(btn=>btn.addEventListener('click',()=>{
+root.querySelectorAll('[data-video-action]').forEach(btn=>btn.addEventListener('click',async()=>{
   const video=document.getElementById(btn.dataset.videoTarget);
   if(!video)return;
   const action=btn.dataset.videoAction;
-  if(action==='play'){video.play().catch(()=>{});}
-  if(action==='pause'){video.pause();}
-  if(action==='restart'){video.pause();video.currentTime=0;video.play().catch(()=>{});}
+  try{
+    if(action==='play'){
+      if(video.readyState===0) video.load();
+      await video.play();
+    }
+    if(action==='pause') video.pause();
+    if(action==='restart'){
+      video.pause();
+      video.currentTime=0;
+      if(video.readyState===0) video.load();
+      await video.play();
+    }
+  }catch(_){
+    const fb=document.getElementById(video.id+'Fallback');
+    if(fb) fb.hidden=false;
+  }
 }));
 screens.forEach(screen=>{
   screen.querySelectorAll('video').forEach(video=>{
+    const fb=document.getElementById(video.id+'Fallback');
     video.addEventListener('play',()=>requestAnimationFrame(fitActiveScreen));
-    video.addEventListener('loadedmetadata',()=>requestAnimationFrame(fitActiveScreen));
+    video.addEventListener('loadedmetadata',()=>{if(fb)fb.hidden=true;requestAnimationFrame(fitActiveScreen);});
+    video.addEventListener('canplay',()=>{if(fb)fb.hidden=true;});
+    video.addEventListener('error',()=>{if(fb)fb.hidden=false;requestAnimationFrame(fitActiveScreen);});
   });
 });
 
