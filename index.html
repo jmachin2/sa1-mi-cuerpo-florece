@@ -1078,6 +1078,55 @@ body.mentor-open{overflow:hidden!important}
 @media(max-width:760px){.mentor-toolbar{grid-template-columns:auto 1fr}.mentor-toolbar a{grid-column:1/-1}.mentor-toolbar-title b{font-size:15px}.mentor-viewer{padding:5px}}
 .mentor-inline{align-self:center!important;background:#fff6db!important;border-color:#d4a925!important;margin:2px 0!important}
 </style>
+
+<style id="mentor-book-reader-v2">
+.mentor-overlay{grid-template-rows:auto auto minmax(0,1fr)!important;background:#d8e1e5!important}
+.mentor-toolbar-book{z-index:5}
+.mentor-book-controls{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:7px 10px;background:#f7f9fa;border-bottom:1px solid #bdcbd2;z-index:4}
+.mentor-book-controls>button,.mentor-book-controls label,.mentor-view-toggle{min-height:38px;border:2px solid #7e98a4;border-radius:11px;background:#fff;color:#24313a;font:900 11px Arial}
+.mentor-book-controls>button{padding:6px 10px;cursor:pointer}
+.mentor-start-control,.mentor-key-control,.mentor-view-toggle{display:flex;align-items:center;gap:5px;padding:3px 6px}
+.mentor-book-controls label>span,.mentor-view-toggle>span{font:900 9px Arial;letter-spacing:.06em;color:#667780}
+.mentor-start-control input{width:54px;min-height:28px;border:1px solid #9aabb3;border-radius:7px;text-align:center;font-weight:900}
+.mentor-start-control button,.mentor-key-control button,.mentor-view-toggle button{min-height:28px;border:0;border-radius:7px;background:#e8eef1;padding:4px 8px;font:900 10px Arial;cursor:pointer}
+.mentor-view-toggle button.active{background:#2d617f;color:#fff}
+.mentor-key-control select{max-width:210px;min-height:28px;border:1px solid #9aabb3;border-radius:7px;background:#fff;font:700 11px Arial;padding:3px 5px}
+#mentorSummaryBtn{background:#fff6db;border-color:#d4a925}
+
+.mentor-book-area{min-height:0;display:grid;grid-template-columns:64px minmax(0,1fr) 64px;gap:8px;align-items:center;padding:10px 14px 8px;background:radial-gradient(circle at 50% 42%,#eef3f5 0,#d8e1e5 65%,#c9d4d9 100%);overflow:hidden}
+.mentor-edge-nav{width:54px;height:86px;border:0;border-radius:16px;background:rgba(255,255,255,.88);box-shadow:0 4px 16px rgba(0,0,0,.13);font:900 54px/1 Arial;color:#345a6e;cursor:pointer;display:grid;place-items:center}
+.mentor-edge-nav:disabled{opacity:.22;cursor:default}
+.mentor-book-shell{min-width:0;min-height:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+.mentor-book{position:relative;width:min(1180px,90vw);height:min(69vh,720px);display:grid;grid-template-columns:1fr 1fr;perspective:2400px;filter:drop-shadow(0 12px 18px rgba(0,0,0,.18))}
+.mentor-book.single{grid-template-columns:1fr;width:min(620px,68vw)}
+.mentor-book.single .mentor-page-slot.left{display:none}
+.mentor-book.single .mentor-page-slot.right{grid-column:1}
+.mentor-book-spine{position:absolute;left:50%;top:1.5%;bottom:1.5%;width:18px;transform:translateX(-50%);z-index:4;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(0,0,0,.18),rgba(255,255,255,.45),rgba(0,0,0,.15),transparent);filter:blur(.3px)}
+.mentor-book.single .mentor-book-spine{display:none}
+.mentor-page-slot{min-width:0;min-height:0;position:relative;display:flex;align-items:stretch;cursor:pointer}
+.mentor-page-slot.left{justify-content:flex-end}.mentor-page-slot.right{justify-content:flex-start}
+.mentor-page-slot.empty{background:transparent;pointer-events:none}
+.mentor-page-paper{position:relative;width:100%;height:100%;background:#fff;overflow:hidden;border:1px solid #c8c5ba}
+.mentor-page-slot.left .mentor-page-paper{border-radius:12px 2px 2px 12px;box-shadow:inset -16px 0 22px -20px rgba(0,0,0,.6)}
+.mentor-page-slot.right .mentor-page-paper{border-radius:2px 12px 12px 2px;box-shadow:inset 16px 0 22px -20px rgba(0,0,0,.6)}
+.mentor-book.single .mentor-page-paper{border-radius:12px;box-shadow:none}
+.mentor-page-paper img{display:block;width:100%;height:100%;object-fit:contain;background:#fff;user-select:none;-webkit-user-drag:none}
+.mentor-page-num{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);min-width:28px;text-align:center;padding:2px 6px;border-radius:999px;background:rgba(255,255,255,.8);font:800 10px Arial;color:#69777e}
+.mentor-flip-sheet{display:none;position:absolute;top:0;height:100%;width:50%;z-index:10;transform-style:preserve-3d;pointer-events:none}
+.mentor-flip-sheet.turn-next{right:0;transform-origin:left center;animation:mentorFlipNext .46s cubic-bezier(.45,.03,.25,1)}
+.mentor-flip-sheet.turn-prev{left:0;transform-origin:right center;animation:mentorFlipPrev .46s cubic-bezier(.45,.03,.25,1)}
+.mentor-flip-sheet.single-flip{width:100%}.mentor-flip-sheet.single-flip.turn-next{left:0;right:auto}.mentor-flip-sheet.single-flip.turn-prev{left:0}
+.mentor-flip-face{position:absolute;inset:0;background:#fff;border:1px solid #c8c5ba;overflow:hidden;backface-visibility:hidden;box-shadow:0 0 25px rgba(0,0,0,.2)}
+.mentor-flip-face img{width:100%;height:100%;object-fit:contain;background:#fff}
+@keyframes mentorFlipNext{0%{transform:rotateY(0deg);box-shadow:0 0 0 rgba(0,0,0,0)}45%{box-shadow:-24px 8px 26px rgba(0,0,0,.28)}100%{transform:rotateY(-178deg);box-shadow:-4px 0 8px rgba(0,0,0,.05)}}
+@keyframes mentorFlipPrev{0%{transform:rotateY(0deg);box-shadow:0 0 0 rgba(0,0,0,0)}45%{box-shadow:24px 8px 26px rgba(0,0,0,.28)}100%{transform:rotateY(178deg);box-shadow:4px 0 8px rgba(0,0,0,.05)}}
+.mentor-book-status{display:flex;justify-content:center;gap:18px;align-items:center;margin-top:7px;min-height:28px;font:900 12px Arial;color:#415963}
+.mentor-turn-help{font-weight:700;color:#718087}
+.mentor-reader-fallback{position:absolute;inset:auto 50% 40px auto;transform:translateX(50%);z-index:30;width:min(520px,80%);padding:14px;border:2px solid #d59a9a;border-radius:15px;background:#fff4f4;text-align:center;font:13px/1.3 Arial;color:#5d5555;box-shadow:0 6px 22px rgba(0,0,0,.14)}
+.mentor-reader-fallback span{display:block;margin:4px 0 8px}.mentor-reader-fallback a{display:inline-flex;padding:7px 10px;border-radius:9px;background:#2d617f;color:#fff;text-decoration:none;font-weight:900}
+@media(max-height:780px){.mentor-book{height:min(62vh,590px)}.mentor-book-area{padding-top:6px}.mentor-book-controls{padding:5px}.mentor-book-controls>button,.mentor-book-controls label,.mentor-view-toggle{min-height:32px}.mentor-turn-help{display:none}}
+@media(max-width:900px){.mentor-book-area{grid-template-columns:44px minmax(0,1fr) 44px;padding-left:5px;padding-right:5px}.mentor-edge-nav{width:40px;height:68px;font-size:42px}.mentor-book{width:82vw}.mentor-key-control select{max-width:140px}}
+</style>
 </head>
 <body>
 <!-- Versión preparada para GitHub Pages. -->
@@ -2402,52 +2451,264 @@ body.mentor-open{overflow:hidden!important}
 </div>
 
 <div class="mentor-overlay" id="mentorOverlay" aria-hidden="true">
-  <div class="mentor-toolbar">
+  <div class="mentor-toolbar mentor-toolbar-book">
     <button type="button" id="mentorClose">← VOLVER A LA SESIÓN</button>
     <div class="mentor-toolbar-title">
       <b id="mentorTitle">Texto mentor</b>
       <span id="mentorSubtitle">Lectura compartida</span>
     </div>
-    <a id="mentorOpenDrive" href="#" target="_blank" rel="noopener">ABRIR LIBRO ↗</a>
+    <a id="mentorOpenDrive" href="#" target="_blank" rel="noopener">PDF ORIGINAL ↗</a>
   </div>
-  <div class="mentor-viewer">
-    <iframe id="mentorFrame" title="Texto mentor" allow="autoplay" loading="eager"></iframe>
-    <div class="mentor-fallback">
-      <b>Si el libro no aparece dentro del visor</b>
-      <span>pulsa «ABRIR LIBRO» en la barra superior.</span>
+
+  <div class="mentor-book-controls">
+    <button type="button" id="mentorCoverBtn">📕 PORTADA</button>
+
+    <label class="mentor-start-control">
+      <span>EMPEZAR EN</span>
+      <input id="mentorStartPage" type="number" min="1" value="1" inputmode="numeric">
+      <button type="button" id="mentorGoPage">IR</button>
+    </label>
+
+    <div class="mentor-view-toggle" aria-label="Número de páginas visibles">
+      <span>VISTA</span>
+      <button type="button" data-mentor-view="1">1 PÁGINA</button>
+      <button type="button" class="active" data-mentor-view="2">2 PÁGINAS</button>
     </div>
+
+    <label class="mentor-key-control">
+      <span>PÁGINAS CLAVE</span>
+      <select id="mentorKeyPages"></select>
+      <button type="button" id="mentorGoKey">IR</button>
+    </label>
+
+    <button type="button" id="mentorSummaryBtn">⭐ RESUMEN</button>
   </div>
-</div>
-<script>
+
+  <div class="mentor-book-area">
+    <button class="mentor-edge-nav prev" id="mentorBookPrev" type="button" aria-label="Página anterior">‹</button>
+
+    <div class="mentor-book-shell">
+      <div class="mentor-book" id="mentorBook">
+        <div class="mentor-book-spine" aria-hidden="true"></div>
+
+        <div class="mentor-page-slot left" id="mentorLeftSlot">
+          <div class="mentor-page-paper">
+            <img id="mentorLeftImg" alt="">
+            <span class="mentor-page-num" id="mentorLeftNum"></span>
+          </div>
+        </div>
+
+        <div class="mentor-page-slot right" id="mentorRightSlot">
+          <div class="mentor-page-paper">
+            <img id="mentorRightImg" alt="">
+            <span class="mentor-page-num" id="mentorRightNum"></span>
+          </div>
+        </div>
+
+        <div class="mentor-flip-sheet" id="mentorFlipSheet" aria-hidden="true">
+          <div class="mentor-flip-face"><img id="mentorFlipImg" alt=""></div>
+        </div>
+      </div>
+
+      <div class="mentor-book-status">
+        <span id="mentorPageStatus">Página 1</span>
+        <span class="mentor-turn-help">Toca los bordes o usa ← → para pasar las hojas</span>
+      </div>
+
+      <div class="mentor-reader-fallback" id="mentorReaderFallback" hidden>
+        <b>No se han podido cargar las páginas del lector.</b>
+        <span>Puedes seguir usando el PDF original.</span>
+        <a id="mentorFallbackLink" href="#" target="_blank" rel="noopener">ABRIR PDF ORIGINAL ↗</a>
+      </div>
+    </div>
+
+    <button class="mentor-edge-nav next" id="mentorBookNext" type="button" aria-label="Página siguiente">›</button>
+  </div>
+</div><script>
 (()=>{
 const root=document.getElementById('app');
 
 const mentorBtn=document.getElementById('mentorBtn');
 const mentorOverlay=document.getElementById('mentorOverlay');
-const mentorFrame=document.getElementById('mentorFrame');
 const mentorTitle=document.getElementById('mentorTitle');
 const mentorSubtitle=document.getElementById('mentorSubtitle');
 const mentorOpenDrive=document.getElementById('mentorOpenDrive');
-const mentorBooks={
-  '1':{title:'Todo sobre mí',file:'1MFgQOjK5-Vm_LkIpevsECIme7Ko5Xez9',week:'SEMANA 1 · YO Y MI CUERPO'},
-  '2':{title:'Todo sobre mí',file:'1MFgQOjK5-Vm_LkIpevsECIme7Ko5Xez9',week:'SEMANA 1 · YO Y MI CUERPO'},
-  '3':{title:'Todo sobre mí',file:'1MFgQOjK5-Vm_LkIpevsECIme7Ko5Xez9',week:'SEMANA 1 · YO Y MI CUERPO'},
-  '4':{title:'Los cinco sentidos',file:'1a5SGIOv_nn4UjlpKggaBvMfVfbG1R9Vy',week:'SEMANA 2 · LOS SENTIDOS'},
-  '5':{title:'Los cinco sentidos',file:'1a5SGIOv_nn4UjlpKggaBvMfVfbG1R9Vy',week:'SEMANA 2 · LOS SENTIDOS'},
-  '6':{title:'Los cinco sentidos',file:'1a5SGIOv_nn4UjlpKggaBvMfVfbG1R9Vy',week:'SEMANA 2 · LOS SENTIDOS'},
-  '7':{title:'2, 4, 6, 8 patas',file:'1jyIn-LgajX1acFthlIVAxVYCi432qmOS',week:'SEMANA 3 · COMPARAMOS Y CLASIFICAMOS'},
-  '8':{title:'2, 4, 6, 8 patas',file:'1jyIn-LgajX1acFthlIVAxVYCi432qmOS',week:'SEMANA 3 · COMPARAMOS Y CLASIFICAMOS'},
-  '9':{title:'2, 4, 6, 8 patas',file:'1jyIn-LgajX1acFthlIVAxVYCi432qmOS',week:'SEMANA 3 · COMPARAMOS Y CLASIFICAMOS'}
+const mentorFallbackLink=document.getElementById('mentorFallbackLink');
+const mentorBookEl=document.getElementById('mentorBook');
+const mentorLeftSlot=document.getElementById('mentorLeftSlot');
+const mentorRightSlot=document.getElementById('mentorRightSlot');
+const mentorLeftImg=document.getElementById('mentorLeftImg');
+const mentorRightImg=document.getElementById('mentorRightImg');
+const mentorLeftNum=document.getElementById('mentorLeftNum');
+const mentorRightNum=document.getElementById('mentorRightNum');
+const mentorFlipSheet=document.getElementById('mentorFlipSheet');
+const mentorFlipImg=document.getElementById('mentorFlipImg');
+const mentorPageStatus=document.getElementById('mentorPageStatus');
+const mentorStartPage=document.getElementById('mentorStartPage');
+const mentorKeyPages=document.getElementById('mentorKeyPages');
+const mentorSummaryBtn=document.getElementById('mentorSummaryBtn');
+const mentorReaderFallback=document.getElementById('mentorReaderFallback');
+
+const mentorBookCatalog={
+  todo:{
+    title:'Todo sobre mí',
+    file:'1MFgQOjK5-Vm_LkIpevsECIme7Ko5Xez9',
+    week:'SEMANA 1 · YO Y MI CUERPO',
+    path:'assets/mentor/todo',
+    pages:10,
+    cover:1,
+    summary:10,
+    summaryLabel:'FINAL',
+    keys:[
+      {page:1,label:'Portada'},
+      {page:4,label:'Mi casa'},
+      {page:6,label:'Mi escuela'},
+      {page:8,label:'Mis amigos'},
+      {page:10,label:'Mi perro · final'}
+    ]
+  },
+  sentidos:{
+    title:'Los cinco sentidos',
+    file:'1a5SGIOv_nn4UjlpKggaBvMfVfbG1R9Vy',
+    week:'SEMANA 2 · LOS SENTIDOS',
+    path:'assets/mentor/sentidos',
+    pages:20,
+    cover:1,
+    summary:18,
+    summaryLabel:'RESUMEN',
+    keys:[
+      {page:1,label:'Portada'},
+      {page:6,label:'Vista · puedo ver'},
+      {page:8,label:'Oído · puedo oír'},
+      {page:10,label:'Gusto · puedo saborear'},
+      {page:12,label:'Olfato · puedo oler'},
+      {page:14,label:'Tacto · puedo tocar'},
+      {page:18,label:'Resumen de los sentidos'}
+    ]
+  },
+  patas:{
+    title:'2, 4, 6, 8 patas',
+    file:'1jyIn-LgajX1acFthlIVAxVYCi432qmOS',
+    week:'SEMANA 3 · COMPARAMOS Y CLASIFICAMOS',
+    path:'assets/mentor/patas',
+    pages:19,
+    cover:2,
+    summary:19,
+    summaryLabel:'RESUMEN',
+    keys:[
+      {page:2,label:'Portada interior'},
+      {page:4,label:'2 patas'},
+      {page:6,label:'4 patas'},
+      {page:8,label:'6 patas'},
+      {page:10,label:'8 patas'},
+      {page:16,label:'2 piernas'},
+      {page:18,label:'¿Ves patas aquí?'},
+      {page:19,label:'Resumen final'}
+    ]
+  }
 };
+const mentorBooks={
+  '1':'todo','2':'todo','3':'todo',
+  '4':'sentidos','5':'sentidos','6':'sentidos',
+  '7':'patas','8':'patas','9':'patas'
+};
+const mentorState={book:null,page:1,view:2,busy:false};
+
+function mentorPageSrc(book,page){
+  return book.path+'/page-'+String(page).padStart(2,'0')+'.jpg';
+}
+function mentorClampPage(page){
+  const max=mentorState.book?.pages||1;
+  return Math.max(1,Math.min(max,Number(page)||1));
+}
+function mentorSpread(){
+  const b=mentorState.book,p=mentorClampPage(mentorState.page);
+  if(!b)return {left:null,right:null,label:''};
+  if(mentorState.view===1)return {left:null,right:p,label:'Página '+p+' de '+b.pages};
+  if(p===1)return {left:null,right:1,label:'Página 1 de '+b.pages};
+  let left=(p%2===0)?p:p-1;
+  let right=(left+1<=b.pages)?left+1:null;
+  return {left,right,label:right?'Páginas '+left+'–'+right+' de '+b.pages:'Página '+left+' de '+b.pages};
+}
+function setMentorSlot(slot,img,num,page,book){
+  if(!page){
+    slot.classList.add('empty');
+    img.removeAttribute('src');
+    img.alt='';
+    num.textContent='';
+    return;
+  }
+  slot.classList.remove('empty');
+  img.alt=book.title+' · página '+page;
+  img.src=mentorPageSrc(book,page);
+  num.textContent=page;
+}
+function renderMentorBook(){
+  const b=mentorState.book;if(!b)return;
+  mentorState.page=mentorClampPage(mentorState.page);
+  const sp=mentorSpread();
+  mentorBookEl.classList.toggle('single',mentorState.view===1);
+  mentorBookEl.classList.toggle('double',mentorState.view===2);
+  setMentorSlot(mentorLeftSlot,mentorLeftImg,mentorLeftNum,sp.left,b);
+  setMentorSlot(mentorRightSlot,mentorRightImg,mentorRightNum,sp.right,b);
+  mentorPageStatus.textContent=sp.label;
+  mentorStartPage.value=mentorState.page;
+  document.querySelectorAll('[data-mentor-view]').forEach(btn=>btn.classList.toggle('active',Number(btn.dataset.mentorView)===mentorState.view));
+  document.getElementById('mentorBookPrev').disabled=mentorState.page<=1;
+  const lastVisible=mentorState.view===1?mentorState.page:(sp.right||sp.left||1);
+  document.getElementById('mentorBookNext').disabled=lastVisible>=b.pages;
+}
+function mentorNextTarget(){
+  const sp=mentorSpread(),b=mentorState.book;if(!b)return 1;
+  if(mentorState.view===1)return Math.min(b.pages,mentorState.page+1);
+  if(mentorState.page===1)return Math.min(b.pages,2);
+  return Math.min(b.pages,(sp.left||mentorState.page)+2);
+}
+function mentorPrevTarget(){
+  const sp=mentorSpread();if(mentorState.view===1)return Math.max(1,mentorState.page-1);
+  if(mentorState.page<=2)return 1;
+  return Math.max(1,(sp.left||mentorState.page)-2);
+}
+function turnMentorPage(target,direction){
+  const b=mentorState.book;if(!b||mentorState.busy)return;
+  target=mentorClampPage(target);
+  if(target===mentorState.page){renderMentorBook();return;}
+  mentorState.busy=true;
+  const sp=mentorSpread();
+  let flipPage=direction==='prev'?(sp.left||mentorState.page):(sp.right||sp.left||mentorState.page);
+  mentorFlipImg.src=mentorPageSrc(b,flipPage);
+  mentorFlipSheet.className='mentor-flip-sheet '+(mentorState.view===1?'single-flip ':'')+(direction==='prev'?'turn-prev':'turn-next');
+  mentorFlipSheet.style.display='block';
+  setTimeout(()=>{
+    mentorState.page=target;
+    renderMentorBook();
+  },230);
+  setTimeout(()=>{
+    mentorFlipSheet.style.display='none';
+    mentorFlipSheet.className='mentor-flip-sheet';
+    mentorState.busy=false;
+  },470);
+}
+function populateMentorControls(book){
+  mentorStartPage.min='1';mentorStartPage.max=String(book.pages);mentorStartPage.value=String(book.cover||1);
+  mentorKeyPages.innerHTML=book.keys.map(k=>'<option value="'+k.page+'">'+k.page+' · '+k.label+'</option>').join('');
+  mentorSummaryBtn.textContent='⭐ '+(book.summaryLabel||'RESUMEN');
+  mentorSummaryBtn.style.display=book.summary?'inline-flex':'none';
+}
+function showMentorFallback(){
+  mentorReaderFallback.hidden=false;
+}
 function openMentor(){
   const session=screens[current]?.dataset.session||'0';
-  const book=mentorBooks[session];if(!book||!mentorOverlay)return;
+  const key=mentorBooks[session],book=mentorBookCatalog[key];if(!book||!mentorOverlay)return;
+  mentorState.book=book;mentorState.page=book.cover||1;mentorState.view=2;mentorState.busy=false;
   mentorTitle.textContent=book.title;
-  mentorSubtitle.textContent=book.week+' · LECTURA COMPARTIDA';
-  const preview='https://drive.google.com/file/d/'+book.file+'/preview';
+  mentorSubtitle.textContent=book.week+' · LECTOR TIPO LIBRO';
   const view='https://drive.google.com/file/d/'+book.file+'/view';
-  if(mentorFrame.src!==preview)mentorFrame.src=preview;
-  mentorOpenDrive.href=view;
+  mentorOpenDrive.href=view;mentorFallbackLink.href=view;
+  mentorReaderFallback.hidden=true;
+  populateMentorControls(book);
+  renderMentorBook();
   mentorOverlay.classList.add('open');mentorOverlay.setAttribute('aria-hidden','false');document.body.classList.add('mentor-open');
 }
 function closeMentor(){
@@ -2456,9 +2717,35 @@ function closeMentor(){
 mentorBtn?.addEventListener('click',openMentor);
 root.querySelectorAll('[data-open-mentor]').forEach(b=>b.addEventListener('click',openMentor));
 document.getElementById('mentorClose')?.addEventListener('click',closeMentor);
-mentorOverlay?.addEventListener('click',e=>{if(e.target===mentorOverlay)closeMentor();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mentorOverlay?.classList.contains('open'))closeMentor();});
-
+document.getElementById('mentorBookNext')?.addEventListener('click',()=>turnMentorPage(mentorNextTarget(),'next'));
+document.getElementById('mentorBookPrev')?.addEventListener('click',()=>turnMentorPage(mentorPrevTarget(),'prev'));
+document.getElementById('mentorCoverBtn')?.addEventListener('click',()=>{if(mentorState.book)turnMentorPage(mentorState.book.cover||1,'prev');});
+document.getElementById('mentorGoPage')?.addEventListener('click',()=>{
+  const p=mentorClampPage(mentorStartPage.value);
+  turnMentorPage(p,p<mentorState.page?'prev':'next');
+});
+mentorStartPage?.addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('mentorGoPage')?.click();});
+document.querySelectorAll('[data-mentor-view]').forEach(btn=>btn.addEventListener('click',()=>{
+  mentorState.view=Number(btn.dataset.mentorView)||2;
+  renderMentorBook();
+}));
+document.getElementById('mentorGoKey')?.addEventListener('click',()=>{
+  const p=mentorClampPage(mentorKeyPages.value);
+  turnMentorPage(p,p<mentorState.page?'prev':'next');
+});
+mentorKeyPages?.addEventListener('change',()=>document.getElementById('mentorGoKey')?.click());
+mentorSummaryBtn?.addEventListener('click',()=>{
+  const p=mentorState.book?.summary;if(p)turnMentorPage(p,p<mentorState.page?'prev':'next');
+});
+mentorLeftSlot?.addEventListener('click',()=>{if(mentorState.view===2)turnMentorPage(mentorPrevTarget(),'prev');});
+mentorRightSlot?.addEventListener('click',()=>turnMentorPage(mentorNextTarget(),'next'));
+[mentorLeftImg,mentorRightImg].forEach(img=>img?.addEventListener('error',showMentorFallback));
+document.addEventListener('keydown',e=>{
+  if(!mentorOverlay?.classList.contains('open'))return;
+  if(e.key==='Escape')closeMentor();
+  if(e.key==='ArrowRight')turnMentorPage(mentorNextTarget(),'next');
+  if(e.key==='ArrowLeft')turnMentorPage(mentorPrevTarget(),'prev');
+});
 
 function fitActiveScreen(){
   const screen=screens[current];
