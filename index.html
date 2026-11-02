@@ -762,6 +762,44 @@ body{min-height:100dvh}
 
 @media(max-width:900px){.home-week-grid.active{grid-template-columns:1fr!important}.screen[data-title="Inicio general"] .home-card p,.screen[data-title="Inicio general"] .home-card .mini{display:none!important}.w3-print-workspace{grid-template-columns:1fr 180px}.w3-sheet-tools h3{font-size:18px}.w3-materials-grid{grid-template-columns:1fr}}
 </style>
+
+<style id="vocab-a4-v2">
+/* S9 · 4/6: composición estricta para evitar superposición */
+.w3-s9-conclusion-screen{overflow:hidden!important}
+.w3-s9-conclusion{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(0,1.1fr);gap:18px;flex:1;min-height:0;align-items:center;overflow:hidden}
+.w3-s9-photo{height:min(46vh,390px);aspect-ratio:4/3;border:2px solid #d7e0e4;border-radius:20px;background:#fff;padding:10px;display:grid;place-items:center;justify-self:center;max-width:100%}
+.w3-s9-photo img{display:block;width:100%;height:100%;object-fit:contain!important;object-position:center}
+.w3-s9-text{display:flex;flex-direction:column;gap:10px;justify-content:center;min-height:0}
+.w3-s9-fact{font-size:clamp(18px,2.5vh,28px);line-height:1.2;padding:10px 12px;border:2px solid #dce4e8;border-radius:14px;background:#fff}
+.w3-s9-question{font-size:clamp(20px,2.8vh,30px);line-height:1.15;text-align:center;background:#fff6db;border:2px solid #f0d779;border-radius:14px;padding:10px}
+@media(max-height:720px){.w3-s9-photo{height:34vh}.w3-s9-text{gap:6px}.w3-s9-fact{font-size:17px;padding:7px}.w3-s9-question{font-size:18px;padding:7px}}
+@media(max-width:820px){.w3-s9-conclusion{grid-template-columns:1fr}.w3-s9-photo{height:28vh}.w3-s9-text{gap:6px}}
+
+/* Vista de vocabulario en pantalla */
+.w3-vocab-screen{overflow:hidden!important}
+.w3-vocab-card-preview{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(0,1.1fr);gap:18px;flex:1;min-height:0;align-items:stretch}
+.w3-vocab-photo{border:2px solid #d7e0e4;border-radius:20px;background:#fff;padding:10px;display:grid;place-items:center;min-height:0}
+.w3-vocab-photo img{width:100%;height:100%;max-height:56vh;object-fit:contain!important;object-position:center}
+.w3-vocab-info{display:flex;flex-direction:column;justify-content:center;gap:9px;min-height:0}
+.w3-vocab-screen .w3-vocab-word{font-size:clamp(48px,8vh,82px);line-height:1;margin:0;text-align:center}
+.w3-vocab-syllables{border:2px solid #a9d8ed;background:#eef8ff;border-radius:15px;padding:8px 12px;text-align:center}.w3-vocab-syllables span{display:block;font:900 11px Arial;letter-spacing:.08em;color:#56717f}.w3-vocab-syllables b{font-size:clamp(25px,3.7vh,40px)}
+.w3-vocab-meaning,.w3-vocab-example,.w3-vocab-own-label{font-size:clamp(17px,2.35vh,25px);line-height:1.2;padding:9px 12px;border-radius:14px;border:2px solid #dce4e8;background:#fff}
+.w3-vocab-example{background:#eef9f4;border-color:#a9d9c4}.w3-vocab-own-label{background:#fffdf6;border-style:dashed}
+.vocab-print-main{width:100%;min-height:43px!important;font-size:14px!important}
+@media(max-height:720px){.w3-vocab-card-preview{gap:10px}.w3-vocab-photo img{max-height:46vh}.w3-vocab-screen .w3-vocab-word{font-size:46px}.w3-vocab-syllables b{font-size:26px}.w3-vocab-meaning,.w3-vocab-example,.w3-vocab-own-label{font-size:16px;padding:6px 8px}}
+@media(max-width:820px){.w3-vocab-card-preview{grid-template-columns:1fr}.w3-vocab-photo{max-height:30vh}.w3-vocab-info{gap:6px}}
+
+/* Ficha de vocabulario A4 vertical */
+.vocab-a4-card{width:210mm;height:297mm;max-width:210mm;max-height:297mm;background:#fff;border:2px solid #cfd7db;border-radius:14px;padding:10mm;box-sizing:border-box;display:grid;grid-template-rows:auto 88mm auto auto 1fr;gap:5mm;overflow:hidden}
+.vocab-a4-header{display:flex;justify-content:space-between;gap:8mm;align-items:flex-end;border-bottom:2px solid #d9e1e4;padding-bottom:3mm;font:10pt Arial;color:#53646d}.vocab-a4-header span{display:block;font-weight:900;letter-spacing:.08em;margin-top:1mm}.vocab-a4-name{white-space:nowrap}
+.vocab-a4-top{display:grid;grid-template-columns:46% 54%;gap:7mm;min-height:0}.vocab-a4-photo{border:2px solid #d7e0e4;border-radius:6mm;padding:3mm;display:grid;place-items:center;overflow:hidden}.vocab-a4-photo img{width:100%;height:100%;object-fit:contain!important}
+.vocab-a4-wordbox{display:flex;flex-direction:column;justify-content:center;text-align:center;border:2px solid #d7e0e4;border-radius:6mm;padding:5mm}.vocab-a4-word{font-size:40pt;line-height:1;margin-bottom:7mm}.vocab-a4-syllable-title,.vocab-a4-label{font:900 10pt Arial;letter-spacing:.08em;color:#53646d}.vocab-a4-syllables{font-size:25pt;line-height:1.1;margin-top:3mm;color:#18324a}
+.vocab-a4-section{border:2px solid #d7e0e4;border-radius:5mm;padding:5mm}.vocab-a4-meaning,.vocab-a4-example{font-size:18pt;line-height:1.25;margin-top:3mm}.vocab-a4-example{font-size:19pt}
+.vocab-a4-own{border:2px dashed #9dabb2;border-radius:5mm;padding:5mm;display:flex;flex-direction:column;min-height:0}.vocab-writing-line{height:13mm;border-bottom:1.5px solid #87949b;position:relative}.vocab-writing-line:after{content:"";position:absolute;left:0;right:0;bottom:4mm;border-bottom:1px dashed #d0d7da}
+
+/* La clase de ocultación solo vale en pantalla, nunca en impresión */
+@media screen{.w3-hidden-print{position:fixed!important;left:-200vw!important;top:0!important;visibility:hidden!important}}
+</style>
 </head>
 <body>
 <!-- Versión preparada para GitHub Pages. -->
@@ -1461,21 +1499,54 @@ body{min-height:100dvh}
 </section>
 
 <section class="screen" data-session="7" data-title="Vocabulario · sesión 7">
-  <div class="panel w3-new">
-    <div class="w3-kicker">SESIÓN 7 · PALABRA DE HOY</div>
-    <div class="w3-vocab">
-      <div class="w3-main-photo"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro con patas visibles"></div>
-      <div><h1 class="w3-vocab-word schoolfont">PATA</h1><p class="schoolfont">Parte del cuerpo de muchos animales.</p><div class="w3-big-prompt schoolfont">“El perro tiene cuatro patas.”</div><button class="w3-print-btn" data-print-vocab="7" type="button">🖨 IMPRIMIR VOCABULARIO</button></div>
+    <div class="panel w3-new w3-vocab-screen">
+      <div class="w3-kicker">SESIÓN 7 · PALABRA DE HOY</div>
+      <div class="w3-vocab-card-preview">
+    <div class="w3-vocab-photo"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro con las patas visibles"></div>
+    <div class="w3-vocab-info">
+      <h1 class="w3-vocab-word schoolfont">PATA</h1>
+      <div class="w3-vocab-syllables"><span>SÍLABAS</span><b class="schoolfont">PA · TA</b></div>
+      <div class="w3-vocab-meaning schoolfont">Una pata es una parte del cuerpo de muchos animales.</div>
+      <div class="w3-vocab-example schoolfont">“El perro tiene cuatro patas.”</div>
+      <div class="w3-vocab-own-label schoolfont">Mi oración con PATA: ____________________</div>
+      <button class="w3-print-btn vocab-print-main" data-print-vocab="7" type="button">🖨 IMPRIMIR FICHA A4</button>
     </div>
-    <div class="vocab-sheet w3-hidden-print" id="vocabSheet7"><div class="vocab-head"><div><div class="vocab-session">MI CUERPO FLORECE · SESIÓN 7</div><div class="vocab-note">Palabra de hoy · sustantivo</div></div><div class="vocab-kicker">VOCABULARIO</div></div><div class="vocab-word schoolfont">PATA</div><div class="vocab-photo-wrap"><img class="vocab-photo" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro"></div><div class="vocab-def schoolfont">Una pata es una parte del cuerpo de muchos animales.</div><div class="vocab-example schoolfont">“El perro tiene cuatro patas.”</div><div class="vocab-say schoolfont">El/La ___ tiene ___ patas.</div></div>
-    
-<div class="w3-nav">
-  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
-  <div class="w3-step"><b>6</b> / 6</div>
-  <div class="w3-nav-right"><button class="w3-nav-btn primary" data-go-home type="button">TERMINAR ✓</button></div>
-</div>
   </div>
-</section>
+      <div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet7">
+    <div class="vocab-a4-header">
+      <div><b>MI CUERPO FLORECE · SESIÓN 7</b><span>PALABRA DE HOY</span></div>
+      <div class="vocab-a4-name">Nombre: ______________________________</div>
+    </div>
+    <div class="vocab-a4-top">
+      <div class="vocab-a4-photo"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro con las patas visibles"></div>
+      <div class="vocab-a4-wordbox">
+        <div class="vocab-a4-word schoolfont">PATA</div>
+        <div class="vocab-a4-syllable-title">DIVIDIMOS EN SÍLABAS</div>
+        <div class="vocab-a4-syllables schoolfont">PA · TA</div>
+      </div>
+    </div>
+    <div class="vocab-a4-section">
+      <div class="vocab-a4-label">¿QUÉ SIGNIFICA?</div>
+      <div class="vocab-a4-meaning schoolfont">Una pata es una parte del cuerpo de muchos animales.</div>
+    </div>
+    <div class="vocab-a4-section">
+      <div class="vocab-a4-label">LA USAMOS EN UNA FRASE</div>
+      <div class="vocab-a4-example schoolfont">“El perro tiene cuatro patas.”</div>
+    </div>
+    <div class="vocab-a4-own">
+      <div class="vocab-a4-label">MI ORACIÓN CON PATA</div>
+      <div class="vocab-writing-line"></div>
+      <div class="vocab-writing-line"></div>
+      <div class="vocab-writing-line"></div>
+    </div>
+  </div>
+      <div class="w3-nav">
+    <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+    <div class="w3-step"><b>6</b> / 6</div>
+    <div class="w3-nav-right"><button class="w3-nav-btn primary" data-go-home type="button">TERMINAR ✓</button></div>
+  </div>
+    </div>
+  </section>
 <section class="screen" data-session="8" data-title="Clasificamos por sus patas">
   <div class="panel w3-new">
     <div class="w3-kicker">SESIÓN 8 · CLASIFICA</div>
@@ -1596,18 +1667,54 @@ body{min-height:100dvh}
 </section>
 
 <section class="screen" data-session="8" data-title="Vocabulario · sesión 8">
-  <div class="panel w3-new">
-    <div class="w3-kicker">SESIÓN 8 · PALABRA DE HOY</div>
-    <div class="w3-vocab"><div class="w3-main-photo"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro"></div><div><h1 class="w3-vocab-word schoolfont">ANIMAL</h1><p class="schoolfont">Un animal es un ser vivo.</p><div class="w3-big-prompt schoolfont">“El perro es un animal.”</div><button class="w3-print-btn" data-print-vocab="8" type="button">🖨 IMPRIMIR VOCABULARIO</button></div></div>
-    <div class="vocab-sheet w3-hidden-print" id="vocabSheet8"><div class="vocab-head"><div><div class="vocab-session">MI CUERPO FLORECE · SESIÓN 8</div><div class="vocab-note">Palabra de hoy · sustantivo</div></div><div class="vocab-kicker">VOCABULARIO</div></div><div class="vocab-word schoolfont">ANIMAL</div><div class="vocab-photo-wrap"><img class="vocab-photo" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro"></div><div class="vocab-def schoolfont">Un animal es un ser vivo.</div><div class="vocab-example schoolfont">“El perro es un animal.”</div><div class="vocab-say schoolfont">El/La ___ es un animal.</div></div>
-    
-<div class="w3-nav">
-  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
-  <div class="w3-step"><b>6</b> / 6</div>
-  <div class="w3-nav-right"><button class="w3-nav-btn primary" data-go-home type="button">TERMINAR ✓</button></div>
-</div>
+    <div class="panel w3-new w3-vocab-screen">
+      <div class="w3-kicker">SESIÓN 8 · PALABRA DE HOY</div>
+      <div class="w3-vocab-card-preview">
+    <div class="w3-vocab-photo"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro, ejemplo de animal"></div>
+    <div class="w3-vocab-info">
+      <h1 class="w3-vocab-word schoolfont">ANIMAL</h1>
+      <div class="w3-vocab-syllables"><span>SÍLABAS</span><b class="schoolfont">A · NI · MAL</b></div>
+      <div class="w3-vocab-meaning schoolfont">Un animal es un ser vivo que nace, crece y necesita alimento y agua.</div>
+      <div class="w3-vocab-example schoolfont">“El perro es un animal.”</div>
+      <div class="w3-vocab-own-label schoolfont">Mi oración con ANIMAL: ____________________</div>
+      <button class="w3-print-btn vocab-print-main" data-print-vocab="8" type="button">🖨 IMPRIMIR FICHA A4</button>
+    </div>
   </div>
-</section>
+      <div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet8">
+    <div class="vocab-a4-header">
+      <div><b>MI CUERPO FLORECE · SESIÓN 8</b><span>PALABRA DE HOY</span></div>
+      <div class="vocab-a4-name">Nombre: ______________________________</div>
+    </div>
+    <div class="vocab-a4-top">
+      <div class="vocab-a4-photo"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="Perro, ejemplo de animal"></div>
+      <div class="vocab-a4-wordbox">
+        <div class="vocab-a4-word schoolfont">ANIMAL</div>
+        <div class="vocab-a4-syllable-title">DIVIDIMOS EN SÍLABAS</div>
+        <div class="vocab-a4-syllables schoolfont">A · NI · MAL</div>
+      </div>
+    </div>
+    <div class="vocab-a4-section">
+      <div class="vocab-a4-label">¿QUÉ SIGNIFICA?</div>
+      <div class="vocab-a4-meaning schoolfont">Un animal es un ser vivo que nace, crece y necesita alimento y agua.</div>
+    </div>
+    <div class="vocab-a4-section">
+      <div class="vocab-a4-label">LA USAMOS EN UNA FRASE</div>
+      <div class="vocab-a4-example schoolfont">“El perro es un animal.”</div>
+    </div>
+    <div class="vocab-a4-own">
+      <div class="vocab-a4-label">MI ORACIÓN CON ANIMAL</div>
+      <div class="vocab-writing-line"></div>
+      <div class="vocab-writing-line"></div>
+      <div class="vocab-writing-line"></div>
+    </div>
+  </div>
+      <div class="w3-nav">
+    <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+    <div class="w3-step"><b>6</b> / 6</div>
+    <div class="w3-nav-right"><button class="w3-nav-btn primary" data-go-home type="button">TERMINAR ✓</button></div>
+  </div>
+    </div>
+  </section>
 <section class="screen" data-session="9" data-title="Predicción · vivo o no vivo">
   <div class="panel w3-new">
     <div class="w3-kicker">SESIÓN 9 · PIENSA</div>
@@ -1671,20 +1778,23 @@ body{min-height:100dvh}
 </section>
 
 <section class="screen" data-session="9" data-title="Conclusión · una planta está viva">
-  <div class="panel w3-new">
+  <div class="panel w3-new w3-s9-conclusion-screen">
     <div class="w3-kicker">SESIÓN 9 · EXPLICA</div>
     <h1 class="w3-title schoolfont">La planta no tiene patas…</h1>
-    <div class="w3-conclusion">
-      <div class="w3-main-photo"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg" alt="Planta"></div>
-      <div><div class="w3-big-prompt schoolfont">…y <b>está viva</b>.</div><p class="schoolfont">Las personas, los animales y las plantas son seres vivos.</p><p class="schoolfont">Una piedra o una pelota no están vivas.</p></div>
+    <div class="w3-s9-conclusion">
+      <div class="w3-s9-photo"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg" alt="Planta verde"></div>
+      <div class="w3-s9-text">
+        <div class="w3-big-prompt schoolfont">…y <b>está viva</b>.</div>
+        <div class="w3-s9-fact schoolfont">Las personas, los animales y las plantas son <b>seres vivos</b>.</div>
+        <div class="w3-s9-fact schoolfont">Una piedra o una pelota <b>no están vivas</b>.</div>
+        <div class="w3-s9-question schoolfont">¿Piensas lo mismo que al principio?</div>
+      </div>
     </div>
-    <div class="w3-instruction schoolfont">¿PIENSAS LO MISMO QUE AL PRINCIPIO?</div>
-    
-<div class="w3-nav">
-  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
-  <div class="w3-step"><b>4</b> / 6</div>
-  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
-</div>
+    <div class="w3-nav">
+      <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+      <div class="w3-step"><b>4</b> / 6</div>
+      <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+    </div>
   </div>
 </section>
 
@@ -1714,18 +1824,54 @@ body{min-height:100dvh}
 </section>
 
 <section class="screen" data-session="9" data-title="Vocabulario · sesión 9">
-  <div class="panel w3-new">
-    <div class="w3-kicker">SESIÓN 9 · PALABRA DE HOY</div>
-    <div class="w3-vocab"><div class="w3-main-photo"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg" alt="Planta"></div><div><h1 class="w3-vocab-word schoolfont">PLANTA</h1><p class="schoolfont">Una planta es un ser vivo.</p><div class="w3-big-prompt schoolfont">“La planta está viva.”</div><button class="w3-print-btn" data-print-vocab="9" type="button">🖨 IMPRIMIR VOCABULARIO</button></div></div>
-    <div class="vocab-sheet w3-hidden-print" id="vocabSheet9"><div class="vocab-head"><div><div class="vocab-session">MI CUERPO FLORECE · SESIÓN 9</div><div class="vocab-note">Palabra de hoy · sustantivo</div></div><div class="vocab-kicker">VOCABULARIO</div></div><div class="vocab-word schoolfont">PLANTA</div><div class="vocab-photo-wrap"><img class="vocab-photo" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg" alt="Planta"></div><div class="vocab-def schoolfont">Una planta es un ser vivo.</div><div class="vocab-example schoolfont">“La planta está viva.”</div><div class="vocab-say schoolfont">La planta…</div></div>
-    
-<div class="w3-nav">
-  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
-  <div class="w3-step"><b>6</b> / 6</div>
-  <div class="w3-nav-right"><button class="w3-nav-btn rubric" data-open-resource="rubric3" type="button">RÚBRICA</button><button class="w3-nav-btn primary" data-go-home type="button">TERMINAR ✓</button></div>
-</div>
+    <div class="panel w3-new w3-vocab-screen">
+      <div class="w3-kicker">SESIÓN 9 · PALABRA DE HOY</div>
+      <div class="w3-vocab-card-preview">
+    <div class="w3-vocab-photo"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg" alt="Planta verde"></div>
+    <div class="w3-vocab-info">
+      <h1 class="w3-vocab-word schoolfont">PLANTA</h1>
+      <div class="w3-vocab-syllables"><span>SÍLABAS</span><b class="schoolfont">PLAN · TA</b></div>
+      <div class="w3-vocab-meaning schoolfont">Una planta es un ser vivo. Nace, crece y necesita agua y luz.</div>
+      <div class="w3-vocab-example schoolfont">“La planta está viva.”</div>
+      <div class="w3-vocab-own-label schoolfont">Mi oración con PLANTA: ____________________</div>
+      <button class="w3-print-btn vocab-print-main" data-print-vocab="9" type="button">🖨 IMPRIMIR FICHA A4</button>
+    </div>
   </div>
-</section>
+      <div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet9">
+    <div class="vocab-a4-header">
+      <div><b>MI CUERPO FLORECE · SESIÓN 9</b><span>PALABRA DE HOY</span></div>
+      <div class="vocab-a4-name">Nombre: ______________________________</div>
+    </div>
+    <div class="vocab-a4-top">
+      <div class="vocab-a4-photo"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg" alt="Planta verde"></div>
+      <div class="vocab-a4-wordbox">
+        <div class="vocab-a4-word schoolfont">PLANTA</div>
+        <div class="vocab-a4-syllable-title">DIVIDIMOS EN SÍLABAS</div>
+        <div class="vocab-a4-syllables schoolfont">PLAN · TA</div>
+      </div>
+    </div>
+    <div class="vocab-a4-section">
+      <div class="vocab-a4-label">¿QUÉ SIGNIFICA?</div>
+      <div class="vocab-a4-meaning schoolfont">Una planta es un ser vivo. Nace, crece y necesita agua y luz.</div>
+    </div>
+    <div class="vocab-a4-section">
+      <div class="vocab-a4-label">LA USAMOS EN UNA FRASE</div>
+      <div class="vocab-a4-example schoolfont">“La planta está viva.”</div>
+    </div>
+    <div class="vocab-a4-own">
+      <div class="vocab-a4-label">MI ORACIÓN CON PLANTA</div>
+      <div class="vocab-writing-line"></div>
+      <div class="vocab-writing-line"></div>
+      <div class="vocab-writing-line"></div>
+    </div>
+  </div>
+      <div class="w3-nav">
+    <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+    <div class="w3-step"><b>6</b> / 6</div>
+    <div class="w3-nav-right"><button class="w3-nav-btn rubric" data-open-resource="rubric3" type="button">RÚBRICA</button><button class="w3-nav-btn primary" data-go-home type="button">TERMINAR ✓</button></div>
+  </div>
+    </div>
+  </section>
 
 <section class="screen" data-session="0" data-title="Materiales imprimibles · semana 3">
   <div class="panel w3-materials-new">
@@ -1966,7 +2112,7 @@ function printTarget(el){
   const isW3Sheet=el.classList.contains('w3-sheet');
   const isEvalLandscape=el.classList.contains('observation-sheet')||el.classList.contains('global-rubric-shell')||el.classList.contains('w3-rubric-shell');
   const host=document.createElement('div'); host.className='print-host'+(isVocab?' vocab-print-host':'')+(isEvalLandscape?' eval-landscape-print-host':'')+(isW3Sheet?' w3-sheet-print-host':'');
-  const clone=el.cloneNode(true); clone.classList.add('print-target');
+  const clone=el.cloneNode(true); clone.classList.add('print-target'); clone.classList.remove('w3-hidden-print');
   const origFields=el.querySelectorAll('input,textarea,select'); const cloneFields=clone.querySelectorAll('input,textarea,select');
   cloneFields.forEach((f,i)=>{const o=origFields[i]; if(!o)return; if('value' in f)f.value=o.value; if(f.tagName==='TEXTAREA')f.textContent=o.value;});
   host.appendChild(clone); document.body.appendChild(host);
@@ -1974,7 +2120,7 @@ function printTarget(el){
   printStyle.textContent=isW3Sheet
     ? '@page{size:A4 portrait;margin:0}@media print{html,body{width:210mm!important;height:297mm!important;overflow:hidden!important}body.w3-sheet-printing>.print-host{position:fixed!important;inset:0!important;width:210mm!important;height:297mm!important;max-width:210mm!important;max-height:297mm!important;overflow:hidden!important}body.w3-sheet-printing>.print-host>.w3-sheet.print-target{position:absolute!important;left:0!important;top:0!important;width:210mm!important;height:297mm!important;min-width:210mm!important;max-width:210mm!important;min-height:297mm!important;max-height:297mm!important;padding:9mm!important;box-sizing:border-box!important;overflow:hidden!important;border:0!important;border-radius:0!important;box-shadow:none!important}.w3-sheet-print-host .w3-cut img{object-fit:contain!important}}'
     : isVocab
-    ? '@page{size:A4 landscape;margin:0}@media print{html,body{width:297mm!important;height:210mm!important;overflow:hidden!important}body.vocab-printing>.print-host{position:fixed!important;inset:0!important;width:297mm!important;height:210mm!important;max-width:297mm!important;max-height:210mm!important;overflow:hidden!important}body.vocab-printing>.print-host>.vocab-sheet.print-target{position:absolute!important;left:0!important;top:0!important;width:297mm!important;height:210mm!important;min-width:297mm!important;max-width:297mm!important;min-height:210mm!important;max-height:210mm!important;padding:9mm!important;box-sizing:border-box!important;overflow:hidden!important;display:grid!important;grid-template-columns:44% 56%!important;grid-template-rows:auto auto 1fr auto auto!important;grid-template-areas:"head head" "photo word" "photo def" "photo example" "photo say"!important;gap:4mm 6mm!important;border:0!important;border-radius:0!important}.vocab-print-host .vocab-head{grid-area:head!important}.vocab-print-host .vocab-word{grid-area:word!important;font-size:34pt!important;line-height:1!important;margin:0!important}.vocab-print-host .vocab-photo-wrap{grid-area:photo!important;min-height:0!important;height:100%!important;padding:3mm!important}.vocab-print-host .vocab-photo{width:100%!important;height:100%!important;max-height:none!important;object-fit:contain!important}.vocab-print-host .vocab-def{grid-area:def!important;font-size:15pt!important;line-height:1.18!important;padding:4mm!important}.vocab-print-host .vocab-example{grid-area:example!important;font-size:14pt!important;line-height:1.18!important;padding:3.5mm!important}.vocab-print-host .vocab-say{grid-area:say!important;font-size:14pt!important;line-height:1.18!important;padding-top:2.5mm!important}.vocab-print-host .vocab-session{font-size:10pt!important}.vocab-print-host .vocab-note{font-size:9pt!important}.vocab-print-host .vocab-kicker{font-size:10pt!important;padding:2mm 3mm!important}}'
+    ? '@page{size:A4 portrait;margin:0}@media print{html,body{width:210mm!important;height:297mm!important;overflow:hidden!important}body.vocab-printing>.print-host{position:fixed!important;inset:0!important;width:210mm!important;height:297mm!important;max-width:210mm!important;max-height:297mm!important;overflow:hidden!important}body.vocab-printing>.print-host>.vocab-sheet.print-target{position:absolute!important;left:0!important;top:0!important;width:210mm!important;height:297mm!important;min-width:210mm!important;max-width:210mm!important;min-height:297mm!important;max-height:297mm!important;visibility:visible!important;display:grid!important;padding:10mm!important;box-sizing:border-box!important;overflow:hidden!important;border:0!important;border-radius:0!important;box-shadow:none!important}.vocab-print-host .vocab-a4-photo img{object-fit:contain!important}}'
     : isEvalLandscape
       ? '@page{size:A4 landscape;margin:0}@media print{html,body{width:297mm!important;height:210mm!important;overflow:hidden!important}body.eval-landscape-printing>.print-host{position:fixed!important;inset:0!important;width:297mm!important;height:210mm!important;max-width:297mm!important;max-height:210mm!important;overflow:hidden!important}body.eval-landscape-printing>.print-host>.print-target{position:absolute!important;left:0!important;top:0!important;width:297mm!important;height:210mm!important;min-width:297mm!important;max-width:297mm!important;min-height:210mm!important;max-height:210mm!important;padding:7mm!important;box-sizing:border-box!important;overflow:hidden!important;border:0!important;border-radius:0!important}.eval-landscape-print-host .obs-table td{height:7mm!important}.eval-landscape-print-host .obs-table input{font-size:8pt!important}.eval-landscape-print-host .global-rubric-shell{gap:3px!important}.eval-landscape-print-host .rubric-table td{padding:2px 4px!important}.eval-landscape-print-host .rubric-criterion{font-size:8.6px!important}.eval-landscape-print-host .rubric-evidence,.eval-landscape-print-host .rubric-source{font-size:7.4px!important}.eval-landscape-print-host .rubric-curriculum>div{font-size:8px!important;padding:4px 6px!important}.eval-landscape-print-host .rubric-level{font-size:7.5px!important;padding:3px 4px!important}.eval-landscape-print-host .rubric-final-rule{font-size:7.3px!important}.eval-landscape-print-host .rubric-notes textarea{height:24px!important}}'
       : '@page{size:A4 portrait;margin:0}';
