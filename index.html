@@ -1147,6 +1147,25 @@ body.mentor-open{overflow:hidden!important}
 @media(max-height:800px){.w3-video-frame iframe,.w3-video-frame video{min-height:210px}.w3-video-card-head b{font-size:18px}}
 @media(max-width:850px){.w3-video-selection{grid-template-columns:1fr}.w3-video-frame iframe,.w3-video-frame video{min-height:230px}}
 </style>
+<style id="all-resources-hub-v1">
+.resources-hub-panel{height:calc(100dvh - 58px);max-height:calc(100dvh - 58px);overflow:auto!important;padding:16px!important}
+.resources-hub-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:12px}
+.resources-hub-head h1{font-size:clamp(32px,4.5vh,50px);line-height:1;margin:0;color:#21343f}
+.resources-hub-head p{margin:4px 0 0;font:700 14px/1.3 Arial;color:#63727a}
+.resources-weeks-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}
+.resources-week{border:2px solid #d5e0e5;border-radius:20px;background:#fff;padding:14px;box-shadow:0 5px 16px rgba(33,52,63,.08)}
+.resources-week.week1{border-top:7px solid #e9a1bd}.resources-week.week2{border-top:7px solid #74b9d8}.resources-week.week3{border-top:7px solid #78bca0}
+.resources-week-head{margin-bottom:10px}.resources-week-head b{display:block;font:900 13px Arial;letter-spacing:.05em;color:#60717a}.resources-week-head h2{font-size:clamp(24px,3vh,32px);line-height:1.05;margin:4px 0}.resources-week-head p{font-size:13px;line-height:1.25;color:#69777d;margin:0}
+.resources-group-title{font:900 12px Arial;letter-spacing:.05em;color:#52646d;margin:12px 0 6px;padding-top:8px;border-top:1px solid #e1e7ea}
+.resources-list{display:grid;gap:7px}.resource-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px;align-items:center;border:1.5px solid #dce5e9;border-radius:12px;padding:8px;background:#fbfcfd}
+.resource-session{min-width:34px;height:34px;border-radius:10px;background:#eef3f6;display:grid;place-items:center;font:900 11px Arial;color:#3e5865}
+.resource-info{min-width:0}.resource-info b{display:block;font:900 13px/1.15 Arial;color:#253943}.resource-info span{display:block;margin-top:2px;font:700 10.5px/1.2 Arial;color:#738188}
+.resource-actions{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}.resource-actions button,.resource-actions a{min-height:32px;border:1.5px solid #355d72;border-radius:9px;background:#fff;color:#2c5367;padding:5px 8px;font:900 10px Arial;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.resource-actions .print,.resource-actions .primary{background:#2d617f;color:#fff}.resource-actions .edit{background:#fff6db;border-color:#c89b16;color:#69540c}
+.resource-rubric{margin-top:12px;border:2px solid #dfc75d;border-radius:14px;background:#fff9df;padding:10px;display:flex;align-items:center;justify-content:space-between;gap:10px}.resource-rubric b{display:block;font:900 14px Arial}.resource-rubric span{display:block;font:700 10.5px/1.25 Arial;color:#6d6242;margin-top:2px}.resource-rubric button{flex:0 0 auto;min-height:36px;border:2px solid #a78217;border-radius:10px;background:#fff;color:#654f0b;padding:6px 10px;font:900 10.5px Arial;cursor:pointer}
+.resources-hub-return{display:flex;justify-content:center;margin:14px 0 4px}.resources-hub-return button{min-height:42px}
+@media(max-width:1100px){.resources-weeks-grid{grid-template-columns:1fr}.resources-hub-panel{height:auto;max-height:none}.resources-hub-head{align-items:start}}
+@media(max-width:650px){.resource-row{grid-template-columns:auto 1fr}.resource-actions{grid-column:1/-1;justify-content:stretch}.resource-actions button,.resource-actions a{flex:1}.resources-hub-head{flex-direction:column}}
+</style>
 </head>
 <body>
 <!-- Versión preparada para GitHub Pages. -->
@@ -1198,8 +1217,7 @@ body.mentor-open{overflow:hidden!important}
 
 
 <div class="home-week-quick">
-  <button class="btn home-quick-materials" id="homeQuickMaterials" type="button">🖨 FICHAS DE LA SEMANA 3</button>
-  <button class="btn home-quick-rubric" id="homeQuickRubric" type="button">📋 RÚBRICA DE LA SEMANA 3</button>
+  <button class="btn home-quick-materials" id="homeAllResources" type="button">🖨 FICHAS Y RÚBRICAS · SEMANAS 1–3</button>
 </div><div class="home-eval">
 <h2 style="margin:0">Evaluación · Semana 1 (sesiones 1–3)</h2>
 <div class="workflow"><span>1 · Durante las sesiones: observar</span><span>2 · Guardar las 3 fichas</span><span>3 · Al terminar: analizar todas las evidencias</span><span>4 · Completar la rúbrica global</span></div>
@@ -2321,6 +2339,104 @@ body.mentor-open{overflow:hidden!important}
     </div>
   </section>
 
+<section class="screen" data-session="0" data-title="Fichas y rúbricas · todas las semanas">
+  <div class="panel resources-hub-panel">
+    <div class="resources-hub-head">
+      <div>
+        <span class="tag">SA 1 · MI CUERPO FLORECE</span>
+        <h1 class="schoolfont">Fichas para imprimir y rúbricas</h1>
+        <p>Todos los materiales de evaluación organizados por semana.</p>
+      </div>
+      <button class="btn" data-go-home type="button">◀ Volver al inicio</button>
+    </div>
+
+    <div class="resources-weeks-grid">
+      <section class="resources-week week1">
+        <div class="resources-week-head">
+          <b>SEMANA 1 · SESIONES 1–3</b>
+          <h2 class="schoolfont">Yo y mi cuerpo</h2>
+          <p>Identidad, partes externas del cuerpo, semejanzas y diferencias.</p>
+        </div>
+        <div class="resources-group-title">FICHAS DE TRABAJO</div>
+        <div class="resources-list">
+          <div class="resource-row">
+            <div class="resource-session">S1</div>
+            <div class="resource-info"><b>Así soy yo</b><span>Dibujo y explicación oral sobre la propia identidad.</span></div>
+            <div class="resource-actions"><button data-open-screen-title="Trabajo físico" type="button">VER</button><button class="print" data-print-target-id="worksheet" type="button">🖨 IMPRIMIR</button></div>
+          </div>
+          <div class="resource-row">
+            <div class="resource-session">S2</div>
+            <div class="resource-info"><b>Este es mi cuerpo</b><span>Dibujo corporal, partes externas y comparación.</span></div>
+            <div class="resource-actions"><button data-open-screen-title="Trabajo físico · mi cuerpo" type="button">VER</button><button class="print" data-print-target-id="bodyWorksheet" type="button">🖨 IMPRIMIR</button></div>
+          </div>
+          <div class="resource-row">
+            <div class="resource-session">S3</div>
+            <div class="resource-info"><b>Yo y otra persona</b><span>Semejanzas y diferencias observables.</span></div>
+            <div class="resource-actions"><button data-open-screen-title="Trabajo físico · comparación" type="button">VER</button><button class="print" data-print-target-id="compareWorksheet" type="button">🖨 IMPRIMIR</button></div>
+          </div>
+        </div>
+        <div class="resource-rubric">
+          <div><b>📋 Rúbrica Semana 1</b><span>Sesiones 1–3 · fichas + observación + diálogo.</span></div>
+          <button data-open-resource="rubric" type="button">ABRIR RÚBRICA</button>
+        </div>
+      </section>
+
+      <section class="resources-week week2">
+        <div class="resources-week-head">
+          <b>SEMANA 2 · SESIONES 4–6</b>
+          <h2 class="schoolfont">Los cinco sentidos</h2>
+          <p>Sentidos, pequeñas investigaciones y aplicación de lo aprendido.</p>
+        </div>
+        <div class="resources-group-title">FICHAS DE TRABAJO</div>
+        <div class="resources-list">
+          <div class="resource-row"><div class="resource-session">S4</div><div class="resource-info"><b>Mis cinco sentidos</b><span>Veo, oigo, huelo, saboreo y toco.</span></div><div class="resource-actions"><a class="primary" href="pdf/S4_MIS_CINCO_SENTIDOS_A4.pdf" target="_blank" rel="noopener">PDF</a></div></div>
+          <div class="resource-row"><div class="resource-session">S4</div><div class="resource-info"><b>Recorta y clasifica</b><span>Relacionar imágenes con cada sentido.</span></div><div class="resource-actions"><a class="primary" href="pdf/S4_RECORTA_Y_CLASIFICA_SENTIDOS_A4.pdf" target="_blank" rel="noopener">PDF</a></div></div>
+          <div class="resource-row"><div class="resource-session">S5</div><div class="resource-info"><b>Recorta y ordena</b><span>PIENSO → PRUEBO → DESCUBRO → CUENTO.</span></div><div class="resource-actions"><a class="primary" href="pdf/S5_RECORTA_Y_ORDENA_INVESTIGACION_A4.pdf" target="_blank" rel="noopener">PDF</a></div></div>
+          <div class="resource-row"><div class="resource-session">S5</div><div class="resource-info"><b>Dibujo mi descubrimiento</b><span>Registrar una observación de las estaciones.</span></div><div class="resource-actions"><a class="primary" href="pdf/S5_DIBUJO_MI_DESCUBRIMIENTO_A4.pdf" target="_blank" rel="noopener">PDF</a></div></div>
+          <div class="resource-row"><div class="resource-session">S6</div><div class="resource-info"><b>¿Qué sentido uso?</b><span>Recortar y clasificar situaciones por sentido.</span></div><div class="resource-actions"><a class="primary" href="pdf/S6_RECORTA_Y_CLASIFICA_QUE_SENTIDO_USO_A4.pdf" target="_blank" rel="noopener">PDF</a></div></div>
+          <div class="resource-row"><div class="resource-session">S6</div><div class="resource-info"><b>Dibujo y repaso</b><span>Cierre individual sobre los cinco sentidos.</span></div><div class="resource-actions"><a class="primary" href="pdf/S6_DIBUJO_Y_REPASO_CINCO_SENTIDOS_A4.pdf" target="_blank" rel="noopener">PDF</a></div></div>
+        </div>
+        <div class="resource-rubric">
+          <div><b>📋 Rúbrica Semana 2</b><span>Sesiones 4–6 · fichas + observación + diálogo.</span></div>
+          <button data-open-resource="rubric2" type="button">ABRIR RÚBRICA</button>
+        </div>
+      </section>
+
+      <section class="resources-week week3">
+        <div class="resources-week-head">
+          <b>SEMANA 3 · SESIONES 7–9</b>
+          <h2 class="schoolfont">Observo y clasifico seres vivos</h2>
+          <p>Patas, clasificación y pequeña investigación vivo / no vivo.</p>
+        </div>
+        <div class="resources-group-title">FICHAS DE TRABAJO</div>
+        <div class="resources-list">
+          <div class="resource-row">
+            <div class="resource-session">S7</div>
+            <div class="resource-info"><b>Miro, cuento y dibujo</b><span>Animales con 2, 4, 6 y 8 patas.</span></div>
+            <div class="resource-actions"><button data-open-w3-sheet="7" type="button">VER</button><button class="edit" data-edit-w3-sheet="7" type="button">✏ EDITAR</button><button class="print" data-direct-print-w3="7" type="button">🖨</button></div>
+          </div>
+          <div class="resource-row">
+            <div class="resource-session">S8</div>
+            <div class="resource-info"><b>Recorta y clasifica</b><span>Clasificar animales según el número de patas.</span></div>
+            <div class="resource-actions"><button data-open-w3-sheet="8" type="button">VER</button><button class="edit" data-edit-w3-sheet="8" type="button">✏ EDITAR</button><button class="print" data-direct-print-w3="8" type="button">🖨</button></div>
+          </div>
+          <div class="resource-row">
+            <div class="resource-session">S9</div>
+            <div class="resource-info"><b>¿Está vivo?</b><span>Clasificar vivo / no vivo y dibujar otro ser vivo.</span></div>
+            <div class="resource-actions"><button data-open-w3-sheet="9" type="button">VER</button><button class="edit" data-edit-w3-sheet="9" type="button">✏ EDITAR</button><button class="print" data-direct-print-w3="9" type="button">🖨</button></div>
+          </div>
+        </div>
+        <div class="resource-rubric">
+          <div><b>📋 Rúbrica Semana 3</b><span>Sesiones 7–9 · lectura, clasificación, investigación y fichas.</span></div>
+          <button data-open-resource="rubric3" type="button">ABRIR RÚBRICA</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="resources-hub-return"><button class="btn primary" data-go-home type="button">◀ Volver al inicio</button></div>
+  </div>
+</section>
+
 <section class="screen" data-session="0" data-title="Materiales imprimibles · semana 3">
   <div class="panel w3-materials-new">
     <span class="tag w3-tag">SEMANA 3</span>
@@ -2823,7 +2939,7 @@ function fitActiveScreen(){
   const panel=screen.querySelector(':scope > .panel');
   if(!panel)return;
   panel.style.zoom='1';
-  if(panel.classList.contains('w3-new')||panel.classList.contains('w3-materials-new')||screen.dataset.title==='Inicio general')return;
+  if(panel.classList.contains('w3-new')||panel.classList.contains('w3-materials-new')||panel.classList.contains('resources-hub-panel')||screen.dataset.title==='Inicio general')return;
   requestAnimationFrame(()=>{
     const ah=Math.max(1,screen.clientHeight-2);
     const aw=Math.max(1,screen.clientWidth-2);
@@ -2859,7 +2975,11 @@ function updateWeek2TaskNav(){
  week2TaskNav.querySelectorAll('button').forEach(b=>{const target=week2Map[session]?.[b.dataset.w2Task];b.classList.toggle('active',target===screens[current]?.dataset.title)});
 }
 week2TaskNav?.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{const session=screens[current]?.dataset.session;const title=week2Map[session]?.[b.dataset.w2Task];const idx=screens.findIndex(x=>x.dataset.title===title);if(idx>=0)show(idx)}));
-root.querySelectorAll('[data-open-materials]').forEach(b=>b.addEventListener('click',()=>{const target=b.dataset.openMaterials==='week3'?'Materiales imprimibles · semana 3':'Materiales imprimibles · semana 2';const idx=screens.findIndex(x=>x.dataset.title===target);if(idx>=0)show(idx)}));
+root.querySelectorAll('[data-open-materials]').forEach(b=>b.addEventListener('click',()=>{
+  const map={week1:'Fichas y rúbricas · todas las semanas',week2:'Materiales imprimibles · semana 2',week3:'Materiales imprimibles · semana 3',all:'Fichas y rúbricas · todas las semanas'};
+  const target=map[b.dataset.openMaterials]||'Fichas y rúbricas · todas las semanas';
+  const idx=screens.findIndex(x=>x.dataset.title===target);if(idx>=0)show(idx);
+}));
 
 sessionTabs.forEach(t=>t.addEventListener('click',()=>{const idx=screens.findIndex(x=>x.dataset.session===t.dataset.sessionJump);if(idx>=0)show(idx);}));
 root.querySelectorAll('[data-home-open]').forEach(b=>b.addEventListener('click',()=>{const idx=screens.findIndex(x=>x.dataset.session===b.dataset.homeOpen);if(idx>=0)show(idx);}));
@@ -2936,6 +3056,7 @@ function printTarget(el){
 }
 document.getElementById('printWorksheet').addEventListener('click',()=>printTarget(document.getElementById('worksheet')));
 document.getElementById('printBodyWorksheet').addEventListener('click',()=>printTarget(document.getElementById('bodyWorksheet')));
+document.getElementById('printCompareWorksheet')?.addEventListener('click',()=>printTarget(document.getElementById('compareWorksheet')));
 
 const bodyPrompts={veo:'👀 VEO… ¿Qué partes puedes observar en este cuerpo?',pienso:'💭 PIENSO… ¿Para qué sirve alguna de estas partes?',pregunto:'❓ ME PREGUNTO… ¿Qué quiero saber sobre mi cuerpo?'};
 root.querySelectorAll('.body-rbtn').forEach(b=>b.addEventListener('click',()=>{root.querySelectorAll('.body-rbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('bodyRoutinePrompt').textContent=bodyPrompts[b.dataset.kind];}));
@@ -3300,26 +3421,18 @@ screens.forEach(screen=>screen.querySelectorAll('video').forEach(video=>{
 function setHomeWeek(week){
   root.querySelectorAll('[data-home-week]').forEach(g=>g.classList.toggle('active',g.dataset.homeWeek===String(week)));
   root.querySelectorAll('[data-home-week-btn]').forEach(b=>b.classList.toggle('active',b.dataset.homeWeekBtn===String(week)));
-  const m=document.getElementById('homeQuickMaterials'),r=document.getElementById('homeQuickRubric');
-  if(m){
-    m.textContent='🖨 FICHAS DE LA SEMANA '+week;
-    m.style.display=(String(week)==='1')?'none':'inline-flex';
-    m.dataset.week=String(week);
-  }
-  if(r){r.textContent='📋 RÚBRICA DE LA SEMANA '+week;r.dataset.week=String(week);}
   requestAnimationFrame(fitActiveScreen);
 }
 root.querySelectorAll('[data-home-week-btn]').forEach(b=>b.addEventListener('click',()=>setHomeWeek(b.dataset.homeWeekBtn)));
-document.getElementById('homeQuickMaterials')?.addEventListener('click',()=>{
-  const w=document.getElementById('homeQuickMaterials').dataset.week;
-  const title=w==='2'?'Materiales imprimibles · semana 2':'Materiales imprimibles · semana 3';
-  const idx=screens.findIndex(x=>x.dataset.title===title);if(idx>=0)show(idx);
+document.getElementById('homeAllResources')?.addEventListener('click',()=>{
+  const idx=screens.findIndex(x=>x.dataset.title==='Fichas y rúbricas · todas las semanas');if(idx>=0)show(idx);
 });
-document.getElementById('homeQuickRubric')?.addEventListener('click',()=>{
-  const w=document.getElementById('homeQuickRubric').dataset.week;
-  const title=w==='1'?'Rúbrica global · sesiones 1-3':(w==='2'?'Rúbrica global · sesiones 4-6':'Rúbrica global · sesiones 7-9');
-  const idx=screens.findIndex(x=>x.dataset.title===title);if(idx>=0)show(idx);
-});
+root.querySelectorAll('[data-open-screen-title]').forEach(b=>b.addEventListener('click',()=>{
+  const idx=screens.findIndex(x=>x.dataset.title===b.dataset.openScreenTitle);if(idx>=0)show(idx);
+}));
+root.querySelectorAll('[data-print-target-id]').forEach(b=>b.addEventListener('click',()=>{
+  const el=document.getElementById(b.dataset.printTargetId);if(el)printTarget(el);
+}));
 setHomeWeek(3);
 
 const w3SheetOriginal={};
