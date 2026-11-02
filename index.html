@@ -818,6 +818,87 @@ body{min-height:100dvh}
 .vocab-two-column-panel:has(.vocab-a4-card) .vocab-controls .btn,.vocab-screen-panel:has(.vocab-a4-card) .vocab-controls .btn{width:100%!important;font-size:13px!important;min-height:42px!important}
 @media(max-width:820px){.vocab-two-column-panel:has(.vocab-a4-card),.vocab-screen-panel:has(.vocab-a4-card){grid-template-columns:1fr!important;height:auto!important;max-height:none!important;overflow:auto!important}.vocab-two-column-panel:has(.vocab-a4-card) .vocab-a4-card,.vocab-screen-panel:has(.vocab-a4-card) .vocab-a4-card{height:auto!important;aspect-ratio:210/297}}
 </style>
+
+<style id="vocab-editor-v1">
+/* A4 equilibrado: sin líneas que atraviesen el texto */
+.vocab-a4-card{
+  padding:9mm!important;
+  grid-template-rows:14mm 78mm 45mm 38mm minmax(0,1fr)!important;
+  gap:4mm!important;
+}
+.vocab-a4-header{min-height:0!important;padding-bottom:2mm!important}
+.vocab-a4-top{grid-template-columns:44% 56%!important;gap:6mm!important;min-height:0!important}
+.vocab-a4-photo,.vocab-a4-wordbox{min-height:0!important}
+.vocab-a4-photo img{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important}
+.vocab-a4-wordbox{padding:4mm!important}
+.vocab-a4-word{font-size:36pt!important;line-height:1!important;margin:0 0 5mm!important}
+.vocab-a4-syllables{font-size:23pt!important;line-height:1.05!important;margin-top:2.5mm!important}
+.vocab-a4-section{padding:4mm 5mm!important;min-height:0!important;overflow:hidden!important}
+.vocab-a4-meaning{font-size:16pt!important;line-height:1.2!important;margin-top:2.5mm!important}
+.vocab-a4-example{font-size:17pt!important;line-height:1.2!important;margin-top:2.5mm!important}
+.vocab-a4-own{padding:4mm 5mm!important;min-height:0!important;overflow:hidden!important}
+.vocab-writing-line{height:16mm!important;min-height:16mm!important;border:0!important;border-bottom:1.4px solid #87949b!important;position:relative!important}
+.vocab-writing-line:after{content:none!important}
+
+/* Botón edición */
+.vocab-edit-open{background:#fff6db!important;border-color:#d4a925!important;color:#24313a!important}
+
+/* Editor de ficha */
+.vocab-editor{display:none;position:fixed;inset:0;z-index:60000;background:#dfe8ec;grid-template-rows:auto auto minmax(0,1fr);overflow:hidden}
+.vocab-editor.open{display:grid}
+.vocab-editor-toolbar{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:7px 9px;background:#fff;border-bottom:2px solid #bccbd2;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.vocab-editor-title{font:900 14px Arial;color:#24313a;margin-right:auto;min-width:180px}
+.vocab-editor-toolbar button{min-height:38px;border:2px solid #456778;border-radius:10px;background:#fff;color:#24313a;padding:5px 9px;font:900 11px Arial;cursor:pointer}
+.vocab-editor-toolbar button.active{background:#eaf7f1;border-color:#58a987}
+.vocab-editor-toolbar button.print{background:#2d617f;color:#fff}
+.vocab-editor-hint{padding:6px 12px;background:#fff9df;border-bottom:1px solid #ead486;font:700 12px/1.25 Arial;color:#536169;text-align:center}
+.vocab-editor-stage{min-height:0;display:grid;place-items:center;padding:8px;overflow:hidden}
+.vocab-editor-stage .vocab-a4-card{
+  position:relative!important;
+  display:grid!important;
+  width:auto!important;
+  height:calc(100dvh - 112px)!important;
+  max-height:calc(100dvh - 112px)!important;
+  max-width:calc((100dvh - 112px) * .70707)!important;
+  aspect-ratio:210/297!important;
+  padding:3.03%!important;
+  grid-template-rows:5.05% 28.15% 16.25% 13.7% minmax(0,1fr)!important;
+  gap:1.45%!important;
+  border-radius:5px!important;
+  box-shadow:0 8px 28px rgba(0,0,0,.18)!important;
+  overflow:hidden!important;
+}
+.vocab-editor-stage .vocab-a4-card:not(.vocab-free-layout) .vocab-a4-header{font-size:clamp(7px,1.05vh,10px)!important;padding-bottom:1%!important}
+.vocab-editor-stage .vocab-a4-card:not(.vocab-free-layout) .vocab-a4-top{gap:2.1%!important}
+.vocab-editor-stage .vocab-a4-card:not(.vocab-free-layout) .vocab-a4-wordbox{padding:2.4%!important}
+.vocab-editor-stage .vocab-a4-card:not(.vocab-free-layout) .vocab-a4-word{font-size:clamp(28px,5.2vh,48px)!important;margin-bottom:4%!important}
+.vocab-editor-stage .vocab-a4-card:not(.vocab-free-layout) .vocab-a4-syllables{font-size:clamp(18px,3.1vh,29px)!important;margin-top:2%!important}
+.vocab-editor-stage .vocab-a4-card:not(.vocab-free-layout) .vocab-a4-section{padding:2.3%!important}
+.vocab-editor-stage .vocab-a4-card:not(.vocab-free-layout) .vocab-a4-meaning,.vocab-editor-stage .vocab-a4-card:not(.vocab-free-layout) .vocab-a4-example{font-size:clamp(12px,1.9vh,18px)!important;margin-top:1.5%!important}
+.vocab-editor-stage .vocab-a4-card:not(.vocab-free-layout) .vocab-a4-own{padding:2.3%!important}
+.vocab-editor-stage .vocab-a4-card:not(.vocab-free-layout) .vocab-writing-line{height:19%!important;min-height:0!important}
+
+/* Objetos libres */
+.vocab-free-layout{display:block!important}
+.vocab-free-layout>.vocab-edit-object{position:absolute!important;margin:0!important;box-sizing:border-box!important}
+.vocab-free-layout .vocab-a4-own>.vocab-edit-line{position:absolute!important;box-sizing:border-box!important}
+.vocab-editor.move-mode .vocab-edit-object,.vocab-editor.move-mode .vocab-edit-line{cursor:move}
+.vocab-editor .vocab-edit-object,.vocab-editor .vocab-edit-line{outline:1px dashed rgba(62,98,116,.38);outline-offset:1px}
+.vocab-editor .vocab-edit-object.selected,.vocab-editor .vocab-edit-line.selected{outline:3px solid #e6538b!important;outline-offset:2px!important}
+.vocab-resize-handle{display:none;position:absolute;width:14px;height:14px;right:-7px;bottom:-7px;background:#e6538b;border:2px solid #fff;border-radius:50%;z-index:5;cursor:nwse-resize;box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.vocab-editor.move-mode .selected>.vocab-resize-handle{display:block}
+.vocab-editor.text-mode [contenteditable="true"]{outline:2px dashed #d4a925!important;background:#fffbe8!important;cursor:text!important}
+.vocab-editor-added-box{border:2px solid #52666f;background:rgba(255,255,255,.75);min-width:12%;min-height:6%}
+.vocab-editor-added-line{border:0;border-bottom:2px solid #52666f;min-width:20%;min-height:2px;background:transparent}
+body.vocab-editor-open{overflow:hidden!important}
+
+@media(max-width:900px){
+  .vocab-editor-toolbar{gap:4px;padding:5px}
+  .vocab-editor-toolbar button{padding:4px 6px;font-size:9px;min-height:32px}
+  .vocab-editor-title{display:none}
+  .vocab-editor-stage .vocab-a4-card{height:calc(100dvh - 142px)!important;max-width:92vw!important}
+}
+</style>
 </head>
 <body>
 <!-- Versión preparada para GitHub Pages. -->
@@ -1008,7 +1089,7 @@ body{min-height:100dvh}
 
 <div class="vocab-controls">
 <button class="btn prev" type="button">◀ Atrás</button>
-<button class="btn" data-print-vocab="1" type="button">🖨️ Imprimir A4</button>
+<button class="btn" data-print-vocab="1" type="button">🖨️ Imprimir A4</button><button class="btn vocab-edit-open" data-edit-vocab="1" type="button">✏️ Editar ficha</button>
 <button class="btn primary" data-go-home="" type="button">✓ Terminar sesión</button>
 </div>
 </div>
@@ -1187,7 +1268,7 @@ body{min-height:100dvh}
 
 <div class="vocab-controls">
 <button class="btn prev" type="button">◀ Atrás</button>
-<button class="btn" data-print-vocab="2" type="button">🖨️ Imprimir A4</button>
+<button class="btn" data-print-vocab="2" type="button">🖨️ Imprimir A4</button><button class="btn vocab-edit-open" data-edit-vocab="2" type="button">✏️ Editar ficha</button>
 <button class="btn primary" data-go-home="" type="button">✓ Terminar sesión</button>
 </div>
 </div>
@@ -1343,7 +1424,7 @@ body{min-height:100dvh}
 
 <div class="vocab-controls">
 <button class="btn prev" type="button">◀ Atrás</button>
-<button class="btn" data-print-vocab="3" type="button">🖨️ Imprimir A4</button>
+<button class="btn" data-print-vocab="3" type="button">🖨️ Imprimir A4</button><button class="btn vocab-edit-open" data-edit-vocab="3" type="button">✏️ Editar ficha</button>
 <button class="btn primary" data-go-home="" type="button">✓ Terminar sesión</button>
 </div>
 </div>
@@ -1377,7 +1458,7 @@ body{min-height:100dvh}
 <div class="vocab-a4-section"><div class="vocab-a4-label">¿QUÉ SIGNIFICA?</div><div class="vocab-a4-meaning schoolfont">El ojo es una parte del cuerpo que usamos para ver.</div></div>
 <div class="vocab-a4-section"><div class="vocab-a4-label">LA USAMOS EN UNA FRASE</div><div class="vocab-a4-example schoolfont">“Con mis ojos puedo ver el río.”</div></div>
 <div class="vocab-a4-own"><div class="vocab-a4-label">MI ORACIÓN CON OJO</div><div class="vocab-writing-line"></div><div class="vocab-writing-line"></div><div class="vocab-writing-line"></div></div></div>
-<div class="vocab-controls"><button class="btn prev">◀ Atrás</button><button class="btn" data-print-vocab="4">🖨️ Imprimir A4</button><button class="btn primary" data-go-home="">✓ Terminar sesión</button></div></div></section><section class="screen" data-session="5" data-title="Investigamos con nuestros sentidos"><div class="panel sense-hero"><div><span class="tag sense-tag">SESIÓN 5 · 35 min efectivos</span><h1 class="student-title schoolfont">Investigamos con nuestros sentidos</h1><div class="sense-lead schoolfont">Hoy hacemos como pequeños científicos: primero pensamos qué pasará, después probamos y al final explicamos qué descubrimos.</div><div class="actions"><button class="btn primary next">Empezar ▶</button></div><div class="teacherbox"><b>Materiales sugeridos.</b> Vista: objeto parcialmente oculto o lupa. Oído: campana/instrumento o botes sonoros. Olfato: piel de naranja, limón o canela. Tacto: tela suave y superficie rugosa. Gusto: opcional y solo con autorización y control de alergias; si no, se realiza mediante imagen/conversación.</div></div><div class="science-cycle"><div class="cycle-card"><span class="num">1</span><b class="schoolfont">Creo</b><p>Hago una predicción.</p></div><div class="cycle-card"><span class="num">2</span><b class="schoolfont">Pruebo</b><p>Observo o experimento.</p></div><div class="cycle-card"><span class="num">3</span><b class="schoolfont">Descubro</b><p>Explico qué pasó.</p></div></div></div></section><section class="screen" data-session="5" data-title="Antes de investigar"><div class="panel"><span class="tag">PREDICCIÓN</span><h2 class="sense-question schoolfont">Antes de probar… ¿qué creo que voy a descubrir?</h2><div class="activity-help"><span>1 · MIRA LA FOTO</span><span>2 · HAZ UNA PREDICCIÓN</span><span>3 · DESPUÉS COMPRUEBA</span></div><div class="predict-grid"><button class="predict-card" data-predict="mirar"><img alt="MIRANDO puedo descubrir…" class="predict-photo" draggable="false" loading="lazy" src="assets/vista.jpg"/><span class="predict-label schoolfont">MIRANDO puedo descubrir…</span></button><button class="predict-card" data-predict="escuchar"><img alt="ESCUCHANDO puedo descubrir…" class="predict-photo" draggable="false" loading="lazy" src="assets/oido.jpg"/><span class="predict-label schoolfont">ESCUCHANDO puedo descubrir…</span></button><button class="predict-card" data-predict="tocar"><img alt="TOCANDO puedo descubrir…" class="predict-photo" draggable="false" loading="lazy" src="assets/tacto.jpg"/><span class="predict-label schoolfont">TOCANDO puedo descubrir…</span></button></div><div class="predict-result schoolfont" id="s5PredictResult">Elige una opción y completa la frase oralmente.</div><div class="teacherbox"><b>4 min.</b> No corrijas la predicción antes de experimentar. La idea es poder comparar “lo que creía” con “lo que descubrí”.</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">Vamos a las estaciones ▶</button></div></div></section><section class="screen" data-session="5" data-title="Arrastramos · estaciones"><div class="panel"><span class="tag">ARRASTRA</span><h2 class="manip-title schoolfont">Lleva cada imagen a su estación sensorial</h2><p class="manip-sub schoolfont">Mira lo que hace cada niño y arrastra la tarjeta al sentido que está usando.</p><div class="drag-activity" id="dragS5"><div class="drag-bank"><div class="drag-item" data-match="vista" data-order="1"><img alt="Mirar con lupa" src="assets/vista.jpg"/><b>MIRAR</b></div><div class="drag-item" data-match="oido" data-order="2"><img alt="Escuchar" src="assets/oido.jpg"/><b>ESCUCHAR</b></div><div class="drag-item" data-match="olfato" data-order="3"><img alt="Oler" src="assets/olfato.jpg"/><b>OLER</b></div><div class="drag-item" data-match="tacto" data-order="4"><img alt="Tocar" src="assets/tacto.jpg"/><b>TOCAR</b></div><div class="drag-item" data-match="gusto" data-order="5"><img alt="Saborear" src="assets/gusto.jpg"/><b>SABOREAR</b></div></div></div><div class="drop-grid"><div class="drop-zone" data-accept="vista"><div class="drop-label">VISTA</div><div class="drop-slot"></div></div><div class="drop-zone" data-accept="oido"><div class="drop-label">OÍDO</div><div class="drop-slot"></div></div><div class="drop-zone" data-accept="olfato"><div class="drop-label">OLFATO</div><div class="drop-slot"></div></div><div class="drop-zone" data-accept="tacto"><div class="drop-label">TACTO</div><div class="drop-slot"></div></div><div class="drop-zone" data-accept="gusto"><div class="drop-label">GUSTO</div><div class="drop-slot"></div></div></div></div><div class="drag-feedback schoolfont">¿Qué sentido está usando cada persona?</div><div class="manip-actions"><button class="btn" data-reset-drag="dragS5">↻ Volver a empezar</button><button class="btn prev">◀ Atrás</button><button class="btn primary next">Ordenamos ▶</button></div><div class="teacherbox"><b>Antes de las estaciones reales.</b> Esta actividad anticipa qué sentido se empleará y da lenguaje para la experimentación.</div></section><section class="screen" data-session="5" data-title="Ordenamos · proceso de investigacion"><div class="panel"><span class="tag">ORDENA</span><h2 class="manip-title schoolfont">Ordena los pasos de nuestra investigación</h2><p class="manip-sub schoolfont">Arrastra las cuatro tarjetas a los números 1, 2, 3 y 4.</p><div class="order-layout drag-activity" id="orderS5"><div class="order-bank"><div class="drag-item" data-match="1" data-order="1"><img alt="Pienso" src="assets/pienso.jpg"/><b>PIENSO</b></div><div class="drag-item" data-match="2" data-order="2"><img alt="Pruebo" src="assets/olfato.jpg"/><b>PRUEBO</b></div><div class="drag-item" data-match="3" data-order="3"><img alt="Descubro" src="assets/vista.jpg"/><b>DESCUBRO</b></div><div class="drag-item" data-match="4" data-order="4"><img alt="Cuento" src="assets/pregunto.jpg"/><b>CUENTO</b></div></div><div class="order-slots"><div class="drop-zone order-slot" data-accept="1"><span class="order-num">1</span><div class="drop-slot"></div></div><div class="drop-zone order-slot" data-accept="2"><span class="order-num">2</span><div class="drop-slot"></div></div><div class="drop-zone order-slot" data-accept="3"><span class="order-num">3</span><div class="drop-slot"></div></div><div class="drop-zone order-slot" data-accept="4"><span class="order-num">4</span><div class="drop-slot"></div></div></div></div><div class="drag-feedback schoolfont">Pienso qué puede pasar → pruebo → descubro → cuento lo que aprendí.</div><div class="manip-actions"><button class="btn" data-reset-drag="orderS5">↻ Volver a empezar</button><button class="btn prev">◀ Atrás</button><button class="btn primary next">Unimos con flechas ▶</button></div></div></section><section class="screen" data-session="5" data-title="Unimos con flechas · estacion y descubrimiento"><div class="panel"><span class="tag">UNE CON FLECHAS</span><h2 class="manip-title schoolfont">¿Qué podemos descubrir en cada estación?</h2><p class="manip-sub schoolfont">Une cada imagen con la palabra que mejor describe lo que investigamos.</p><div class="match-activity" id="matchS5"><div class="match-board"><svg class="match-svg"><defs><marker id="arrow-matchS5" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="3"><path d="M0,0 L0,6 L9,3 z" fill="#406b85"></path></marker></defs></svg><div class="match-col left"><button class="match-node" data-key="detalle"><img alt="Vista" src="assets/vista.jpg"/><b>VISTA</b></button><button class="match-node" data-key="sonido"><img alt="Oído" src="assets/oido.jpg"/><b>OÍDO</b></button><button class="match-node" data-key="olor"><img alt="Olfato" src="assets/olfato.jpg"/><b>OLFATO</b></button><button class="match-node" data-key="textura"><img alt="Tacto" src="assets/tacto.jpg"/><b>TACTO</b></button><button class="match-node" data-key="sabor"><img alt="Gusto" src="assets/gusto.jpg"/><b>GUSTO</b></button></div><div class="match-col right"><button class="match-node" data-key="sonido"><b>SONIDO</b><small>¿Qué escucho?</small></button><button class="match-node" data-key="textura"><b>TEXTURA</b><small>¿Cómo es al tocar?</small></button><button class="match-node" data-key="detalle"><b>COLOR · FORMA · DETALLE</b><small>¿Qué veo?</small></button><button class="match-node" data-key="sabor"><b>SABOR</b><small>¿Qué noto al saborear?</small></button><button class="match-node" data-key="olor"><b>OLOR</b><small>¿Qué noto al oler?</small></button></div></div><div class="match-feedback schoolfont">Haz la primera unión.</div><div class="manip-actions"><button class="btn" data-reset-match="matchS5">↻ Borrar flechas</button><button class="btn prev">◀ Atrás</button><button class="btn primary next">Ficha y PDFs ▶</button></div></div></div></section><section class="screen printables-session-screen" data-session="5" data-title="Fichas para imprimir · sesión 5">
+<div class="vocab-controls"><button class="btn prev">◀ Atrás</button><button class="btn" data-print-vocab="4">🖨️ Imprimir A4</button><button class="btn vocab-edit-open" data-edit-vocab="4" type="button">✏️ Editar ficha</button><button class="btn primary" data-go-home="">✓ Terminar sesión</button></div></div></section><section class="screen" data-session="5" data-title="Investigamos con nuestros sentidos"><div class="panel sense-hero"><div><span class="tag sense-tag">SESIÓN 5 · 35 min efectivos</span><h1 class="student-title schoolfont">Investigamos con nuestros sentidos</h1><div class="sense-lead schoolfont">Hoy hacemos como pequeños científicos: primero pensamos qué pasará, después probamos y al final explicamos qué descubrimos.</div><div class="actions"><button class="btn primary next">Empezar ▶</button></div><div class="teacherbox"><b>Materiales sugeridos.</b> Vista: objeto parcialmente oculto o lupa. Oído: campana/instrumento o botes sonoros. Olfato: piel de naranja, limón o canela. Tacto: tela suave y superficie rugosa. Gusto: opcional y solo con autorización y control de alergias; si no, se realiza mediante imagen/conversación.</div></div><div class="science-cycle"><div class="cycle-card"><span class="num">1</span><b class="schoolfont">Creo</b><p>Hago una predicción.</p></div><div class="cycle-card"><span class="num">2</span><b class="schoolfont">Pruebo</b><p>Observo o experimento.</p></div><div class="cycle-card"><span class="num">3</span><b class="schoolfont">Descubro</b><p>Explico qué pasó.</p></div></div></div></section><section class="screen" data-session="5" data-title="Antes de investigar"><div class="panel"><span class="tag">PREDICCIÓN</span><h2 class="sense-question schoolfont">Antes de probar… ¿qué creo que voy a descubrir?</h2><div class="activity-help"><span>1 · MIRA LA FOTO</span><span>2 · HAZ UNA PREDICCIÓN</span><span>3 · DESPUÉS COMPRUEBA</span></div><div class="predict-grid"><button class="predict-card" data-predict="mirar"><img alt="MIRANDO puedo descubrir…" class="predict-photo" draggable="false" loading="lazy" src="assets/vista.jpg"/><span class="predict-label schoolfont">MIRANDO puedo descubrir…</span></button><button class="predict-card" data-predict="escuchar"><img alt="ESCUCHANDO puedo descubrir…" class="predict-photo" draggable="false" loading="lazy" src="assets/oido.jpg"/><span class="predict-label schoolfont">ESCUCHANDO puedo descubrir…</span></button><button class="predict-card" data-predict="tocar"><img alt="TOCANDO puedo descubrir…" class="predict-photo" draggable="false" loading="lazy" src="assets/tacto.jpg"/><span class="predict-label schoolfont">TOCANDO puedo descubrir…</span></button></div><div class="predict-result schoolfont" id="s5PredictResult">Elige una opción y completa la frase oralmente.</div><div class="teacherbox"><b>4 min.</b> No corrijas la predicción antes de experimentar. La idea es poder comparar “lo que creía” con “lo que descubrí”.</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">Vamos a las estaciones ▶</button></div></div></section><section class="screen" data-session="5" data-title="Arrastramos · estaciones"><div class="panel"><span class="tag">ARRASTRA</span><h2 class="manip-title schoolfont">Lleva cada imagen a su estación sensorial</h2><p class="manip-sub schoolfont">Mira lo que hace cada niño y arrastra la tarjeta al sentido que está usando.</p><div class="drag-activity" id="dragS5"><div class="drag-bank"><div class="drag-item" data-match="vista" data-order="1"><img alt="Mirar con lupa" src="assets/vista.jpg"/><b>MIRAR</b></div><div class="drag-item" data-match="oido" data-order="2"><img alt="Escuchar" src="assets/oido.jpg"/><b>ESCUCHAR</b></div><div class="drag-item" data-match="olfato" data-order="3"><img alt="Oler" src="assets/olfato.jpg"/><b>OLER</b></div><div class="drag-item" data-match="tacto" data-order="4"><img alt="Tocar" src="assets/tacto.jpg"/><b>TOCAR</b></div><div class="drag-item" data-match="gusto" data-order="5"><img alt="Saborear" src="assets/gusto.jpg"/><b>SABOREAR</b></div></div></div><div class="drop-grid"><div class="drop-zone" data-accept="vista"><div class="drop-label">VISTA</div><div class="drop-slot"></div></div><div class="drop-zone" data-accept="oido"><div class="drop-label">OÍDO</div><div class="drop-slot"></div></div><div class="drop-zone" data-accept="olfato"><div class="drop-label">OLFATO</div><div class="drop-slot"></div></div><div class="drop-zone" data-accept="tacto"><div class="drop-label">TACTO</div><div class="drop-slot"></div></div><div class="drop-zone" data-accept="gusto"><div class="drop-label">GUSTO</div><div class="drop-slot"></div></div></div></div><div class="drag-feedback schoolfont">¿Qué sentido está usando cada persona?</div><div class="manip-actions"><button class="btn" data-reset-drag="dragS5">↻ Volver a empezar</button><button class="btn prev">◀ Atrás</button><button class="btn primary next">Ordenamos ▶</button></div><div class="teacherbox"><b>Antes de las estaciones reales.</b> Esta actividad anticipa qué sentido se empleará y da lenguaje para la experimentación.</div></section><section class="screen" data-session="5" data-title="Ordenamos · proceso de investigacion"><div class="panel"><span class="tag">ORDENA</span><h2 class="manip-title schoolfont">Ordena los pasos de nuestra investigación</h2><p class="manip-sub schoolfont">Arrastra las cuatro tarjetas a los números 1, 2, 3 y 4.</p><div class="order-layout drag-activity" id="orderS5"><div class="order-bank"><div class="drag-item" data-match="1" data-order="1"><img alt="Pienso" src="assets/pienso.jpg"/><b>PIENSO</b></div><div class="drag-item" data-match="2" data-order="2"><img alt="Pruebo" src="assets/olfato.jpg"/><b>PRUEBO</b></div><div class="drag-item" data-match="3" data-order="3"><img alt="Descubro" src="assets/vista.jpg"/><b>DESCUBRO</b></div><div class="drag-item" data-match="4" data-order="4"><img alt="Cuento" src="assets/pregunto.jpg"/><b>CUENTO</b></div></div><div class="order-slots"><div class="drop-zone order-slot" data-accept="1"><span class="order-num">1</span><div class="drop-slot"></div></div><div class="drop-zone order-slot" data-accept="2"><span class="order-num">2</span><div class="drop-slot"></div></div><div class="drop-zone order-slot" data-accept="3"><span class="order-num">3</span><div class="drop-slot"></div></div><div class="drop-zone order-slot" data-accept="4"><span class="order-num">4</span><div class="drop-slot"></div></div></div></div><div class="drag-feedback schoolfont">Pienso qué puede pasar → pruebo → descubro → cuento lo que aprendí.</div><div class="manip-actions"><button class="btn" data-reset-drag="orderS5">↻ Volver a empezar</button><button class="btn prev">◀ Atrás</button><button class="btn primary next">Unimos con flechas ▶</button></div></div></section><section class="screen" data-session="5" data-title="Unimos con flechas · estacion y descubrimiento"><div class="panel"><span class="tag">UNE CON FLECHAS</span><h2 class="manip-title schoolfont">¿Qué podemos descubrir en cada estación?</h2><p class="manip-sub schoolfont">Une cada imagen con la palabra que mejor describe lo que investigamos.</p><div class="match-activity" id="matchS5"><div class="match-board"><svg class="match-svg"><defs><marker id="arrow-matchS5" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="3"><path d="M0,0 L0,6 L9,3 z" fill="#406b85"></path></marker></defs></svg><div class="match-col left"><button class="match-node" data-key="detalle"><img alt="Vista" src="assets/vista.jpg"/><b>VISTA</b></button><button class="match-node" data-key="sonido"><img alt="Oído" src="assets/oido.jpg"/><b>OÍDO</b></button><button class="match-node" data-key="olor"><img alt="Olfato" src="assets/olfato.jpg"/><b>OLFATO</b></button><button class="match-node" data-key="textura"><img alt="Tacto" src="assets/tacto.jpg"/><b>TACTO</b></button><button class="match-node" data-key="sabor"><img alt="Gusto" src="assets/gusto.jpg"/><b>GUSTO</b></button></div><div class="match-col right"><button class="match-node" data-key="sonido"><b>SONIDO</b><small>¿Qué escucho?</small></button><button class="match-node" data-key="textura"><b>TEXTURA</b><small>¿Cómo es al tocar?</small></button><button class="match-node" data-key="detalle"><b>COLOR · FORMA · DETALLE</b><small>¿Qué veo?</small></button><button class="match-node" data-key="sabor"><b>SABOR</b><small>¿Qué noto al saborear?</small></button><button class="match-node" data-key="olor"><b>OLOR</b><small>¿Qué noto al oler?</small></button></div></div><div class="match-feedback schoolfont">Haz la primera unión.</div><div class="manip-actions"><button class="btn" data-reset-match="matchS5">↻ Borrar flechas</button><button class="btn prev">◀ Atrás</button><button class="btn primary next">Ficha y PDFs ▶</button></div></div></div></section><section class="screen printables-session-screen" data-session="5" data-title="Fichas para imprimir · sesión 5">
 <div class="panel">
   <div class="printables-head"><div><span class="tag">SESIÓN 5 · FICHAS REALES</span><h1 class="schoolfont">Fichas para imprimir</h1><p>Las fichas de <b>Investigamos con nuestros sentidos</b>.</p></div></div>
   <div class="printables-note">Toca una ficha para abrir el PDF en tamaño DIN A4. Desde el visor del PDF puedes imprimirla.</div>
@@ -1405,7 +1486,7 @@ body{min-height:100dvh}
 <div class="vocab-a4-section"><div class="vocab-a4-label">¿QUÉ SIGNIFICA?</div><div class="vocab-a4-meaning schoolfont">La nariz es una parte del cuerpo que usamos para oler.</div></div>
 <div class="vocab-a4-section"><div class="vocab-a4-label">LA USAMOS EN UNA FRASE</div><div class="vocab-a4-example schoolfont">“Con mi nariz puedo oler las flores.”</div></div>
 <div class="vocab-a4-own"><div class="vocab-a4-label">MI ORACIÓN CON NARIZ</div><div class="vocab-writing-line"></div><div class="vocab-writing-line"></div><div class="vocab-writing-line"></div></div></div>
-<div class="vocab-controls"><button class="btn prev">◀ Atrás</button><button class="btn" data-print-vocab="5">🖨️ Imprimir A4</button><button class="btn primary" data-go-home="">✓ Terminar sesión</button></div></div></section><section class="screen" data-session="6" data-title="¿Qué sentido uso?"><div class="panel sense-hero"><div><span class="tag sense-tag">SESIÓN 6 · 35 min efectivos</span><h1 class="student-title schoolfont">¿Qué sentido uso?</h1><div class="sense-lead schoolfont">Hoy vamos a ordenar lo que sabemos y a explicar <b>cómo lo sabemos</b>.</div><div class="actions"><button class="btn primary next">Empezar ▶</button></div><div class="teacherbox"><b>Objetivo.</b> Consolidar órgano/acción/ejemplo, clasificar situaciones y justificar. Volvemos al libro como fuente para comprobar información.</div></div><div class="sense-hero-visual"><div class="sense-orb"><img alt="Ejemplo de río" class="sense-photo" draggable="false" loading="lazy" src="assets/vista.jpg"/><b>río</b><small>¿?</small></div><div class="sense-orb"><img alt="Ejemplo de aves" class="sense-photo" draggable="false" loading="lazy" src="assets/oido.jpg"/><b>aves</b><small>¿?</small></div><div class="sense-orb"><img alt="Ejemplo de pan" class="sense-photo" draggable="false" loading="lazy" src="assets/gusto.jpg"/><b>pan</b><small>¿?</small></div><div class="sense-orb"><img alt="Ejemplo de flores" class="sense-photo" draggable="false" loading="lazy" src="assets/olfato.jpg"/><b>flores</b><small>¿?</small></div><div class="sense-orb"><img alt="Ejemplo de agua" class="sense-photo" draggable="false" loading="lazy" src="assets/tacto.jpg"/><b>agua</b><small>¿?</small></div></div></div></section><section class="screen" data-session="6" data-title="Volvemos al libro · resumen"><div class="panel book-senses"><div class="book-sense-main"><img alt="Página resumen del libro Los cinco sentidos" src="assets/embedded_de27debe2903d48a.jpg"/></div><div class="book-sense-side"><span class="tag">RELECTURA PARA COMPROBAR</span><h2 class="student-title schoolfont" style="font-size:clamp(34px,4vw,56px)">Busco · miro · compruebo</h2><div class="book-line schoolfont">ojos → ver<br/>oídos → oír<br/>boca → saborear<br/>nariz → oler<br/>manos → tocar</div><div class="teacherbox"><b>5 min.</b> Usa la página-resumen como tabla de consulta. Pregunta: “Si no estoy seguro, ¿dónde puedo comprobarlo?”</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">Clasificamos ▶</button></div></div></div></section><section class="screen" data-session="6" data-title="Arrastramos · que sentido uso"><div class="panel"><span class="tag">ARRASTRA</span><h2 class="manip-title schoolfont">¿Qué sentido uso en cada situación?</h2><p class="manip-sub schoolfont">Arrastra cada imagen al sentido principal que estamos trabajando.</p><div class="drag-activity" id="dragS6"><div class="drag-bank"><div class="drag-item" data-match="vista" data-order="1"><img alt="Vista" src="assets/vista.jpg"/><b>MIRO</b></div><div class="drag-item" data-match="oido" data-order="2"><img alt="Oído" src="assets/oido.jpg"/><b>ESCUCHO</b></div><div class="drag-item" data-match="olfato" data-order="3"><img alt="Olfato" src="assets/olfato.jpg"/><b>HUELO</b></div><div class="drag-item" data-match="gusto" data-order="4"><img alt="Gusto" src="assets/gusto.jpg"/><b>SABOREO</b></div><div class="drag-item" data-match="tacto" data-order="5"><img alt="Tacto" src="assets/tacto.jpg"/><b>TOCO</b></div></div></div><div class="drop-grid"><div class="drop-zone" data-accept="vista"><div class="drop-label">VISTA</div><div class="drop-slot"></div></div><div class="drop-zone" data-accept="oido"><div class="drop-label">OÍDO</div><div class="drop-slot"></div></div><div class="drop-zone" data-accept="olfato"><div class="drop-label">OLFATO</div><div class="drop-slot"></div></div><div class="drop-zone" data-accept="gusto"><div class="drop-label">GUSTO</div><div class="drop-slot"></div></div><div class="drop-zone" data-accept="tacto"><div class="drop-label">TACTO</div><div class="drop-slot"></div></div></div></div><div class="drag-feedback schoolfont">Después de colocar cada imagen, explica: “Uso… porque…”</div><div class="manip-actions"><button class="btn" data-reset-drag="dragS6">↻ Volver a empezar</button><button class="btn prev">◀ Atrás</button><button class="btn primary next">Unimos con flechas ▶</button></div></section><section class="screen" data-session="6" data-title="Unimos con flechas · cuerpo accion ejemplo"><div class="panel"><span class="tag">UNE CON FLECHAS</span><h2 class="manip-title schoolfont">Une la parte del cuerpo con la acción y el ejemplo del libro</h2><p class="manip-sub schoolfont">Toca una tarjeta de la izquierda y después su pareja.</p><div class="match-activity" id="matchS6"><div class="match-board"><svg class="match-svg"><defs><marker id="arrow-matchS6" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="3"><path d="M0,0 L0,6 L9,3 z" fill="#406b85"></path></marker></defs></svg><div class="match-col left"><button class="match-node" data-key="rio"><img alt="Ojos" src="assets/vista.jpg"/><b>OJOS</b></button><button class="match-node" data-key="aves"><img alt="Oídos" src="assets/oido.jpg"/><b>OÍDOS</b></button><button class="match-node" data-key="pan"><img alt="Boca" src="assets/gusto.jpg"/><b>BOCA</b></button><button class="match-node" data-key="flores"><img alt="Nariz" src="assets/olfato.jpg"/><b>NARIZ</b></button><button class="match-node" data-key="agua"><img alt="Manos" src="assets/tacto.jpg"/><b>MANOS</b></button></div><div class="match-col right"><button class="match-node book-example-node" data-key="pan"><img alt="Pan del libro" src="assets/book_pan.jpg"/><b>SABOREAR · PAN</b></button><button class="match-node book-example-node" data-key="rio"><img alt="Río del libro" src="assets/book_rio.jpg"/><b>VER · RÍO</b></button><button class="match-node book-example-node" data-key="agua"><img alt="Agua del libro" src="assets/book_agua.jpg"/><b>TOCAR · AGUA</b></button><button class="match-node book-example-node" data-key="flores"><img alt="Flores del libro" src="assets/book_flores.jpg"/><b>OLER · FLORES</b></button><button class="match-node book-example-node" data-key="aves"><img alt="Aves del libro" src="assets/book_aves.jpg"/><b>OÍR · AVES</b></button></div></div><div class="match-feedback schoolfont">Une la primera pareja.</div><div class="manip-actions"><button class="btn" data-reset-match="matchS6">↻ Borrar flechas</button><button class="btn prev">◀ Atrás</button><button class="btn primary next">Ordenamos ▶</button></div></div></div></section><section class="screen" data-session="6" data-title="Ordenamos y justificamos"><div class="panel"><span class="tag">ORDENA Y EXPLICA</span><h2 class="manip-title schoolfont">¿Qué hago para responder bien?</h2><p class="manip-sub schoolfont">Ordena: miro la situación, elijo el sentido y explico cómo lo sé.</p><div class="order-layout drag-activity" id="orderS6"><div class="order-bank three"><div class="drag-item" data-match="1" data-order="1"><img alt="Miro" src="assets/veo.jpg"/><b>MIRO</b></div><div class="drag-item" data-match="2" data-order="2"><img alt="Elijo" src="assets/pienso.jpg"/><b>ELIJO</b></div><div class="drag-item" data-match="3" data-order="3"><img alt="Explico" src="assets/pregunto.jpg"/><b>EXPLICO</b></div></div><div class="order-slots three"><div class="drop-zone order-slot" data-accept="1"><span class="order-num">1</span><div class="drop-slot"></div></div><div class="drop-zone order-slot" data-accept="2"><span class="order-num">2</span><div class="drop-slot"></div></div><div class="drop-zone order-slot" data-accept="3"><span class="order-num">3</span><div class="drop-slot"></div></div></div></div><div class="drag-feedback schoolfont">Cuando termines, usa la frase: “Lo sé porque…”</div><div class="sequence-evidence"><div class="evidence-mini"><img alt="Libro" src="assets/book_summary.jpg"/><b>LO COMPRUEBO EN EL LIBRO</b></div><div class="evidence-mini"><img alt="Cuerpo" src="assets/gusto.jpg"/><b>MIRO QUÉ PARTE DEL CUERPO USO</b></div><div class="evidence-mini"><img alt="Investigación" src="assets/vista.jpg"/><b>RECUERDO LO QUE INVESTIGUÉ</b></div></div><div class="manip-actions"><button class="btn" data-reset-drag="orderS6">↻ Volver a empezar</button><button class="btn prev">◀ Atrás</button><button class="btn primary next">Ficha y PDFs ▶</button></div></div></section><section class="screen printables-session-screen" data-session="6" data-title="Fichas para imprimir · sesión 6">
+<div class="vocab-controls"><button class="btn prev">◀ Atrás</button><button class="btn" data-print-vocab="5">🖨️ Imprimir A4</button><button class="btn vocab-edit-open" data-edit-vocab="5" type="button">✏️ Editar ficha</button><button class="btn primary" data-go-home="">✓ Terminar sesión</button></div></div></section><section class="screen" data-session="6" data-title="¿Qué sentido uso?"><div class="panel sense-hero"><div><span class="tag sense-tag">SESIÓN 6 · 35 min efectivos</span><h1 class="student-title schoolfont">¿Qué sentido uso?</h1><div class="sense-lead schoolfont">Hoy vamos a ordenar lo que sabemos y a explicar <b>cómo lo sabemos</b>.</div><div class="actions"><button class="btn primary next">Empezar ▶</button></div><div class="teacherbox"><b>Objetivo.</b> Consolidar órgano/acción/ejemplo, clasificar situaciones y justificar. Volvemos al libro como fuente para comprobar información.</div></div><div class="sense-hero-visual"><div class="sense-orb"><img alt="Ejemplo de río" class="sense-photo" draggable="false" loading="lazy" src="assets/vista.jpg"/><b>río</b><small>¿?</small></div><div class="sense-orb"><img alt="Ejemplo de aves" class="sense-photo" draggable="false" loading="lazy" src="assets/oido.jpg"/><b>aves</b><small>¿?</small></div><div class="sense-orb"><img alt="Ejemplo de pan" class="sense-photo" draggable="false" loading="lazy" src="assets/gusto.jpg"/><b>pan</b><small>¿?</small></div><div class="sense-orb"><img alt="Ejemplo de flores" class="sense-photo" draggable="false" loading="lazy" src="assets/olfato.jpg"/><b>flores</b><small>¿?</small></div><div class="sense-orb"><img alt="Ejemplo de agua" class="sense-photo" draggable="false" loading="lazy" src="assets/tacto.jpg"/><b>agua</b><small>¿?</small></div></div></div></section><section class="screen" data-session="6" data-title="Volvemos al libro · resumen"><div class="panel book-senses"><div class="book-sense-main"><img alt="Página resumen del libro Los cinco sentidos" src="assets/embedded_de27debe2903d48a.jpg"/></div><div class="book-sense-side"><span class="tag">RELECTURA PARA COMPROBAR</span><h2 class="student-title schoolfont" style="font-size:clamp(34px,4vw,56px)">Busco · miro · compruebo</h2><div class="book-line schoolfont">ojos → ver<br/>oídos → oír<br/>boca → saborear<br/>nariz → oler<br/>manos → tocar</div><div class="teacherbox"><b>5 min.</b> Usa la página-resumen como tabla de consulta. Pregunta: “Si no estoy seguro, ¿dónde puedo comprobarlo?”</div><div class="actions"><button class="btn prev">◀ Atrás</button><button class="btn primary next">Clasificamos ▶</button></div></div></div></section><section class="screen" data-session="6" data-title="Arrastramos · que sentido uso"><div class="panel"><span class="tag">ARRASTRA</span><h2 class="manip-title schoolfont">¿Qué sentido uso en cada situación?</h2><p class="manip-sub schoolfont">Arrastra cada imagen al sentido principal que estamos trabajando.</p><div class="drag-activity" id="dragS6"><div class="drag-bank"><div class="drag-item" data-match="vista" data-order="1"><img alt="Vista" src="assets/vista.jpg"/><b>MIRO</b></div><div class="drag-item" data-match="oido" data-order="2"><img alt="Oído" src="assets/oido.jpg"/><b>ESCUCHO</b></div><div class="drag-item" data-match="olfato" data-order="3"><img alt="Olfato" src="assets/olfato.jpg"/><b>HUELO</b></div><div class="drag-item" data-match="gusto" data-order="4"><img alt="Gusto" src="assets/gusto.jpg"/><b>SABOREO</b></div><div class="drag-item" data-match="tacto" data-order="5"><img alt="Tacto" src="assets/tacto.jpg"/><b>TOCO</b></div></div></div><div class="drop-grid"><div class="drop-zone" data-accept="vista"><div class="drop-label">VISTA</div><div class="drop-slot"></div></div><div class="drop-zone" data-accept="oido"><div class="drop-label">OÍDO</div><div class="drop-slot"></div></div><div class="drop-zone" data-accept="olfato"><div class="drop-label">OLFATO</div><div class="drop-slot"></div></div><div class="drop-zone" data-accept="gusto"><div class="drop-label">GUSTO</div><div class="drop-slot"></div></div><div class="drop-zone" data-accept="tacto"><div class="drop-label">TACTO</div><div class="drop-slot"></div></div></div></div><div class="drag-feedback schoolfont">Después de colocar cada imagen, explica: “Uso… porque…”</div><div class="manip-actions"><button class="btn" data-reset-drag="dragS6">↻ Volver a empezar</button><button class="btn prev">◀ Atrás</button><button class="btn primary next">Unimos con flechas ▶</button></div></section><section class="screen" data-session="6" data-title="Unimos con flechas · cuerpo accion ejemplo"><div class="panel"><span class="tag">UNE CON FLECHAS</span><h2 class="manip-title schoolfont">Une la parte del cuerpo con la acción y el ejemplo del libro</h2><p class="manip-sub schoolfont">Toca una tarjeta de la izquierda y después su pareja.</p><div class="match-activity" id="matchS6"><div class="match-board"><svg class="match-svg"><defs><marker id="arrow-matchS6" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="3"><path d="M0,0 L0,6 L9,3 z" fill="#406b85"></path></marker></defs></svg><div class="match-col left"><button class="match-node" data-key="rio"><img alt="Ojos" src="assets/vista.jpg"/><b>OJOS</b></button><button class="match-node" data-key="aves"><img alt="Oídos" src="assets/oido.jpg"/><b>OÍDOS</b></button><button class="match-node" data-key="pan"><img alt="Boca" src="assets/gusto.jpg"/><b>BOCA</b></button><button class="match-node" data-key="flores"><img alt="Nariz" src="assets/olfato.jpg"/><b>NARIZ</b></button><button class="match-node" data-key="agua"><img alt="Manos" src="assets/tacto.jpg"/><b>MANOS</b></button></div><div class="match-col right"><button class="match-node book-example-node" data-key="pan"><img alt="Pan del libro" src="assets/book_pan.jpg"/><b>SABOREAR · PAN</b></button><button class="match-node book-example-node" data-key="rio"><img alt="Río del libro" src="assets/book_rio.jpg"/><b>VER · RÍO</b></button><button class="match-node book-example-node" data-key="agua"><img alt="Agua del libro" src="assets/book_agua.jpg"/><b>TOCAR · AGUA</b></button><button class="match-node book-example-node" data-key="flores"><img alt="Flores del libro" src="assets/book_flores.jpg"/><b>OLER · FLORES</b></button><button class="match-node book-example-node" data-key="aves"><img alt="Aves del libro" src="assets/book_aves.jpg"/><b>OÍR · AVES</b></button></div></div><div class="match-feedback schoolfont">Une la primera pareja.</div><div class="manip-actions"><button class="btn" data-reset-match="matchS6">↻ Borrar flechas</button><button class="btn prev">◀ Atrás</button><button class="btn primary next">Ordenamos ▶</button></div></div></div></section><section class="screen" data-session="6" data-title="Ordenamos y justificamos"><div class="panel"><span class="tag">ORDENA Y EXPLICA</span><h2 class="manip-title schoolfont">¿Qué hago para responder bien?</h2><p class="manip-sub schoolfont">Ordena: miro la situación, elijo el sentido y explico cómo lo sé.</p><div class="order-layout drag-activity" id="orderS6"><div class="order-bank three"><div class="drag-item" data-match="1" data-order="1"><img alt="Miro" src="assets/veo.jpg"/><b>MIRO</b></div><div class="drag-item" data-match="2" data-order="2"><img alt="Elijo" src="assets/pienso.jpg"/><b>ELIJO</b></div><div class="drag-item" data-match="3" data-order="3"><img alt="Explico" src="assets/pregunto.jpg"/><b>EXPLICO</b></div></div><div class="order-slots three"><div class="drop-zone order-slot" data-accept="1"><span class="order-num">1</span><div class="drop-slot"></div></div><div class="drop-zone order-slot" data-accept="2"><span class="order-num">2</span><div class="drop-slot"></div></div><div class="drop-zone order-slot" data-accept="3"><span class="order-num">3</span><div class="drop-slot"></div></div></div></div><div class="drag-feedback schoolfont">Cuando termines, usa la frase: “Lo sé porque…”</div><div class="sequence-evidence"><div class="evidence-mini"><img alt="Libro" src="assets/book_summary.jpg"/><b>LO COMPRUEBO EN EL LIBRO</b></div><div class="evidence-mini"><img alt="Cuerpo" src="assets/gusto.jpg"/><b>MIRO QUÉ PARTE DEL CUERPO USO</b></div><div class="evidence-mini"><img alt="Investigación" src="assets/vista.jpg"/><b>RECUERDO LO QUE INVESTIGUÉ</b></div></div><div class="manip-actions"><button class="btn" data-reset-drag="orderS6">↻ Volver a empezar</button><button class="btn prev">◀ Atrás</button><button class="btn primary next">Ficha y PDFs ▶</button></div></div></section><section class="screen printables-session-screen" data-session="6" data-title="Fichas para imprimir · sesión 6">
 <div class="panel">
   <div class="printables-head"><div><span class="tag">SESIÓN 6 · FICHAS REALES</span><h1 class="schoolfont">Fichas para imprimir</h1><p>Las fichas de cierre de <b>¿Qué sentido uso?</b>.</p></div></div>
   <div class="printables-note">Toca una ficha para abrir el PDF en tamaño DIN A4. Desde el visor del PDF puedes imprimirla.</div>
@@ -1433,7 +1514,7 @@ body{min-height:100dvh}
 <div class="vocab-a4-section"><div class="vocab-a4-label">¿QUÉ SIGNIFICA?</div><div class="vocab-a4-meaning schoolfont">La boca es una parte del cuerpo que usamos para saborear.</div></div>
 <div class="vocab-a4-section"><div class="vocab-a4-label">LA USAMOS EN UNA FRASE</div><div class="vocab-a4-example schoolfont">“Con mi boca puedo saborear el pan.”</div></div>
 <div class="vocab-a4-own"><div class="vocab-a4-label">MI ORACIÓN CON BOCA</div><div class="vocab-writing-line"></div><div class="vocab-writing-line"></div><div class="vocab-writing-line"></div></div></div>
-<div class="vocab-controls"><button class="btn prev">◀ Atrás</button><button class="btn" data-print-vocab="6">🖨️ Imprimir A4</button><button class="btn primary" data-go-home="">✓ Terminar sesión</button></div></div></section>
+<div class="vocab-controls"><button class="btn prev">◀ Atrás</button><button class="btn" data-print-vocab="6">🖨️ Imprimir A4</button><button class="btn vocab-edit-open" data-edit-vocab="6" type="button">✏️ Editar ficha</button><button class="btn primary" data-go-home="">✓ Terminar sesión</button></div></div></section>
 
 
 
@@ -1563,7 +1644,7 @@ body{min-height:100dvh}
       <div class="w3-vocab-meaning schoolfont">Una pata es una parte del cuerpo de muchos animales.</div>
       <div class="w3-vocab-example schoolfont">“El perro tiene cuatro patas.”</div>
       <div class="w3-vocab-own-label schoolfont">Mi oración con PATA: ____________________</div>
-      <button class="w3-print-btn vocab-print-main" data-print-vocab="7" type="button">🖨 IMPRIMIR FICHA A4</button>
+      <button class="w3-print-btn vocab-print-main" data-print-vocab="7" type="button">🖨 IMPRIMIR FICHA A4</button><button class="w3-print-btn vocab-edit-open" data-edit-vocab="7" type="button">✏ EDITAR FICHA</button>
     </div>
   </div>
       <div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet7">
@@ -1731,7 +1812,7 @@ body{min-height:100dvh}
       <div class="w3-vocab-meaning schoolfont">Un animal es un ser vivo que nace, crece y necesita alimento y agua.</div>
       <div class="w3-vocab-example schoolfont">“El perro es un animal.”</div>
       <div class="w3-vocab-own-label schoolfont">Mi oración con ANIMAL: ____________________</div>
-      <button class="w3-print-btn vocab-print-main" data-print-vocab="8" type="button">🖨 IMPRIMIR FICHA A4</button>
+      <button class="w3-print-btn vocab-print-main" data-print-vocab="8" type="button">🖨 IMPRIMIR FICHA A4</button><button class="w3-print-btn vocab-edit-open" data-edit-vocab="8" type="button">✏ EDITAR FICHA</button>
     </div>
   </div>
       <div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet8">
@@ -1888,7 +1969,7 @@ body{min-height:100dvh}
       <div class="w3-vocab-meaning schoolfont">Una planta es un ser vivo. Nace, crece y necesita agua y luz.</div>
       <div class="w3-vocab-example schoolfont">“La planta está viva.”</div>
       <div class="w3-vocab-own-label schoolfont">Mi oración con PLANTA: ____________________</div>
-      <button class="w3-print-btn vocab-print-main" data-print-vocab="9" type="button">🖨 IMPRIMIR FICHA A4</button>
+      <button class="w3-print-btn vocab-print-main" data-print-vocab="9" type="button">🖨 IMPRIMIR FICHA A4</button><button class="w3-print-btn vocab-edit-open" data-edit-vocab="9" type="button">✏ EDITAR FICHA</button>
     </div>
   </div>
       <div class="vocab-sheet vocab-a4-card w3-hidden-print" id="vocabSheet9">
@@ -2174,7 +2255,7 @@ function printTarget(el){
   printStyle.textContent=isW3Sheet
     ? '@page{size:A4 portrait;margin:0}@media print{html,body{width:210mm!important;height:297mm!important;overflow:hidden!important}body.w3-sheet-printing>.print-host{position:fixed!important;inset:0!important;width:210mm!important;height:297mm!important;max-width:210mm!important;max-height:297mm!important;overflow:hidden!important}body.w3-sheet-printing>.print-host>.w3-sheet.print-target{position:absolute!important;left:0!important;top:0!important;width:210mm!important;height:297mm!important;min-width:210mm!important;max-width:210mm!important;min-height:297mm!important;max-height:297mm!important;padding:9mm!important;box-sizing:border-box!important;overflow:hidden!important;border:0!important;border-radius:0!important;box-shadow:none!important}.w3-sheet-print-host .w3-cut img{object-fit:contain!important}}'
     : isVocab
-    ? '@page{size:A4 portrait;margin:0}@media print{html,body{width:210mm!important;height:297mm!important;overflow:hidden!important}body.vocab-printing>.print-host{position:fixed!important;inset:0!important;width:210mm!important;height:297mm!important;max-width:210mm!important;max-height:297mm!important;overflow:hidden!important}body.vocab-printing>.print-host>.vocab-sheet.print-target{position:absolute!important;left:0!important;top:0!important;width:210mm!important;height:297mm!important;min-width:210mm!important;max-width:210mm!important;min-height:297mm!important;max-height:297mm!important;visibility:visible!important;display:grid!important;padding:10mm!important;box-sizing:border-box!important;overflow:hidden!important;border:0!important;border-radius:0!important;box-shadow:none!important}.vocab-print-host .vocab-a4-photo img{object-fit:contain!important}}'
+    ? '@page{size:A4 portrait;margin:0}@media print{html,body{width:210mm!important;height:297mm!important;overflow:hidden!important}body.vocab-printing>.print-host{position:fixed!important;inset:0!important;width:210mm!important;height:297mm!important;max-width:210mm!important;max-height:297mm!important;overflow:hidden!important}body.vocab-printing>.print-host>.vocab-sheet.print-target{position:absolute!important;left:0!important;top:0!important;width:210mm!important;height:297mm!important;min-width:210mm!important;max-width:210mm!important;min-height:297mm!important;max-height:297mm!important;visibility:visible!important;display:grid!important;padding:9mm!important;box-sizing:border-box!important;overflow:hidden!important;border:0!important;border-radius:0!important;box-shadow:none!important;grid-template-rows:14mm 78mm 45mm 38mm minmax(0,1fr)!important;gap:4mm!important}.vocab-print-host .vocab-free-layout.print-target{display:block!important;position:absolute!important}.vocab-print-host .vocab-free-layout>.vocab-edit-object{position:absolute!important}.vocab-print-host .vocab-free-layout .vocab-a4-own>.vocab-edit-line{position:absolute!important}.vocab-print-host .vocab-resize-handle{display:none!important}.vocab-print-host .vocab-edit-object,.vocab-print-host .vocab-edit-line{outline:0!important}.vocab-print-host .vocab-a4-photo img{object-fit:contain!important}}'
     : isEvalLandscape
       ? '@page{size:A4 landscape;margin:0}@media print{html,body{width:297mm!important;height:210mm!important;overflow:hidden!important}body.eval-landscape-printing>.print-host{position:fixed!important;inset:0!important;width:297mm!important;height:210mm!important;max-width:297mm!important;max-height:210mm!important;overflow:hidden!important}body.eval-landscape-printing>.print-host>.print-target{position:absolute!important;left:0!important;top:0!important;width:297mm!important;height:210mm!important;min-width:297mm!important;max-width:297mm!important;min-height:210mm!important;max-height:210mm!important;padding:7mm!important;box-sizing:border-box!important;overflow:hidden!important;border:0!important;border-radius:0!important}.eval-landscape-print-host .obs-table td{height:7mm!important}.eval-landscape-print-host .obs-table input{font-size:8pt!important}.eval-landscape-print-host .global-rubric-shell{gap:3px!important}.eval-landscape-print-host .rubric-table td{padding:2px 4px!important}.eval-landscape-print-host .rubric-criterion{font-size:8.6px!important}.eval-landscape-print-host .rubric-evidence,.eval-landscape-print-host .rubric-source{font-size:7.4px!important}.eval-landscape-print-host .rubric-curriculum>div{font-size:8px!important;padding:4px 6px!important}.eval-landscape-print-host .rubric-level{font-size:7.5px!important;padding:3px 4px!important}.eval-landscape-print-host .rubric-final-rule{font-size:7.3px!important}.eval-landscape-print-host .rubric-notes textarea{height:24px!important}}'
       : '@page{size:A4 portrait;margin:0}';
@@ -2207,6 +2288,169 @@ root.querySelectorAll('.same-btn').forEach(b=>b.addEventListener('click',()=>{ro
 root.querySelectorAll('.c-card').forEach(c=>c.addEventListener('click',()=>{c.classList.remove('same','diff');const same=c.dataset.answer==='same';c.classList.add(same?'same':'diff');document.getElementById('comparePrompt').textContent=same?'✅ Esto habla de algo igual. Los dos lo tienen.':'↔️ Esto habla de algo diferente. No es igual en los dos.';}));
 document.getElementById('printCompareWorksheet').addEventListener('click',()=>printTarget(document.getElementById('compareWorksheet')));
 root.querySelectorAll('[data-print-vocab]').forEach(b=>b.addEventListener('click',()=>{const n=b.dataset.printVocab;printTarget(document.getElementById('vocabSheet'+n));}));
+
+const vocabEditor=document.getElementById('vocabEditor');
+const vocabEditorStage=document.getElementById('vocabEditorStage');
+const vocabEditorHint=document.getElementById('vocabEditorHint');
+const vocabEditorFile=document.getElementById('vocabEditorFile');
+let vocabEditorSheet=null,vocabEditorNumber=null,vocabEditorMode='move',vocabEditorSelected=null;
+let vocabEditorHome=null,vocabEditorNext=null;
+const vocabEditorOriginal={};
+for(let n=1;n<=9;n++){const s=document.getElementById('vocabSheet'+n);if(s)vocabEditorOriginal[n]=s.innerHTML;}
+
+function pct(v,total){return (v/total*100).toFixed(4)+'%';}
+function makeHandle(el){
+  if(el.querySelector(':scope > .vocab-resize-handle'))return;
+  const h=document.createElement('span');h.className='vocab-resize-handle';h.setAttribute('aria-hidden','true');el.appendChild(h);
+}
+function markVocabObjects(sheet){
+  const top=[
+    sheet.querySelector('.vocab-a4-header'),
+    sheet.querySelector('.vocab-a4-photo'),
+    sheet.querySelector('.vocab-a4-wordbox'),
+    ...sheet.querySelectorAll(':scope > .vocab-a4-section'),
+    sheet.querySelector(':scope > .vocab-a4-own')
+  ].filter(Boolean);
+  top.forEach(el=>{el.classList.add('vocab-edit-object');makeHandle(el);});
+  sheet.querySelectorAll('.vocab-a4-own .vocab-writing-line').forEach(el=>{el.classList.add('vocab-edit-line');makeHandle(el);});
+}
+function activateFreeVocabLayout(sheet){
+  if(sheet.classList.contains('vocab-free-layout')){markVocabObjects(sheet);return;}
+  markVocabObjects(sheet);
+  const sr=sheet.getBoundingClientRect();
+  const top=[...sheet.querySelectorAll(':scope > .vocab-edit-object')];
+  const rects=top.map(el=>({el,r:el.getBoundingClientRect()}));
+  const own=sheet.querySelector(':scope > .vocab-a4-own');
+  let lineRects=[];
+  if(own){const or=own.getBoundingClientRect();lineRects=[...own.querySelectorAll(':scope > .vocab-edit-line')].map(el=>({el,r:el.getBoundingClientRect(),or}));}
+  sheet.classList.add('vocab-free-layout');
+  rects.forEach(({el,r})=>{
+    el.style.left=pct(r.left-sr.left,sr.width);
+    el.style.top=pct(r.top-sr.top,sr.height);
+    el.style.width=pct(r.width,sr.width);
+    el.style.height=pct(r.height,sr.height);
+  });
+  lineRects.forEach(({el,r,or})=>{
+    el.style.left=pct(r.left-or.left,or.width);
+    el.style.top=pct(r.top-or.top,or.height);
+    el.style.width=pct(r.width,or.width);
+    el.style.height=pct(Math.max(r.height,4),or.height);
+  });
+}
+function setVocabEditorMode(mode){
+  vocabEditorMode=mode;
+  vocabEditor.classList.toggle('move-mode',mode==='move');
+  vocabEditor.classList.toggle('text-mode',mode==='text');
+  vocabEditor.querySelectorAll('[data-vocab-editor-mode]').forEach(b=>b.classList.toggle('active',b.dataset.vocabEditorMode===mode));
+  if(vocabEditorSheet){
+    vocabEditorSheet.querySelectorAll('[contenteditable]').forEach(x=>x.removeAttribute('contenteditable'));
+    if(mode==='text'){
+      vocabEditorSheet.querySelectorAll('.vocab-a4-header div,.vocab-a4-word,.vocab-a4-syllable-title,.vocab-a4-syllables,.vocab-a4-label,.vocab-a4-meaning,.vocab-a4-example,.vocab-editor-added-box').forEach(x=>{x.setAttribute('contenteditable','true');x.setAttribute('spellcheck','true');});
+      vocabEditorHint.textContent='Toca cualquier texto resaltado y escribe. Los cambios se conservarán al imprimir.';
+    }else vocabEditorHint.textContent='Selecciona un bloque y arrástralo. Usa el punto de la esquina para cambiar su tamaño.';
+  }
+}
+function selectVocabObject(el){
+  if(vocabEditorSelected)vocabEditorSelected.classList.remove('selected');
+  vocabEditorSelected=el;
+  if(el)el.classList.add('selected');
+}
+function openVocabEditor(n){
+  const sheet=document.getElementById('vocabSheet'+n);if(!sheet)return;
+  vocabEditorNumber=String(n);vocabEditorSheet=sheet;
+  vocabEditorHome=sheet.parentNode;vocabEditorNext=sheet.nextSibling;
+  sheet.classList.remove('w3-hidden-print');
+  vocabEditorStage.appendChild(sheet);
+  vocabEditor.classList.add('open');vocabEditor.setAttribute('aria-hidden','false');document.body.classList.add('vocab-editor-open');
+  document.getElementById('vocabEditorTitle').textContent='Editar vocabulario · sesión '+n;
+  requestAnimationFrame(()=>{activateFreeVocabLayout(sheet);setVocabEditorMode('move');selectVocabObject(null);});
+}
+function closeVocabEditor(){
+  if(!vocabEditorSheet)return;
+  selectVocabObject(null);
+  vocabEditorSheet.querySelectorAll('[contenteditable]').forEach(x=>x.removeAttribute('contenteditable'));
+  if(vocabEditorHome){
+    if(vocabEditorNext&&vocabEditorNext.parentNode===vocabEditorHome)vocabEditorHome.insertBefore(vocabEditorSheet,vocabEditorNext);
+    else vocabEditorHome.appendChild(vocabEditorSheet);
+  }
+  if(Number(vocabEditorNumber)>=7)vocabEditorSheet.classList.add('w3-hidden-print');
+  vocabEditor.classList.remove('open','text-mode','move-mode');vocabEditor.setAttribute('aria-hidden','true');document.body.classList.remove('vocab-editor-open');
+  vocabEditorSheet=null;vocabEditorSelected=null;vocabEditorNumber=null;vocabEditorHome=null;vocabEditorNext=null;
+}
+root.querySelectorAll('[data-edit-vocab]').forEach(b=>b.addEventListener('click',()=>openVocabEditor(b.dataset.editVocab)));
+document.getElementById('vocabEditorClose')?.addEventListener('click',closeVocabEditor);
+vocabEditor?.querySelectorAll('[data-vocab-editor-mode]').forEach(b=>b.addEventListener('click',()=>setVocabEditorMode(b.dataset.vocabEditorMode)));
+
+vocabEditorStage?.addEventListener('pointerdown',e=>{
+  if(!vocabEditorSheet||vocabEditorMode!=='move')return;
+  const handle=e.target.closest('.vocab-resize-handle');
+  const obj=e.target.closest('.vocab-edit-object,.vocab-edit-line');
+  if(!obj||!vocabEditorSheet.contains(obj))return;
+  e.preventDefault();selectVocabObject(obj);
+  const resize=!!handle;
+  const parent=obj.offsetParent;
+  const pr=parent.getBoundingClientRect(),or=obj.getBoundingClientRect();
+  const sx=e.clientX,sy=e.clientY;
+  const start={left:or.left-pr.left,top:or.top-pr.top,width:or.width,height:or.height};
+  obj.setPointerCapture?.(e.pointerId);
+  const move=ev=>{
+    const dx=ev.clientX-sx,dy=ev.clientY-sy;
+    if(resize){
+      const nw=Math.max(24,Math.min(pr.width-start.left,start.width+dx));
+      const nh=Math.max(8,Math.min(pr.height-start.top,start.height+dy));
+      obj.style.width=pct(nw,pr.width);obj.style.height=pct(nh,pr.height);
+    }else{
+      const nl=Math.max(0,Math.min(pr.width-start.width,start.left+dx));
+      const nt=Math.max(0,Math.min(pr.height-start.height,start.top+dy));
+      obj.style.left=pct(nl,pr.width);obj.style.top=pct(nt,pr.height);
+    }
+  };
+  const up=ev=>{obj.releasePointerCapture?.(e.pointerId);window.removeEventListener('pointermove',move);window.removeEventListener('pointerup',up);};
+  window.addEventListener('pointermove',move);window.addEventListener('pointerup',up,{once:true});
+});
+vocabEditorStage?.addEventListener('click',e=>{
+  const obj=e.target.closest('.vocab-edit-object,.vocab-edit-line');
+  if(obj&&vocabEditorSheet?.contains(obj))selectVocabObject(obj);
+});
+
+document.getElementById('vocabEditorImage')?.addEventListener('click',()=>{
+  let img=null;
+  if(vocabEditorSelected?.classList.contains('vocab-a4-photo'))img=vocabEditorSelected.querySelector('img');
+  else if(vocabEditorSelected)img=vocabEditorSelected.querySelector('img');
+  if(!img)img=vocabEditorSheet?.querySelector('.vocab-a4-photo img');
+  if(!img){vocabEditorHint.textContent='Selecciona primero el bloque de la fotografía.';return;}
+  vocabEditorFile.dataset.targetReady='1';vocabEditorFile.click();
+});
+vocabEditorFile?.addEventListener('change',()=>{
+  const file=vocabEditorFile.files?.[0];if(!file||!vocabEditorSheet)return;
+  let img=vocabEditorSelected?.querySelector?.('img')||vocabEditorSheet.querySelector('.vocab-a4-photo img');
+  if(!img)return;
+  const reader=new FileReader();reader.onload=()=>{img.src=String(reader.result);};reader.readAsDataURL(file);vocabEditorFile.value='';
+});
+document.getElementById('vocabEditorAddLine')?.addEventListener('click',()=>{
+  if(!vocabEditorSheet)return;
+  activateFreeVocabLayout(vocabEditorSheet);
+  const el=document.createElement('div');el.className='vocab-editor-added-line vocab-edit-object';el.style.cssText='left:15%;top:88%;width:70%;height:2%;';makeHandle(el);vocabEditorSheet.appendChild(el);selectVocabObject(el);setVocabEditorMode('move');
+});
+document.getElementById('vocabEditorAddBox')?.addEventListener('click',()=>{
+  if(!vocabEditorSheet)return;
+  activateFreeVocabLayout(vocabEditorSheet);
+  const el=document.createElement('div');el.className='vocab-editor-added-box vocab-edit-object schoolfont';el.style.cssText='left:18%;top:78%;width:64%;height:8%;';el.textContent='';makeHandle(el);vocabEditorSheet.appendChild(el);selectVocabObject(el);setVocabEditorMode('move');
+});
+document.getElementById('vocabEditorDelete')?.addEventListener('click',()=>{
+  if(!vocabEditorSelected)return;
+  const core=vocabEditorSelected.matches('.vocab-a4-header,.vocab-a4-photo,.vocab-a4-wordbox,.vocab-a4-section,.vocab-a4-own');
+  if(core){vocabEditorSelected.style.display='none';selectVocabObject(null);}
+  else{vocabEditorSelected.remove();vocabEditorSelected=null;}
+});
+document.getElementById('vocabEditorReset')?.addEventListener('click',()=>{
+  if(!vocabEditorSheet||!vocabEditorNumber)return;
+  vocabEditorSheet.classList.remove('vocab-free-layout');vocabEditorSheet.removeAttribute('style');vocabEditorSheet.innerHTML=vocabEditorOriginal[vocabEditorNumber];
+  requestAnimationFrame(()=>{activateFreeVocabLayout(vocabEditorSheet);setVocabEditorMode('move');selectVocabObject(null);});
+});
+document.getElementById('vocabEditorPrint')?.addEventListener('click',()=>{if(vocabEditorSheet)printTarget(vocabEditorSheet);});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&vocabEditor?.classList.contains('open'))closeVocabEditor();});
+
 const compareClosePrompts={veo:'👀 VEO… Ahora puedo mirar a dos personas y encontrar cosas iguales.',pienso:'💭 PIENSO… Las personas pueden tener muchas cosas en común y también algunas diferencias.',pregunto:'❓ ME PREGUNTO… ¿Qué más quiero descubrir sobre nuestro cuerpo y sobre cómo conocemos el mundo?'};
 root.querySelectorAll('.compare-close-rbtn').forEach(b=>b.addEventListener('click',()=>{root.querySelectorAll('.compare-close-rbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('compareClosingPrompt').textContent=compareClosePrompts[b.dataset.kind];}));
 
@@ -2494,5 +2738,23 @@ root.classList.toggle('focus-week3',['7','8','9'].includes(screens[current]?.dat
 })();
 </script>
 
+
+<div class="vocab-editor" id="vocabEditor" aria-hidden="true">
+  <div class="vocab-editor-toolbar">
+    <button type="button" id="vocabEditorClose">← CERRAR Y GUARDAR</button>
+    <div class="vocab-editor-title" id="vocabEditorTitle">Editar ficha de vocabulario</div>
+    <button type="button" class="active" data-vocab-editor-mode="move">↔ MOVER / TAMAÑO</button>
+    <button type="button" data-vocab-editor-mode="text">T TEXTO</button>
+    <button type="button" id="vocabEditorImage">🖼 CAMBIAR IMAGEN</button>
+    <button type="button" id="vocabEditorAddLine">＋ LÍNEA</button>
+    <button type="button" id="vocabEditorAddBox">＋ RECUADRO</button>
+    <button type="button" id="vocabEditorDelete">🗑 BORRAR</button>
+    <button type="button" id="vocabEditorReset">↻ RESTABLECER</button>
+    <button type="button" class="print" id="vocabEditorPrint">🖨 IMPRIMIR</button>
+    <input type="file" id="vocabEditorFile" accept="image/*" hidden>
+  </div>
+  <div class="vocab-editor-hint" id="vocabEditorHint">Selecciona un bloque y arrástralo. Usa el punto de la esquina para cambiar su tamaño.</div>
+  <div class="vocab-editor-stage" id="vocabEditorStage"></div>
+</div>
 </body>
 </html>
