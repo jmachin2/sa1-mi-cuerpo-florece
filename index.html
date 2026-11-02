@@ -712,6 +712,56 @@ body{min-height:100dvh}
 @media(max-height:720px){.focus-week3 .w3-new{padding:8px 12px!important;gap:5px!important}.w3-title{font-size:30px}.w3-instruction{font-size:18px;padding:5px 8px}.w3-nav{padding-top:5px}.w3-nav-btn{min-height:36px;padding:5px 10px;font-size:13px}.w3-target{min-height:52px}.w3-answer{min-height:62px}.w3-feedback-new{font-size:15px;min-height:34px}.w3-mentor-card b,.w3-four-gallery b{font-size:16px}.w3-mentor-card span{font-size:12px}.w3-video-box video{max-height:42vh}}
 @media(max-width:820px){.w3-mentor-grid,.w3-four-gallery,.w3-item-row{grid-template-columns:repeat(2,1fr)}.w3-quiz-layout,.w3-conclusion,.w3-vocab{grid-template-columns:1fr}.w3-main-photo{max-height:34vh}.w3-two-compare{gap:8px}.w3-nav{grid-template-columns:auto auto 1fr}.w3-target-row{grid-template-columns:repeat(2,1fr)}}
 </style>
+
+<style id="ui-polish-v4">
+/* PORTADA: solo una semana visible, tarjetas grandes */
+.screen[data-title="Inicio general"]>.panel{height:calc(100dvh - 58px)!important;overflow:hidden!important;display:flex;flex-direction:column;gap:8px;padding:12px 16px!important}
+.screen[data-title="Inicio general"] .home-main-title{font-size:clamp(34px,5.2vh,56px)!important;margin:0!important;line-height:1}
+.screen[data-title="Inicio general"] .home-sub{font-size:clamp(17px,2.2vh,24px)!important;line-height:1.15!important;margin:0}
+.home-week-picker{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;flex:0 0 auto}
+.home-week-btn{border:2px solid #9fb2bc;border-radius:16px;background:#fff;padding:9px 12px;cursor:pointer;text-align:left;min-height:58px}.home-week-btn b{display:block;font:900 15px Arial;color:#24313a}.home-week-btn span{display:block;font:700 13px Arial;color:#65737a;margin-top:2px}.home-week-btn.active{background:#eaf7f1;border-color:#58a987;box-shadow:0 0 0 2px rgba(88,169,135,.14)}
+.home-week-grid{display:none!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important;margin:0!important;flex:1;min-height:0}
+.home-week-grid.active{display:grid!important}
+.screen[data-title="Inicio general"] .home-card{min-height:0!important;height:100%;padding:16px!important;border-radius:22px!important;gap:9px!important;overflow:hidden}
+.screen[data-title="Inicio general"] .home-card h3{font-size:clamp(23px,3.2vh,34px)!important;line-height:1.05!important}
+.screen[data-title="Inicio general"] .home-card p{display:block!important;font-size:clamp(14px,1.75vh,18px)!important;line-height:1.25!important}
+.screen[data-title="Inicio general"] .home-card .mini{font-size:clamp(11px,1.45vh,14px)!important;line-height:1.2!important}
+.screen[data-title="Inicio general"] .home-card .btn{min-height:42px!important;font-size:14px!important;padding:7px 9px!important}
+.screen[data-title="Inicio general"] .week-banner,.screen[data-title="Inicio general"]>.panel>.materials-home-btn,.screen[data-title="Inicio general"] .home-eval,.screen[data-title="Inicio general"]>.panel>.teacherbox{display:none!important}
+.home-week-quick{display:flex;justify-content:center;gap:10px;flex:0 0 auto}.home-week-quick .btn{min-height:40px!important;padding:6px 12px!important;font-size:13px!important}
+
+/* FOTOS: formato visual estable, nunca tiras alargadas */
+.focus-week3 .w3-mentor-card,.focus-week3 .w3-four-gallery article,.focus-week3 .w3-pick-card{justify-content:flex-start!important}
+.focus-week3 .w3-mentor-card img,.focus-week3 .w3-four-gallery img,.focus-week3 .w3-pick-card img{width:100%!important;height:auto!important;aspect-ratio:1/1!important;max-height:min(39vh,360px)!important;object-fit:contain!important;object-position:center!important;background:#fff!important}
+.focus-week3 .w3-main-photo{width:min(100%,680px)!important;aspect-ratio:4/3!important;height:auto!important;justify-self:center!important;align-self:center!important}
+.focus-week3 .w3-main-photo img{width:100%!important;height:100%!important;aspect-ratio:4/3!important;object-fit:contain!important}
+.focus-week3 .w3-two-compare article,.focus-week3 .w3-pair article{justify-content:center!important}
+.focus-week3 .w3-two-compare img,.focus-week3 .w3-pair img{width:100%!important;height:auto!important;aspect-ratio:4/3!important;max-height:42vh!important;object-fit:contain!important}
+.focus-week3 .w3-cut img{width:100%!important;height:auto!important;aspect-ratio:1/1!important;object-fit:contain!important}
+
+/* FICHAS: hoja completa + herramientas siempre visibles */
+.focus-week3 .w3-print-screen{height:calc(100dvh - 58px)!important;max-height:calc(100dvh - 58px)!important}
+.w3-print-workspace{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:14px;flex:1;min-height:0;align-items:stretch}
+.w3-sheet-preview{min-height:0;border:2px solid #d6e0e4;background:#eef3f6;border-radius:18px;padding:8px;display:grid;place-items:center;overflow:hidden}
+.w3-sheet-preview .w3-sheet{height:100%!important;max-height:100%!important;width:auto!important;max-width:100%!important;aspect-ratio:210/297!important;margin:0!important;box-shadow:0 6px 20px rgba(0,0,0,.12);border-radius:8px!important;padding:5mm!important;gap:5px!important}
+.w3-sheet-preview .w3-sheet h2{font-size:clamp(18px,2.4vh,27px)!important}
+.w3-sheet-preview .w3-sheet .name,.w3-sheet-preview .w3-sheet p{font-size:clamp(10px,1.35vh,15px)!important;margin:2px 0!important}
+.w3-sheet-preview .w3-sheet-box{min-height:0!important;padding:5px!important}.w3-sheet-preview .w3-sheet-box b{font-size:clamp(12px,1.7vh,18px)!important}
+.w3-sheet-preview .w3-drawbox{min-height:0!important}.w3-sheet-preview .w3-cut img{max-height:48px!important}.w3-sheet-preview .w3-cut b{font-size:10px!important}
+.w3-sheet-tools{border:2px solid #d7e0e4;border-radius:18px;background:#fff;padding:12px;display:flex;flex-direction:column;gap:8px;justify-content:center}.w3-sheet-tools h3{font-size:22px;margin:0}.w3-sheet-tools p{font-size:14px;line-height:1.25;color:#596970;margin:0 0 4px}
+.w3-tool-btn{width:100%;min-height:43px;border:2px solid #355d72;border-radius:13px;background:#fff;color:#24313a;font:900 13px Arial;cursor:pointer}.w3-tool-btn.edit{background:#fff6db;border-color:#d4a925}.w3-tool-btn.print{background:#2d617f;color:#fff}.w3-tool-btn.active{background:#eaf7f1;border-color:#58a987}
+.w3-edit-help{font-size:11px;line-height:1.25;color:#68757c;border-top:1px solid #dce4e8;padding-top:8px}
+.w3-sheet.sheet-editing{outline:4px solid #f0c84b!important;outline-offset:2px}.w3-sheet.sheet-editing [contenteditable="true"]{background:#fff7c9!important;outline:1px dashed #c69500!important;cursor:text}
+.w3-sheet-expanded{position:fixed!important;inset:8px!important;z-index:50000!important;background:#e8eef1!important;border-radius:18px!important;padding:8px!important;display:grid!important;place-items:center!important}
+.w3-sheet-expanded .w3-sheet{height:calc(100dvh - 24px)!important;width:auto!important;max-width:96vw!important;max-height:calc(100dvh - 24px)!important}
+#w3SheetClose{position:fixed;right:20px;top:18px;z-index:50001;min-height:42px;border:2px solid #24313a;border-radius:999px;background:#fff;padding:7px 14px;font:900 13px Arial;cursor:pointer}
+
+/* Hub de materiales */
+.w3-materials-new{height:calc(100dvh - 58px);display:flex;flex-direction:column;overflow:hidden}.w3-materials-new>h1{font-size:clamp(34px,5vh,54px);margin:4px 0}.w3-materials-new>p{font-size:18px;margin:0 0 8px}
+.w3-materials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;flex:1;min-height:0}.w3-material-card{border:2px solid #d7e0e4;border-radius:20px;background:#fff;padding:16px;display:flex;flex-direction:column;justify-content:center;gap:8px}.w3-material-number{font:900 14px Arial;color:#5d6c73}.w3-material-card h2{font-size:28px;margin:0}.w3-material-card p{font-size:16px;line-height:1.3;color:#5e6b72}.w3-material-actions{display:grid;gap:7px}.w3-material-actions button{min-height:42px;border:2px solid #355d72;border-radius:12px;background:#fff;font-weight:900;cursor:pointer}.w3-material-actions button:last-child{background:#2d617f;color:#fff}
+
+@media(max-width:900px){.home-week-grid.active{grid-template-columns:1fr!important}.screen[data-title="Inicio general"] .home-card p,.screen[data-title="Inicio general"] .home-card .mini{display:none!important}.w3-print-workspace{grid-template-columns:1fr 180px}.w3-sheet-tools h3{font-size:18px}.w3-materials-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <!-- Versión preparada para GitHub Pages. -->
@@ -735,27 +785,36 @@ body{min-height:100dvh}
 <span class="home-tag">SA 1 · MI CUERPO FLORECE · SESIONES 1–9</span>
 <h1 class="home-main-title schoolfont">Mi cuerpo florece</h1>
 <div class="home-sub schoolfont">Tres semanas para conocernos, observar nuestro cuerpo, usar los sentidos y empezar a comparar y clasificar seres vivos.</div>
-<div class="home-grid">
+<div class="home-week-picker" role="tablist" aria-label="Elegir semana">
+  <button class="home-week-btn" data-home-week-btn="1" type="button"><b>SEMANA 1</b><span>Yo y mi cuerpo</span></button>
+  <button class="home-week-btn" data-home-week-btn="2" type="button"><b>SEMANA 2</b><span>Los sentidos</span></button>
+  <button class="home-week-btn active" data-home-week-btn="3" type="button"><b>SEMANA 3</b><span>Seres vivos</span></button>
+</div>
+<div class="home-grid home-week-grid" data-home-week="1">
 <div class="home-card"><span class="tag">SESIÓN 1</span><h3 class="schoolfont">Todo sobre mí</h3><p>Partimos del libro mentor para hablar de quiénes somos, qué puede contar algo sobre nosotros y cómo usamos <b>VEO · PIENSO · ME PREGUNTO</b>.</p><div class="mini">Evidencia: ficha “Así soy yo”</div><button class="btn primary" data-home-open="1" type="button">Abrir sesión 1 ▶</button><button class="btn vocab-home-btn" data-open-vocab="1" type="button">📚 Vocabulario · FAMILIA</button></div>
 <div class="home-card"><span class="tag session2-tag">SESIÓN 2</span><h3 class="schoolfont">Mi cuerpo por fuera</h3><p>Observamos e identificamos partes externas del cuerpo, diferenciamos cuerpo y objetos y explicamos lo que vemos.</p><div class="mini">Evidencia: ficha “Este es mi cuerpo”</div><button class="btn primary" data-home-open="2" type="button">Abrir sesión 2 ▶</button><button class="btn vocab-home-btn" data-open-vocab="2" type="button">📚 Vocabulario · MANO</button></div>
 <div class="home-card"><span class="tag s3-tag">SESIÓN 3</span><h3 class="schoolfont">Iguales y diferentes</h3><p>Comparamos personas, volvemos al libro mentor y buscamos semejanzas y diferencias apoyándonos en evidencias.</p><div class="mini">Evidencia: ficha “Yo y otra persona”</div><button class="btn primary" data-home-open="3" type="button">Abrir sesión 3 ▶</button><button class="btn vocab-home-btn" data-open-vocab="3" type="button">📚 Vocabulario · PERSONA</button></div>
 </div>
-<div class="home-grid week2-grid">
+<div class="home-grid week2-grid home-week-grid" data-home-week="2">
 <div class="home-card sense-home-card"><span class="tag sense-tag">SESIÓN 4</span><h3 class="schoolfont">Descubrimos los cinco sentidos</h3><p>Leemos el texto informativo, buscamos palabras importantes y relacionamos <b>parte del cuerpo → acción</b>.</p><div class="mini">Web: arrastrar · unir · ordenar · fichas al final</div><button class="btn primary" data-home-open="4" type="button">Abrir sesión 4 ▶</button><button class="btn vocab-home-btn" data-open-vocab="4" type="button">📚 Vocabulario · OJO</button></div>
 <div class="home-card sense-home-card"><span class="tag sense-tag">SESIÓN 5</span><h3 class="schoolfont">Investigamos con nuestros sentidos</h3><p>Hacemos pequeñas estaciones: predecimos, observamos o experimentamos y explicamos qué hemos descubierto.</p><div class="mini">Web: arrastrar · ordenar · unir · fichas al final</div><button class="btn primary" data-home-open="5" type="button">Abrir sesión 5 ▶</button><button class="btn vocab-home-btn" data-open-vocab="5" type="button">📚 Vocabulario · NARIZ</button></div>
 <div class="home-card sense-home-card"><span class="tag sense-tag">SESIÓN 6</span><h3 class="schoolfont">¿Qué sentido uso?</h3><p>Clasificamos situaciones, organizamos la información y justificamos nuestras respuestas con <b>“Lo sé porque…”</b>.</p><div class="mini">Web: arrastrar · unir · ordenar · fichas al final</div><button class="btn primary" data-home-open="6" type="button">Abrir sesión 6 ▶</button><button class="btn vocab-home-btn" data-open-vocab="6" type="button">📚 Vocabulario · BOCA</button></div>
 </div>
 <div class="week-banner week2"><span>SEMANA 2</span><b class="schoolfont">Conozco el mundo con mis sentidos</b><small>Sesiones 4, 5 y 6 · Libro base: Los cinco sentidos</small></div><button class="btn primary materials-home-btn" data-open-materials="week2" type="button">FICHAS PARA IMPRIMIR · SEMANA 2</button>
 
-<div class="home-grid">
+<div class="home-grid home-week-grid active" data-home-week="3">
   <div class="home-card w3-home-card"><span class="tag w3-tag">SESIÓN 7</span><h3 class="schoolfont">Patas: observamos y contamos</h3><p>Lectura compartida de <b>2, 4, 6, 8 patas</b>. Localizamos una característica, contamos y comparamos patas y piernas.</p><div class="mini"><b>Texto mentor:</b> <i>2, 4, 6, 8 patas</i> · Patricia Brennan<br>Evidencia: respuesta al texto + ficha de observación</div><button class="btn primary" data-home-open="7" type="button">Abrir sesión 7 ▶</button><button class="btn vocab-home-btn" data-open-vocab="7" type="button">📚 Vocabulario · PATA</button></div>
-  <div class="home-card w3-home-card"><span class="tag w3-tag">SESIÓN 8</span><h3 class="schoolfont">Clasificamos por sus patas</h3><p>Arrastramos, unimos y ordenamos animales según tengan <b>2, 4, 6 u 8 patas</b> y explicamos cómo lo sabemos.</p><div class="mini">Evidencia: clasificación justificada</div><button class="btn primary" data-home-open="8" type="button">Abrir sesión 8 ▶</button><button class="btn vocab-home-btn" data-open-vocab="8" type="button">📚 Vocabulario · ANIMAL</button></div>
+  <div class="home-card w3-home-card"><span class="tag w3-tag">SESIÓN 8</span><h3 class="schoolfont">Clasificamos por sus patas</h3><p>Tocamos, clasificamos y comparamos animales según tengan <b>2, 4, 6 u 8 patas</b> y explicamos cómo lo sabemos.</p><div class="mini">Evidencia: clasificación justificada</div><button class="btn primary" data-home-open="8" type="button">Abrir sesión 8 ▶</button><button class="btn vocab-home-btn" data-open-vocab="8" type="button">📚 Vocabulario · ANIMAL</button></div>
   <div class="home-card w3-home-card"><span class="tag w3-tag">SESIÓN 9</span><h3 class="schoolfont">¿Está vivo?</h3><p>Investigamos una pregunta: <b>¿necesita tener patas para estar vivo?</b> Contrastamos predicción, imágenes y clasificación.</p><div class="mini">Evidencia: predicción + resultado mediante dibujo</div><button class="btn primary" data-home-open="9" type="button">Abrir sesión 9 ▶</button><button class="btn vocab-home-btn" data-open-vocab="9" type="button">📚 Vocabulario · PLANTA</button></div>
 </div>
 <div class="week-banner week2" style="background:#eef8ff;border-color:#a9d8ed"><span>SEMANA 3</span><b class="schoolfont">Observo, comparo y clasifico seres vivos</b><small>Sesiones 7, 8 y 9 · Texto mentor: 2, 4, 6, 8 patas</small></div>
 <button class="btn primary materials-home-btn" data-open-materials="week3" type="button">FICHAS PARA IMPRIMIR · SEMANA 3</button>
 
-<div class="home-eval">
+
+<div class="home-week-quick">
+  <button class="btn home-quick-materials" id="homeQuickMaterials" type="button">🖨 FICHAS DE LA SEMANA 3</button>
+  <button class="btn home-quick-rubric" id="homeQuickRubric" type="button">📋 RÚBRICA DE LA SEMANA 3</button>
+</div><div class="home-eval">
 <h2 style="margin:0">Evaluación · Semana 1 (sesiones 1–3)</h2>
 <div class="workflow"><span>1 · Durante las sesiones: observar</span><span>2 · Guardar las 3 fichas</span><span>3 · Al terminar: analizar todas las evidencias</span><span>4 · Completar la rúbrica global</span></div>
 <div class="home-eval-grid">
@@ -1376,18 +1435,28 @@ body{min-height:100dvh}
   </div>
 </section>
 
+
 <section class="screen" data-session="7" data-title="Ficha para imprimir · sesión 7">
   <div class="panel w3-new w3-print-screen">
     <div class="w3-kicker">SESIÓN 7 · FICHA DE HOY</div>
     <h1 class="w3-title schoolfont">Miro, cuento y dibujo</h1>
-    <div class="w3-sheet" id="w3Sheet7"><h2 class="schoolfont">Miro, cuento y dibujo</h2><div class="name">Nombre: __________________________________</div><p>Dibuja un animal en cada cuadro. Después cuenta sus patas.</p><div class="w3-sheet-grid4"><div class="w3-sheet-box"><b>2 patas</b><small>DIBUJO</small></div><div class="w3-sheet-box"><b>4 patas</b><small>DIBUJO</small></div><div class="w3-sheet-box"><b>6 patas</b><small>DIBUJO</small></div><div class="w3-sheet-box"><b>8 patas</b><small>DIBUJO</small></div></div><div class="w3-drawbox"><b>El que más me sorprendió fue…</b></div></div>
-    <button class="w3-print-btn" data-print-w3="7" type="button">🖨 IMPRIMIR / GUARDAR PDF</button>
-    
-<div class="w3-nav">
-  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
-  <div class="w3-step"><b>5</b> / 6</div>
-  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
-</div>
+    <div class="w3-print-workspace">
+      <div class="w3-sheet-preview"><div class="w3-sheet" id="w3Sheet7"><h2 class="schoolfont">Miro, cuento y dibujo</h2><div class="name">Nombre: __________________________________</div><p>Dibuja un animal en cada cuadro. Después cuenta sus patas.</p><div class="w3-sheet-grid4"><div class="w3-sheet-box"><b>2 patas</b><small>DIBUJO</small></div><div class="w3-sheet-box"><b>4 patas</b><small>DIBUJO</small></div><div class="w3-sheet-box"><b>6 patas</b><small>DIBUJO</small></div><div class="w3-sheet-box"><b>8 patas</b><small>DIBUJO</small></div></div><div class="w3-drawbox"><b>El que más me sorprendió fue…</b></div></div></div>
+      <aside class="w3-sheet-tools">
+        <h3>Ficha completa</h3>
+        <p>Revísala, modifica el texto si quieres y después imprime.</p>
+        <button class="w3-tool-btn view" data-enlarge-sheet="7" type="button">⛶ VER GRANDE</button>
+        <button class="w3-tool-btn edit" data-edit-sheet="7" type="button">✏️ EDITAR TEXTO</button>
+        <button class="w3-tool-btn reset" data-reset-sheet="7" type="button">↻ RESTABLECER</button>
+        <button class="w3-tool-btn print" data-print-w3="7" type="button">🖨 IMPRIMIR / PDF</button>
+        <div class="w3-edit-help">En modo edición puedes tocar títulos, instrucciones y etiquetas y escribir directamente.</div>
+      </aside>
+    </div>
+    <div class="w3-nav">
+      <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+      <div class="w3-step"><b>5</b> / 6</div>
+      <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+    </div>
   </div>
 </section>
 
@@ -1501,18 +1570,28 @@ body{min-height:100dvh}
   </div>
 </section>
 
+
 <section class="screen" data-session="8" data-title="Ficha para imprimir · sesión 8">
   <div class="panel w3-new w3-print-screen">
     <div class="w3-kicker">SESIÓN 8 · FICHA DE HOY</div>
     <h1 class="w3-title schoolfont">Recorta y clasifica</h1>
-    <div class="w3-sheet" id="w3Sheet8"><h2 class="schoolfont">Recorta y clasifica por sus patas</h2><div class="name">Nombre: __________________________________</div><div class="w3-sheet-grid4"><div class="w3-sheet-box"><b>2 patas</b></div><div class="w3-sheet-box"><b>4 patas</b></div><div class="w3-sheet-box"><b>6 patas</b></div><div class="w3-sheet-box"><b>8 patas</b></div></div><div class="w3-cut-bank"><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG" alt="PATO"><b>PATO</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A_chicken_standing_alone.jpg" alt="GALLINA"><b>GALLINA</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="PERRO"><b>PERRO</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cat_is_standing.jpg" alt="GATO"><b>GATO</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg" alt="ABEJA"><b>ABEJA</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Spider_image_view.jpg" alt="ARAÑA"><b>ARAÑA</b></div></div></div>
-    <button class="w3-print-btn" data-print-w3="8" type="button">🖨 IMPRIMIR / GUARDAR PDF</button>
-    
-<div class="w3-nav">
-  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
-  <div class="w3-step"><b>5</b> / 6</div>
-  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
-</div>
+    <div class="w3-print-workspace">
+      <div class="w3-sheet-preview"><div class="w3-sheet" id="w3Sheet8"><h2 class="schoolfont">Recorta y clasifica por sus patas</h2><div class="name">Nombre: __________________________________</div><div class="w3-sheet-grid4"><div class="w3-sheet-box"><b>2 patas</b></div><div class="w3-sheet-box"><b>4 patas</b></div><div class="w3-sheet-box"><b>6 patas</b></div><div class="w3-sheet-box"><b>8 patas</b></div></div><div class="w3-cut-bank"><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck_from_right_side.JPG" alt="PATO"><b>PATO</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A_chicken_standing_alone.jpg" alt="GALLINA"><b>GALLINA</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="PERRO"><b>PERRO</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cat_is_standing.jpg" alt="GATO"><b>GATO</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bee_whole_body.jpg" alt="ABEJA"><b>ABEJA</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Spider_image_view.jpg" alt="ARAÑA"><b>ARAÑA</b></div></div></div></div>
+      <aside class="w3-sheet-tools">
+        <h3>Ficha completa</h3>
+        <p>Revísala, modifica el texto si quieres y después imprime.</p>
+        <button class="w3-tool-btn view" data-enlarge-sheet="8" type="button">⛶ VER GRANDE</button>
+        <button class="w3-tool-btn edit" data-edit-sheet="8" type="button">✏️ EDITAR TEXTO</button>
+        <button class="w3-tool-btn reset" data-reset-sheet="8" type="button">↻ RESTABLECER</button>
+        <button class="w3-tool-btn print" data-print-w3="8" type="button">🖨 IMPRIMIR / PDF</button>
+        <div class="w3-edit-help">En modo edición puedes tocar títulos, instrucciones y etiquetas y escribir directamente.</div>
+      </aside>
+    </div>
+    <div class="w3-nav">
+      <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+      <div class="w3-step"><b>5</b> / 6</div>
+      <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+    </div>
   </div>
 </section>
 
@@ -1609,18 +1688,28 @@ body{min-height:100dvh}
   </div>
 </section>
 
+
 <section class="screen" data-session="9" data-title="Ficha para imprimir · sesión 9">
   <div class="panel w3-new w3-print-screen">
     <div class="w3-kicker">SESIÓN 9 · FICHA DE HOY</div>
     <h1 class="w3-title schoolfont">¿Está vivo?</h1>
-    <div class="w3-sheet" id="w3Sheet9"><h2 class="schoolfont">¿Está vivo?</h2><div class="name">Nombre: __________________________________</div><div class="w3-two"><div class="w3-sheet-box"><b>ESTÁ VIVO</b></div><div class="w3-sheet-box"><b>NO ESTÁ VIVO</b></div></div><div class="w3-cut-bank" style="grid-template-columns:repeat(3,1fr)"><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg" alt="PLANTA"><b>PLANTA</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="PERRO"><b>PERRO</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Stone_rock.jpg" alt="PIEDRA"><b>PIEDRA</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Happy_fun_ball.png" alt="PELOTA"><b>PELOTA</b></div></div><div class="w3-drawbox"><b>Dibuja otro ser vivo.</b></div></div>
-    <button class="w3-print-btn" data-print-w3="9" type="button">🖨 IMPRIMIR / GUARDAR PDF</button>
-    
-<div class="w3-nav">
-  <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
-  <div class="w3-step"><b>5</b> / 6</div>
-  <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
-</div>
+    <div class="w3-print-workspace">
+      <div class="w3-sheet-preview"><div class="w3-sheet" id="w3Sheet9"><h2 class="schoolfont">¿Está vivo?</h2><div class="name">Nombre: __________________________________</div><div class="w3-two"><div class="w3-sheet-box"><b>ESTÁ VIVO</b></div><div class="w3-sheet-box"><b>NO ESTÁ VIVO</b></div></div><div class="w3-cut-bank" style="grid-template-columns:repeat(3,1fr)"><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Basil_Plant.jpg" alt="PLANTA"><b>PLANTA</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_walking_sideview_grass.JPG" alt="PERRO"><b>PERRO</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Stone_rock.jpg" alt="PIEDRA"><b>PIEDRA</b></div><div class="w3-cut"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Happy_fun_ball.png" alt="PELOTA"><b>PELOTA</b></div></div><div class="w3-drawbox"><b>Dibuja otro ser vivo.</b></div></div></div>
+      <aside class="w3-sheet-tools">
+        <h3>Ficha completa</h3>
+        <p>Revísala, modifica el texto si quieres y después imprime.</p>
+        <button class="w3-tool-btn view" data-enlarge-sheet="9" type="button">⛶ VER GRANDE</button>
+        <button class="w3-tool-btn edit" data-edit-sheet="9" type="button">✏️ EDITAR TEXTO</button>
+        <button class="w3-tool-btn reset" data-reset-sheet="9" type="button">↻ RESTABLECER</button>
+        <button class="w3-tool-btn print" data-print-w3="9" type="button">🖨 IMPRIMIR / PDF</button>
+        <div class="w3-edit-help">En modo edición puedes tocar títulos, instrucciones y etiquetas y escribir directamente.</div>
+      </aside>
+    </div>
+    <div class="w3-nav">
+      <button class="w3-nav-btn secondary prev" type="button">← ANTERIOR</button>
+      <div class="w3-step"><b>5</b> / 6</div>
+      <div class="w3-nav-right"><button class="w3-nav-btn primary next" type="button">CONTINUAR →</button></div>
+    </div>
   </div>
 </section>
 
@@ -1637,11 +1726,18 @@ body{min-height:100dvh}
 </div>
   </div>
 </section>
-<section class="screen" data-session="0" data-title="Materiales imprimibles · semana 3"><div class="panel"><span class="tag w3-tag">SEMANA 3</span><h1 class="schoolfont" style="font-size:clamp(36px,5vw,62px);margin:10px 0">Fichas para imprimir</h1><p class="student-text" style="font-size:clamp(22px,2.5vw,34px)">Las tres fichas mantienen el formato DIN A4 y pueden imprimirse o guardarse como PDF desde el navegador.</p><div class="materials-hub">
-<div class="materials-session"><h3>Sesión 7 · Observo</h3><p>Dibujar animales según el número de patas.</p><button class="btn" data-open-w3-sheet="7">Abrir ficha</button></div>
-<div class="materials-session"><h3>Sesión 8 · Clasifico</h3><p>Recortar y clasificar 2, 4, 6 y 8 patas.</p><button class="btn" data-open-w3-sheet="8">Abrir ficha</button></div>
-<div class="materials-session"><h3>Sesión 9 · Investigo</h3><p>Recortar, clasificar vivo/no vivo y dibujar.</p><button class="btn" data-open-w3-sheet="9">Abrir ficha</button></div>
-</div><div class="w3-credits">Fotografías externas: Wikimedia Commons. Créditos y licencias documentados en CREDITOS_RECURSOS.md del repositorio.</div><div class="main-return"><button class="btn" data-go-home>◀ Volver al inicio</button></div></div></section>
+
+<section class="screen" data-session="0" data-title="Materiales imprimibles · semana 3">
+  <div class="panel w3-materials-new">
+    <span class="tag w3-tag">SEMANA 3</span>
+    <h1 class="schoolfont">Fichas para imprimir</h1>
+    <p>Abre la hoja completa, edita el texto si lo necesitas y después imprime o guarda en PDF.</p>
+    <div class="w3-materials-grid">
+      <article class="w3-material-card"><div class="w3-material-number">S7</div><h2>Miro, cuento y dibujo</h2><p>Dibujar animales según el número de patas.</p><div class="w3-material-actions"><button data-open-w3-sheet="7" type="button">VER FICHA</button><button data-edit-w3-sheet="7" type="button">✏️ EDITAR</button><button data-direct-print-w3="7" type="button">🖨 IMPRIMIR</button></div></article><article class="w3-material-card"><div class="w3-material-number">S8</div><h2>Recorta y clasifica</h2><p>Clasificar animales en 2, 4, 6 y 8 patas.</p><div class="w3-material-actions"><button data-open-w3-sheet="8" type="button">VER FICHA</button><button data-edit-w3-sheet="8" type="button">✏️ EDITAR</button><button data-direct-print-w3="8" type="button">🖨 IMPRIMIR</button></div></article><article class="w3-material-card"><div class="w3-material-number">S9</div><h2>¿Está vivo?</h2><p>Clasificar vivo/no vivo y dibujar otro ser vivo.</p><div class="w3-material-actions"><button data-open-w3-sheet="9" type="button">VER FICHA</button><button data-edit-w3-sheet="9" type="button">✏️ EDITAR</button><button data-direct-print-w3="9" type="button">🖨 IMPRIMIR</button></div></article>
+    </div>
+    <div class="main-return"><button class="btn" data-go-home type="button">◀ Volver al inicio</button></div>
+  </div>
+</section>
 
 
 <section class="screen" data-session="0" data-title="Rúbrica global · sesiones 7-9">
@@ -1867,14 +1963,17 @@ function printTarget(el){
   const oldHost=document.querySelector('.print-host'); if(oldHost) oldHost.remove();
   const oldPrintStyle=document.getElementById('dynamicPrintPage'); if(oldPrintStyle) oldPrintStyle.remove();
   const isVocab=el.classList.contains('vocab-sheet');
+  const isW3Sheet=el.classList.contains('w3-sheet');
   const isEvalLandscape=el.classList.contains('observation-sheet')||el.classList.contains('global-rubric-shell')||el.classList.contains('w3-rubric-shell');
-  const host=document.createElement('div'); host.className='print-host'+(isVocab?' vocab-print-host':'')+(isEvalLandscape?' eval-landscape-print-host':'');
+  const host=document.createElement('div'); host.className='print-host'+(isVocab?' vocab-print-host':'')+(isEvalLandscape?' eval-landscape-print-host':'')+(isW3Sheet?' w3-sheet-print-host':'');
   const clone=el.cloneNode(true); clone.classList.add('print-target');
   const origFields=el.querySelectorAll('input,textarea,select'); const cloneFields=clone.querySelectorAll('input,textarea,select');
   cloneFields.forEach((f,i)=>{const o=origFields[i]; if(!o)return; if('value' in f)f.value=o.value; if(f.tagName==='TEXTAREA')f.textContent=o.value;});
   host.appendChild(clone); document.body.appendChild(host);
   const printStyle=document.createElement('style'); printStyle.id='dynamicPrintPage';
-  printStyle.textContent=isVocab
+  printStyle.textContent=isW3Sheet
+    ? '@page{size:A4 portrait;margin:0}@media print{html,body{width:210mm!important;height:297mm!important;overflow:hidden!important}body.w3-sheet-printing>.print-host{position:fixed!important;inset:0!important;width:210mm!important;height:297mm!important;max-width:210mm!important;max-height:297mm!important;overflow:hidden!important}body.w3-sheet-printing>.print-host>.w3-sheet.print-target{position:absolute!important;left:0!important;top:0!important;width:210mm!important;height:297mm!important;min-width:210mm!important;max-width:210mm!important;min-height:297mm!important;max-height:297mm!important;padding:9mm!important;box-sizing:border-box!important;overflow:hidden!important;border:0!important;border-radius:0!important;box-shadow:none!important}.w3-sheet-print-host .w3-cut img{object-fit:contain!important}}'
+    : isVocab
     ? '@page{size:A4 landscape;margin:0}@media print{html,body{width:297mm!important;height:210mm!important;overflow:hidden!important}body.vocab-printing>.print-host{position:fixed!important;inset:0!important;width:297mm!important;height:210mm!important;max-width:297mm!important;max-height:210mm!important;overflow:hidden!important}body.vocab-printing>.print-host>.vocab-sheet.print-target{position:absolute!important;left:0!important;top:0!important;width:297mm!important;height:210mm!important;min-width:297mm!important;max-width:297mm!important;min-height:210mm!important;max-height:210mm!important;padding:9mm!important;box-sizing:border-box!important;overflow:hidden!important;display:grid!important;grid-template-columns:44% 56%!important;grid-template-rows:auto auto 1fr auto auto!important;grid-template-areas:"head head" "photo word" "photo def" "photo example" "photo say"!important;gap:4mm 6mm!important;border:0!important;border-radius:0!important}.vocab-print-host .vocab-head{grid-area:head!important}.vocab-print-host .vocab-word{grid-area:word!important;font-size:34pt!important;line-height:1!important;margin:0!important}.vocab-print-host .vocab-photo-wrap{grid-area:photo!important;min-height:0!important;height:100%!important;padding:3mm!important}.vocab-print-host .vocab-photo{width:100%!important;height:100%!important;max-height:none!important;object-fit:contain!important}.vocab-print-host .vocab-def{grid-area:def!important;font-size:15pt!important;line-height:1.18!important;padding:4mm!important}.vocab-print-host .vocab-example{grid-area:example!important;font-size:14pt!important;line-height:1.18!important;padding:3.5mm!important}.vocab-print-host .vocab-say{grid-area:say!important;font-size:14pt!important;line-height:1.18!important;padding-top:2.5mm!important}.vocab-print-host .vocab-session{font-size:10pt!important}.vocab-print-host .vocab-note{font-size:9pt!important}.vocab-print-host .vocab-kicker{font-size:10pt!important;padding:2mm 3mm!important}}'
     : isEvalLandscape
       ? '@page{size:A4 landscape;margin:0}@media print{html,body{width:297mm!important;height:210mm!important;overflow:hidden!important}body.eval-landscape-printing>.print-host{position:fixed!important;inset:0!important;width:297mm!important;height:210mm!important;max-width:297mm!important;max-height:210mm!important;overflow:hidden!important}body.eval-landscape-printing>.print-host>.print-target{position:absolute!important;left:0!important;top:0!important;width:297mm!important;height:210mm!important;min-width:297mm!important;max-width:297mm!important;min-height:210mm!important;max-height:210mm!important;padding:7mm!important;box-sizing:border-box!important;overflow:hidden!important;border:0!important;border-radius:0!important}.eval-landscape-print-host .obs-table td{height:7mm!important}.eval-landscape-print-host .obs-table input{font-size:8pt!important}.eval-landscape-print-host .global-rubric-shell{gap:3px!important}.eval-landscape-print-host .rubric-table td{padding:2px 4px!important}.eval-landscape-print-host .rubric-criterion{font-size:8.6px!important}.eval-landscape-print-host .rubric-evidence,.eval-landscape-print-host .rubric-source{font-size:7.4px!important}.eval-landscape-print-host .rubric-curriculum>div{font-size:8px!important;padding:4px 6px!important}.eval-landscape-print-host .rubric-level{font-size:7.5px!important;padding:3px 4px!important}.eval-landscape-print-host .rubric-final-rule{font-size:7.3px!important}.eval-landscape-print-host .rubric-notes textarea{height:24px!important}}'
@@ -1882,8 +1981,9 @@ function printTarget(el){
   document.head.appendChild(printStyle);
   document.body.classList.add('printing');
   if(isVocab) document.body.classList.add('vocab-printing');
+  if(isW3Sheet) document.body.classList.add('w3-sheet-printing');
   if(isEvalLandscape) document.body.classList.add('eval-landscape-printing');
-  const cleanup=()=>{document.body.classList.remove('printing','vocab-printing','eval-landscape-printing');host.remove();printStyle.remove();window.removeEventListener('afterprint',cleanup)};
+  const cleanup=()=>{document.body.classList.remove('printing','vocab-printing','eval-landscape-printing','w3-sheet-printing');host.remove();printStyle.remove();window.removeEventListener('afterprint',cleanup)};
   window.addEventListener('afterprint',cleanup); window.print(); setTimeout(cleanup,1800);
 }
 document.getElementById('printWorksheet').addEventListener('click',()=>printTarget(document.getElementById('worksheet')));
@@ -2085,6 +2185,59 @@ screens.forEach(screen=>screen.querySelectorAll('video').forEach(video=>{
  video.addEventListener('pause',()=>{const b=root.querySelector('[data-video-target="'+video.id+'"]');if(b&&video.currentTime===0)b.style.display='block';});
  video.addEventListener('error',()=>{if(fb)fb.hidden=false;});
 }));
+
+
+function setHomeWeek(week){
+  root.querySelectorAll('[data-home-week]').forEach(g=>g.classList.toggle('active',g.dataset.homeWeek===String(week)));
+  root.querySelectorAll('[data-home-week-btn]').forEach(b=>b.classList.toggle('active',b.dataset.homeWeekBtn===String(week)));
+  const m=document.getElementById('homeQuickMaterials'),r=document.getElementById('homeQuickRubric');
+  if(m){
+    m.textContent='🖨 FICHAS DE LA SEMANA '+week;
+    m.style.display=(String(week)==='1')?'none':'inline-flex';
+    m.dataset.week=String(week);
+  }
+  if(r){r.textContent='📋 RÚBRICA DE LA SEMANA '+week;r.dataset.week=String(week);}
+  requestAnimationFrame(fitActiveScreen);
+}
+root.querySelectorAll('[data-home-week-btn]').forEach(b=>b.addEventListener('click',()=>setHomeWeek(b.dataset.homeWeekBtn)));
+document.getElementById('homeQuickMaterials')?.addEventListener('click',()=>{
+  const w=document.getElementById('homeQuickMaterials').dataset.week;
+  const title=w==='2'?'Materiales imprimibles · semana 2':'Materiales imprimibles · semana 3';
+  const idx=screens.findIndex(x=>x.dataset.title===title);if(idx>=0)show(idx);
+});
+document.getElementById('homeQuickRubric')?.addEventListener('click',()=>{
+  const w=document.getElementById('homeQuickRubric').dataset.week;
+  const title=w==='1'?'Rúbrica global · sesiones 1-3':(w==='2'?'Rúbrica global · sesiones 4-6':'Rúbrica global · sesiones 7-9');
+  const idx=screens.findIndex(x=>x.dataset.title===title);if(idx>=0)show(idx);
+});
+setHomeWeek(3);
+
+const w3SheetOriginal={};
+['7','8','9'].forEach(n=>{const s=document.getElementById('w3Sheet'+n);if(s)w3SheetOriginal[n]=s.innerHTML;});
+function setSheetEditing(n,on){
+  const sheet=document.getElementById('w3Sheet'+n),btn=root.querySelector('[data-edit-sheet="'+n+'"]');if(!sheet)return;
+  sheet.classList.toggle('sheet-editing',on);
+  sheet.querySelectorAll('h2,p,b,.name,small').forEach(el=>{
+    if(on){el.setAttribute('contenteditable','true');el.setAttribute('spellcheck','true');}
+    else el.removeAttribute('contenteditable');
+  });
+  if(btn){btn.classList.toggle('active',on);btn.textContent=on?'✓ TERMINAR EDICIÓN':'✏️ EDITAR TEXTO';}
+}
+root.querySelectorAll('[data-edit-sheet]').forEach(btn=>btn.addEventListener('click',()=>{const n=btn.dataset.editSheet;const s=document.getElementById('w3Sheet'+n);setSheetEditing(n,!s.classList.contains('sheet-editing'));}));
+root.querySelectorAll('[data-reset-sheet]').forEach(btn=>btn.addEventListener('click',()=>{const n=btn.dataset.resetSheet,s=document.getElementById('w3Sheet'+n);if(!s)return;s.innerHTML=w3SheetOriginal[n];setSheetEditing(n,false);}));
+root.querySelectorAll('[data-enlarge-sheet]').forEach(btn=>btn.addEventListener('click',()=>{
+  const n=btn.dataset.enlargeSheet,s=document.getElementById('w3Sheet'+n),preview=s?.closest('.w3-sheet-preview');if(!preview)return;
+  preview.classList.add('w3-sheet-expanded');
+  let close=document.getElementById('w3SheetClose');if(!close){close=document.createElement('button');close.id='w3SheetClose';close.type='button';close.textContent='✕ CERRAR';document.body.appendChild(close);}
+  close.style.display='block';close.onclick=()=>{preview.classList.remove('w3-sheet-expanded');close.style.display='none';};
+}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){root.querySelectorAll('.w3-sheet-expanded').forEach(x=>x.classList.remove('w3-sheet-expanded'));const close=document.getElementById('w3SheetClose');if(close)close.style.display='none';}});
+
+function openW3Sheet(n,edit=false){
+  const title='Ficha para imprimir · sesión '+n,idx=screens.findIndex(x=>x.dataset.title===title);if(idx<0)return;show(idx);if(edit)setTimeout(()=>setSheetEditing(String(n),true),0);
+}
+root.querySelectorAll('[data-edit-w3-sheet]').forEach(b=>b.addEventListener('click',()=>openW3Sheet(b.dataset.editW3Sheet,true)));
+root.querySelectorAll('[data-direct-print-w3]').forEach(b=>b.addEventListener('click',()=>{const s=document.getElementById('w3Sheet'+b.dataset.directPrintW3);if(s)printTarget(s);}));
 
 window.addEventListener('resize',()=>requestAnimationFrame(fitActiveScreen));
 root.querySelectorAll('img').forEach(img=>img.addEventListener('load',()=>{if(img.closest('.screen.active'))requestAnimationFrame(fitActiveScreen);}));
