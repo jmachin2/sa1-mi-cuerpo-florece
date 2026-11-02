@@ -1168,6 +1168,59 @@ body.mentor-open{overflow:hidden!important}
 @media(max-width:1100px){.resources-weeks-grid{grid-template-columns:1fr}.resources-hub-panel{height:auto;max-height:none}.resources-hub-head{align-items:start}}
 @media(max-width:650px){.resource-row{grid-template-columns:auto 1fr}.resource-actions{grid-column:1/-1;justify-content:stretch}.resource-actions button,.resource-actions a{flex:1}.resources-hub-head{flex-direction:column}}
 </style>
+
+<style id="w3-song-v1">
+/* ===== SEMANA 3 · CANCIÓN DE APERTURA · MIRA Y CUENTA ===== */
+.w3-song-screen{
+  height:calc(100dvh - 58px);
+  max-height:calc(100dvh - 58px);
+  overflow:auto!important;
+  padding:14px 18px!important;
+  background:linear-gradient(180deg,#fffef9 0%,#f7fcff 100%);
+  border-color:#b9dbe8!important;
+}
+.w3-song-head{text-align:center;margin-bottom:8px}
+.w3-song-kicker{display:inline-block;font:900 13px/1 Arial,Helvetica,sans-serif;letter-spacing:.09em;color:#31576a;background:#e8f7ff;border:2px solid #add8e9;border-radius:999px;padding:7px 12px}
+.w3-song-title{font-size:clamp(38px,5.3vw,70px);line-height:1;margin:8px 0 3px;color:#203944}
+.w3-song-sub{font-size:clamp(18px,2vw,26px);line-height:1.2;margin:0;color:#5c6b72}
+.w3-song-animals{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin:10px 0}
+.w3-song-animal{border:2px solid #d7e2e6;border-radius:18px;background:#fff;padding:7px 8px;text-align:center;min-width:0}
+.w3-song-animal svg{width:100%;height:86px;display:block}
+.w3-song-animal b{display:block;font-size:18px;line-height:1.05;margin-top:2px}
+.w3-song-animal span{display:inline-block;margin-top:3px;border-radius:999px;padding:4px 9px;background:#fff4d6;border:1.5px solid #efd174;font:900 18px/1 Arial}
+.w3-song-animal.plant span{background:#eaf8ef;border-color:#9dcfb0}
+.w3-song-main{display:grid;grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr);gap:14px;align-items:stretch}
+.w3-song-player{border:2px solid #bed9e5;border-radius:20px;background:#eef9ff;padding:14px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.w3-song-player h3{margin:0;font-size:clamp(25px,2.7vw,36px)}
+.w3-song-player p{margin:0;font-size:16px;line-height:1.3;color:#52646d}
+.w3-song-player audio{width:100%;min-height:54px}
+.w3-song-chips{display:flex;gap:7px;flex-wrap:wrap}.w3-song-chips span{background:#fff;border:1.5px solid #bdd4de;border-radius:999px;padding:6px 9px;font:800 13px Arial;color:#355261}
+.w3-song-question{background:#fff6db;border:2px solid #efd476;border-radius:15px;padding:10px;text-align:center;font-size:21px;line-height:1.18}
+.w3-song-lyrics{border:2px solid #d8e1e5;border-radius:20px;background:#fff;padding:12px 16px}
+.w3-song-lyrics h3{margin:0 0 7px;text-align:center;font-size:26px}
+.w3-song-columns{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.w3-song-verse{font-size:clamp(18px,1.72vw,24px);line-height:1.42;margin:0 0 9px;color:#283c46}
+.w3-song-verse strong{color:#ad3565}
+.w3-song-chorus{background:#fff4f8;border:2px solid #f0b9cf;border-radius:15px;padding:8px 10px}
+.w3-song-count{font-weight:900;color:#18324a}
+.w3-song-end{display:flex;justify-content:flex-end;margin-top:10px}
+.w3-song-end .btn{font-family:"Segoe Print","Comic Sans MS","Bradley Hand ITC",cursive;font-size:20px}
+.w3-song-screen .teacherbox{margin-top:9px}
+@media(max-width:850px){
+  .w3-song-screen{height:auto;max-height:none}
+  .w3-song-animals{grid-template-columns:repeat(2,1fr)}
+  .w3-song-animal.plant{grid-column:1/-1}
+  .w3-song-main,.w3-song-columns{grid-template-columns:1fr}
+}
+@media(max-height:760px) and (orientation:landscape){
+  .w3-song-screen{padding:8px 12px!important}
+  .w3-song-head{margin-bottom:3px}.w3-song-title{font-size:38px;margin:4px 0}.w3-song-sub{font-size:16px}
+  .w3-song-animals{margin:5px 0;gap:6px}.w3-song-animal{padding:4px}.w3-song-animal svg{height:58px}.w3-song-animal b{font-size:14px}.w3-song-animal span{font-size:14px;padding:3px 7px}
+  .w3-song-main{gap:8px}.w3-song-player{padding:9px}.w3-song-player h3{font-size:24px}.w3-song-player p{font-size:13px}.w3-song-player audio{min-height:42px}
+  .w3-song-lyrics{padding:8px 11px}.w3-song-lyrics h3{font-size:20px;margin-bottom:4px}.w3-song-verse{font-size:15px;line-height:1.25;margin-bottom:5px}.w3-song-chorus{padding:5px 7px}
+  .w3-song-question{font-size:16px;padding:6px}.w3-song-end{margin-top:5px}
+}
+</style>
 </head>
 <body>
 <!-- Versión preparada para GitHub Pages. -->
@@ -1210,7 +1263,7 @@ body.mentor-open{overflow:hidden!important}
 <div class="week-banner week2"><span>SEMANA 2</span><b class="schoolfont">Conozco el mundo con mis sentidos</b><small>Sesiones 4, 5 y 6 · Libro base: Los cinco sentidos</small></div><button class="btn primary materials-home-btn" data-open-materials="week2" type="button">FICHAS PARA IMPRIMIR · SEMANA 2</button>
 
 <div class="home-grid home-week-grid active" data-home-week="3">
-  <div class="home-card w3-home-card"><span class="tag w3-tag">SESIÓN 7</span><h3 class="schoolfont">Patas: observamos y contamos</h3><p>Lectura compartida de <b>2, 4, 6, 8 patas</b>. Localizamos una característica, contamos y comparamos patas y piernas.</p><div class="mini"><b>Texto mentor:</b> <i>2, 4, 6, 8 patas</i> · Patricia Brennan<br>Evidencia: respuesta al texto + ficha de observación</div><button class="btn primary" data-home-open="7" type="button">Abrir sesión 7 ▶</button><button class="btn vocab-home-btn" data-open-vocab="7" type="button">📚 Vocabulario · PATA</button></div>
+  <div class="home-card w3-home-card"><span class="tag w3-tag">SESIÓN 7</span><h3 class="schoolfont">Patas: observamos y contamos</h3><p>Lectura compartida de <b>2, 4, 6, 8 patas</b>. Localizamos una característica, contamos y comparamos patas y piernas.</p><div class="mini"><b>Texto mentor:</b> <i>2, 4, 6, 8 patas</i> · Patricia Brennan<br>Evidencia: respuesta al texto + ficha de observación</div><button class="btn primary" data-home-open="7" type="button">Empezar Semana 3 · canción ▶</button><button class="btn vocab-home-btn" data-open-vocab="7" type="button">📚 Vocabulario · PATA</button></div>
   <div class="home-card w3-home-card"><span class="tag w3-tag">SESIÓN 8</span><h3 class="schoolfont">Clasificamos por sus patas</h3><p>Tocamos, clasificamos y comparamos animales según tengan <b>2, 4, 6 u 8 patas</b> y explicamos cómo lo sabemos.</p><div class="mini">Evidencia: clasificación justificada</div><button class="btn primary" data-home-open="8" type="button">Abrir sesión 8 ▶</button><button class="btn vocab-home-btn" data-open-vocab="8" type="button">📚 Vocabulario · ANIMAL</button></div>
   <div class="home-card w3-home-card"><span class="tag w3-tag">SESIÓN 9</span><h3 class="schoolfont">¿Está vivo?</h3><p>Investigamos una pregunta: <b>¿necesita tener patas para estar vivo?</b> Contrastamos predicción, imágenes y clasificación.</p><div class="mini">Evidencia: predicción + resultado mediante dibujo</div><button class="btn primary" data-home-open="9" type="button">Abrir sesión 9 ▶</button><button class="btn vocab-home-btn" data-open-vocab="9" type="button">📚 Vocabulario · PLANTA</button></div>
 </div>
@@ -1841,6 +1894,131 @@ body.mentor-open{overflow:hidden!important}
 
 
 
+
+<section class="screen" data-session="7" data-title="Canción · Mira y cuenta" id="w3SongIntro">
+  <div class="panel w3-song-screen">
+    <div class="w3-song-head">
+      <span class="w3-song-kicker">🎵 CANCIÓN DE LA SEMANA 3</span>
+      <h1 class="w3-song-title schoolfont">Mira y cuenta</h1>
+      <p class="w3-song-sub schoolfont">Escuchamos, contamos las patas y clasificamos.</p>
+    </div>
+
+    <div class="w3-song-animals" aria-label="Animales de la canción">
+      <div class="w3-song-animal">
+        <svg viewBox="0 0 140 90" role="img" aria-label="Dibujo de un pájaro con dos patas">
+          <ellipse cx="65" cy="48" rx="34" ry="25" fill="#7bc9e8" stroke="#294854" stroke-width="3"/>
+          <circle cx="98" cy="31" r="17" fill="#8ed6ef" stroke="#294854" stroke-width="3"/>
+          <path d="M112 31l18 7-18 7z" fill="#f3b84e" stroke="#294854" stroke-width="2"/>
+          <circle cx="103" cy="27" r="2.7" fill="#24313a"/>
+          <path d="M56 39q16 6 24 20q-20 3-30-8z" fill="#5aa9cf"/>
+          <path d="M50 70v14M78 70v14M43 84h15M71 84h15" stroke="#294854" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <b>PÁJARO</b><span>2 patas</span>
+      </div>
+
+      <div class="w3-song-animal">
+        <svg viewBox="0 0 140 90" role="img" aria-label="Dibujo de un perro con cuatro patas">
+          <rect x="34" y="35" width="65" height="34" rx="15" fill="#d99b68" stroke="#4a392f" stroke-width="3"/>
+          <circle cx="105" cy="35" r="20" fill="#e0aa78" stroke="#4a392f" stroke-width="3"/>
+          <path d="M92 18q-16 2-14 22q12 0 20-10zM114 17q17 4 13 22q-12-1-18-11z" fill="#b97b50"/>
+          <circle cx="111" cy="32" r="2.5" fill="#24313a"/>
+          <circle cx="120" cy="40" r="3" fill="#24313a"/>
+          <path d="M43 66v18M62 66v18M80 66v18M94 65v19M27 42q-15-12-18 2" fill="none" stroke="#4a392f" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <b>PERRO</b><span>4 patas</span>
+      </div>
+
+      <div class="w3-song-animal">
+        <svg viewBox="0 0 140 90" role="img" aria-label="Dibujo de una hormiga con seis patas">
+          <circle cx="43" cy="48" r="13" fill="#6f5046" stroke="#352b28" stroke-width="3"/>
+          <circle cx="70" cy="48" r="16" fill="#805c50" stroke="#352b28" stroke-width="3"/>
+          <circle cx="101" cy="48" r="19" fill="#6f5046" stroke="#352b28" stroke-width="3"/>
+          <path d="M45 36L30 20M50 40L35 46M48 57L30 72M68 32L62 15M74 33L82 15M69 64L63 82M77 62L86 80" stroke="#352b28" stroke-width="3" stroke-linecap="round"/>
+          <path d="M28 38Q16 26 24 15M31 39Q43 25 38 14" fill="none" stroke="#352b28" stroke-width="2"/>
+        </svg>
+        <b>HORMIGA</b><span>6 patas</span>
+      </div>
+
+      <div class="w3-song-animal">
+        <svg viewBox="0 0 140 90" role="img" aria-label="Dibujo de una araña con ocho patas">
+          <circle cx="73" cy="48" r="21" fill="#5d6570" stroke="#29323a" stroke-width="3"/>
+          <circle cx="73" cy="27" r="13" fill="#747d87" stroke="#29323a" stroke-width="3"/>
+          <circle cx="68" cy="24" r="2.2" fill="#fff"/><circle cx="78" cy="24" r="2.2" fill="#fff"/>
+          <path d="M57 39L33 25L18 31M54 47L29 43L14 49M56 55L31 63L18 75M62 63L45 78L40 87M89 39L112 25L126 31M92 47L117 43L132 49M90 55L114 63L127 75M84 63L101 78L106 87" fill="none" stroke="#29323a" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <b>ARAÑA</b><span>8 patas</span>
+      </div>
+
+      <div class="w3-song-animal plant">
+        <svg viewBox="0 0 140 90" role="img" aria-label="Dibujo de una planta">
+          <path d="M70 60V25" stroke="#3f8c5d" stroke-width="5" stroke-linecap="round"/>
+          <path d="M69 37Q45 18 36 36Q49 54 69 44" fill="#70be7e" stroke="#32764c" stroke-width="3"/>
+          <path d="M71 48Q96 27 106 45Q94 62 72 55" fill="#87c98e" stroke="#32764c" stroke-width="3"/>
+          <path d="M45 60h50l-7 27H52z" fill="#d98762" stroke="#704837" stroke-width="3"/>
+          <path d="M43 60h54" stroke="#704837" stroke-width="4"/>
+        </svg>
+        <b>PLANTA</b><span>ser vivo</span>
+      </div>
+    </div>
+
+    <div class="w3-song-main">
+      <div class="w3-song-player">
+        <h3 class="schoolfont">Escucha y canta</h3>
+        <p>Primero escuchamos. Después señalamos cada dibujo cuando aparece en la canción.</p>
+        <audio controls preload="metadata" src="assets/audio/mira-y-cuenta.mp3">
+          Tu navegador no puede reproducir este audio.
+        </audio>
+        <div class="w3-song-chips"><span>👀 MIRA</span><span>🔢 CUENTA</span><span>🧺 CLASIFICA</span></div>
+        <div class="w3-song-question schoolfont">¿Cuántas patas tiene cada animal?</div>
+      </div>
+
+      <div class="w3-song-lyrics">
+        <h3 class="schoolfont">Letra de la canción</h3>
+        <div class="w3-song-columns">
+          <div>
+            <p class="w3-song-verse">
+              Mira, mira, ¿qué animal es?<br>
+              Un pájaro: <strong>una, dos</strong>.<br>
+              Mira, mira, ¿qué animal es?<br>
+              Un perro: <strong>una, dos, tres, cuatro</strong>.
+            </p>
+            <p class="w3-song-verse w3-song-chorus">
+              <strong>Mira y cuenta, cuenta las patas,</strong><br>
+              <strong>mira y cuenta, vamos a jugar.</strong>
+            </p>
+            <p class="w3-song-verse">
+              Una hormiga: <strong>seis patitas</strong>,<br>
+              una araña: <strong>ocho más</strong>.<br>
+              <span class="w3-song-count">Dos, cuatro, seis y ocho,</span><br>
+              ¡los podemos clasificar!
+            </p>
+          </div>
+          <div>
+            <p class="w3-song-verse w3-song-chorus">
+              <strong>Pájaro: dos.</strong><br>
+              <strong>Perro: cuatro.</strong><br>
+              <strong>Hormiga: seis.</strong><br>
+              <strong>Araña: ocho.</strong>
+            </p>
+            <p class="w3-song-verse">
+              ¿Y la planta? ¿Tiene patas?<br>
+              <strong>No, no, no.</strong><br>
+              Pero crece, necesita agua<br>
+              y es un ser <strong>vivo</strong>.
+            </p>
+            <p class="w3-song-verse w3-song-chorus">
+              <strong>Animal, planta, ser vivo,</strong><br>
+              <strong>miro, pienso y lo explico.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="teacherbox"><b>Uso docente.</b><br/>Primera escucha: disfrutar y reconocer animales. Segunda escucha: señalar 2, 4, 6 y 8 con los dedos. Al terminar, pregunta qué tienen en común el animal y la planta y recupera la idea de <b>ser vivo</b>.</div>
+    <div class="w3-song-end"><button class="btn primary next" type="button">Empezamos la sesión 7 ▶</button></div>
+  </div>
+</section>
 <section class="screen" data-session="7" data-title="Texto mentor · Patas">
   <div class="panel w3-new">
     <div class="w3-kicker">SESIÓN 7 · MIRA Y DESCUBRE</div>
