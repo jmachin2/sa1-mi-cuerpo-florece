@@ -1875,7 +1875,7 @@ function fitActiveScreen(){
   const panel=screen.querySelector(':scope > .panel');
   if(!panel)return;
   panel.style.zoom='1';
-  if(panel.classList.contains('w3-new'))return;
+  if(panel.classList.contains('w3-new')||panel.classList.contains('w3-materials-new')||screen.dataset.title==='Inicio general')return;
   requestAnimationFrame(()=>{
     const ah=Math.max(1,screen.clientHeight-2);
     const aw=Math.max(1,screen.clientWidth-2);
