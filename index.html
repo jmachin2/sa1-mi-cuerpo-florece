@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>SA1 · Mi cuerpo florece · Sesiones 1–9</title>
+<title>SA1 · Mi cuerpo florece · Sesiones 1–12</title>
 <style>
 :root{--bg:#fffdf8;--ink:#24313a;--muted:#66737b;--accent:#e6538b;--accent2:#58a987;--sun:#f6c957;--panel:#ffffff;--line:#d9e0e3;--teacher:#18324a;}
 *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;}
@@ -718,7 +718,7 @@ body{min-height:100dvh}
 .screen[data-title="Inicio general"]>.panel{height:calc(100dvh - 58px)!important;overflow:hidden!important;display:flex;flex-direction:column;gap:8px;padding:12px 16px!important}
 .screen[data-title="Inicio general"] .home-main-title{font-size:clamp(34px,5.2vh,56px)!important;margin:0!important;line-height:1}
 .screen[data-title="Inicio general"] .home-sub{font-size:clamp(17px,2.2vh,24px)!important;line-height:1.15!important;margin:0}
-.home-week-picker{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;flex:0 0 auto}
+.home-week-picker{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;flex:0 0 auto}
 .home-week-btn{border:2px solid #9fb2bc;border-radius:16px;background:#fff;padding:9px 12px;cursor:pointer;text-align:left;min-height:58px}.home-week-btn b{display:block;font:900 15px Arial;color:#24313a}.home-week-btn span{display:block;font:700 13px Arial;color:#65737a;margin-top:2px}.home-week-btn.active{background:#eaf7f1;border-color:#58a987;box-shadow:0 0 0 2px rgba(88,169,135,.14)}
 .home-week-grid{display:none!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important;margin:0!important;flex:1;min-height:0}
 .home-week-grid.active{display:grid!important}
@@ -1254,6 +1254,66 @@ body.mentor-open{overflow:hidden!important}
   .w3-vocab-song{display:none!important}
 }
 </style>
+
+<style id="week4Styles2026">
+/* ===== SEMANA 4 · NECESIDADES Y CUIDADO ===== */
+.focus-week4 .w4-new{
+  height:calc(100dvh - 58px);max-height:calc(100dvh - 58px);overflow:auto;
+  padding:14px 18px!important;display:flex;flex-direction:column;gap:10px;
+  background:linear-gradient(180deg,#fffef9,#f7fbf5);border-color:#c9dfc7!important
+}
+.w4-kicker{font:900 13px/1 Arial;letter-spacing:.08em;color:#476246}
+.w4-title{font-size:clamp(36px,5vw,60px);line-height:1.05;margin:0;color:#263d32}
+.w4-instruction{font-size:clamp(20px,2.3vw,29px);line-height:1.15;background:#fff7dc;border:2px solid #efd472;border-radius:15px;padding:8px 12px;text-align:center}
+.w4-strategy{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.w4-strategy span{min-height:64px;display:grid;place-items:center;text-align:center;border:2px solid #cddbd2;border-radius:15px;background:#fff;padding:7px;font:800 14px/1.15 Arial}
+.w4-strategy b{display:block;font-size:23px;margin-bottom:3px}
+.w4-book-callout{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;background:#eef8ff;border:2px solid #b8d9e9;border-radius:18px;padding:12px 14px}
+.w4-book-callout h3{margin:0;font-size:25px}.w4-book-callout p{margin:3px 0 0;font-size:16px;line-height:1.3}
+.w4-open-book{border:2px solid #2d617f;background:#2d617f;color:#fff;border-radius:14px;padding:10px 14px;font:900 14px Arial;cursor:pointer;min-height:46px}
+.w4-grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;flex:1;min-height:0}
+.w4-card{border:2px solid #d4ded8;border-radius:18px;background:#fff;padding:13px;display:flex;flex-direction:column;gap:7px;justify-content:center}
+.w4-card h3{font-size:26px;margin:0}.w4-card p{font-size:17px;line-height:1.3;margin:0}
+.w4-big-emoji{font-size:66px;text-align:center;line-height:1}
+.w4-question{font-size:clamp(24px,2.7vw,34px);line-height:1.2;text-align:center}
+.w4-options{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.w4-option{border:3px solid #d5dee0;background:#fff;border-radius:17px;padding:12px;min-height:70px;cursor:pointer;font:800 19px/1.15 Arial}
+.w4-option.good{border-color:#58a987;background:#eef9f4}.w4-option.bad{border-color:#d37b7b;background:#fff3f3}
+.w4-feedback{border:2px solid #d7e1e4;background:#f8fafb;border-radius:15px;padding:10px;text-align:center;font-size:20px;min-height:48px}
+.w4-sequence{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.w4-seq{border:2px solid #d4dfd7;border-radius:17px;background:#fff;padding:9px;text-align:center}
+.w4-seq strong{display:block;color:#ad3565;font:900 13px Arial;letter-spacing:.05em;margin-bottom:5px}
+.w4-seq span{display:block;font-size:40px}.w4-seq b{display:block;font-size:18px;margin-top:4px}
+.w4-compare{display:grid;grid-template-columns:1fr .85fr 1fr;gap:10px;align-items:stretch}
+.w4-compare-col{border:2px solid #d6e0dc;border-radius:18px;background:#fff;padding:12px;text-align:center}
+.w4-compare-col h3{margin:0 0 8px;font-size:25px}.w4-chiprow{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.w4-chip{border:2px solid #c9d6d0;background:#f9fbfa;border-radius:999px;padding:7px 10px;font:800 14px Arial}
+.w4-chip.common{background:#eef9f4;border-color:#9fcdb7}
+.w4-predict{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.w4-predict button{border:3px solid #d4dee0;border-radius:18px;background:#fff;padding:12px;cursor:pointer;font:800 17px Arial;min-height:84px}.w4-predict button.active{background:#fff6db;border-color:#e1bd4c}
+.w4-habits{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.w4-habit{border:2px solid #d7e0dc;background:#fff;border-radius:18px;padding:12px;text-align:center}.w4-habit span{display:block;font-size:50px}.w4-habit b{display:block;font-size:18px}
+.w4-beforeafter{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center}.w4-state{border:2px solid #cfdadd;border-radius:18px;background:#fff;padding:16px;text-align:center}.w4-state h3{margin:0 0 8px}.w4-state .emoji{font-size:56px}.w4-arrow{font-size:44px}
+.w4-nav{display:grid;grid-template-columns:auto auto 1fr;gap:10px;align-items:center;margin-top:auto;padding-top:4px}
+.w4-nav-right{display:flex;justify-content:flex-end}.w4-nav-btn{min-height:42px;border:2px solid #355d72;border-radius:13px;padding:7px 12px;background:#fff;font:900 13px Arial;cursor:pointer}.w4-nav-btn.primary{background:#2d617f;color:#fff}.w4-step{font:900 13px Arial;color:#64737a}
+.w4-sheet{background:#fff;border:2px solid #cfd7db;border-radius:14px;padding:6mm;aspect-ratio:210/297;max-width:720px;margin:auto;display:flex;flex-direction:column;gap:8px}
+.w4-sheet h2{font-size:29px;margin:0}.w4-sheet .name{font-size:14px}.w4-sheet-box{border:2px dashed #bfcbd0;border-radius:14px;min-height:95px;padding:8px;position:relative}.w4-sheet-box small{position:absolute;right:7px;bottom:5px;color:#8c989e}
+.w4-sheet-grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;flex:1}
+.w4-vocab{display:grid;grid-template-columns:.8fr 1.2fr;gap:14px;align-items:stretch;flex:1}
+.w4-vocab-visual{border:2px solid #d7e0dc;border-radius:20px;background:#fff;display:grid;place-items:center;font-size:120px}
+.w4-vocab-info{border:2px solid #d7e0dc;border-radius:20px;background:#fff;padding:16px;display:flex;flex-direction:column;gap:9px;justify-content:center}
+.w4-vocab-word{font-size:clamp(48px,6vw,78px);margin:0}.w4-syll{background:#fff6db;border:2px solid #efd472;border-radius:14px;padding:8px 12px;font-size:26px}.w4-meaning,.w4-example{border:2px solid #dce4e1;border-radius:14px;padding:9px 11px;font-size:20px;line-height:1.25}
+@media(max-width:850px){
+ .w4-grid2,.w4-vocab{grid-template-columns:1fr}.w4-strategy{grid-template-columns:repeat(2,1fr)}.w4-strategy span:last-child{grid-column:1/-1}
+ .w4-sequence,.w4-habits{grid-template-columns:repeat(2,1fr)}.w4-compare{grid-template-columns:1fr}.w4-beforeafter{grid-template-columns:1fr}.w4-arrow{transform:rotate(90deg);text-align:center}
+}
+@media(max-height:760px) and (orientation:landscape){
+ .focus-week4 .w4-new{padding:8px 12px!important;gap:6px}.w4-title{font-size:32px}.w4-instruction{font-size:17px;padding:5px 8px}
+ .w4-strategy span{min-height:48px;font-size:11px;padding:4px}.w4-strategy b{font-size:18px}.w4-card{padding:8px}.w4-card h3{font-size:20px}.w4-card p{font-size:13px}
+ .w4-big-emoji{font-size:48px}.w4-question{font-size:21px}.w4-option{min-height:52px;padding:7px;font-size:15px}.w4-feedback{font-size:15px;padding:6px;min-height:36px}
+ .w4-seq span{font-size:29px}.w4-seq b{font-size:14px}.w4-habit span{font-size:34px}.w4-habit b{font-size:14px}
+}
+</style>
 </head>
 <body>
 <!-- Versión preparada para GitHub Pages. -->
@@ -1265,7 +1325,7 @@ body.mentor-open{overflow:hidden!important}
 <button class="session-tab" data-session-jump="1" type="button">Sesión 1</button>
 <button class="session-tab" data-session-jump="2" type="button">Sesión 2</button>
 <button class="session-tab" data-session-jump="3" type="button">Sesión 3</button>
-<button class="session-tab" data-session-jump="4" type="button">Sesión 4</button><button class="session-tab" data-session-jump="5" type="button">Sesión 5</button><button class="session-tab" data-session-jump="6" type="button">Sesión 6</button><button class="session-tab" data-session-jump="7" type="button">Sesión 7</button><button class="session-tab" data-session-jump="8" type="button">Sesión 8</button><button class="session-tab" data-session-jump="9" type="button">Sesión 9</button></div>
+<button class="session-tab" data-session-jump="4" type="button">Sesión 4</button><button class="session-tab" data-session-jump="5" type="button">Sesión 5</button><button class="session-tab" data-session-jump="6" type="button">Sesión 6</button><button class="session-tab" data-session-jump="7" type="button">Sesión 7</button><button class="session-tab" data-session-jump="8" type="button">Sesión 8</button><button class="session-tab" data-session-jump="9" type="button">Sesión 9</button><button class="session-tab" data-session-jump="10" type="button">Sesión 10</button><button class="session-tab" data-session-jump="11" type="button">Sesión 11</button><button class="session-tab" data-session-jump="12" type="button">Sesión 12</button></div>
 <div class="progress" id="progress"></div><div class="week2-tasknav" id="week2TaskNav" aria-label="Actividades de la sesión"><button data-w2-task="drag" type="button">1 · ARRASTRA</button><button data-w2-task="match" type="button">2 · UNE CON FLECHAS</button><button data-w2-task="order" type="button">3 · ORDENA</button><button class="print-nav" data-w2-task="print" type="button">FICHAS PARA IMPRIMIR</button></div>
 <div class="top-actions">
 <button class="btn soft" id="mentorBtn" type="button">📖 Texto mentor</button>
@@ -1275,13 +1335,14 @@ body.mentor-open{overflow:hidden!important}
 </div>
 <section class="screen active" data-session="0" data-title="Inicio general">
 <div class="panel">
-<span class="home-tag">SA 1 · MI CUERPO FLORECE · SESIONES 1–9</span>
+<span class="home-tag">SA 1 · MI CUERPO FLORECE · SESIONES 1–12</span>
 <h1 class="home-main-title schoolfont">Mi cuerpo florece</h1>
-<div class="home-sub schoolfont">Tres semanas para conocernos, observar nuestro cuerpo, usar los sentidos y empezar a comparar y clasificar seres vivos.</div>
+<div class="home-sub schoolfont">Cuatro semanas para conocernos, observar nuestro cuerpo, usar los sentidos, comparar seres vivos y descubrir qué necesitamos para vivir y cuidarnos.</div>
 <div class="home-week-picker" role="tablist" aria-label="Elegir semana">
   <button class="home-week-btn" data-home-week-btn="1" type="button"><b>SEMANA 1</b><span>Yo y mi cuerpo</span></button>
   <button class="home-week-btn" data-home-week-btn="2" type="button"><b>SEMANA 2</b><span>Los sentidos</span></button>
-  <button class="home-week-btn active" data-home-week-btn="3" type="button"><b>SEMANA 3</b><span>Seres vivos</span></button>
+  <button class="home-week-btn" data-home-week-btn="3" type="button"><b>SEMANA 3</b><span>Seres vivos</span></button>
+  <button class="home-week-btn active" data-home-week-btn="4" type="button"><b>SEMANA 4</b><span>Necesidades y cuidado</span></button>
 </div>
 <div class="home-grid home-week-grid" data-home-week="1">
 <div class="home-card"><span class="tag">SESIÓN 1</span><h3 class="schoolfont">Todo sobre mí</h3><p>Partimos del libro mentor para hablar de quiénes somos, qué puede contar algo sobre nosotros y cómo usamos <b>VEO · PIENSO · ME PREGUNTO</b>.</p><div class="mini">Evidencia: ficha “Así soy yo”</div><button class="btn primary" data-home-open="1" type="button">Abrir sesión 1 ▶</button><button class="btn vocab-home-btn" data-open-vocab="1" type="button">📚 Vocabulario · FAMILIA</button></div>
@@ -1303,9 +1364,17 @@ body.mentor-open{overflow:hidden!important}
 <div class="week-banner week2" style="background:#eef8ff;border-color:#a9d8ed"><span>SEMANA 3</span><b class="schoolfont">Observo, comparo y clasifico seres vivos</b><small>Sesiones 7, 8 y 9 · Texto mentor: 2, 4, 6, 8 patas</small></div>
 <button class="btn primary materials-home-btn" data-open-materials="week3" type="button">FICHAS PARA IMPRIMIR · SEMANA 3</button>
 
+<div class="home-grid home-week-grid active" data-home-week="4">
+  <div class="home-card w3-home-card"><span class="tag w3-tag">SESIÓN 10</span><h3 class="schoolfont">¿Quién tiene hambre?</h3><p>Leemos el texto mentor, buscamos pistas en texto e imágenes y descubrimos una necesidad común: <b>alimentarse</b>.</p><div class="mini"><b>Comprensión:</b> leo/escucho · miro · busco pistas · pienso · vuelvo a leer<br>Evidencia: respuesta justificada + ficha</div><button class="btn primary" data-home-open="10" type="button">Abrir sesión 10 ▶</button><button class="btn vocab-home-btn" data-open-vocab="10" type="button">📚 Vocabulario · ALIMENTO</button></div>
+  <div class="home-card w3-home-card"><span class="tag w3-tag">SESIÓN 11</span><h3 class="schoolfont">¿Qué necesitan?</h3><p>Comparamos necesidades de <b>plantas y personas</b>: primero pensamos, luego observamos, después comprobamos y al final explicamos.</p><div class="mini">Evidencia: predicción + comparación + conclusión</div><button class="btn primary" data-home-open="11" type="button">Abrir sesión 11 ▶</button><button class="btn vocab-home-btn" data-open-vocab="11" type="button">📚 Vocabulario · AGUA</button></div>
+  <div class="home-card w3-home-card"><span class="tag w3-tag">SESIÓN 12</span><h3 class="schoolfont">Así me cuido</h3><p>Ordenamos y explicamos hábitos de <b>alimentación, higiene, descanso y movimiento</b> usando primero, luego, después y al final.</p><div class="mini">Evidencia: secuencia oral + observación antes/después + conclusión</div><button class="btn primary" data-home-open="12" type="button">Abrir sesión 12 ▶</button><button class="btn vocab-home-btn" data-open-vocab="12" type="button">📚 Vocabulario · CUIDADO</button></div>
+</div>
+<div class="week-banner week2" style="background:#f3f8ee;border-color:#bfd7b7"><span>SEMANA 4</span><b class="schoolfont">¿Qué necesitamos para vivir y cuidarnos?</b><small>Sesiones 10, 11 y 12 · Texto mentor: ¿Quién tiene hambre?</small></div>
+
+
 
 <div class="home-week-quick">
-  <button class="btn home-quick-materials" id="homeAllResources" type="button">🖨 FICHAS Y RÚBRICAS · SEMANAS 1–3</button>
+  <button class="btn home-quick-materials" id="homeAllResources" type="button">🖨 FICHAS Y RÚBRICAS · SEMANAS 1–4</button>
 </div><div class="home-eval">
 <h2 style="margin:0">Evaluación · Semana 1 (sesiones 1–3)</h2>
 <div class="workflow"><span>1 · Durante las sesiones: observar</span><span>2 · Guardar las 3 fichas</span><span>3 · Al terminar: analizar todas las evidencias</span><span>4 · Completar la rúbrica global</span></div>
@@ -2815,6 +2884,234 @@ body.mentor-open{overflow:hidden!important}
 <div class="main-return"><button class="btn" data-go-home="" type="button">◀ Volver al inicio</button><button class="btn" id="resetGlobalRubric123" type="button">↻ Borrar puntuación</button><button class="btn primary" id="printGlobalRubric123" type="button">🖨️ Imprimir A4 apaisado</button></div>
 </div>
 </section></div>
+
+<section class="screen" data-session="10" data-title="¿Quién tiene hambre?">
+  <div class="panel w4-new">
+    <div class="w4-kicker">SESIÓN 10 · TEXTO MENTOR Y COMPRENSIÓN</div>
+    <h1 class="w4-title schoolfont">¿Quién tiene hambre?</h1>
+    <div class="w4-instruction schoolfont">LEO O ESCUCHO · MIRO · BUSCO PISTAS · PIENSO · VUELVO A LEER</div>
+    <div class="w4-strategy">
+      <span><b>📖</b>LEO / ESCUCHO</span><span><b>👀</b>MIRO EL DIBUJO</span><span><b>🔎</b>BUSCO PISTAS</span><span><b>💭</b>PIENSO</span><span><b>↩️</b>VUELVO A LEER</span>
+    </div>
+    <div class="w4-book-callout">
+      <div><h3 class="schoolfont">Abrimos el libro</h3><p>Lee la maestra y deja pequeñas frases o palabras para que los niños intenten leer. Paramos para preguntar qué entienden y qué pista les ayuda.</p></div>
+      <button class="w4-open-book" data-open-mentor type="button">📖 ABRIR ¿QUIÉN TIENE HAMBRE?</button>
+    </div>
+    <div class="teacherbox"><b>Programación oficial:</b> lectura sobre alimentación y necesidades. Diferencia lectura docente de lectura autónoma ajustada. Pregunta siempre: “¿Cómo lo sabes: lo dice el texto, lo ves en la imagen o lo has deducido?”.</div>
+    <div class="w4-nav"><button class="w4-nav-btn secondary" data-go-home type="button">← SALIR</button><div class="w4-step"><b>1</b> / 5</div><div class="w4-nav-right"><button class="w4-nav-btn primary next" type="button">CONTINUAR →</button></div></div>
+  </div>
+</section>
+
+<section class="screen" data-session="10" data-title="Comprendo lo que leo">
+  <div class="panel w4-new">
+    <div class="w4-kicker">SESIÓN 10 · COMPRENSIÓN</div>
+    <h1 class="w4-title schoolfont">¿Qué he entendido?</h1>
+    <div class="w4-grid2">
+      <div class="w4-card"><div class="w4-big-emoji">🐇🥕</div><div class="w4-question schoolfont">El conejo tiene hambre. ¿Qué necesita?</div></div>
+      <div class="w4-card">
+        <div class="w4-options" id="s10Q1">
+          <button class="w4-option" data-w4-correct="1">ALIMENTO</button>
+          <button class="w4-option" data-w4-correct="0">UN JUGUETE</button>
+          <button class="w4-option" data-w4-correct="0">UN SOMBRERO</button>
+          <button class="w4-option" data-w4-correct="0">UNA CAMA PARA VOLAR</button>
+        </div>
+        <div class="w4-feedback schoolfont" id="s10Feedback">Toca una respuesta y explica qué pista has usado.</div>
+      </div>
+    </div>
+    <div class="teacherbox"><b>Comprensión auténtica.</b> No basta con acertar. Pide la evidencia: “Lo sé porque el texto dice…” o “Lo sé porque en la imagen veo…”. Si aparece una palabra desconocida, modela la estrategia de cinco pasos de la pantalla anterior.</div>
+    <div class="w4-nav"><button class="w4-nav-btn secondary prev" type="button">← ANTERIOR</button><div class="w4-step"><b>2</b> / 5</div><div class="w4-nav-right"><button class="w4-nav-btn primary next" type="button">CONTINUAR →</button></div></div>
+  </div>
+</section>
+
+<section class="screen" data-session="10" data-title="Animales y alimentos">
+  <div class="panel w4-new">
+    <div class="w4-kicker">SESIÓN 10 · BUSCAMOS INFORMACIÓN</div>
+    <h1 class="w4-title schoolfont">¿Qué come cada animal?</h1>
+    <div class="w4-instruction schoolfont">VUELVE AL LIBRO CUANDO NECESITES COMPROBAR</div>
+    <div class="w4-grid2">
+      <div class="w4-card">
+        <div class="w4-sequence">
+          <div class="w4-seq"><strong>ARAÑA</strong><span>🕷️</span><b>insecto</b></div>
+          <div class="w4-seq"><strong>PÁJARO</strong><span>🐦</span><b>gusano</b></div>
+          <div class="w4-seq"><strong>CONEJO</strong><span>🐇</span><b>plantas</b></div>
+          <div class="w4-seq"><strong>OSO</strong><span>🐻</span><b>pez</b></div>
+        </div>
+      </div>
+      <div class="w4-card">
+        <h3 class="schoolfont">¿Qué tienen en común?</h3>
+        <div class="w4-question schoolfont">Todos necesitan <b>ALIMENTO</b> para vivir.</div>
+        <button class="w4-open-book" data-open-mentor type="button">🔎 COMPROBAR EN EL LIBRO</button>
+      </div>
+    </div>
+    <div class="teacherbox">El libro también muestra rana, culebra, león y caballo. No es necesario memorizar dietas: el objetivo es extraer la idea común de <b>necesidad de alimentación</b>.</div>
+    <div class="w4-nav"><button class="w4-nav-btn secondary prev" type="button">← ANTERIOR</button><div class="w4-step"><b>3</b> / 5</div><div class="w4-nav-right"><button class="w4-nav-btn primary next" type="button">A LA FICHA →</button></div></div>
+  </div>
+</section>
+
+<section class="screen" data-session="10" data-title="Ficha para imprimir · sesión 10">
+  <div class="panel w4-new">
+    <div class="w4-kicker">SESIÓN 10 · EVIDENCIA</div><h1 class="w4-title schoolfont">Leo, miro y comprendo</h1>
+    <div class="w4-sheet" id="w4Sheet10">
+      <h2 class="schoolfont">¿Quién tiene hambre?</h2><div class="name">Nombre: ______________________________</div>
+      <p>1. Dibuja un animal del libro y el alimento que come.</p><div class="w4-sheet-grid2"><div class="w4-sheet-box"><b>ANIMAL</b><small>DIBUJO</small></div><div class="w4-sheet-box"><b>ALIMENTO</b><small>DIBUJO</small></div></div>
+      <p>2. ¿Qué pista te ayudó a entender?</p><div class="w4-sheet-grid2"><div class="w4-sheet-box"><b>EL TEXTO</b><small>DIBUJO / MARCA</small></div><div class="w4-sheet-box"><b>LA IMAGEN</b><small>DIBUJO / MARCA</small></div></div>
+      <div class="w4-sheet-box"><b>He descubierto que los animales necesitan…</b></div>
+    </div>
+    <div class="w4-nav"><button class="w4-nav-btn secondary prev" type="button">← ANTERIOR</button><div class="w4-step"><b>4</b> / 5</div><div class="w4-nav-right"><button class="w4-nav-btn" data-print-w4="10" type="button">🖨 IMPRIMIR</button><button class="w4-nav-btn primary next" type="button">VOCABULARIO →</button></div></div>
+  </div>
+</section>
+
+<section class="screen" data-session="10" data-title="Vocabulario · sesión 10">
+  <div class="panel w4-new">
+    <div class="w4-kicker">SESIÓN 10 · PALABRA DE HOY</div>
+    <div class="w4-vocab"><div class="w4-vocab-visual">🍎</div><div class="w4-vocab-info">
+      <h1 class="w4-vocab-word schoolfont">ALIMENTO</h1><div class="w4-syll schoolfont">A · LI · MEN · TO</div>
+      <div class="w4-meaning schoolfont">Un alimento es algo que un ser vivo come para obtener lo que necesita.</div>
+      <div class="w4-example schoolfont">“El conejo come un alimento.”</div>
+      <div class="w4-question schoolfont">¿Qué alimento aparece en el libro?</div>
+    </div></div>
+    <div class="w4-nav"><button class="w4-nav-btn secondary prev" type="button">← ANTERIOR</button><div class="w4-step"><b>5</b> / 5</div><div class="w4-nav-right"><button class="w4-nav-btn primary" data-go-home type="button">TERMINAR ✓</button></div></div>
+  </div>
+</section>
+
+<section class="screen" data-session="11" data-title="¿Qué necesitan plantas y personas?">
+  <div class="panel w4-new">
+    <div class="w4-kicker">SESIÓN 11 · PREDICE Y COMPARA</div>
+    <h1 class="w4-title schoolfont">¿Qué necesitan?</h1>
+    <div class="w4-instruction schoolfont">PRIMERO PENSAMOS · LUEGO OBSERVAMOS · DESPUÉS COMPROBAMOS · AL FINAL EXPLICAMOS</div>
+    <div class="w4-predict" id="s11Predict">
+      <button data-msg="Creo que plantas y personas necesitan algunas cosas iguales.">🌱 + 🧒<br>ALGUNAS COSAS IGUALES</button>
+      <button data-msg="Creo que necesitan exactamente lo mismo.">🌱 = 🧒<br>TODO IGUAL</button>
+      <button data-msg="Creo que no necesitan nada en común.">🌱 ≠ 🧒<br>NADA IGUAL</button>
+    </div>
+    <div class="w4-feedback schoolfont" id="s11PredictFeedback">Elige tu predicción. Todavía no buscamos la respuesta.</div>
+    <button class="w4-open-book" data-open-mentor type="button">📖 VOLVER AL TEXTO MENTOR</button>
+    <div class="teacherbox">La programación prevé comparar necesidades de plantas y personas, preferentemente vinculándolo al huerto. Conserva la predicción para contrastarla al final.</div>
+    <div class="w4-nav"><button class="w4-nav-btn secondary" data-go-home type="button">← SALIR</button><div class="w4-step"><b>1</b> / 5</div><div class="w4-nav-right"><button class="w4-nav-btn primary next" type="button">CONTINUAR →</button></div></div>
+  </div>
+</section>
+
+<section class="screen" data-session="11" data-title="Primero luego después al final">
+  <div class="panel w4-new">
+    <div class="w4-kicker">SESIÓN 11 · SECUENCIA DE INVESTIGACIÓN</div><h1 class="w4-title schoolfont">Investigamos en orden</h1>
+    <div class="w4-sequence">
+      <div class="w4-seq"><strong>PRIMERO</strong><span>💭</span><b>hacemos una predicción</b></div>
+      <div class="w4-seq"><strong>LUEGO</strong><span>👀</span><b>observamos</b></div>
+      <div class="w4-seq"><strong>DESPUÉS</strong><span>🔎</span><b>buscamos pruebas</b></div>
+      <div class="w4-seq"><strong>AL FINAL</strong><span>🗣️</span><b>explicamos</b></div>
+    </div>
+    <div class="w4-question schoolfont">Cuenta la secuencia usando las cuatro palabras.</div>
+    <div class="teacherbox">Conecta explícitamente con Lengua. Primero modela tú una secuencia completa; después deja que varios niños la reconstruyan oralmente señalando las tarjetas.</div>
+    <div class="w4-nav"><button class="w4-nav-btn secondary prev" type="button">← ANTERIOR</button><div class="w4-step"><b>2</b> / 5</div><div class="w4-nav-right"><button class="w4-nav-btn primary next" type="button">COMPARAMOS →</button></div></div>
+  </div>
+</section>
+
+<section class="screen" data-session="11" data-title="Comparamos necesidades">
+  <div class="panel w4-new">
+    <div class="w4-kicker">SESIÓN 11 · COMPARA Y EXPLICA</div><h1 class="w4-title schoolfont">Planta · los dos · persona</h1>
+    <div class="w4-compare">
+      <div class="w4-compare-col"><div class="w4-big-emoji">🌱</div><h3>PLANTA</h3><div class="w4-chiprow"><span class="w4-chip">luz</span><span class="w4-chip">espacio para crecer</span></div></div>
+      <div class="w4-compare-col"><h3>LOS DOS</h3><div class="w4-chiprow"><span class="w4-chip common">agua</span><span class="w4-chip common">aire</span><span class="w4-chip common">cuidados</span></div></div>
+      <div class="w4-compare-col"><div class="w4-big-emoji">🧒</div><h3>PERSONA</h3><div class="w4-chiprow"><span class="w4-chip">alimentos</span><span class="w4-chip">descanso</span><span class="w4-chip">movimiento</span></div></div>
+    </div>
+    <div class="w4-question schoolfont">Son seres vivos y tienen necesidades. <b>No todas son exactamente iguales.</b></div>
+    <div class="teacherbox">Usa solo aspectos que el grupo pueda observar, comprobar o comprender. La tabla es un apoyo para conversar, no una lista que deban memorizar.</div>
+    <div class="w4-nav"><button class="w4-nav-btn secondary prev" type="button">← ANTERIOR</button><div class="w4-step"><b>3</b> / 5</div><div class="w4-nav-right"><button class="w4-nav-btn primary next" type="button">A LA FICHA →</button></div></div>
+  </div>
+</section>
+
+<section class="screen" data-session="11" data-title="Ficha para imprimir · sesión 11">
+  <div class="panel w4-new"><div class="w4-kicker">SESIÓN 11 · EVIDENCIA</div><h1 class="w4-title schoolfont">Primero pienso, después compruebo</h1>
+    <div class="w4-sheet" id="w4Sheet11">
+      <h2 class="schoolfont">¿Qué necesitan?</h2><div class="name">Nombre: ______________________________</div>
+      <p><b>PRIMERO:</b> dibuja lo que creías que necesitaba una planta.</p><div class="w4-sheet-box"><small>PREDICCIÓN</small></div>
+      <p><b>DESPUÉS:</b> dibuja algo que comprobaste.</p><div class="w4-sheet-box"><small>OBSERVACIÓN</small></div>
+      <div class="w4-sheet-grid2"><div class="w4-sheet-box"><b>PLANTA</b><small>NECESITA…</small></div><div class="w4-sheet-box"><b>PERSONA</b><small>NECESITA…</small></div></div>
+      <div class="w4-sheet-box"><b>AL FINAL he descubierto que…</b></div>
+    </div>
+    <div class="w4-nav"><button class="w4-nav-btn secondary prev" type="button">← ANTERIOR</button><div class="w4-step"><b>4</b> / 5</div><div class="w4-nav-right"><button class="w4-nav-btn" data-print-w4="11" type="button">🖨 IMPRIMIR</button><button class="w4-nav-btn primary next" type="button">VOCABULARIO →</button></div></div>
+  </div>
+</section>
+
+<section class="screen" data-session="11" data-title="Vocabulario · sesión 11">
+  <div class="panel w4-new"><div class="w4-kicker">SESIÓN 11 · PALABRA DE HOY</div>
+    <div class="w4-vocab"><div class="w4-vocab-visual">💧</div><div class="w4-vocab-info">
+      <h1 class="w4-vocab-word schoolfont">AGUA</h1><div class="w4-syll schoolfont">A · GUA</div>
+      <div class="w4-meaning schoolfont">El agua es una necesidad de muchos seres vivos.</div><div class="w4-example schoolfont">“La planta necesita agua.”</div>
+      <div class="w4-question schoolfont">¿Quién necesita agua: la planta, la persona o los dos?</div>
+    </div></div>
+    <div class="w4-nav"><button class="w4-nav-btn secondary prev" type="button">← ANTERIOR</button><div class="w4-step"><b>5</b> / 5</div><div class="w4-nav-right"><button class="w4-nav-btn primary" data-go-home type="button">TERMINAR ✓</button></div></div>
+  </div>
+</section>
+
+<section class="screen" data-session="12" data-title="Así me cuido">
+  <div class="panel w4-new">
+    <div class="w4-kicker">SESIÓN 12 · CUIDADO Y HÁBITOS</div><h1 class="w4-title schoolfont">¿Qué hacemos para cuidarnos?</h1>
+    <div class="w4-habits"><div class="w4-habit"><span>🥗</span><b>ALIMENTACIÓN</b></div><div class="w4-habit"><span>🧼</span><b>HIGIENE</b></div><div class="w4-habit"><span>😴</span><b>DESCANSO</b></div><div class="w4-habit"><span>🏃</span><b>MOVIMIENTO</b></div></div>
+    <div class="w4-question schoolfont">Los hábitos de cuidado ayudan a nuestro bienestar.</div>
+    <button class="w4-open-book" data-open-mentor type="button">📖 RECORDAR EL TEXTO MENTOR</button>
+    <div class="teacherbox">La programación pide ordenar hábitos de higiene, descanso, movimiento y alimentación, reconocer cómo nos sentimos y explicar qué nos ayuda a cuidarnos.</div>
+    <div class="w4-nav"><button class="w4-nav-btn secondary" data-go-home type="button">← SALIR</button><div class="w4-step"><b>1</b> / 6</div><div class="w4-nav-right"><button class="w4-nav-btn primary next" type="button">CONTINUAR →</button></div></div>
+  </div>
+</section>
+
+<section class="screen" data-session="12" data-title="Ordeno una rutina de cuidado">
+  <div class="panel w4-new"><div class="w4-kicker">SESIÓN 12 · SECUENCIA</div><h1 class="w4-title schoolfont">Cuéntalo en orden</h1>
+    <div class="w4-sequence">
+      <div class="w4-seq"><strong>PRIMERO</strong><span>🧼</span><b>me lavo las manos</b></div>
+      <div class="w4-seq"><strong>LUEGO</strong><span>🍽️</span><b>como</b></div>
+      <div class="w4-seq"><strong>DESPUÉS</strong><span>💧</span><b>bebo agua</b></div>
+      <div class="w4-seq"><strong>AL FINAL</strong><span>🪥</span><b>me limpio los dientes</b></div>
+    </div>
+    <div class="w4-question schoolfont">Señala y cuenta la secuencia sin saltarte ninguna palabra.</div>
+    <div class="teacherbox">La secuencia es un ejemplo para practicar lenguaje temporal. Puedes cambiarla oralmente por una rutina real del grupo. Lo importante es usar los cuatro conectores con sentido.</div>
+    <div class="w4-nav"><button class="w4-nav-btn secondary prev" type="button">← ANTERIOR</button><div class="w4-step"><b>2</b> / 6</div><div class="w4-nav-right"><button class="w4-nav-btn primary next" type="button">ANTES Y DESPUÉS →</button></div></div>
+  </div>
+</section>
+
+<section class="screen" data-session="12" data-title="Antes y después de movernos">
+  <div class="panel w4-new"><div class="w4-kicker">SESIÓN 12 · EXPERIENCIA GUIADA</div><h1 class="w4-title schoolfont">¿Cómo me siento?</h1>
+    <div class="w4-beforeafter"><div class="w4-state"><h3>ANTES</h3><div class="emoji">🙂</div><p>Observamos respiración, calor y cómo nos sentimos.</p></div><div class="w4-arrow">→</div><div class="w4-state"><h3>DESPUÉS</h3><div class="emoji">😅</div><p>Tras una actividad suave, volvemos a observar.</p></div></div>
+    <div class="w4-question schoolfont">¿Qué ha cambiado? ¿Qué me ayuda ahora a cuidarme?</div>
+    <div class="teacherbox">Actividad suave y breve. No compares capacidades entre niños ni establezcas una respuesta corporal “correcta”. Se observa el propio cambio y se verbalizan necesidades: parar, respirar, beber agua, descansar, etc.</div>
+    <div class="w4-nav"><button class="w4-nav-btn secondary prev" type="button">← ANTERIOR</button><div class="w4-step"><b>3</b> / 6</div><div class="w4-nav-right"><button class="w4-nav-btn primary next" type="button">COMPRENDO →</button></div></div>
+  </div>
+</section>
+
+<section class="screen" data-session="12" data-title="Leo y comprendo una instrucción">
+  <div class="panel w4-new"><div class="w4-kicker">SESIÓN 12 · COMPRENSIÓN LECTORA</div><h1 class="w4-title schoolfont">Leo una frase y busco pistas</h1>
+    <div class="w4-grid2">
+      <div class="w4-card"><div class="w4-question schoolfont">“Después de movernos, bebemos agua y descansamos.”</div><div class="w4-big-emoji">🏃 → 💧 → 😌</div></div>
+      <div class="w4-card"><h3 class="schoolfont">Preguntas</h3><p>¿Qué hacemos después de movernos?</p><p>¿Cuántas cosas hacemos?</p><p>¿Qué palabra nos indica cuándo ocurre?</p><p>Si no entiendo “descansamos”, ¿qué dibujo me da una pista?</p></div>
+    </div>
+    <div class="w4-strategy"><span><b>📖</b>LEO</span><span><b>👀</b>MIRO</span><span><b>🔎</b>BUSCO PISTAS</span><span><b>💭</b>PIENSO</span><span><b>↩️</b>VUELVO A LEER</span></div>
+    <div class="w4-nav"><button class="w4-nav-btn secondary prev" type="button">← ANTERIOR</button><div class="w4-step"><b>4</b> / 6</div><div class="w4-nav-right"><button class="w4-nav-btn primary next" type="button">A LA FICHA →</button></div></div>
+  </div>
+</section>
+
+<section class="screen" data-session="12" data-title="Ficha para imprimir · sesión 12">
+  <div class="panel w4-new"><div class="w4-kicker">SESIÓN 12 · EVIDENCIA</div><h1 class="w4-title schoolfont">Así me cuido</h1>
+    <div class="w4-sheet" id="w4Sheet12">
+      <h2 class="schoolfont">Así me cuido</h2><div class="name">Nombre: ______________________________</div>
+      <p>Ordena con dibujos una rutina de cuidado.</p>
+      <div class="w4-sheet-grid2"><div class="w4-sheet-box"><b>PRIMERO</b><small>DIBUJO</small></div><div class="w4-sheet-box"><b>LUEGO</b><small>DIBUJO</small></div><div class="w4-sheet-box"><b>DESPUÉS</b><small>DIBUJO</small></div><div class="w4-sheet-box"><b>AL FINAL</b><small>DIBUJO</small></div></div>
+      <div class="w4-sheet-box"><b>Para cuidarme necesito…</b></div>
+    </div>
+    <div class="w4-nav"><button class="w4-nav-btn secondary prev" type="button">← ANTERIOR</button><div class="w4-step"><b>5</b> / 6</div><div class="w4-nav-right"><button class="w4-nav-btn" data-print-w4="12" type="button">🖨 IMPRIMIR</button><button class="w4-nav-btn primary next" type="button">VOCABULARIO →</button></div></div>
+  </div>
+</section>
+
+<section class="screen" data-session="12" data-title="Vocabulario · sesión 12">
+  <div class="panel w4-new"><div class="w4-kicker">SESIÓN 12 · PALABRA DE HOY</div>
+    <div class="w4-vocab"><div class="w4-vocab-visual">🤲</div><div class="w4-vocab-info">
+      <h1 class="w4-vocab-word schoolfont">CUIDADO</h1><div class="w4-syll schoolfont">CUI · DA · DO</div>
+      <div class="w4-meaning schoolfont">Un cuidado es una acción que ayuda a estar bien y atender una necesidad.</div><div class="w4-example schoolfont">“Descansar es un cuidado de mi cuerpo.”</div>
+      <div class="w4-question schoolfont">Dime un cuidado que haces cada día.</div>
+    </div></div>
+    <div class="w4-nav"><button class="w4-nav-btn secondary prev" type="button">← ANTERIOR</button><div class="w4-step"><b>6</b> / 6</div><div class="w4-nav-right"><button class="w4-nav-btn primary" data-go-home type="button">TERMINAR SEMANA 4 ✓</button></div></div>
+  </div>
+</section>
+
 <div class="vocab-editor" id="vocabEditor" aria-hidden="true">
   <div class="vocab-editor-toolbar">
     <button type="button" id="vocabEditorClose">← CERRAR Y GUARDAR</button>
@@ -2999,12 +3296,32 @@ const mentorBookCatalog={
       {page:18,label:'¿Ves patas aquí?'},
       {page:19,label:'Resumen final'}
     ]
+  },
+  hambre:{
+    title:'¿Quién tiene hambre?',
+    file:'1RouGLbjVSyNqfeMxpRS_y_XsISObvQWW',
+    week:'SEMANA 4 · NECESIDADES Y CUIDADO',
+    pages:16,
+    cover:1,
+    summary:16,
+    summaryLabel:'FINAL',
+    externalOnly:true,
+    keys:[
+      {page:1,label:'Portada'},
+      {page:2,label:'Araña · tiene hambre'},
+      {page:4,label:'Rana · tiene hambre'},
+      {page:6,label:'Pájaro · tiene hambre'},
+      {page:8,label:'Conejo · tiene hambre'},
+      {page:12,label:'Oso · tiene hambre'},
+      {page:16,label:'Caballo · final'}
+    ]
   }
 };
 const mentorBooks={
   '1':'todo','2':'todo','3':'todo',
   '4':'sentidos','5':'sentidos','6':'sentidos',
-  '7':'patas','8':'patas','9':'patas'
+  '7':'patas','8':'patas','9':'patas',
+  '10':'hambre','11':'hambre','12':'hambre'
 };
 const mentorState={book:null,page:1,view:2,busy:false};
 
@@ -3130,11 +3447,16 @@ function openMentor(){
   const preview='https://drive.google.com/file/d/'+book.file+'/preview';
   mentorOpenDrive.href=view;mentorFallbackLink.href=view;
   if(mentorFallbackFrame)mentorFallbackFrame.src=preview;
-  mentorReaderFallback.hidden=true;
-  mentorBookShell?.classList.remove('fallback-mode');
-  mentorBookControls?.classList.remove('fallback-mode');
+  mentorReaderFallback.hidden=!book.externalOnly;
+  mentorBookShell?.classList.toggle('fallback-mode',!!book.externalOnly);
+  mentorBookControls?.classList.toggle('fallback-mode',!!book.externalOnly);
   populateMentorControls(book);
-  renderMentorBook();
+  if(book.externalOnly){
+    const prev=document.getElementById('mentorBookPrev'),next=document.getElementById('mentorBookNext');
+    if(prev)prev.disabled=true;if(next)next.disabled=true;
+  }else{
+    renderMentorBook();
+  }
   mentorOverlay.classList.add('open');mentorOverlay.setAttribute('aria-hidden','false');document.body.classList.add('mentor-open');
 }
 function closeMentor(){
@@ -3179,7 +3501,7 @@ function fitActiveScreen(){
   const panel=screen.querySelector(':scope > .panel');
   if(!panel)return;
   panel.style.zoom='1';
-  if(panel.classList.contains('w3-new')||panel.classList.contains('w3-materials-new')||panel.classList.contains('resources-hub-panel')||screen.dataset.title==='Inicio general')return;
+  if(panel.classList.contains('w3-new')||panel.classList.contains('w4-new')||panel.classList.contains('w3-materials-new')||panel.classList.contains('resources-hub-panel')||screen.dataset.title==='Inicio general')return;
   requestAnimationFrame(()=>{
     const ah=Math.max(1,screen.clientHeight-2);
     const aw=Math.max(1,screen.clientWidth-2);
@@ -3195,8 +3517,8 @@ const screens=[...root.querySelectorAll('.screen')]; let current=0; let teacher=
 const brand=document.getElementById('brand');
 const sessionTabs=[...root.querySelectorAll('.session-tab')];
 const progress=document.getElementById('progress');
-function drawProgress(){progress.innerHTML='';const session=screens[current].dataset.session;const ss=screens.filter(x=>x.dataset.session===session);const active=ss.indexOf(screens[current]);if(session!=='0'){ss.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(i===active?' on':'');progress.appendChild(d);});}sessionTabs.forEach(t=>t.classList.toggle('active',t.dataset.sessionJump===session));brand.textContent=session==='0'?'🌱 Mi cuerpo florece · Inicio':(['7','8','9'].includes(session)?'🌱 Mi cuerpo florece · Sesión '+session+' · Semana 3':'🌱 Mi cuerpo florece · Sesión '+session);const vb=document.getElementById('vocabBtn');if(vb)vb.style.display=session==='0'?'none':'inline-flex';const mb=document.getElementById('mentorBtn');if(mb)mb.style.display=session==='0'?'none':'inline-flex';}
-function show(i){current=Math.max(0,Math.min(screens.length-1,i));screens.forEach((s,j)=>s.classList.toggle('active',j===current));const ses=screens[current]?.dataset.session||'0';root.classList.toggle('focus-week3',['7','8','9'].includes(ses));drawProgress();updateWeek2TaskNav();requestAnimationFrame(fitActiveScreen)}
+function drawProgress(){progress.innerHTML='';const session=screens[current].dataset.session;const ss=screens.filter(x=>x.dataset.session===session);const active=ss.indexOf(screens[current]);if(session!=='0'){ss.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(i===active?' on':'');progress.appendChild(d);});}sessionTabs.forEach(t=>t.classList.toggle('active',t.dataset.sessionJump===session));brand.textContent=session==='0'?'🌱 Mi cuerpo florece · Inicio':(['10','11','12'].includes(session)?'🌱 Mi cuerpo florece · Sesión '+session+' · Semana 4':(['7','8','9'].includes(session)?'🌱 Mi cuerpo florece · Sesión '+session+' · Semana 3':'🌱 Mi cuerpo florece · Sesión '+session));const vb=document.getElementById('vocabBtn');if(vb)vb.style.display=session==='0'?'none':'inline-flex';const mb=document.getElementById('mentorBtn');if(mb)mb.style.display=session==='0'?'none':'inline-flex';}
+function show(i){current=Math.max(0,Math.min(screens.length-1,i));screens.forEach((s,j)=>s.classList.toggle('active',j===current));const ses=screens[current]?.dataset.session||'0';root.classList.toggle('focus-week3',['7','8','9'].includes(ses));root.classList.toggle('focus-week4',['10','11','12'].includes(ses));drawProgress();updateWeek2TaskNav();requestAnimationFrame(fitActiveScreen)}
 
 // ===== Navegación directa Semana 2 =====
 const week2TaskNav=document.getElementById('week2TaskNav');
@@ -3680,7 +4002,7 @@ root.querySelectorAll('[data-print-rubric]').forEach(b=>b.addEventListener('clic
   const map={rubric:'globalRubric123',rubric2:'globalRubric456',rubric3:'w3Rubric79'};
   const el=document.getElementById(map[b.dataset.printRubric]);if(el)printTarget(el);
 }));
-setHomeWeek(3);
+setHomeWeek(4);
 
 const w3SheetOriginal={};
 ['7','8','9'].forEach(n=>{const s=document.getElementById('w3Sheet'+n);if(s)w3SheetOriginal[n]=s.innerHTML;});
@@ -3709,9 +4031,26 @@ function openW3Sheet(n,edit=false){
 root.querySelectorAll('[data-edit-w3-sheet]').forEach(b=>b.addEventListener('click',()=>openW3Sheet(b.dataset.editW3Sheet,true)));
 root.querySelectorAll('[data-direct-print-w3]').forEach(b=>b.addEventListener('click',()=>{const s=document.getElementById('w3Sheet'+b.dataset.directPrintW3);if(s)printTarget(s);}));
 
+
+
+// ===== SEMANA 4 · COMPRENSIÓN, NECESIDADES Y CUIDADO =====
+root.querySelectorAll('#s10Q1 .w4-option').forEach(btn=>btn.addEventListener('click',()=>{
+  root.querySelectorAll('#s10Q1 .w4-option').forEach(x=>x.classList.remove('good','bad'));
+  const ok=btn.dataset.w4Correct==='1';btn.classList.add(ok?'good':'bad');
+  const fb=document.getElementById('s10Feedback');
+  if(fb)fb.textContent=ok?'✓ Sí. Ahora explica qué pista del texto o de la imagen te ayudó.':'Mira otra vez. ¿Qué necesita un ser vivo cuando tiene hambre?';
+}));
+root.querySelectorAll('#s11Predict button').forEach(btn=>btn.addEventListener('click',()=>{
+  root.querySelectorAll('#s11Predict button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');
+  const fb=document.getElementById('s11PredictFeedback');if(fb)fb.textContent=btn.dataset.msg+' Después lo comprobaremos.';
+}));
+root.querySelectorAll('[data-print-w4]').forEach(btn=>btn.addEventListener('click',()=>{
+  const el=document.getElementById('w4Sheet'+btn.dataset.printW4);if(el)printTarget(el);
+}));
+
 window.addEventListener('resize',()=>requestAnimationFrame(fitActiveScreen));
 root.querySelectorAll('img').forEach(img=>img.addEventListener('load',()=>{if(img.closest('.screen.active'))requestAnimationFrame(fitActiveScreen);}));
-root.classList.toggle('focus-week3',['7','8','9'].includes(screens[current]?.dataset.session||'0'));drawProgress();storyShow();mentor3Show();requestAnimationFrame(fitActiveScreen);
+root.classList.toggle('focus-week3',['7','8','9'].includes(screens[current]?.dataset.session||'0'));root.classList.toggle('focus-week4',['10','11','12'].includes(screens[current]?.dataset.session||'0'));drawProgress();storyShow();mentor3Show();requestAnimationFrame(fitActiveScreen);
 })();
 </script>
 
