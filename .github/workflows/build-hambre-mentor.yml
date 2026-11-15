@@ -1,0 +1,51 @@
+name: Build mentor reader - Quien tiene hambre
+
+on:
+  push:
+    paths:
+      - ".github/workflows/build-hambre-mentor.yml"
+      - "tools/build_hambre_mentor.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-pages:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install renderer
+        run: pip install --disable-pip-version-check gdown pypdfium2 pillow
+
+      - name: Generate 20 local mentor pages
+        run: python tools/build_hambre_mentor.py
+
+      - name: Verify generated pages
+        shell: bash
+        run: |
+          test "$(find assets/mentor/hambre -maxdepth 1 -name 'page-*.jpg' | wc -l)" -eq 20
+          ls -lh assets/mentor/hambre
+
+      - name: Commit generated pages
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/mentor/hambre/page-*.jpg
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Generar páginas locales de ¿Quién tiene hambre?"
+            git push origin HEAD:main
+          fi

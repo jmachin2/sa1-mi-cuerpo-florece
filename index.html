@@ -2893,7 +2893,7 @@ body.mentor-open{overflow:hidden!important}
     </div>
     <div class="w4-book-callout">
       <div><h3 class="schoolfont">Abrimos el libro</h3><p>Lee la maestra y deja pequeñas frases o palabras para que los niños intenten leer. Paramos para preguntar qué entienden y qué pista les ayuda.</p></div>
-      <button class="w4-open-book" data-open-mentor type="button">📖 ABRIR ¿QUIÉN TIENE HAMBRE?</button>
+      <button class="w4-open-book" data-open-mentor type="button">📖 ABRIR LIBRO · PASAR PÁGINAS</button>
     </div>
     <div class="teacherbox"><b>Programación oficial:</b> lectura sobre alimentación y necesidades. Diferencia lectura docente de lectura autónoma ajustada. Pregunta siempre: “¿Cómo lo sabes: lo dice el texto, lo ves en la imagen o lo has deducido?”.</div>
     <div class="w4-nav"><button class="w4-nav-btn secondary" data-go-home type="button">← SALIR</button><div class="w4-step"><b>1</b> / 5</div><div class="w4-nav-right"><button class="w4-nav-btn primary next" type="button">CONTINUAR →</button></div></div>
@@ -3302,19 +3302,23 @@ const mentorBookCatalog={
     title:'¿Quién tiene hambre?',
     file:'1RouGLbjVSyNqfeMxpRS_y_XsISObvQWW',
     week:'SEMANA 4 · NECESIDADES Y CUIDADO',
-    pages:16,
+    path:'assets/mentor/hambre',
+    pages:20,
     cover:1,
-    summary:16,
+    summary:20,
     summaryLabel:'FINAL',
-    externalOnly:true,
     keys:[
       {page:1,label:'Portada'},
-      {page:2,label:'Araña · tiene hambre'},
-      {page:4,label:'Rana · tiene hambre'},
-      {page:6,label:'Pájaro · tiene hambre'},
-      {page:8,label:'Conejo · tiene hambre'},
-      {page:12,label:'Oso · tiene hambre'},
-      {page:16,label:'Caballo · final'}
+      {page:3,label:'Portada interior'},
+      {page:4,label:'Araña · tiene hambre'},
+      {page:6,label:'Rana · tiene hambre'},
+      {page:8,label:'Pájaro · tiene hambre'},
+      {page:10,label:'Conejo · tiene hambre'},
+      {page:12,label:'Culebra · tiene hambre'},
+      {page:14,label:'Oso · tiene hambre'},
+      {page:16,label:'León · tiene hambre'},
+      {page:18,label:'Caballo · tiene hambre'},
+      {page:20,label:'Contraportada'}
     ]
   }
 };
@@ -3327,7 +3331,9 @@ const mentorBooks={
 const mentorState={book:null,page:1,view:2,busy:false};
 
 function mentorPageSrc(book,page){
-  return book.sprite || (book.path+'/page-'+String(page).padStart(2,'0')+'.jpg');
+  if(book.sprite)return book.sprite;
+  const src=book.path+'/page-'+String(page).padStart(2,'0')+'.jpg';
+  return book===mentorBookCatalog.hambre?src+'?v=20261115-hambre-reader':src;
 }
 function applyMentorPageImage(img,book,page){
   if(!img||!book||!page)return;
