@@ -1,0 +1,44 @@
+name: Build mentor reader - Cuenta abuelo cuenta
+
+on:
+  push:
+    paths:
+      - ".github/workflows/build-abuelo-mentor.yml"
+      - "tools/build_abuelo_mentor.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-pages:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install renderer
+        run: pip install --disable-pip-version-check gdown pypdfium2 pillow
+      - name: Generate mentor pages
+        run: python tools/build_abuelo_mentor.py
+      - name: Verify pages
+        shell: bash
+        run: |
+          test "$(find assets/mentor/abuelo -maxdepth 1 -name 'page-*.jpg' | wc -l)" -eq 20
+          ls -lh assets/mentor/abuelo
+      - name: Commit mentor pages
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/mentor/abuelo/page-*.jpg
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Generar páginas del texto mentor Cuenta abuelo cuenta"
+            git push origin HEAD:main
+          fi

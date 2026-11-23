@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SA2 · Semana R/RR · Conocimiento del Medio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+ES:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#263842;--muted:#64737b;--line:#d7e1e4;--paper:#fff;--bg:#f3f7f4;--green:#dff1e6;--green2:#6da487;--blue:#e8f4fb;--yellow:#fff4cf;--rose:#f8e8ee;--accent:#315f72;--shadow:0 8px 24px rgba(29,55,66,.12)}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif}.school{font-family:"Playwrite ES","Comic Sans MS",cursive}
+button,a{font:inherit}.app{height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+.topbar{height:62px;flex:0 0 62px;background:#fff;border-bottom:1px solid #d9e3e6;display:flex;align-items:center;gap:10px;padding:7px 12px;z-index:20}
+.brand{font-weight:900;font-size:15px;white-space:nowrap}.top-spacer{flex:1}.top-btn{border:2px solid #aabcc4;border-radius:12px;background:#fff;padding:8px 10px;font-weight:800;cursor:pointer;min-height:42px}.top-btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}.top-btn.teacher.on{background:var(--yellow);border-color:#d9b84d}
+.stage{flex:1;min-height:0;position:relative}.screen{display:none;height:100%;padding:12px}.screen.active{display:block}.panel{height:100%;background:#fff;border:2px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:16px;display:flex;flex-direction:column;gap:10px;overflow:auto}.teacherbox{display:none;border:2px solid #d8c56e;background:#fff8d9;border-radius:15px;padding:10px 12px;font-size:14px;line-height:1.35}.teacher-mode .teacherbox{display:block}
+.kicker{font-size:12px;font-weight:900;letter-spacing:.08em;color:#52705d}.title{font-size:clamp(34px,5vw,58px);line-height:1.04;margin:0}.subtitle{font-size:clamp(18px,2vw,25px);line-height:1.2;color:#4b5f68}.instruction{background:var(--yellow);border:2px solid #efd270;border-radius:15px;padding:8px 11px;text-align:center;font-size:clamp(18px,2vw,26px)}
+.home{background:linear-gradient(135deg,#fff,#f7fbf5)}.home-head{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}.week-chip{display:inline-flex;align-items:center;gap:7px;background:var(--green);border:2px solid #a7cfb7;border-radius:999px;padding:7px 12px;font-weight:900;width:max-content}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;flex:1;min-height:0}.session-card{border:2px solid var(--line);border-radius:20px;padding:15px;background:#fff;display:flex;flex-direction:column;gap:9px;min-height:0}.session-card h2{font-size:27px;margin:0}.session-card p{font-size:16px;line-height:1.3;margin:0}.session-card .mini{font-size:13px;color:var(--muted);line-height:1.3}.card-btn{margin-top:auto;border:2px solid var(--accent);background:var(--accent);color:#fff;border-radius:13px;min-height:44px;padding:8px 10px;font-weight:900;cursor:pointer}.card-btn.secondary{background:#fff;color:var(--ink)}
+.source-strip{display:flex;gap:8px;flex-wrap:wrap}.source-pill{border:1px solid #bdcdd3;background:#f8fbfc;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:800}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;flex:1;min-height:0}.card{border:2px solid var(--line);border-radius:18px;background:#fff;padding:13px;display:flex;flex-direction:column;gap:8px;justify-content:center}.card h3{font-size:25px;margin:0}.card p{font-size:17px;line-height:1.32;margin:0}.bigicon{font-size:72px;text-align:center}.prompt{font-size:clamp(23px,2.7vw,33px);line-height:1.18;text-align:center}.smallprompt{font-size:18px;line-height:1.3}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:9px}.option{border:3px solid #d5dee1;background:#fff;border-radius:16px;min-height:62px;padding:9px;font-weight:850;font-size:17px;cursor:pointer}.option.good{border-color:#70aa8a;background:#eff9f3}.option.bad{border-color:#d48282;background:#fff2f2}.feedback{border:2px solid var(--line);border-radius:14px;background:#f8fafb;padding:9px;text-align:center;font-size:17px;min-height:44px}
+.strategy{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.strategy div{border:2px solid #cbd9d0;background:#fff;border-radius:14px;padding:7px;text-align:center;font-weight:800;font-size:13px}.strategy b{display:block;font-size:24px}
+.sequence{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.seq{border:2px solid #d4dfda;border-radius:17px;background:#fff;padding:10px;text-align:center;min-height:126px;display:flex;flex-direction:column;justify-content:center;gap:5px}.seq strong{font-size:13px;color:#a03865}.seq span{font-size:38px}.seq b{font-size:16px}.seq-selectable{cursor:pointer}.seq-selectable.selected{border-color:#6da487;background:#eef9f3}.seq-selectable.wrong{border-color:#d48282;background:#fff2f2}
+.care-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.care{border:2px solid #d5dfdb;border-radius:17px;background:#fff;padding:12px;text-align:center}.care span{display:block;font-size:48px}.care b{font-size:16px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}.compare>div{border:2px solid var(--line);border-radius:18px;padding:13px;background:#fff}.compare h3{margin:0 0 8px;font-size:24px}.tagline{border-radius:999px;background:var(--blue);border:1px solid #b7d6e4;padding:6px 9px;display:inline-block;font-size:13px;font-weight:900}
+.role-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.role{border:3px solid #d6e0e3;background:#fff;border-radius:18px;padding:15px;cursor:pointer;text-align:center}.role.active{border-color:#6da487;background:#eff9f3}.role span{font-size:58px;display:block}.role b{font-size:22px}.question-list{display:grid;gap:8px}.question-list div{border:2px solid #d8e1e3;border-radius:14px;padding:9px 11px;background:#fff;font-size:17px}
+.emotion-row{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.emotion{border:2px solid #d7e0e3;border-radius:16px;background:#fff;padding:10px;text-align:center;cursor:pointer;font-size:40px}.emotion.active{border-color:#6da487;background:#eff9f3}.emotion small{display:block;font-size:13px;color:#52656d}
+.bridge{border:2px solid #b8d8e5;background:var(--blue);border-radius:18px;padding:12px}.bridge h3{margin:0 0 6px;font-size:24px}.bridge-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.bridge-card{border:2px solid #c9dbe3;background:#fff;border-radius:15px;padding:11px;text-align:center}.bridge-card .emoji{font-size:52px}.bridge-card b{display:block;font-size:18px}.bridge-card p{font-size:14px;line-height:1.3;margin:5px 0 0}
+.nav{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;margin-top:auto}.nav button{border:2px solid #446b7b;border-radius:12px;background:#fff;padding:8px 11px;min-height:42px;font-weight:900;cursor:pointer}.nav .next{background:var(--accent);color:#fff}.step{text-align:center;font-size:13px;font-weight:900;color:#718087}
+.open-mentor{border:2px solid #315f72;background:#315f72;color:white;border-radius:14px;padding:9px 12px;font-weight:900;cursor:pointer;min-height:44px}
+.mentor-overlay{position:fixed;inset:0;background:#dde5e7;z-index:100;display:none;flex-direction:column}.mentor-overlay.open{display:flex}.mentor-toolbar{height:62px;background:#fff;border-bottom:1px solid #cdd8dc;display:flex;align-items:center;gap:10px;padding:7px 12px}.mentor-toolbar b{font-size:18px}.mentor-toolbar small{display:block;color:#63737a}.mentor-toolbar .grow{flex:1}.mentor-toolbar button,.mentor-toolbar a{border:2px solid #a9bac1;border-radius:11px;background:#fff;padding:7px 10px;font-weight:850;text-decoration:none;color:var(--ink);cursor:pointer}
+.mentor-controls{display:flex;gap:8px;justify-content:center;align-items:center;padding:7px;flex-wrap:wrap}.mentor-controls button,.mentor-controls select{border:1px solid #aebcc2;background:#fff;border-radius:10px;padding:6px 9px;font-weight:750}.mentor-controls button.active{background:#dfeff6;border-color:#5890a8}
+.book-area{flex:1;min-height:0;display:grid;grid-template-columns:56px 1fr 56px;gap:8px;padding:8px 12px 12px;align-items:center}.edge{height:100%;max-height:520px;border:0;background:transparent;font-size:54px;cursor:pointer;color:#385965}.edge:disabled{opacity:.2}.book-shell{height:100%;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center}.book{width:min(1100px,100%);height:min(72vh,720px);display:grid;grid-template-columns:1fr 1fr;background:#b7aaa0;border-radius:14px;overflow:hidden;box-shadow:0 15px 35px rgba(0,0,0,.18);position:relative}.book.single{grid-template-columns:1fr}.book.single .page.left{display:none}.page{background:#fff;position:relative;display:grid;place-items:center;overflow:hidden}.page.left{border-right:1px solid #d4d4d4}.page img{width:100%;height:100%;object-fit:contain;display:block}.page-num{position:absolute;bottom:6px;right:8px;background:rgba(255,255,255,.8);border-radius:999px;padding:3px 7px;font-size:11px}.book-status{font-weight:850;font-size:13px;margin-top:7px;color:#475b63}.mentor-fallback{display:none;background:#fff;border:2px solid #d4dee2;border-radius:15px;padding:15px;text-align:center;max-width:780px}.mentor-fallback.show{display:block}
+.notebook-shell{display:flex;flex-direction:column;gap:9px;height:100%}.notebook-toolbar{display:flex;gap:8px;align-items:center}.notebook-toolbar h2{margin:0;font-size:28px}.notebook-toolbar .grow{flex:1}.print-btn{border:2px solid #315f72;background:#315f72;color:#fff;border-radius:12px;padding:8px 12px;font-weight:900;cursor:pointer}.pages-preview{flex:1;min-height:0;overflow:auto;background:#e8eef0;border-radius:16px;padding:12px;display:grid;grid-template-columns:repeat(3,minmax(300px,1fr));gap:12px;align-items:start}
+.notebook-page{background:#fff;width:210mm;min-height:297mm;padding:12mm;box-shadow:0 5px 18px rgba(0,0,0,.13);margin:auto;display:flex;flex-direction:column;gap:6mm;position:relative}.np-title{font-size:27px;margin:0}.np-sub{font-size:14px;color:#50636a}.name-line{font-size:13px}.drawbox{border:2px dashed #aebdc3;border-radius:12px;min-height:54mm;display:grid;place-items:center;color:#8a989e}.two-box{display:grid;grid-template-columns:1fr 1fr;gap:5mm}.mini-box{border:2px solid #bdc9cd;border-radius:10px;min-height:43mm;padding:4mm}.mini-box b{font-size:15px}.pauta-wrap{display:grid;gap:4mm}.pauta-label{font-family:"Playwrite ES",cursive;font-size:15px}.pauta{height:32mm;border-radius:8px;background:
+ linear-gradient(to bottom,
+ transparent 0mm,transparent 2mm,#bcc7cb 2mm,#bcc7cb 2.25mm,
+ transparent 2.25mm,transparent 7mm,#8d9ca2 7mm,#8d9ca2 7.35mm,
+ transparent 7.35mm,transparent 12mm,#8d9ca2 12mm,#8d9ca2 12.35mm,
+ transparent 12.35mm,transparent 17mm,#bcc7cb 17mm,#bcc7cb 17.25mm,
+ transparent 17.25mm,transparent 22mm,#bcc7cb 22mm,#bcc7cb 22.25mm,
+ transparent 22.25mm,transparent 27mm,#8d9ca2 27mm,#8d9ca2 27.35mm,
+ transparent 27.35mm,transparent 32mm);
+ border:1px solid #d5dddf}
+.seqboxes{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm}.seqbox{border:2px dashed #aebdc3;border-radius:9px;min-height:48mm;padding:3mm}.seqbox b{display:block;color:#9b3d63;font-size:12px;margin-bottom:2mm}.checkline{font-size:12px;color:#596a71}.page-no{position:absolute;right:10mm;bottom:7mm;font-size:11px;color:#7c8a90}
+.rubric{display:grid;grid-template-columns:1.4fr repeat(4,.45fr);border:1px solid #c7d0d4}.rubric>*{padding:7px;border-right:1px solid #c7d0d4;border-bottom:1px solid #c7d0d4;font-size:13px}.rubric .head{font-weight:900;background:#eff4f5;text-align:center}.score{cursor:pointer;text-align:center;font-weight:900}.score.on{background:#e8f6ee}
+@media(max-width:900px){.three,.grid2,.compare,.bridge-grid,.role-grid{grid-template-columns:1fr}.strategy{grid-template-columns:repeat(2,1fr)}.strategy div:last-child{grid-column:1/-1}.sequence,.care-grid{grid-template-columns:repeat(2,1fr)}.emotion-row{grid-template-columns:repeat(2,1fr)}.pages-preview{grid-template-columns:1fr}.notebook-page{transform:scale(.72);transform-origin:top center;margin-bottom:-80mm}.book-area{grid-template-columns:42px 1fr 42px}}
+@media(max-height:760px) and (orientation:landscape){.panel{padding:10px;gap:6px}.title{font-size:32px}.subtitle{font-size:16px}.instruction{font-size:16px;padding:5px}.session-card{padding:10px}.session-card h2{font-size:21px}.session-card p{font-size:13px}.bigicon{font-size:49px}.prompt{font-size:20px}.card p,.smallprompt{font-size:13px}.sequence .seq{min-height:86px}.seq span{font-size:28px}.care span{font-size:34px}.book{height:68vh}}
+@media print{
+  @page{size:A4 portrait;margin:0}
+  body{background:#fff}.topbar,.screen:not(#notebookScreen),#notebookScreen .notebook-toolbar,#notebookScreen .nav{display:none!important}.stage{display:block!important;overflow:visible!important}.screen#notebookScreen{display:block!important;height:auto!important;padding:0!important}.screen#notebookScreen .panel{display:block!important;height:auto!important;border:0!important;box-shadow:none!important;padding:0!important;overflow:visible!important}.pages-preview{display:block!important;background:#fff!important;padding:0!important;overflow:visible!important}.notebook-page{width:210mm!important;height:297mm!important;min-height:297mm!important;max-height:297mm!important;box-shadow:none!important;margin:0!important;page-break-after:always;break-after:page;transform:none!important;overflow:hidden}.notebook-page:last-child{page-break-after:auto;break-after:auto}
+}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <div class="topbar">
+    <div class="brand">🌺 SA2 · Un jardín de flores diferentes · Semana R/RR</div>
+    <div class="top-spacer"></div>
+    <button class="top-btn" id="homeBtn" type="button">⌂ Inicio</button>
+    <button class="top-btn" id="notebookBtn" type="button">📒 Cuaderno</button>
+    <button class="top-btn teacher" id="teacherBtn" type="button">👩‍🏫 Guía docente</button>
+    <a class="top-btn" href="index.html" style="text-decoration:none;color:inherit">← SA1</a>
+  </div>
+
+  <main class="stage" id="stage">
+    <section class="screen active" data-name="home">
+      <div class="panel home">
+        <div class="home-head">
+          <div>
+            <div class="week-chip">SEMANA 7 · 16–20 NOVIEMBRE · R / RR</div>
+            <h1 class="title school">Cuidamos, escuchamos y contamos</h1>
+            <div class="subtitle school">Texto mentor: <b>Cuenta abuelo, cuenta</b> · SA2 · cuidados, emociones y convivencia.</div>
+          </div>
+          <button class="open-mentor" data-open-mentor type="button">📖 ABRIR TEXTO MENTOR</button>
+        </div>
+        <div class="source-strip">
+          <span class="source-pill">Programación: cuidado entre generaciones</span>
+          <span class="source-pill">Lengua: primero · luego · después · al final</span>
+          <span class="source-pill">Puente R: Ruymán · paloma rabiche</span>
+          <span class="source-pill">Evidencia: explicar con una pista</span>
+        </div>
+        <div class="three">
+          <article class="session-card">
+            <div class="week-chip">SESIÓN 1</div>
+            <h2 class="school">Leo, miro y comprendo</h2>
+            <p>Lectura compartida del texto mentor. Identificamos personajes, localizamos información explícita y ordenamos lo ocurrido.</p>
+            <div class="mini"><b>Pregunta clave:</b> ¿qué hace una persona para cuidar a otra?<br><b>Evidencia:</b> señala una pista del texto o de la imagen.</div>
+            <button class="card-btn" data-go="s1a" type="button">Abrir sesión 1 ▶</button>
+          </article>
+          <article class="session-card">
+            <div class="week-chip">SESIÓN 2</div>
+            <h2 class="school">Cuidarnos entre generaciones</h2>
+            <p>Recuperamos el cuento, conectamos con Olegario y Acerina y preparamos una entrevista breve o una dramatización.</p>
+            <div class="mini"><b>Lengua:</b> primero · luego · después · al final.<br><b>Evidencia:</b> dibujo + explicación oral de una acción de cuidado.</div>
+            <button class="card-btn" data-go="s2a" type="button">Abrir sesión 2 ▶</button>
+          </article>
+          <article class="session-card">
+            <div class="week-chip">SESIÓN 3</div>
+            <h2 class="school">Cuidados y emociones</h2>
+            <p>Contrastamos el relato con experiencias reales, hablamos de emociones y conectamos con Ruymán y la paloma rabiche.</p>
+            <div class="mini"><b>Importante:</b> distinguimos personaje y animal real; no evaluamos conocimientos históricos.<br><b>Evidencia:</b> conclusión de cuidado.</div>
+            <button class="card-btn" data-go="s3a" type="button">Abrir sesión 3 ▶</button>
+          </article>
+        </div>
+        <div class="teacherbox"><b>Base de diseño.</b> La programación anual sitúa esta semana en SA2 y prescribe: lectura de “El abuelo”, cuidado entre generaciones; conexión con Olegario y Acerina + entrevista o dramatización; explicación final sobre cuidados y emociones. El material de abuelo disponible en Drive es <i>Cuenta abuelo, cuenta</i>, que se integra aquí como lector de páginas.</div>
+      </div>
+    </section>
+
+    <section class="screen" data-name="s1a">
+      <div class="panel">
+        <div class="kicker">SESIÓN 1 · TEXTO MENTOR</div>
+        <h1 class="title school">Cuenta abuelo, cuenta</h1>
+        <div class="instruction school">LEO / ESCUCHO · MIRO · BUSCO UNA PISTA · PIENSO · VUELVO AL TEXTO</div>
+        <div class="strategy">
+          <div><b>📖</b>LEO / ESCUCHO</div><div><b>👀</b>MIRO</div><div><b>🔎</b>BUSCO PISTAS</div><div><b>💭</b>PIENSO</div><div><b>↩️</b>COMPRUEBO</div>
+        </div>
+        <div class="grid2">
+          <div class="card"><div class="bigicon">👧🛏️</div><div class="prompt school">Jenny nota que la cama se mueve. ¿Qué hace?</div></div>
+          <div class="card">
+            <h3 class="school">Comprendo</h3>
+            <div class="options" id="s1q">
+              <button class="option" data-correct="0">Se va de paseo</button>
+              <button class="option" data-correct="1">Llama a su abuelo</button>
+              <button class="option" data-correct="0">Se pone a cantar</button>
+              <button class="option" data-correct="0">Busca una pelota</button>
+            </div>
+            <div class="feedback school" id="s1fb">Toca una respuesta y después di qué pista te ayudó.</div>
+          </div>
+        </div>
+        <button class="open-mentor" data-open-mentor type="button">📖 VOLVER AL LIBRO Y COMPROBAR</button>
+        <div class="teacherbox">Modela la diferencia entre <b>acertar</b> y <b>comprender</b>: la respuesta debe sostenerse con una pista. La docente lee el texto complejo; la lectura autónoma se limita a palabras o frases ajustadas al código trabajado.</div>
+        <div class="nav"><button data-go="home">← Salir</button><div class="step">1 / 3</div><button class="next" data-go="s1b">Continuar →</button></div>
+      </div>
+    </section>
+
+    <section class="screen" data-name="s1b">
+      <div class="panel">
+        <div class="kicker">SESIÓN 1 · ORDENAMOS LO OCURRIDO</div>
+        <h1 class="title school">Primero, luego, después, al final</h1>
+        <div class="sequence" id="storySequence">
+          <div class="seq seq-selectable" data-order="1"><strong>PRIMERO</strong><span>😴</span><b>Jenny estaba durmiendo.</b></div>
+          <div class="seq seq-selectable" data-order="3"><strong>DESPUÉS</strong><span>👴💬</span><b>El abuelo cuenta lo que sabe y recuerda.</b></div>
+          <div class="seq seq-selectable" data-order="2"><strong>LUEGO</strong><span>📣</span><b>Jenny llama a su abuelo.</b></div>
+          <div class="seq seq-selectable" data-order="4"><strong>AL FINAL</strong><span>🗣️</span><b>Jenny escucha y comprende mejor lo ocurrido.</b></div>
+        </div>
+        <div class="feedback school" id="seqfb">Toca las tarjetas en el orden de la historia.</div>
+        <div class="prompt school">Ahora cuéntalo tú: «Primero… Luego… Después… Al final…»</div>
+        <div class="teacherbox">La secuencia se usa como herramienta de comprensión y expresión oral. No se pretende memorizar datos geológicos del cuento. La programación indica expresamente que no se evalúen conocimientos históricos.</div>
+        <div class="nav"><button data-go="s1a">← Anterior</button><div class="step">2 / 3</div><button class="next" data-go="s1c">Cerrar sesión →</button></div>
+      </div>
+    </section>
+
+    <section class="screen" data-name="s1c">
+      <div class="panel">
+        <div class="kicker">SESIÓN 1 · CONCLUSIÓN</div>
+        <h1 class="title school">¿Cómo cuida el abuelo?</h1>
+        <div class="care-grid">
+          <div class="care"><span>👂</span><b>ESCUCHA</b></div>
+          <div class="care"><span>🗣️</span><b>EXPLICA</b></div>
+          <div class="care"><span>🤝</span><b>ACOMPAÑA</b></div>
+          <div class="care"><span>❤️</span><b>TRANQUILIZA</b></div>
+        </div>
+        <div class="prompt school">Completa oralmente: «El abuelo cuida a Jenny cuando…»</div>
+        <div class="bridge"><h3 class="school">Palabra clave · CUIDADO</h3><div class="smallprompt school">Un cuidado es una acción que ayuda a otra persona a estar mejor o sentirse acompañada.</div></div>
+        <div class="teacherbox">Estas palabras sirven como andamiaje oral. Acepta otras acciones justificadas con el relato. La evidencia principal es que el niño pueda señalar una acción y explicar dónde la ha visto.</div>
+        <div class="nav"><button data-go="s1b">← Anterior</button><div class="step">3 / 3</div><button class="next" data-go="home">Terminar ✓</button></div>
+      </div>
+    </section>
+
+    <section class="screen" data-name="s2a">
+      <div class="panel">
+        <div class="kicker">SESIÓN 2 · DEL CUENTO A LA VIDA REAL</div>
+        <h1 class="title school">Cuidarnos entre generaciones</h1>
+        <div class="instruction school">PREGUNTAMOS · ESCUCHAMOS · CONTAMOS LO QUE HEMOS ENTENDIDO</div>
+        <div class="grid2">
+          <div class="card">
+            <h3 class="school">Recordamos el Zurrón</h3>
+            <div class="bigicon">🧓👵</div>
+            <p>La programación propone conectar con <b>Olegario y Acerina</b>, personajes ya conocidos por el grupo.</p>
+            <p class="smallprompt school">¿Qué recordamos de ellos? ¿Qué relación de cuidado podemos representar?</p>
+          </div>
+          <div class="card">
+            <h3 class="school">Elige una forma de trabajar</h3>
+            <div class="role-grid" id="roles">
+              <button class="role" data-role="entrevista"><span>🎤</span><b>ENTREVISTA</b><small>pregunto a una persona adulta</small></button>
+              <button class="role" data-role="drama"><span>🎭</span><b>DRAMATIZACIÓN</b><small>represento una situación inventada</small></button>
+            </div>
+            <div class="feedback school" id="rolefb">Puedes elegir entrevista o dramatización. Ninguna exige contar información privada.</div>
+          </div>
+        </div>
+        <div class="teacherbox">La programación permite una entrevista breve a una persona adulta <b>o</b> una dramatización. La alternativa dramatizada garantiza participación sin exigir datos familiares.</div>
+        <div class="nav"><button data-go="home">← Salir</button><div class="step">1 / 3</div><button class="next" data-go="s2b">Continuar →</button></div>
+      </div>
+    </section>
+
+    <section class="screen" data-name="s2b">
+      <div class="panel">
+        <div class="kicker">SESIÓN 2 · GUION ORAL</div>
+        <h1 class="title school">Hago una entrevista con cuatro pasos</h1>
+        <div class="sequence">
+          <div class="seq"><strong>PRIMERO</strong><span>👋</span><b>saludo y explico qué voy a preguntar</b></div>
+          <div class="seq"><strong>LUEGO</strong><span>❓</span><b>hago una pregunta</b></div>
+          <div class="seq"><strong>DESPUÉS</strong><span>👂</span><b>escucho sin interrumpir</b></div>
+          <div class="seq"><strong>AL FINAL</strong><span>🙏</span><b>doy las gracias y cuento lo que entendí</b></div>
+        </div>
+        <div class="question-list">
+          <div class="school">¿Qué acción de cuidado recuerdas?</div>
+          <div class="school">¿Quién ayudaba a quién?</div>
+          <div class="school">¿Cómo crees que se sentía esa persona?</div>
+        </div>
+        <div class="teacherbox">Si se dramatiza, usa exactamente las mismas preguntas con una situación ficticia. El objetivo es escuchar, interpretar una acción de cuidado y explicarla, no recopilar información familiar.</div>
+        <div class="nav"><button data-go="s2a">← Anterior</button><div class="step">2 / 3</div><button class="next" data-go="s2c">Cerrar sesión →</button></div>
+      </div>
+    </section>
+
+    <section class="screen" data-name="s2c">
+      <div class="panel">
+        <div class="kicker">SESIÓN 2 · COMUNICO</div>
+        <h1 class="title school">Podemos cuidar a alguien cuando…</h1>
+        <div class="grid2">
+          <div class="card"><div class="bigicon">🖍️</div><div class="prompt school">Dibuja una acción de cuidado.</div></div>
+          <div class="card"><h3 class="school">Cuéntaselo a tu pareja</h3><p class="prompt school">«Podemos cuidar a alguien cuando…»</p><p>Después añade: «Lo sé porque…»</p></div>
+        </div>
+        <div class="bridge"><h3 class="school">Palabra clave · AYUDA</h3><div class="smallprompt school">Ayudar es hacer algo que facilita o mejora una situación para otra persona.</div></div>
+        <div class="teacherbox">Observa participación en el diálogo, respeto del turno y capacidad para explicar una acción concreta. No conviertas la tarea en una valoración de la obediencia o del carácter.</div>
+        <div class="nav"><button data-go="s2b">← Anterior</button><div class="step">3 / 3</div><button class="next" data-go="home">Terminar ✓</button></div>
+      </div>
+    </section>
+
+    <section class="screen" data-name="s3a">
+      <div class="panel">
+        <div class="kicker">SESIÓN 3 · CUIDADOS Y EMOCIONES</div>
+        <h1 class="title school">¿Cómo puede sentirse?</h1>
+        <div class="grid2">
+          <div class="card"><div class="bigicon">👧💭</div><div class="prompt school">Cuando algo inesperado ocurre, podemos sentir emociones diferentes.</div></div>
+          <div class="card">
+            <div class="emotion-row" id="emotions">
+              <button class="emotion" data-em="asustada">😟<small>asustada</small></button>
+              <button class="emotion" data-em="sorprendida">😮<small>sorprendida</small></button>
+              <button class="emotion" data-em="tranquila">🙂<small>tranquila</small></button>
+              <button class="emotion" data-em="confundida">🤔<small>confundida</small></button>
+            </div>
+            <div class="feedback school" id="emofb">No hay una única respuesta: elige una emoción y explica qué pista te hace pensar eso.</div>
+          </div>
+        </div>
+        <button class="open-mentor" data-open-mentor type="button">📖 BUSCAR UNA PISTA EN EL TEXTO</button>
+        <div class="teacherbox">La emoción se interpreta con evidencia, no se adivina como una respuesta cerrada. Permite distintas respuestas razonables. Vincula el cuidado del abuelo con cómo cambia o puede cambiar el estado emocional.</div>
+        <div class="nav"><button data-go="home">← Salir</button><div class="step">1 / 3</div><button class="next" data-go="s3b">Continuar →</button></div>
+      </div>
+    </section>
+
+    <section class="screen" data-name="s3b">
+      <div class="panel">
+        <div class="kicker">SESIÓN 3 · PUENTE CON LA R DE LENGUA</div>
+        <h1 class="title school">Ruymán: personaje y animal real</h1>
+        <div class="bridge">
+          <h3 class="school">Lo que ya estamos trabajando en Lengua</h3>
+          <div class="bridge-grid">
+            <div class="bridge-card"><div class="emoji">🎭🕊️</div><b>RUYMÁN · PERSONAJE</b><p>En el cuento del Zurrón, Ruymán es una paloma rabiche que viaja al carnaval.</p></div>
+            <div class="bridge-card"><div class="emoji">🕊️🌿</div><b>PALOMA RABICHE · ANIMAL</b><p>La presentación de la R la identifica como una paloma canaria. Diferenciamos el personaje del animal real.</p></div>
+          </div>
+        </div>
+        <div class="compare">
+          <div><h3 class="school">CUENTO</h3><p class="school">¿Qué cosas puede hacer Ruymán porque es un personaje?</p></div>
+          <div><h3 class="school">REALIDAD</h3><p class="school">¿Qué cuidados crees que necesita un animal real? ¿Cómo podemos respetarlo?</p></div>
+        </div>
+        <div class="teacherbox">La programación conecta R con <b>Ruymán, paloma rabiche y cuidado de animales</b>. No se exige contenido zoológico nuevo: interesa distinguir ficción/realidad y formular una acción de cuidado razonada.</div>
+        <div class="nav"><button data-go="s3a">← Anterior</button><div class="step">2 / 3</div><button class="next" data-go="s3c">Cerrar semana →</button></div>
+      </div>
+    </section>
+
+    <section class="screen" data-name="s3c">
+      <div class="panel">
+        <div class="kicker">SESIÓN 3 · CIERRE</div>
+        <h1 class="title school">Lo que aprendí sobre cuidar</h1>
+        <div class="grid2">
+          <div class="card"><h3 class="school">En el cuento</h3><p class="prompt school">«He visto una acción de cuidado cuando…»</p></div>
+          <div class="card"><h3 class="school">En la vida real</h3><p class="prompt school">«Yo puedo cuidar cuando…»</p></div>
+        </div>
+        <div class="instruction school">DI QUÉ HAS APRENDIDO · DI QUÉ PISTA TE AYUDÓ</div>
+        <div class="bridge"><h3 class="school">Palabra clave · EMOCIÓN</h3><div class="smallprompt school">Una emoción es cómo nos sentimos ante lo que nos ocurre.</div></div>
+        <div class="teacherbox">Cierre de evaluación formativa: explicación con apoyo visual, evidencia usada y una acción de cuidado. Separa la calidad de la explicación de cualquier juicio sobre la conducta personal.</div>
+        <div class="nav"><button data-go="s3b">← Anterior</button><div class="step">3 / 3</div><button class="next" data-go="notebook">Abrir cuaderno 📒</button></div>
+      </div>
+    </section>
+
+    <section class="screen" data-name="notebook" id="notebookScreen">
+      <div class="panel">
+        <div class="notebook-shell">
+          <div class="notebook-toolbar">
+            <h2 class="school">Cuaderno de actividades · Semana R/RR</h2><div class="grow"></div>
+            <button class="print-btn" id="printNotebook" type="button">🖨 IMPRIMIR CUADERNO</button>
+          </div>
+          <div class="pages-preview">
+            <article class="notebook-page">
+              <h2 class="np-title school">Sesión 1 · Leo, miro y comprendo</h2>
+              <div class="np-sub school">Texto mentor: Cuenta abuelo, cuenta</div>
+              <div class="name-line">Nombre ____________________________________________</div>
+              <div class="two-box">
+                <div class="mini-box"><b class="school">Dibuja una pista del cuento.</b><div class="drawbox">dibujo</div></div>
+                <div class="mini-box"><b class="school">¿Quién cuida a quién?</b><div class="drawbox">dibujo</div></div>
+              </div>
+              <div><b class="school">Ordeno lo ocurrido.</b></div>
+              <div class="seqboxes">
+                <div class="seqbox"><b>PRIMERO</b></div><div class="seqbox"><b>LUEGO</b></div><div class="seqbox"><b>DESPUÉS</b></div><div class="seqbox"><b>AL FINAL</b></div>
+              </div>
+              <div class="pauta-wrap"><div class="pauta-label">El abuelo cuida a Jenny cuando…</div><div class="pauta"></div><div class="pauta"></div></div>
+              <div class="checkline">□ He usado una pista del cuento. &nbsp; □ He contado los hechos en orden.</div>
+              <div class="page-no">1</div>
+            </article>
+
+            <article class="notebook-page">
+              <h2 class="np-title school">Sesión 2 · Cuidarnos entre generaciones</h2>
+              <div class="np-sub school">Entrevista breve o dramatización</div>
+              <div class="name-line">Nombre ____________________________________________</div>
+              <div class="question-list">
+                <div class="school"><b>1.</b> ¿Qué acción de cuidado recuerdas?</div>
+                <div class="school"><b>2.</b> ¿Quién ayudaba a quién?</div>
+                <div class="school"><b>3.</b> ¿Cómo crees que se sentía esa persona?</div>
+              </div>
+              <div class="drawbox"><span class="school">Dibujo una acción de cuidado.</span></div>
+              <div class="pauta-wrap"><div class="pauta-label">Podemos cuidar a alguien cuando…</div><div class="pauta"></div><div class="pauta"></div></div>
+              <div class="checkline">□ He escuchado. &nbsp; □ He esperado mi turno. &nbsp; □ He contado lo que entendí.</div>
+              <div class="page-no">2</div>
+            </article>
+
+            <article class="notebook-page">
+              <h2 class="np-title school">Sesión 3 · Cuidados y emociones</h2>
+              <div class="np-sub school">Del cuento a la vida real · Ruymán y la paloma rabiche</div>
+              <div class="name-line">Nombre ____________________________________________</div>
+              <div class="two-box">
+                <div class="mini-box"><b class="school">En el cuento</b><div class="drawbox">dibujo</div></div>
+                <div class="mini-box"><b class="school">En la vida real</b><div class="drawbox">dibujo</div></div>
+              </div>
+              <div><b class="school">Una emoción que puedo reconocer:</b> &nbsp; □ 😟 &nbsp; □ 😮 &nbsp; □ 🙂 &nbsp; □ 🤔</div>
+              <div class="two-box">
+                <div class="mini-box"><b class="school">RUYMÁN · personaje</b><div style="font-size:48px;text-align:center;margin-top:8mm">🎭🕊️</div></div>
+                <div class="mini-box"><b class="school">PALOMA RABICHE · animal real</b><div style="font-size:48px;text-align:center;margin-top:8mm">🕊️🌿</div></div>
+              </div>
+              <div class="pauta-wrap"><div class="pauta-label">Una forma de cuidar es…</div><div class="pauta"></div><div class="pauta"></div></div>
+              <div class="checkline">□ He explicado una idea. &nbsp; □ He dicho qué pista me ayudó.</div>
+              <div class="page-no">3</div>
+            </article>
+          </div>
+        </div>
+        <div class="nav"><button data-go="home">← Volver</button><div class="step">Cuaderno · 3 páginas A4</div><button class="next" id="printNotebook2" type="button">🖨 Imprimir</button></div>
+      </div>
+    </section>
+
+    <section class="screen" data-name="rubric">
+      <div class="panel">
+        <div class="kicker">EVALUACIÓN FORMATIVA · SEMANA R/RR</div>
+        <h1 class="title school">Qué observar</h1>
+        <div class="rubric" id="rubric">
+          <div class="head">Indicador</div><div class="head">1</div><div class="head">2</div><div class="head">3</div><div class="head">4</div>
+          <div>Reconoce una acción de cuidado y la relaciona con una situación.</div><div class="score">○</div><div class="score">○</div><div class="score">○</div><div class="score">○</div>
+          <div>Explica una emoción o relación usando una pista.</div><div class="score">○</div><div class="score">○</div><div class="score">○</div><div class="score">○</div><div class="score">○</div>
+          <div>Participa en diálogo, entrevista o dramatización respetando turnos.</div><div class="score">○</div><div class="score">○</div><div class="score">○</div><div class="score">○</div>
+        </div>
+        <div class="teacherbox"><b>Escala:</b> 1 con modelado continuo · 2 con ayudas frecuentes · 3 con una pista ocasional · 4 de forma autónoma. Registra la ayuda recibida y evita valorar rasgos de personalidad.</div>
+        <div class="nav"><button data-go="home">← Volver</button><div class="step">Criterios SA2 · 4.1 · 8.2 · 9.1</div><button class="next" data-go="home">Cerrar ✓</button></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="mentor-overlay" id="mentorOverlay" aria-hidden="true">
+  <div class="mentor-toolbar">
+    <button id="mentorClose" type="button">← VOLVER A LA SESIÓN</button>
+    <div><b>Cuenta abuelo, cuenta</b><small>Texto mentor · 20 páginas · lector tipo libro</small></div>
+    <div class="grow"></div>
+    <a href="https://drive.google.com/file/d/1s0317-i0MzXlVj9h3y23Kfymr7BloLA2/view" target="_blank" rel="noopener">PDF ORIGINAL ↗</a>
+  </div>
+  <div class="mentor-controls">
+    <button id="coverBtn" type="button">📕 PORTADA</button>
+    <button data-view="1" type="button">1 PÁGINA</button>
+    <button data-view="2" class="active" type="button">2 PÁGINAS</button>
+    <select id="keyPage">
+      <option value="1">1 · Portada</option>
+      <option value="3">3 · Jenny despierta</option>
+      <option value="6">6 · El abuelo explica</option>
+      <option value="8">8 · El volcán</option>
+      <option value="10">10 · La lava avanza</option>
+      <option value="16">16 · La noche</option>
+      <option value="18">18 · Conclusión del relato</option>
+    </select>
+    <button id="goKey" type="button">IR</button>
+  </div>
+  <div class="book-area">
+    <button class="edge" id="prevPage" type="button">‹</button>
+    <div class="book-shell">
+      <div class="book" id="book">
+        <div class="page left"><img id="leftImg" alt=""><span class="page-num" id="leftNum"></span></div>
+        <div class="page right"><img id="rightImg" alt=""><span class="page-num" id="rightNum"></span></div>
+      </div>
+      <div class="mentor-fallback" id="mentorFallback">Las páginas locales todavía no están disponibles. Puedes abrir el PDF original mientras se completa el despliegue.</div>
+      <div class="book-status" id="bookStatus">Página 1</div>
+    </div>
+    <button class="edge" id="nextPage" type="button">›</button>
+  </div>
+</div>
+
+<script>
+(()=>{
+const screens=[...document.querySelectorAll('.screen')], app=document.getElementById('app');
+let current='home',teacher=false;
+function show(name){
+  current=name;screens.forEach(s=>s.classList.toggle('active',s.dataset.name===name));
+  document.querySelector('.stage')?.scrollTo?.(0,0);
+}
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.go)));
+document.getElementById('homeBtn').addEventListener('click',()=>show('home'));
+document.getElementById('notebookBtn').addEventListener('click',()=>show('notebook'));
+document.getElementById('teacherBtn').addEventListener('click',()=>{
+  teacher=!teacher;app.classList.toggle('teacher-mode',teacher);
+  const b=document.getElementById('teacherBtn');b.classList.toggle('on',teacher);b.textContent=teacher?'🔓 Ocultar guía':'👩‍🏫 Guía docente';
+});
+document.querySelectorAll('#s1q .option').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#s1q .option').forEach(x=>x.classList.remove('good','bad'));
+  const ok=b.dataset.correct==='1';b.classList.add(ok?'good':'bad');
+  document.getElementById('s1fb').textContent=ok?'✓ Sí. Ahora señala la pista del texto o de la imagen que te lo demuestra.':'Vuelve al libro. ¿A quién llama Jenny cuando la cama se mueve?';
+}));
+let expected=1;document.querySelectorAll('#storySequence .seq-selectable').forEach(c=>c.addEventListener('click',()=>{
+  if(Number(c.dataset.order)===expected){c.classList.add('selected');expected++;document.getElementById('seqfb').textContent=expected===5?'✓ ¡Orden completo! Cuéntalo ahora usando las cuatro palabras.':'✓ Bien. ¿Qué ocurre después?';}
+  else{c.classList.add('wrong');setTimeout(()=>c.classList.remove('wrong'),450);document.getElementById('seqfb').textContent='Todavía no. Busca qué ocurre antes en el cuento.';}
+}));
+document.querySelectorAll('#roles .role').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#roles .role').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+  document.getElementById('rolefb').textContent=b.dataset.role==='entrevista'?'🎤 Harás una entrevista breve. Recuerda: no hace falta contar nada privado.':'🎭 Harás una dramatización con una situación inventada.';
+}));
+document.querySelectorAll('#emotions .emotion').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#emotions .emotion').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+  document.getElementById('emofb').textContent='Has elegido «'+b.dataset.em+'». Ahora busca una pista que apoye tu idea.';
+}));
+document.querySelectorAll('.score').forEach(s=>s.addEventListener('click',()=>{
+  const row=s.parentElement; const idx=[...row.children].indexOf(s); // fallback if wrapped
+  s.parentElement?.querySelectorAll?.('.score')?.forEach(x=>x.classList.remove('on'));s.classList.add('on');
+}));
+function printNotebook(){show('notebook');setTimeout(()=>window.print(),100)}
+document.getElementById('printNotebook').addEventListener('click',printNotebook);
+document.getElementById('printNotebook2').addEventListener('click',printNotebook);
+
+// Mentor reader: same page-turn logic as the SA1 reader.
+const overlay=document.getElementById('mentorOverlay'),book=document.getElementById('book');
+const leftImg=document.getElementById('leftImg'),rightImg=document.getElementById('rightImg'),leftNum=document.getElementById('leftNum'),rightNum=document.getElementById('rightNum');
+const status=document.getElementById('bookStatus'),fallback=document.getElementById('mentorFallback');
+let page=1,view=2; const pages=20;
+function src(p){return 'assets/mentor/abuelo/page-'+String(p).padStart(2,'0')+'.jpg?v=20261123-r';}
+function spread(){
+  if(view===1)return {l:null,r:page,label:'Página '+page+' de '+pages};
+  if(page===1)return {l:null,r:1,label:'Página 1 de '+pages};
+  const l=page%2===0?page:page-1;return {l,r:l+1<=pages?l+1:null,label:l+1<=pages?'Páginas '+l+'–'+(l+1)+' de '+pages:'Página '+l+' de '+pages};
+}
+function setImg(img,num,p){
+  if(!p){img.style.display='none';num.textContent='';return}
+  img.style.display='block';img.src=src(p);img.alt='Cuenta abuelo, cuenta · página '+p;num.textContent=p;
+}
+function render(){
+  const s=spread();book.classList.toggle('single',view===1);setImg(leftImg,leftNum,s.l);setImg(rightImg,rightNum,s.r);status.textContent=s.label;
+  document.getElementById('prevPage').disabled=page<=1;
+  document.getElementById('nextPage').disabled=(view===1?page:(s.r||s.l||1))>=pages;
+  document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('active',Number(b.dataset.view)===view));
+}
+function next(){if(view===1)page=Math.min(pages,page+1);else if(page===1)page=2;else page=Math.min(pages,(page%2===0?page:page-1)+2);render()}
+function prev(){if(view===1)page=Math.max(1,page-1);else if(page<=2)page=1;else page=Math.max(1,(page%2===0?page:page-1)-2);render()}
+document.querySelectorAll('[data-open-mentor]').forEach(b=>b.addEventListener('click',()=>{overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');render()}));
+document.getElementById('mentorClose').addEventListener('click',()=>{overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true')});
+document.getElementById('nextPage').addEventListener('click',next);document.getElementById('prevPage').addEventListener('click',prev);
+document.getElementById('coverBtn').addEventListener('click',()=>{page=1;render()});
+document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{view=Number(b.dataset.view);render()}));
+document.getElementById('goKey').addEventListener('click',()=>{page=Math.max(1,Math.min(pages,Number(document.getElementById('keyPage').value)||1));render()});
+[leftImg,rightImg].forEach(img=>img.addEventListener('error',()=>{fallback.classList.add('show')}));
+[leftImg,rightImg].forEach(img=>img.addEventListener('load',()=>fallback.classList.remove('show')));
+document.addEventListener('keydown',e=>{if(!overlay.classList.contains('open'))return;if(e.key==='Escape')document.getElementById('mentorClose').click();if(e.key==='ArrowRight')next();if(e.key==='ArrowLeft')prev();});
+render();
+})();
+</script>
+</body>
+</html>
